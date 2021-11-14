@@ -1,4 +1,4 @@
-
+﻿
 
 > No hay nada como una taza de café para estimular las células del cerebro.  
 **Sherlock Holmes**
@@ -34,3 +34,7 @@ Nuestra audiencia es toda aquella persona que quiera aprender a disfrutar el caf
 # *¿Cómo ajustamos nuestra oferta a esa audiencia?*
 A través del envío de la suscripción y con los distintos beneficios y descuentos tanto en la tienda como en las experiencias. 
 Además generaremos un newsletter semanal, con información de cursos, descuentos o experiencias que ayudará a fidelizar a nuestros suscriptores y a ampliar la base de interesados.
+
+[Sitios inspiradores](https://github.com/lopezjuandiego/grupo5Cofi/blob/test/inspirador.MD)
+[Sobre nosotros](https://github.com/lopezjuandiego/grupo5Cofi/blob/test/nosotros.md)
+[Estilos gráficos del proyecto](https://github.com/lopezjuandiego/grupo5Cofi/blob/test/estilos.md)

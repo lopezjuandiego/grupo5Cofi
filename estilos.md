@@ -4,6 +4,7 @@
 
 #  *Paleta de colores*  
   
+  ![enter image description here](https://trello.com/1/cards/61869b68f54cc07a1b600153/attachments/6191730dfbe0d2757689d882/previews/6191730dfbe0d2757689d889/download/paleta.png)
 https://coolors.co/6f1d1b-ae8647-432818-99582a-ffe6a7 
 
 #  *Tipografías*  
