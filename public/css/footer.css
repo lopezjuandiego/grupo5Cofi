@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+
+footer{
+    background-color: #432818;
+    font-family: 'Cinzel', serif;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.contendorQr{
+    padding: 1em;
+}
+
+.imagenQr{
+    width: 9em;
+    
+}
+
+.footerEnlace{
+    padding: 1em 1em;
+    margin: 1em;
+}
+
+.footernav1{
+    width: 24em;
+}
+
+.footernav{
+    width: 12em;
+}
+
+.fa-whatsapp-square{
+font-size: 4em;
+color: #3fcf4b;
+cursor: pointer;
+}
+
+.fa-facebook-square{
+    font-size: 4em;
+    color:#3f79cf;
+    cursor: pointer;
+}
+
+.fa-instagram-square{
+    font-size: 4em;
+    color: #741b80;
+    cursor: pointer;
+}
+
+.footertexto{
+font-size: 1.5em;
+color: #ffe6a7; 
+}
+
+.footericonos{
+    width: 40em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    cursor: pointer;
+}
