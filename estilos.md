@@ -11,5 +11,7 @@ https://coolors.co/6f1d1b-ae8647-432818-99582a-ffe6a7
 
 -  SERIF - CYNZEL https://fonts.google.com/specimen/Cinzel?category=Serif&preview.text=suscripcion&preview.text_type=custom
 - SAN SERIF  - MOHAVE https://fonts.google.com/specimen/Mohave?preview.text=es%20un%20club%20de%20cafe&preview.text_type=custom#standard-styles
+- SAN SERIF - MONOTON
+- https://fonts.google.com/specimen/Monoton?category=Sans+Serif,Display,Monospace&preview.text=COFI&preview.text_type=custom
 - MANUSCRITA  
 https://fonts.google.com/specimen/Kristi?preview.text=es%20un%20club%20de%20cafe&preview.text_type=custom&category=Handwriting#standard-styles
