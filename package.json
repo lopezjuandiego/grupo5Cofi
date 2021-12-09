@@ -6,8 +6,9 @@
   "scripts": {
     "test": "nodemon src/app.js -e js,mjs,json,html,css",
     "start": "node src/app.js"
+  
   },
-  "author": "Juan D. López",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
