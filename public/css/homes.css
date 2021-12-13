@@ -1,21 +1,248 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
- 
+
+
 
 /*--CUERPO--*/
 
 main{
     background-color: #6f1d1b;
 }
-#lorem{
-    padding: 25em;
 
+/*--CARRUCEL--*/
+
+.contenedorgeneral{
+    width: 100%;
+    height: 27.8vw;
+    overflow: hidden;
+}
+
+.contenedorcarrucel{
+    display: flex;
+    animation: carrufotos 15s infinite alternate ease;
+    width: 300%;  
+    font-family: 'Dancing Script', cursive;
+}
+
+.carrucelitem {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    position: relative;
+}
+
+.carrucelfoto{
+    width: 100%;
+    height: 40%;
+}
+
+@keyframes carrufotos {
+
+    0% {margin-left: 0;}
+    35% {margin-left: 0;}
+
+    40% {margin-left: -100%;}
+    70% {margin-left: -100%;}
+
+    75% {margin-left: -200%;}
+    100% {margin-left: -200%;}
+    
+}
+
+.carruceltexto1{
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    font-size: 3vw;
+    width: 60%;
+    color: #ffe6a7;
+}
+
+.carruceltexto2{
+    position: absolute;
+    right: 1em;
+    top: 1em;   
+    font-size: 3vw;
+    width: 34%;
+    color: #ffe6a7;
+}
+
+.carruceltexto3{
+    position: absolute;
+    right: 1em;
+    top: 3em;    
+    font-size: 3vw;
+    width: 40%;
+   color: #432818;
+}
+
+/* FIN CARRUCEL */
+
+/* INFORMACION DIBUJOS */
+
+.contenedorinformacion{
+    background-color: #ffff;
+    display: flex;    
+    justify-content: center;
+    height: 20em;
+    align-content: center;
+}
+
+.tituloinformacion{
+    font-family: 'Cinzel', serif;
+    color: #6f1d1b;
+    padding: 1em;
+}
+
+.textoinformacion2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4em;
+    color:#6f1d1b;
+    width: 90%;
+}
+
+.textoinformacion1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.7em;
+    color:#6f1d1b;
+    padding-top: 1em;
+    background-color: #fff;
+    text-align: center;
+}
+
+.imagengeneral{
+    padding: 2em;
+    text-align: center;
+}
+
+/* FIN INFORMACION DIBUJOS */
+
+/* BANNER */
+
+.contenedorbanner{
+    display: flex;
+    height: 100%;
+    padding: 0.6em;
+    width: 100%;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.banner{
+width: 100%;
+position: relative;
+}
+
+.imgbanner{
+    width: 32vw;
+    opacity: 0.5;
+}
+
+.bannertexto1{
+    position: absolute;
+    top: 8vw;
+    right: 7vw;
+    font-size: 4em;
+    color: #6f1d1b;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+}
+
+.bannertexto2{
+    position: absolute;
+    top: 8vw;
+    right: 6vw;    
+    font-size: 4em;    
+    color: #6f1d1b;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+}
+
+.bannertexto3{
+    position: absolute;
+    top: 2.6em;
+    left: 1em;
+    font-size: 4em;   
+    color: #6f1d1b;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+}
+
+/*--FIN BANNER -- */
+
+/* NEWSLETTER */
+
+.contenedorletter{
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    color: #ffe6a7;
+    font-size: 2em;
+    padding: 0.5em;
+    text-decoration: underline;
 }
 
 
+.correo{
+    text-decoration: none;
+    border: none;
+    padding: 1em;
+}
 
+.oculto{
+    display: none;
+}
+
+#email{
+    padding: 1em;
+    width: 60em;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contenedorinputs{
+    display: flex;
+    padding-bottom: 2em;
+    justify-content: center;
+}
+
+.botonenviar{
+ text-decoration: none;
+    border: none;
+    padding: 1em;
+    
+}
+
+.enviar{
+    padding: 0.6em;
+    width: 8em;
+    border-radius: 20px;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    color: #6f1d1b;
+    background-color: #ffe6a7;
+    transition: all 0.3s linear;
+}
+
+.enviar:hover{
+    color: #ffe6a7;
+    background-color: #432818;
+}
+
+/* FIN NEWSLETTER */
+
+@media  (min-width: 500px)  {
+
+    
+    
+}
