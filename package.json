@@ -4,7 +4,9 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "test": "nodemon src/app.js -e json,css,js,mjs,html"
+    "test": "nodemon src/app.js -e js,mjs,json,html,css",
+    "start": "node src/app.js"
+  
   },
   "author": "",
   "license": "ISC",
