@@ -63,6 +63,7 @@ main{
     font-size: 3vw;
     width: 60%;
     color: #ffe6a7;
+    display: none;
 }
 
 .carruceltexto2{
@@ -72,6 +73,7 @@ main{
     font-size: 3vw;
     width: 34%;
     color: #ffe6a7;
+    display: none;
 }
 
 .carruceltexto3{
@@ -81,6 +83,37 @@ main{
     font-size: 3vw;
     width: 40%;
    color: #432818;
+   display: none;
+}
+
+.carruceltexto4{
+    position: absolute;
+    right: 0;
+    top: 0.3em;   
+    font-size: 7vw;
+    width: 40%;
+    color: #ffe6a7;
+display: block;
+}
+
+.carruceltexto5{
+    position: absolute;
+    right: 1em;
+    top: 0;   
+    font-size: 7.4vw;
+    width: 40%;
+    color: #ffe6a7;
+    display: block;
+}
+
+.carruceltexto6{
+    position: absolute;
+    right: 0;
+    top: 0.4em;    
+    font-size: 7.4vw;
+    width: 40%;
+   color: #432818;
+    display: block;
 }
 
 /* FIN CARRUCEL */
@@ -91,8 +124,13 @@ main{
     background-color: #ffff;
     display: flex;    
     justify-content: center;
-    height: 20em;
+    height: 38em;
     align-content: center;
+    flex-direction: column;
+}
+
+.fotoimg{
+width: 5em;
 }
 
 .tituloinformacion{
@@ -103,9 +141,9 @@ main{
 
 .textoinformacion2{
     font-family: 'Roboto', sans-serif;
-    font-size: 1.4em;
+    font-size: 1em;
     color:#6f1d1b;
-    width: 90%;
+    width: 100%;
 }
 
 .textoinformacion1{
@@ -118,7 +156,7 @@ main{
 }
 
 .imagengeneral{
-    padding: 2em;
+    padding: 0.4em;
     text-align: center;
 }
 
@@ -129,50 +167,85 @@ main{
 .contenedorbanner{
     display: flex;
     height: 100%;
-    padding: 0.6em;
+    padding: 0;
     width: 100%;
     background-color: #fff;
     font-weight: bold;
+    flex-direction: column;
+    gap: 1em;
 }
 
-.banner{
-width: 100%;
-position: relative;
+
+.banner1{
+    background: linear-gradient(rgba(5, 7, 12, 0.5), rgba(5, 7, 12, 0.6)), url(../image/bolsafull2.jpg);    
+    height: 40vh;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    
 }
 
-.imgbanner{
-    width: 32vw;
-    opacity: 0.5;
+.banner2{
+    background-image: linear-gradient(rgba(5, 7, 12, 0.5), rgba(5, 7, 12, 0.6)),url(../image/tazafull3.jpg);
+    background-size: cover;
+    height: 40vh;
+    text-align: center;
+    background-repeat: no-repeat;
+    width: 100vw;
 }
 
-.bannertexto1{
-    position: absolute;
-    top: 8vw;
-    right: 7vw;
+.banner3{
+    background-image: linear-gradient(rgba(5, 7, 12, 0.5), rgba(5, 7, 12, 0.6)),url(../image/fondofull1.jpg);
+    background-size: cover;
+    height: 40vh;
+    text-align: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+}
+
+.banner1:hover{
+    box-shadow:  0px 0px 15px rgb(70, 70, 70);
+    
+}
+.banner2:hover{
+    box-shadow:  0px 0px 15px rgb( 100 , 100 , 100 );
+    
+}
+
+.banner3:hover{
+    box-shadow:  0px 0px 15px rgb( 100 , 100 , 100 );
+   
+}
+
+
+.bannerparrafo{    
+    text-align: center;
+    margin-top: 9em;
+    
+}
+
+
+.bannertexto1{      
     font-size: 4em;
-    color: #6f1d1b;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Cinzel', serif;
+   color: #ae8647;
+   list-style: none;
+   text-decoration: none;
+   font-family: 'Cinzel', serif;
+   
 }
 
-.bannertexto2{
-    position: absolute;
-    top: 8vw;
-    right: 6vw;    
+.bannertexto2{         
     font-size: 4em;    
-    color: #6f1d1b;
+    color: #ae8647;
     list-style: none;
     text-decoration: none;
     font-family: 'Cinzel', serif;
 }
 
-.bannertexto3{
-    position: absolute;
-    top: 2.6em;
-    left: 1em;
+.bannertexto3{   
     font-size: 4em;   
-    color: #6f1d1b;
+    color: #ae8647;
     list-style: none;
     text-decoration: none;
     font-family: 'Cinzel', serif;
@@ -204,7 +277,7 @@ position: relative;
 
 #email{
     padding: 1em;
-    width: 60em;
+    width: 90vw;
     border-radius: 20px;
     font-family: 'Roboto', sans-serif;
 }
@@ -213,6 +286,8 @@ position: relative;
     display: flex;
     padding-bottom: 2em;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .botonenviar{
@@ -241,8 +316,280 @@ position: relative;
 
 /* FIN NEWSLETTER */
 
-@media  (min-width: 500px)  {
+@media  (min-width: 768px)  {
 
+
+    /*-- CARRUCEL--*/
+   
+.carruceltexto1{
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    font-size: 3vw;
+    width: 60%;
+    color: #ffe6a7;
+    display: none;
+}
+
+.carruceltexto2{
+    position: absolute;
+    right: 1em;
+    top: 1em;   
+    font-size: 3vw;
+    width: 34%;
+    color: #ffe6a7;
+    display: none;
+}
+
+.carruceltexto3{
+    position: absolute;
+    right: 1em;
+    top: 3em;    
+    font-size: 3vw;
+    width: 40%;
+   color: #432818;
+   display: none;
+}
+
+.carruceltexto4{
+display: block;
+}
+
+.carruceltexto5{
+    display: block;
+}
+
+.carruceltexto6{
+    display: block;
+}
+
+/*-- FIN CARRUCEL--*/
+
+/* INFORMACION DIBUJOS */
+
+.contenedorinformacion{
+    background-color: #ffff;
+    display: flex;    
+    justify-content: center;
+    height: 24em;
+    align-content: center;
+    flex-direction: row;
+}
+.fotoimg{
+    width: 9em;
+    }
+
+    .imagengeneral{
+        padding: 2em;
+        text-align: center;
+    }
     
+    .textoinformacion2{
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.4em;
+        color:#6f1d1b;
+        width: 90%;
+    }
+
+    /* FIN INFORMACION DIBUJOS */
+
+    /* BANNER */
+
+    .contenedorbanner{
+        display: flex;
+        height: 100%;
+        padding: 0.5em;
+        width: 100%;
+        background-color: #fff;
+        font-weight: bold;
+        flex-direction: row;
+        gap: 0.2em;
+        justify-content: space-evenly;
+    }
+
+    .bannertexto1{      
+        font-size: 2.5em;
+       color: #ae8647;
+       list-style: none;
+       text-decoration: none;
+       font-family: 'Cinzel', serif;
+       
+    }
     
+    .bannertexto2{         
+        font-size: 2.5em;    
+        color: #ae8647;
+        list-style: none;
+        text-decoration: none;
+        font-family: 'Cinzel', serif;
+    }
+    
+    .bannertexto3{   
+        font-size: 2.5em;   
+        color: #ae8647;
+        list-style: none;
+        text-decoration: none;
+        font-family: 'Cinzel', serif;
+    }
+    
+    .bannerparrafo{    
+        text-align: center;
+        margin-top: 9em;
+       
+    }
+    
+/* -- FIN BANNER --*/
+
+/* NEWSLETTER */ 
+    
+#email{
+    padding: 1em;
+    width: 45em;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+.contenedorinputs{
+    display: flex;
+    padding-bottom: 2em;
+    justify-content: center;
+    flex-direction: row;
+}
+
+}
+
+
+@media  (min-width: 1300px) {
+
+
+    /*-- CARRUCEL--*/
+
+    .carruceltexto1{
+        position: absolute;
+        right: 1em;
+        top: 1em;
+        font-size: 3vw;
+        width: 60%;
+        color: #ffe6a7;
+        display: block;
+    }
+    
+    .carruceltexto2{
+        position: absolute;
+        right: 1em;
+        top: 1em;   
+        font-size: 3vw;
+        width: 34%;
+        color: #ffe6a7;
+        display: block;
+    }
+    
+    .carruceltexto3{
+        position: absolute;
+        right: 1em;
+        top: 3em;    
+        font-size: 3vw;
+        width: 40%;
+       color: #432818;
+       display: block;
+    }
+    
+    .carruceltexto4{
+    display: none;
+    }
+    
+    .carruceltexto5{
+        display: none;
+    }
+    
+    .carruceltexto6{
+        display: none;
+    }
+    
+/*-- FIN CARRUCEL--*/
+
+/* INFORMACION DIBUJOS */
+
+.contenedorinformacion{
+    background-color: #ffff;
+    display: flex;    
+    justify-content: center;
+    height: 20em;
+    align-content: center;
+    flex-direction: row;
+}
+
+.fotoimg{
+    width: 9em;
+    }
+
+    .imagengeneral{
+        padding: 2em;
+        text-align: center;
+    }
+
+    .textoinformacion2{
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.4em;
+        color:#6f1d1b;
+        width: 90%;
+    }
+    
+    /* FIN INFORMACION DIBUJOS */
+
+       /* BANNER */
+
+       .contenedorbanner{
+        display: flex;
+        height: 100%;
+        padding: 0.5em;
+        width: 100%;
+        background-color: #fff;
+        font-weight: bold;
+        flex-direction: row;
+        gap: 0.2em;
+        justify-content: space-evenly;
+    }
+
+    .bannertexto1{      
+        font-size: 4em;
+       color: #ae8647;
+       list-style: none;
+       text-decoration: none;
+       font-family: 'Cinzel', serif;
+       
+    }
+    
+    .bannertexto2{         
+        font-size: 4em;    
+        color: #ae8647;
+        list-style: none;
+        text-decoration: none;
+        font-family: 'Cinzel', serif;
+    }
+    
+    .bannertexto3{   
+        font-size: 4em;   
+        color: #ae8647;
+        list-style: none;
+        text-decoration: none;
+        font-family: 'Cinzel', serif;
+    }
+    
+    .bannerparrafo{    
+        text-align: center;
+        margin-top: 9em;
+        
+    }
+    
+/* FIN BANNER */ 
+
+/* NEWSLETTER */ 
+#email{
+    padding: 1em;
+    width: 60em;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* FIN NEWALWTTER */
 }

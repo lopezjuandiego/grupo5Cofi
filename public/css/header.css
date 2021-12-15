@@ -36,6 +36,7 @@ header {
     margin-right: -4em;
     height: 1em;
     transition: all 0.5s;
+    display: none;
 }
 
 .headerEnlacesVisible{
