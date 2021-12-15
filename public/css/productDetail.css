@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #6f1d1b;
+  font-family: "Cinzel";
+  color: #ffe6a7;
+  font-size: 1.2rem;
+}
+
+h1,
+h2,
+h4,
+h5 {
+  margin: 5px;
+  font-family: "Roboto";
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+picture {
+  width: 100px;
+}
+
+form fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-cafe {
+  margin: 10px;
+  padding-bottom: 10px;
+}
+
+#banner {
+  max-width: 100%;
+  opacity: 0.8;
+}
+#article-pos {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+#banner-txt {
+  position: absolute;
+  font-family: "Dancing Script";
+  color: #ffe6a7;
+  font-size: 3rem;
+  top: 10%;
+  left: 20%;
+}
+.ocultar {
+  display: none;
+}
+
+.btn-buy {
+  flex: 1 0 auto;
+  background-color:#ffe6a7 ;
+  color: #99582a;
+  border-radius: 20px;
+  border: none;
+  margin: 10px 0px;
+  font-size: 20px;
+  padding: 5px 10px;
+  transition: all 0.3 linear;
+}
+
+.btn-buy:hover {
+  background-color: #432818;
+}
+
+.chk-txt {
+  margin: 0px 0 5px 25px;
+  font-size: 0.9rem;
+}
+.chk-input {
+  margin: -19px 5px 5px 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .imgbolsacafe {
+    display: block;
+    max-width: 100%;
+  }
+  .contenedor-cafe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px;
+  }
+
+  .producto-cafe {
+    display: flex;
+    margin: 12px 35px;
+    padding-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+  }
+
+#banner-txt {
+  top: 25%;
+  left: 35%;
+}
+
+form fieldset {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 9px 0px -10px 5px;
+}
+
+ .btn-buy {
+  margin: 5px 75px;
+  font-size: 20px;
+}
+
+.btn-buy:hover {
+  background-color: #432818;
+}
+}
+@media screen and (min-width: 1200px) {
+  #banner-txt {
+    top: 35%;
+    left: 38%;
+    font-size: 4rem;
+  }
+  .contenedor-cafe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5px;
+  }
+
+  .producto-cafe {
+    display: flex;
+    margin: 30px 5px;
+    align-items: center;
+    border: none;
+  }
+
+  .imgbolsacafe {
+    display: flex;
+    max-width: 150%;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  h2, h4, h5{
+    font-size:1.2rem
+  }
+}
