@@ -36,6 +36,8 @@ header {
     margin-right: -4em;
     height: 1em;
     transition: all 0.5s;
+    display: none;
+
 }
 
 .headerEnlacesVisible{
@@ -209,7 +211,9 @@ color: #ffe6a7;
         color: #ffe6a7;
         display: inline-block;
         padding: 0 1em;
-        font-size: 1.2em;
+
+        font-size: 1.1em;
+
         list-style: none;
         text-decoration: none;
         font-weight: bold;
@@ -243,12 +247,4 @@ color: #ffe6a7;
             color: #ffe6a7;
             
         }
-
-
-
 }
-
-
-
-
-
