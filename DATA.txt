@@ -1,0 +1,60 @@
+Paleta
+#6F1D1B
+#AE8647 Hs
+#432818
+#99582A 
+#FFE6A7 CUERPO
+
+CYNZEL
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+
+ROBOTO
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+DANCING
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+QUERIES
+0 a 768 mobile 
+ a 1300 tablet 
+1000 en adelante Desktop
+
+HTML banner 
+<section id="article-pos">
+      <article class="flex-text">
+        <p id="banner-txt">PRODUCTOS</p>
+      </article>
+    </section>
+
+CSS BANNER
+#article-pos {
+  background-image: url(../image/cafelargo3.jpeg);
+  height: 20vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.flex-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+
+#banner-txt {
+  font-family: "Dancing Script";
+  color: #ffe6a7;
+  font-size: 3rem;
+}
+
+QUERIE 768
+ #banner-txt {
+    font-size: 4rem;
+  }
+
+  QUERIES 1300
+ #article-pos {
+    height: 30vh;
+  }
+  .flex-text {
+    height: 30vh;
+  }

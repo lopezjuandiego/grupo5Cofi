@@ -1,20 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Librerias-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--RESET-->
     <link
       rel="stylesheet"
       href="https://meyerweb.com/eric/tools/css/reset/reset.css"
     />
     <!--Estilos-->
-    <link rel="stylesheet" href="/css/" />
-    <title>Carrito de compras</title>
+    <link rel="stylesheet" href="/css/productCart.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+   
+    <title>Comprar</title>
   </head>
   <body>
-   Proximamente
+    <header>
+      <section class="headerPrincipal">
+        <picture class="contenedorelementos1">
+        <img class="logo" src="/image/logoFinal.jpg">
+       </picture>
+
+       <nav class="headerEnlaces">
+           <li id="lienlace"><a class="enlaces" href="">INICIO</a></li>
+           <li id="lienlace"><a class="enlaces" href="">SUSCRIPCION</a></li>
+           <li id="lienlace"><a class="enlaces" href="">TIENDA</a></li>
+           <li id="lienlace"><a class="enlaces" href="">EDUCACION</a></li>
+           <li id="lienlace"><a class="enlaces" href="">EXPERIENCIA</a></li>
+       </nav>
+    
+     <picture class="contenedorelementos1">
+         <a class="iconos" href=""><i class="fa-solid fa-cart-shopping"></i></a>          
+         <a class="iconos" href=""><i class="fa-solid fa-circle-user"></i></a>
+     </picture>
+ 
+     <button class="contenedorelementos2">
+         <i class="fas fa-bars"></i>
+     </button>
+ </section>
+    </header>
+ 
+    <main>
+      <section id="article-pos">
+        <article class="flex-text">
+          <p id="banner-txt">PRODUCTOS</p>
+        </article>
+      </section>
+      <article class="flex-container">
+        <section class="compra-actual">
+          <picture>
+            <img
+              class="imgbolsacafe ocultar"
+              src="/image/bolsaCafeSinFondo.png"
+              alt="Imagen Bolsa de Café"
+            />
+          </picture>
+         
+          <article>
+            <p>Cantidad: 1/4</p>
+            <p>Precio: $1200</p>
+            <p>cantidad: 1</p>
+            <p>Total: $1200</p>
+            <a class="link" href="/productDetail">Agregar/Eliminar Producto</a>
+
+          </article>
+        </section>
+        <section class="forma-pago">
+          <form action="/pagoyenvio" method="get">
+            <fieldset>
+              <legend>Forma de pago</legend>
+              <label class="ocultar"> Forma de pago</label>
+              <input
+                class="chk-input"
+                type="radio"
+                name="Tarjeta"
+                value="Pago con Tarjeta"
+                id="tarjeta"
+              />
+              <label class="chk-txt" for="tarjeta">Pago con Tarjeta</label>
+              <input
+                class="chk-input"
+                type="radio"
+                name="Efectivo"
+                value="Pago en Efectivo"
+                id="efectivo"
+              />
+              <label class="chk-txt" for="efectivo">Pago en Efectivo</label>
+              <input
+                class="chk-input"
+                type="radio"
+                name="MercadoPago"
+                value="MercadoPago"
+                id="mercadoPago"
+              />
+              <label class="chk-txt" for="mercadoPago">MercadoPago</label>
+              <input
+                class="chk-input"
+                type="radio"
+                name="Transferencia"
+                value="Transferencia"
+                id="transferencia"
+              />
+              <label class="chk-txt" for="transferencia">Transferencia</label>
+            </fieldset>
+            <fieldset>
+              <button class="btn-buy" type="submit">Finalizar compra</button>
+            </fieldset>
+          </form>
+        </section>
+      </article>
+    </main>
+
+<footer>
+  <section class="footer">              
+    <picture class="contendorQr">
+        <img class="imagenQr" src="image/qr.jpg" alt="">
+    </picture>
+
+   <nav class="footernav">
+   <li><a class="footerEnlace" href="">NOSOTROS</a></li>
+   <li><a class="footerEnlace" href="">LEGALES</a></li>
+   </nav>
+
+   <nav class="footernav1">
+    <li><a class="footerEnlace" href="">MI CUENTA</a></li>
+    <li><a class="footerEnlace" href="">PREGUNTAS FRECUENTES</a></li>
+   </nav>
+
+   <picture class="footericonos">
+    <i class="fa-brands fa-whatsapp-square"></i><p class="footertexto">5555-COFI</p>
+    <i class="fa-brands fa-facebook-square"></i><p class="footertexto">COFICLUB</p>
+    <i class="fa-brands fa-instagram-square"></i><p class="footertexto">@COFICLUB</p>
+   </picture>
+</section>
+</footer>
   </body>
 </html>

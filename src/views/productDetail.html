@@ -1,150 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!--Librerias-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Librerias-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--RESET-->
     <link
       rel="stylesheet"
       href="https://meyerweb.com/eric/tools/css/reset/reset.css"
-    />
+    /> 
     <!--Estilos-->
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/footer.css"/>
-    <link rel="stylesheet" href="/css/" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/productDetail.css" />
     <title>Detalle de producto</title>
-</head>
-<body>
-  <header></header>
-  <main>
-    <section>
-        <article>
-          <picture>
-            <img src="/images/bolsaCafeFondo.jpeg" alt="Imagen Bolsa de Café" />
-          </picture>
+  </head>
+  <body>
+    <header>
+
+      <section class="headerPrincipal">
+        <picture class="contenedorelementos1">
+        <img class="logo" src="/image/logoFinal.jpg">
+       </picture>
+
+       <nav class="headerEnlaces">
+           <li id="lienlace"><a class="enlaces" href="">INICIO</a></li>
+           <li id="lienlace"><a class="enlaces" href="">SUSCRIPCION</a></li>
+           <li id="lienlace"><a class="enlaces" href="">TIENDA</a></li>
+           <li id="lienlace"><a class="enlaces" href="">EDUCACION</a></li>
+           <li id="lienlace"><a class="enlaces" href="">EXPERIENCIA</a></li>
+       </nav>
+    
+     <picture class="contenedorelementos1">
+         <a class="iconos" href=""><i class="fa-solid fa-cart-shopping"></i></a>          
+         <a class="iconos" href=""><i class="fa-solid fa-circle-user"></i></a>
+     </picture>
+ 
+     <button class="contenedorelementos2">
+         <i class="fas fa-bars"></i>
+     </button>
+ </section>
+    </header>
+   
+    <main>
+      <section id="article-pos">
+        <article class="flex-text">
+          <p id="banner-txt">SUSCRIPCIÓN</p>
         </article>
-        <article>
-          <p>
-            Suscripción a 250 gramos de café de especialidad:
-          </p>
-          <p>
+      </section>
+      <section class="contenedor-cafe">
+        <article class="producto-cafe">
+          <picture>
+            <img
+              class="imgbolsacafe ocultar"
+              src="/image/bolsaCafeSinFondo.png"
+              alt="Imagen Bolsa de Café"
+            />
+          </picture>
+
+          <h2 class="items-suscripcion">
+            250 gramos
+          </h2>
+          <h4 class="items-suscripcion">
             Precio: $1200
-          </p>
+          </h4>
+          <h5 class="items-suscripcion">
+            Molienda:
+          </h5>
+
           <form action="/" method="get">
             <fieldset>
-              <legend>
-                Molienda a elección - OCULTAR CON CLASS
+              <legend class="ocultar">
+                Molienda a elección
               </legend>
-              <label>Elegí la molienda:</label>
-              <label for="fina">Fina</label>
-              <input type="checkbox" name="moliendaFina" value="Fina" id="fina">
-              <label for="media">Media</label>
-              <input type="checkbox" name="moliendaMedia" value="Media" id="media">                    
-              <label for="yoga">Gruesa</label>
-              <input type="checkbox" name="moliendaGruesa" value="Gruesa" id="yoga">
-              <input type="submit" value="Suscribirse">
+              <label class="chk-txt">Fina</label>
+              <input
+                class="chk-input"
+                type="checkbox"
+                name="moliendaFina"
+                value="Fina"
+              />
+              <label class="chk-txt">Media</label>
+              <input
+                class="chk-input"
+                type="checkbox"
+                name="moliendaMedia"
+                value="Media"
+              />
+              <label class="chk-txt">Gruesa</label>
+              <input
+                class="chk-input"
+                type="checkbox"
+                name="moliendaGruesa"
+                value="Gruesa"
+              />
+            </fieldset>
+            <fieldset>
+              <button class="btn-buy" type="submit">Comprar</button>
             </fieldset>
           </form>
         </article>
-      </section>
 
-      <section>
-        <article>
+        <article class="producto-cafe">
           <picture>
-            <img src="/images/bolsaCafeFondo.jpeg" alt="Imagen Bolsa de Café" />
+            <img
+              class="imgbolsacafe ocultar"
+              src="/image/bolsaCafeSinFondo.png"
+              alt="Imagen Bolsa de Café"
+            />
           </picture>
-        </article>
-        <article>
-          <p>
-            Suscripción a 500 gramos de café de especialidad:
-          </p>
-          <p>
-            Precio: $1600
-          </p>
+
+          <h2 class="items-suscripcion">
+            500 gramos
+          </h2>
+          <h4 class="items-suscripcion">
+            Precio: $1200
+          </h4>
+          <h5 class="items-suscripcion">
+            Molienda:
+          </h5>
+
           <form action="/" method="get">
             <fieldset>
-              <legend>
-                Molienda a elección - OCULTAR CON CLASS
+              <legend class="ocultar">
+                Molienda a elección
               </legend>
-              <label>Elegí la molienda:</label>
-              <label for="fina">Fina</label>
-              <input type="checkbox" name="moliendaFina" value="Fina" id="fina">
-              <label for="media">Media</label>
-              <input type="checkbox" name="moliendaMedia" value="Media" id="media">                    
-              <label for="yoga">Gruesa</label>
-              <input type="checkbox" name="moliendaGruesa" value="Gruesa" id="yoga">
-              <input type="submit" value="Suscribirse">
+              <label class="chk-txt">Fina</label>
+              <input
+                class="chk-input"
+                type="checkbox"
+                name="moliendaFina"
+                value="Fina"
+              />
+              <label class="chk-txt">Media</label>
+              <input
+                class="chk-input"
+                type="checkbox"
+                name="moliendaMedia"
+                value="Media"
+              />
+              <label class="chk-txt">Gruesa</label>
+              <input
+                class="chk-input"
+                type="checkbox"
+                name="moliendaGruesa"
+                value="Gruesa"
+              />
+            </fieldset>
+            <fieldset>
+              <button class="btn-buy" type="submit">Comprar</button>
             </fieldset>
           </form>
         </article>
-      </section>
-
-      <section>
-        <article>
+        <article class="producto-cafe">
           <picture>
-            <img src="/images/bolsaCafeFondo.jpeg" alt="Imagen Bolsa de Café" />
+            <img
+              class="imgbolsacafe ocultar"
+              src="/image/bolsaCafeSinFondo.png"
+              alt="Imagen Bolsa de Café"
+            />
           </picture>
-        </article>
-        <article>
-          <p>
-            Suscripción a 750 gramos de café de especialidad:
-          </p>
-          <p>
-            Precio: $2000
-          </p>
+
+          <h2 class="items-suscripcion">
+            750 gramos
+          </h2>
+          <h4 class="items-suscripcion">
+            Precio: $3000
+          </h4>
+          <h5 class="items-suscripcion">
+            Molienda:
+          </h5>
+
           <form action="/" method="get">
             <fieldset>
-              <legend>
-                Molienda a elección - OCULTAR CON CLASS
+              <legend class="ocultar">
+                Molienda a elección
               </legend>
-              <label>Elegí la molienda:</label>
-              <label for="fina">Fina</label>
-              <input type="checkbox" name="moliendaFina" value="Fina" id="fina">
-              <label for="media">Media</label>
-              <input type="checkbox" name="moliendaMedia" value="Media" id="media">                    
-              <label for="yoga">Gruesa</label>
-              <input type="checkbox" name="moliendaGruesa" value="Gruesa" id="yoga">
-              <input type="submit" value="Suscribirse">
+              <label class="chk-txt">Fina</label>
+              <input
+                class="chk-input"
+                type="checkbox"
+                name="moliendaFina"
+                value="Fina"
+              />
+              <label class="chk-txt">Media</label>
+              <input
+                class="chk-input"
+                type="checkbox"
+                name="moliendaMedia"
+                value="Media"
+              />
+              <label class="chk-txt">Gruesa</label>
+              <input
+                class="chk-input"
+                type="checkbox"
+                name="moliendaGruesa"
+                value="Gruesa"
+              />
+            </fieldset>
+            <fieldset>
+              <button class="btn-buy" type="submit">Comprar</button>
             </fieldset>
           </form>
         </article>
-      </section>
-
-      <section>
-        <article>
+        <article class="producto-cafe">
           <picture>
-            <img src="/images/bolsaCafeFondo.jpeg" alt="Imagen Bolsa de Café" />
+            <img
+              class="imgbolsacafe ocultar"
+              src="/image/bolsaCafeSinFondo.png"
+              alt="Imagen Bolsa de Café"
+            />
           </picture>
-        </article>
-        <article>
-          <p>
-            Suscripción a 1 kilo de café de especialidad:
-          </p>
-          <p>
-            Precio: $2300
-          </p>
-          <form action="/" method="get">
+
+          <h2 class="items-suscripcion">
+            1 kilo
+          </h2>
+          <h4 class="items-suscripcion">
+            Precio: $4000
+          </h4>
+          <h5 class="items-suscripcion">
+            Molienda:
+          </h5>
+
+          <form class action="/productCart" method="get">
             <fieldset>
-              <legend>
-                Molienda a elección - OCULTAR CON CLASS
+              <legend class="ocultar">
+                Molienda a elección
               </legend>
-              <label>Elegí la molienda:</label>
-              <label for="fina">Fina</label>
-              <input type="checkbox" name="moliendaFina" value="Fina" id="fina">
-              <label for="media">Media</label>
-              <input type="checkbox" name="moliendaMedia" value="Media" id="media">                    
-              <label for="yoga">Gruesa</label>
-              <input type="checkbox" name="moliendaGruesa" value="Gruesa" id="yoga">
-              <input type="submit" value="Suscribirse">
+              <label class="chk-txt">Fina</label>
+              <input
+                class="chk-input"
+                type="checkbox"
+                name="moliendaFina"
+                value="Fina"
+              />
+              <label class="chk-txt">Media</label>
+              <input
+                class="chk-input"
+                type="checkbox"
+                name="moliendaMedia"
+                value="Media"
+              />
+              <label class="chk-txt">Gruesa</label>
+              <input
+                class="chk-input"
+                type="checkbox"
+                name="moliendaGruesa"
+                value="Gruesa"
+              />
+            </fieldset>
+            <fieldset>
+              <button class="btn-buy" type="submit">Comprar</button>
             </fieldset>
           </form>
         </article>
       </section>
     </main>
-    <footer>
-
+    
+      <footer>
+        <section class="footer">              
+          <picture class="contendorQr">
+              <img class="imagenQr" src="image/qr.jpg" alt="">
+          </picture>
+      
+         <nav class="footernav">
+         <li><a class="footerEnlace" href="">NOSOTROS</a></li>
+         <li><a class="footerEnlace" href="">LEGALES</a></li>
+         </nav>
+      
+         <nav class="footernav1">
+          <li><a class="footerEnlace" href="">MI CUENTA</a></li>
+          <li><a class="footerEnlace" href="">PREGUNTAS FRECUENTES</a></li>
+         </nav>
+      
+         <picture class="footericonos">
+          <i class="fa-brands fa-whatsapp-square"></i><p class="footertexto">5555-COFI</p>
+          <i class="fa-brands fa-facebook-square"></i><p class="footertexto">COFICLUB</p>
+          <i class="fa-brands fa-instagram-square"></i><p class="footertexto">@COFICLUB</p>
+         </picture>
+      </section>
+      
     </footer>
-</body>
+  </body>
 </html>
