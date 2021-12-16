@@ -6,33 +6,56 @@
     box-sizing: border-box;
 }
 
-
 header {
     background-color: #6f1d1b;
     font-family: 'Cinzel', serif;
 }
 
+
 .headerPrincipal{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    
 }
 
-.headerEnlaces,li,a,.enlaces{
+.iconos{
+     padding: 2em;
+
+}
+
+.headerEnlaces,#lienlace,.enlaces{
     color: #ffe6a7;
-    display: inline-block;
-    padding: 0 1em;
+    background-color: #432818;
+    padding:  0.7em;
     font-size: 1.1em;
     list-style: none;
     text-decoration: none;
-    font-weight: bold;
-    transition: all 0.5s linear;
+    order: 6;
+    margin-right: -4em;
+    height: 1em;
+    transition: all 0.5s;
+    display: none;
+
 }
 
-a.enlaces:hover{
-border-bottom: solid  1px #ffe6a7;
-padding: 0 1.1em;
+.headerEnlacesVisible{
+
+    margin-right: 0em;
+    height: 0;
+}
+
+
+
+.contenedorelementos1,.contenedorelementos2{
+    flex-grow: 1;
+    
+}
+
+.contenedorelementos2{
+    background-color: #6f1d1b;
+    border: none;
 }
 
 
@@ -52,4 +75,176 @@ color: #ffe6a7;
     font-size: 2.1em;
     color: #ffe6a7;
     
+}
+
+
+
+.fa-bars{
+    color: #ffe6a7;
+    padding: 0.5em 0 0.5em ;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+
+
+
+@media (min-width: 768px) {
+
+    header {
+        background-color: #6f1d1b;
+        font-family: 'Cinzel', serif;
+    }
+    .contenedorelementos2{
+        flex-grow: 0;
+       display: none;
+    }
+    .contenedorelementos1{
+        flex-grow: 0;
+       
+    }
+    .burger-menu{
+         display: none;
+    }
+    
+    .fa-bars{
+        display: none;
+    }
+
+
+
+    .headerPrincipal{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    .headerEnlaces,#lienlace,.enlaces{
+        color: #ffe6a7;
+        display: inline-block;
+        padding: 0 0.1em;
+        font-size: 18px;
+        list-style: none;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.5s linear;
+        background-color: #6f1d1b;
+        order: 0;
+        margin-right: 0;
+        height: 1.4em;
+    }
+    
+    .enlaces:hover{
+        border-bottom: solid  1px #ffe6a7;
+        padding: 0 1.1em;
+        }
+        
+        
+        .logo{
+            width: 6em;
+            height: 5em;
+        }
+        
+        
+        .fa-cart-shopping{
+        font-size: 2.1em;
+        color: #ffe6a7;
+        
+        }
+        
+        .fa-circle-user{
+            font-size: 2.1em;
+            color: #ffe6a7;
+            
+        }
+
+        .iconos {
+            padding: 1em;
+            font-size: 11px;
+        }
+
+
+}
+
+
+@media (min-width: 1300px) {
+
+
+    header {
+        background-color: #6f1d1b;
+        font-family: 'Cinzel', serif;
+    }
+    .contenedorelementos2{
+        flex-grow: 0;
+       display: none;
+    }
+    .contenedorelementos1{
+        flex-grow: 0;
+       
+    }
+    .burger-menu{
+         display: none;
+    }
+    
+    .fa-bars{
+        display: none;
+    }
+
+    .iconos {
+        padding: 1em;
+        font-size: 20px;
+    }
+
+  
+
+    .headerPrincipal{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    .headerEnlaces,#lienlace,.enlaces{
+        color: #ffe6a7;
+        display: inline-block;
+        padding: 0 1em;
+
+        font-size: 1.1em;
+
+        list-style: none;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.5s linear;
+        background-color: #6f1d1b;
+        order: 0;
+        margin-right: 0;
+        height: 1.4em;
+    }
+    
+    .enlaces:hover{
+        border-bottom: solid  1px #ffe6a7;
+        padding: 0 1.1em;
+        }
+        
+        
+        .logo{
+            width: 6em;
+            height: 5em;
+        }
+        
+        
+        .fa-cart-shopping{
+        font-size: 2.1em;
+        color: #ffe6a7;
+        
+        }
+        
+        .fa-circle-user{
+            font-size: 2.1em;
+            color: #ffe6a7;
+            
+        }
 }

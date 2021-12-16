@@ -15,21 +15,51 @@ body {
   font-size: 1.2rem;
 }
 
-.items-suscripcion {
+h1,h2  {
   margin: 5px;
   font-family: "Roboto";
   font-size: 1rem;
+
 }
 
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+h3{
+  font-size: 0.8rem;
+  font-family: "Roboto";
+  margin: 5px;
+
+}
 
 form fieldset {
   display: flex;
   flex-direction: column;
 }
 
-.producto-cafe {
-  margin: 10px;
-  padding: 0 0 20px 15px;
+label {
+  font-size: 0.8rem;
+  margin: 5px;
+}
+
+form fieldset input {
+  outline: none;
+  border: none;
+  margin: 5px;
+  border-radius: 10px;
+  height: 25px;
+  width:100%;
+  text-align: center;
+}
+
+select{
+  outline: none;
+  border: none;
+  margin: 5px;
+  border-radius: 10px;
+  height: 25px;
 }
 
 #article-pos {
@@ -49,14 +79,24 @@ form fieldset {
   font-family: "Dancing Script";
   color: #ffe6a7;
   font-size: 3rem;
-}
+}  
+
+
 .ocultar {
   display: none;
 }
 
+#caja-pago, #caja-envio {
+  margin: 20px;
+}
+
+.tipos-pago {
+  margin: 10px;
+}
+
 .btn-buy {
   flex: 1 0 auto;
-  background-color: #ffe6a7;
+  background-color:#ffe6a7 ;
   color: #99582a;
   border-radius: 20px;
   margin: 10px 0px;
@@ -67,7 +107,7 @@ form fieldset {
 
 .btn-buy:hover {
   background-color: #432818;
-  color: #ffe6a7;
+  color: #ffe6a7
 }
 
 .chk-txt {
@@ -78,51 +118,53 @@ form fieldset {
   margin: -19px 5px 5px 5px;
 }
 
-@media screen and (min-width: 768px) {
-  .imgbolsacafe {
-    display: block;
-    max-width: 100%;
-    width: 120px
-  }
-  .contenedor-cafe {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 5px;
-  }
+::placeholder{
+  font-style: italic;
+  font-size: 0.7rem;
+  text-align: center;
+}
 
-  .producto-cafe {
-    display: flex;
-    margin: 12px 35px;
-    padding-bottom: 10px;
-    flex-direction: column;
-    align-items: center;
-    border: none;
-  }
+@media screen and (min-width: 768px) {
 
   #banner-txt {
     font-size: 4rem;
   }
-
+ 
   form fieldset {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     margin: 9px 0px -10px 5px;
-  }
-
-  .btn-buy {
-    margin: 5px 75px;
-    font-size: 20px;
-  }
-
-  .btn-buy:hover {
-    background-color: #432818;
-  }
+ 
 }
-@media screen and (min-width: 1300px) {
+
+.btn-buy {
+  
+  margin: 5px 75px;
+  font-size: 20px;
+ 
+}
+
+.btn-buy:hover {
+  background-color: #432818;
+}
 
 
+.tipos-pago {
+  margin: 25px 0 10px 0;
+}
+
+label {
+  font-size: 0.8rem;
+  margin: 5px;
+  width: 120px
+}
+select{
+  margin: 3px -14px 0 -14px;
+}
+
+@media screen and (min-width: 1200px) {
+ 
   #article-pos {
     height: 30vh;
   }
@@ -130,30 +172,17 @@ form fieldset {
     height: 30vh;
   }
 
-  .contenedor-cafe {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 5px;
+label{
+  width: 240px;
+  font-size: 1rem;
+  height: 30px;
+}
+select{
+  margin: 3px -14px 0 -40px;
+}
+.btn-buy {
+  
+  margin: 20px 75px;
   }
-
-  .producto-cafe {
-    display: flex;
-    margin: 30px 5px;
-    align-items: center;
-    border: none;
-  }
-
-  .imgbolsacafe {
-    display: flex;
-    max-width: 150%;
-    width: 150px;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  .items-suscripcion  {
-    font-size: 1.2rem;
-  }
+}
 }
