@@ -182,7 +182,7 @@ width: 5em;
     text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100vw;
+    width: 95vw;
     
 }
 
@@ -192,7 +192,7 @@ width: 5em;
     height: 40vh;
     text-align: center;
     background-repeat: no-repeat;
-    width: 100vw;
+    width: 95vw;
 }
 
 .banner3{
@@ -201,7 +201,7 @@ width: 5em;
     height: 40vh;
     text-align: center;
     background-repeat: no-repeat;
-    width: 100vw;
+    width: 95vw;
 }
 
 .banner1:hover{
@@ -227,7 +227,7 @@ width: 5em;
 
 
 .bannertexto1{      
-    font-size: 4em;
+    font-size: 3em;
    color: #ae8647;
    list-style: none;
    text-decoration: none;
@@ -236,7 +236,7 @@ width: 5em;
 }
 
 .bannertexto2{         
-    font-size: 4em;    
+    font-size: 3em;    
     color: #ae8647;
     list-style: none;
     text-decoration: none;
@@ -244,7 +244,7 @@ width: 5em;
 }
 
 .bannertexto3{   
-    font-size: 4em;   
+    font-size: 3em;   
     color: #ae8647;
     list-style: none;
     text-decoration: none;

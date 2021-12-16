@@ -36,14 +36,14 @@ footer{
 }
 
 .footernav1{
-    width: 13em;
+    width: 10em;
     list-style: none;
     font-size: 2em;
     text-align: center;
 }
 
 .footernav{
-    width: 12em;
+    width: 10em;
     list-style: none;
     font-size: 2em;
     text-align: center;
@@ -74,7 +74,7 @@ display: none;
 }
 
 .footericonos{
-    width: 40em;
+    width: 20em;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
