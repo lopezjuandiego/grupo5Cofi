@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2? family = Roboto: ital, wght @ 0,100; 0,300; 0,400; 0,500; 0,700; 0,900; 1,100; 1,300; 1,400; 1,500; 1,700; 1,900 & display = swap ");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+fieldset{
+  border: none;
+}
+
+body {
+  background-color: #6f1d1b;
+}
+.banner {
+  background-image: url(../image/cafelargo3.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 20vh;
+  }
+
+.imagenBanner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+ }
+h1 {
+  color: #ffe6a7;
+  font-family: Dancing Script;
+  font-size: 9vh;
+  
+}
+
+.imgbanner {
+  box-sizing: border-box;
+  height: 36vh;
+  width: 100vw;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 6vh;
+  color: white;
+  font-family: "Cinzel";
+  color: #ffe6a7;
+}
+form {
+  padding: 8vh;
+  text-align: center;
+}
+
+.Nombre {
+  margin-bottom: 25px;
+  border-radius: 5px;
+  text-align: center;
+  height: 4vh;
+  width: 50vh;
+  border-radius: 20px;
+  font-family: "Roboto";
+  font-size: 3vh;
+}
+.Apellido {
+  margin-bottom: 25px;
+  border-radius: 5px;
+  text-align: center;
+  height: 4vh;
+  width: 50vh;
+  border-radius: 20px;
+  font-family: "Roboto";
+  font-size: 3vh;
+}
+
+.Email {
+  margin-bottom: 25px;
+  border-radius: 5px;
+  text-align: center;
+  height: 4vh;
+  width: 50vh;
+  border-radius: 20px;
+  font-family: "Roboto";
+  font-size: 3vh;
+}
+
+.Contraseña {
+  margin-bottom: 25px;
+  border-radius: 5px;
+  text-align: center;
+  height: 4vh;
+  width: 50vh;
+  border-radius: 20px;
+  font-family: "Roboto";
+  font-size: 3vh;
+}
+
+.botonEnviar {
+  padding: 0.6em;
+  width: 8em;
+  border-radius: 20px;
+  font-size: 1.2em;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  color: #6f1d1b;
+  background-color: #ffe6a7;
+  transition: all 0.3s linear;
+  margin-right: 39px;
+}
+.botonEnviar:hover {
+  background-color: rgb(67, 40, 24);
+  color: #ffe6a7;
+}
+
+.botonReset {
+  padding: 0.6em;
+  width: 8em;
+  border-radius: 20px;
+  font-size: 1.2em;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  color: #6f1d1b;
+  background-color: #ffe6a7;
+  transition: all 0.3s linear;
+}
+.botonReset:hover {
+  background-color: rgb(67, 40, 24);
+  color: #ffe6a7;
+}
+
+.yaTengoUsuario {
+  font-size: 25px;
+  color: #ffe6a7;
+}
+.YaEstoyRegistrado {
+  margin-top: 30px;
+}
+.leyendas {
+  display: inline-flex;
+}
+::placeholder {
+    color: #6f1d1b;
+    font-family: "Roboto";
+}
+section a {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .Nombre {
+    margin-bottom: 25px;
+    border-radius: 5px;
+    text-align: center;
+    height: 4vh;
+    width: 62vh;
+    border-radius: 20px;
+    font-family: "Roboto";
+    font-size: 3vh;
+  }
+
+  .Apellido {
+    margin-bottom: 25px;
+    border-radius: 5px;
+    text-align: center;
+    height: 4vh;
+    width: 62vh;
+    border-radius: 20px;
+    font-family: "Roboto";
+    font-size: 3vh;
+  }
+
+  .Email {
+    margin-bottom: 25px;
+    border-radius: 5px;
+    text-align: center;
+    height: 4vh;
+    width: 62vh;
+    border-radius: 20px;
+    font-family: "Roboto";
+    font-size: 3vh;
+  }
+
+  .Contraseña {
+    margin-bottom: 25px;
+    border-radius: 5px;
+    text-align: center;
+    height: 4vh;
+    width: 62vh;
+    border-radius: 20px;
+    font-family: "Roboto";
+    font-size: 3vh;
+  }
+
+  .botonEnviar {
+    padding: 0.6em;
+    width: 6em;
+    border-radius: 20px;
+    font-size: 2vw;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    color: #6f1d1b;
+    background-color: #ffe6a7;
+    transition: all 0.3s linear;
+    margin-right: 39px;
+  }
+  .botonEnviar:hover {
+    background-color: rgb(67, 40, 24);
+    color: #ffe6a7;
+  }
+
+  .botonReset {
+    padding: 0.6em;
+    width: 6em;
+    border-radius: 20px;
+    font-size: 2vw;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    color: #6f1d1b;
+    background-color: #ffe6a7;
+    transition: all 0.3s linear;
+  }
+  .botonReset:hover {
+    background-color: rgb(67, 40, 24);
+    color: #ffe6a7;
+  }
+
+  .yaTengoUsuario {
+    font-size: 25px;
+    color: #ffe6a7;
+    text-decoration: none;
+  }
+  .YaEstoyRegistrado {
+    margin-top: 30px;
+  }
+  .leyendas {
+    display: inline-flex;
+  }
+}
+@media (min-width: 1300px) {
+  .Nombre {
+    margin-bottom: 25px;
+    border-radius: 5px;
+    text-align: center;
+    height: 4vh;
+    width: 62vh;
+    border-radius: 20px;
+    font-family: "Roboto";
+    font-size: 3vh;
+  }
+
+  .Apellido {
+    margin-bottom: 25px;
+    border-radius: 5px;
+    text-align: center;
+    height: 4vh;
+    width: 62vh;
+    border-radius: 20px;
+    font-family: "Roboto";
+    font-size: 3vh;
+  }
+  .Email {
+    margin-bottom: 25px;
+    border-radius: 5px;
+    text-align: center;
+    height: 4vh;
+    width: 62vh;
+    border-radius: 20px;
+    font-family: "Roboto";
+    font-size: 3vh;
+  }
+
+  .Contraseña {
+    margin-bottom: 25px;
+    border-radius: 5px;
+    text-align: center;
+    height: 4vh;
+    width: 62vh;
+    border-radius: 20px;
+    font-family: "Roboto";
+    font-size: 3vh;
+  }
+
+  .botonEnviar {
+    padding: 0.6em;
+    width: 6em;
+    border-radius: 20px;
+    font-size: 1.2vw;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    color: #6f1d1b;
+    background-color: #ffe6a7;
+    transition: all 0.3s linear;
+    margin-right: 39px;
+  }
+  .botonEnviar:hover {
+    background-color: rgb(67, 40, 24);
+    color: #ffe6a7;
+  }
+
+  .botonReset {
+    padding: 0.6em;
+    width: 6em;
+    border-radius: 20px;
+    font-size: 1.2vw;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    color: #6f1d1b;
+    background-color: #ffe6a7;
+    transition: all 0.3s linear;
+  }
+  .botonReset:hover {
+    background-color: rgb(67, 40, 24);
+    color: #ffe6a7;
+  }
+
+  .yaTengoUsuario {
+    font-size: 25px;
+    color: #ffe6a7;
+  }
+  .YaEstoyRegistrado {
+    margin-top: 30px;
+  }
+  .leyendas {
+    display: inline-flex;
+  }
+  .banner {
+    height: 30vh;
+    }
+    
+  .imagenBanner{
+    height: 30vh;
+   }
+}
