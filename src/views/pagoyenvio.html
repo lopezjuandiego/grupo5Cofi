@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Librerias-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--RESET-->
+    <link
+      rel="stylesheet"
+      href="https://meyerweb.com/eric/tools/css/reset/reset.css"
+    />
+    <!--Estilos-->
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/pagoyenvio.css" />
+    <title>Detalle de producto</title>
+  </head>
+  <body>
+    <header>
+      <section class="headerPrincipal">
+        <picture class="contenedorelementos1">
+        <img class="logo" src="/image/logoFinal.jpg">
+       </picture>
+
+       <nav class="headerEnlaces">
+           <li id="lienlace"><a class="enlaces" href="">INICIO</a></li>
+           <li id="lienlace"><a class="enlaces" href="">SUSCRIPCION</a></li>
+           <li id="lienlace"><a class="enlaces" href="">TIENDA</a></li>
+           <li id="lienlace"><a class="enlaces" href="">EDUCACION</a></li>
+           <li id="lienlace"><a class="enlaces" href="">EXPERIENCIA</a></li>
+       </nav>
+    
+     <picture class="contenedorelementos1">
+         <a class="iconos" href=""><i class="fa-solid fa-cart-shopping"></i></a>          
+         <a class="iconos" href=""><i class="fa-solid fa-circle-user"></i></a>
+     </picture>
+ 
+     <button class="contenedorelementos2">
+         <i class="fas fa-bars"></i>
+     </button>
+ </section>
+    </header>
+
+    <main>
+      <section id="article-pos">
+        <article class="flex-text">
+          <p id="banner-txt">PRODUCTOS</p>
+        </article>
+      </section>
+<section id="caja-pago">
+  <article>
+    <h1>FORMA DE PAGO</h1>
+  </article>
+    <article class="tipos-pago">
+      <h2>Pago con Tarjeta</h2>
+        <form action="/" method="post">
+            <fieldset>
+                <legend class="ocultar">Tarjeta</legend>
+                <label for="tarjetipo">Tarjeta</label>
+                <input
+                  type="text"
+                  name="tipotarjeta"
+                  id="tarjetipo"
+                  placeholder="Visa, Master, Amex...." 
+                  required
+                />
+            </fieldset>
+
+            <fieldset>
+                <legend class="ocultar">Nombre y Apellido</legend>
+                <label for="nombretarjeta">Nombre y Apellido</label>
+                <input
+                  type="text"
+                  name="nombreyapellidotarjeta"
+                  id="nombretarjeta"
+                  placeholder="Nombre y Apellido" 
+                  required
+                />
+            </fieldset>
+
+            <fieldset>
+                <legend class="ocultar">Nro Tarjeta</legend>
+                <label for="nrotarjeta">Número de la tarjeta</label>
+                <input
+                  type="number"
+                  name="numerotarjeta"
+                  id="nrotarjeta"
+                  placeholder="Número de la tarjeta" 
+                  required
+                />
+            </fieldset>
+
+            <fieldset>
+                <legend class="ocultar">Vencimiento</legend>
+                <label for="vtotarjeta">Vencimiento</label>
+                <input
+                  type="date"
+                  name="vencimientotarjeta"
+                  id="vtotarjeta"
+                  placeholder="Fecha de vencimiento" 
+                  required
+                />
+            </fieldset>
+
+            <fieldset>
+                <legend class="ocultar">Código de seguridad</legend>
+                <label for="codtarjeta">Codigo de seguridad</label>
+                <input
+                  type="number"
+                  name="codigotarjeta"
+                  id="codtarjeta"
+                  placeholder="Código de seguridad" 
+                  required
+                />
+            </fieldset>
+        </form>
+      </article>
+  
+    <article class="tipos-pago">
+        <h2>Pago con Mercado Pago</h2>
+        <button class="btn-buy" type="submit">Ir a MercadoPago</button>
+
+    </article>
+    <article class="tipos-pago">
+        <h2>Pago por transferencia</h2>
+        <h3>Datos para transferencia:</h3>
+            <h3>Alias: COFI.CLUB.CAFE</h3>
+            <form action="/" method="post">
+            <fieldset>
+                <legend class="ocultar">Subí el comprobante</legend>
+                <label for="transfer">Subí el comprobante</label>
+                <input type="file" name="comprobanteTransfer" id="transfer" required />
+              </fieldset>
+            </form>
+              
+    </article>
+
+    
+</section>
+
+<section id="caja-envio">
+    <article>
+        <h1>ENVÍO</h1>
+    </article>
+    <form action="/" method="post">
+    <fieldset>
+      <legend class="ocultar">ZonaGeográfica</legend>
+      <label for="zona">Zona geográfica:</label>
+      <select name="localidad" id="zona">
+        <option value="caba">CABA</option>
+        <option value="gban">GBA Norte</option>
+        <option value="gbas">GBA Oeste</option>
+        <option value="gbas">GBA Sur</option>
+      </select> 
+  
+  </fieldset>
+    <fieldset>
+        <legend class="ocultar">Dirección</legend>
+        <label for="domicilio">Domicilio de entrega</label>
+        <input type="name" name="domicilio" id="domicilio" placeholder="Domicilio" required />
+      </fieldset>
+    
+      <fieldset>
+        <button class="btn-buy" type="submit">Finalizar compra</button>
+        <button class="btn-buy" type="reset">Borrar</button>
+    </fieldset>
+  </form>
+</section>
+
+    </main>
+      <footer>
+        <section class="footer">              
+          <picture class="contendorQr">
+              <img class="imagenQr" src="image/qr.jpg" alt="">
+          </picture>
+      
+         <nav class="footernav">
+         <li><a class="footerEnlace" href="">NOSOTROS</a></li>
+         <li><a class="footerEnlace" href="">LEGALES</a></li>
+         </nav>
+      
+         <nav class="footernav1">
+          <li><a class="footerEnlace" href="">MI CUENTA</a></li>
+          <li><a class="footerEnlace" href="">PREGUNTAS FRECUENTES</a></li>
+         </nav>
+      
+         <picture class="footericonos">
+          <i class="fa-brands fa-whatsapp-square"></i><p class="footertexto">5555-COFI</p>
+          <i class="fa-brands fa-facebook-square"></i><p class="footertexto">COFICLUB</p>
+          <i class="fa-brands fa-instagram-square"></i><p class="footertexto">@COFICLUB</p>
+         </picture>
+      </section>
+  </footer>
+  </body>
+</html>
