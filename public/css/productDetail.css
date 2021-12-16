@@ -38,26 +38,26 @@ form fieldset {
 
 .producto-cafe {
   margin: 10px;
-  padding-bottom: 10px;
+  padding: 0 0 20px 15px;
 }
 
-#banner {
-  max-width: 100%;
-  opacity: 0.8;
-}
 #article-pos {
-  position: relative;
-  display: inline-block;
-  text-align: center;
+  background-image: url(../image/cafelargo3.jpeg);
+  height: 20vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.flex-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
 }
 
 #banner-txt {
-  position: absolute;
   font-family: "Dancing Script";
   color: #ffe6a7;
   font-size: 3rem;
-  top: 10%;
-  left: 20%;
 }
 .ocultar {
   display: none;
@@ -65,18 +65,18 @@ form fieldset {
 
 .btn-buy {
   flex: 1 0 auto;
-  background-color:#ffe6a7 ;
+  background-color: #ffe6a7;
   color: #99582a;
   border-radius: 20px;
-  border: none;
   margin: 10px 0px;
   font-size: 20px;
   padding: 5px 10px;
-  transition: all 0.3 linear;
+  transition: all 0.3 lineal;
 }
 
 .btn-buy:hover {
   background-color: #432818;
+  color: #ffe6a7;
 }
 
 .chk-txt {
@@ -108,33 +108,36 @@ form fieldset {
     border: none;
   }
 
-#banner-txt {
-  top: 25%;
-  left: 35%;
-}
-
-form fieldset {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  margin: 9px 0px -10px 5px;
-}
-
- .btn-buy {
-  margin: 5px 75px;
-  font-size: 20px;
-}
-
-.btn-buy:hover {
-  background-color: #432818;
-}
-}
-@media screen and (min-width: 1200px) {
   #banner-txt {
-    top: 35%;
-    left: 38%;
     font-size: 4rem;
   }
+
+  form fieldset {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 9px 0px -10px 5px;
+  }
+
+  .btn-buy {
+    margin: 5px 75px;
+    font-size: 20px;
+  }
+
+  .btn-buy:hover {
+    background-color: #432818;
+  }
+}
+@media screen and (min-width: 1300px) {
+
+
+  #article-pos {
+    height: 30vh;
+  }
+  .flex-text {
+    height: 30vh;
+  }
+
   .contenedor-cafe {
     display: flex;
     flex-wrap: wrap;
@@ -157,7 +160,9 @@ form fieldset {
     display: flex;
     flex-direction: column;
   }
-  h2, h4, h5{
-    font-size:1.2rem
+  h2,
+  h4,
+  h5 {
+    font-size: 1.2rem;
   }
 }
