@@ -14,7 +14,8 @@ footer{
 
 .footer{
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 }
 
 .contendorQr{
@@ -27,16 +28,25 @@ footer{
 }
 
 .footerEnlace{
-    padding: 1em 1em;
-    margin: 1em;
+    padding: 0.5em;
+    margin: 0;
+    text-decoration: none;
+    color: #ffe6a7;
+    display: inline-block;
 }
 
 .footernav1{
-    width: 24em;
+    width: 13em;
+    list-style: none;
+    font-size: 2em;
+    text-align: center;
 }
 
 .footernav{
     width: 12em;
+    list-style: none;
+    font-size: 2em;
+    text-align: center;
 }
 
 .fa-whatsapp-square{
@@ -60,6 +70,7 @@ cursor: pointer;
 .footertexto{
 font-size: 1.5em;
 color: #ffe6a7; 
+display: none;
 }
 
 .footericonos{
@@ -67,6 +78,70 @@ color: #ffe6a7;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     cursor: pointer;
+    gap: 2em;
+}
+
+@media (min-width: 768px) {
+
+
+    .footer{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+    
+    .footernav1{
+        width: 24em;
+        list-style: none;
+        font-size: 1.2em;
+    }
+    
+    .footernav{
+        width: 12em;
+        list-style: none;
+        font-size: 1.2em;
+    }
+    
+    .footerEnlace{
+        padding: 1em 1em;
+        margin: 1em;
+        text-decoration: none;
+        color: #ffe6a7;
+        display: inline-block;
+    }
+
+    .footertexto{
+        font-size: 1.5em;
+        color: #ffe6a7; 
+        display: none;
+        }
+        
+        .footericonos{
+            width: 40em;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            cursor: pointer;
+            gap: 0;
+        }
+        
+
+}
+
+@media (min-width: 1300px) {
+
+
+    .footertexto{
+        font-size: 1.5em;
+        color: #ffe6a7; 
+        display: block;
+        }
+        
+
+
+
+
 }
