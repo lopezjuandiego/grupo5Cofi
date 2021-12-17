@@ -336,7 +336,7 @@ section a {
   }
   .leyendas {
     display: flex;
-    jjustify-content: space-around;
+    justify-content: space-around;
     padding: 0 0 2em 0;
   }
   .banner {
