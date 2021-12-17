@@ -28,6 +28,7 @@ body {
 
   fieldset{
     border: none;
+    
   }
 
 
@@ -39,13 +40,13 @@ h1 {
 
 h2 {
   text-align: center;
-  margin-bottom: 6vh;
+  padding: 1.5em;
   color: white;
   font-family: "Cinzel";
   color: #ffe6a7;
 }
 form {
-  padding: 8vh;
+  padding: 0;
   text-align: center;
 }
 .Nombre {
@@ -73,22 +74,26 @@ form {
   margin-bottom: 25px;
   border-radius: 5px;
   text-align: center;
-  height: 4vh;
-  width: 50vh;
+  height: 1.2em;
+  width: 14em;
   border-radius: 20px;
   font-family: "Roboto";
-  font-size: 3vh;
+  font-size: 1.5em;
 }
+
+
+
+
 
 .Contraseña {
   margin-bottom: 25px;
   border-radius: 5px;
   text-align: center;
-  height: 4vh;
-  width: 50vh;
+  height: 1.2em;
+    width: 14em;
   border-radius: 20px;
   font-family: "Roboto";
-  font-size: 3vh;
+  font-size: 1.5em;
 }
 ::placeholder {
   color: #6f1d1b;
@@ -99,7 +104,7 @@ form {
   padding: 0.6em;
   width: 8em;
   border-radius: 20px;
-  font-size: 1.2em;
+  font-size: 0.7em;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
   color: #6f1d1b;
@@ -116,7 +121,7 @@ form {
   padding: 0.6em;
   width: 8em;
   border-radius: 20px;
-  font-size: 1.2em;
+  font-size: 0.7em;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
   color: #6f1d1b;
@@ -131,11 +136,13 @@ form {
 .olvidasteContraseña {
   font-size: 25px;
   color: #ffe6a7;
-  margin-right: 250px;
+  width: 6em;
+  
 }
 .olvidasteUsuario {
   font-size: 25px;
   color: #ffe6a7;
+  width: 6em;
 }
 .leyendas {
   margin-top: 53px;
@@ -148,13 +155,17 @@ form {
   margin-top: 30px;
 }
 .leyendas {
-  display: inline-flex;
+  display:flex;
+  justify-content: space-around;
+    padding: 0 0 2em 0;
 }
 section a {
   text-decoration: none;
 }
 
 @media (min-width: 768px) {
+
+  
   .Nombre {
     margin-bottom: 25px;
     border-radius: 5px;
@@ -202,7 +213,7 @@ section a {
     padding: 0.6em;
     width: 6em;
     border-radius: 20px;
-    font-size: 1.2vw;
+    font-size: 1em;
     font-family: "Roboto", sans-serif;
     cursor: pointer;
     color: #6f1d1b;
@@ -219,7 +230,7 @@ section a {
     padding: 0.6em;
     width: 6em;
     border-radius: 20px;
-    font-size: 1.2vw;
+    font-size: 1em;
     font-family: "Roboto", sans-serif;
     cursor: pointer;
     color: #6f1d1b;
@@ -235,11 +246,15 @@ section a {
     margin-top: 30px;
   }
   .leyendas {
-    display: inline-flex;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0 2em 0;
   }
 }
 
 @media (min-width: 1300px) {
+
+ 
   .Nombre {
     margin-bottom: 25px;
     border-radius: 5px;
@@ -287,7 +302,7 @@ section a {
     padding: 0.6em;
     width: 6em;
     border-radius: 20px;
-    font-size: 1.2vw;
+    font-size: 1em;
     font-family: "Roboto", sans-serif;
     cursor: pointer;
     color: #6f1d1b;
@@ -304,7 +319,7 @@ section a {
     padding: 0.6em;
     width: 6em;
     border-radius: 20px;
-    font-size: 1.2vw;
+    font-size: 1em;
     font-family: "Roboto", sans-serif;
     cursor: pointer;
     color: #6f1d1b;
@@ -320,7 +335,9 @@ section a {
     margin-top: 30px;
   }
   .leyendas {
-    display: inline-flex;
+    display: flex;
+    jjustify-content: space-around;
+    padding: 0 0 2em 0;
   }
   .banner {
     height: 30vh;
