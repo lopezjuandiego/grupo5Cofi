@@ -31,24 +31,23 @@ body {
 h1 {
   color: #ffe6a7;
   font-family: Dancing Script;
-  font-size: 9vh;
+  font-size: 9vw;
   
 }
 
-.imgbanner {
-  box-sizing: border-box;
+.imgbanner {  
   height: 36vh;
   width: 100vw;
 }
 h2 {
   text-align: center;
-  margin-bottom: 6vh;
+  padding: 1.5em;
   color: white;
   font-family: "Cinzel";
   color: #ffe6a7;
 }
 form {
-  padding: 8vh;
+  
   text-align: center;
 }
 
@@ -56,50 +55,50 @@ form {
   margin-bottom: 25px;
   border-radius: 5px;
   text-align: center;
-  height: 4vh;
-  width: 50vh;
+  height: 1.2em;
+    width: 14em;
   border-radius: 20px;
   font-family: "Roboto";
-  font-size: 3vh;
+  font-size: 1.5em;
 }
 .Apellido {
   margin-bottom: 25px;
   border-radius: 5px;
   text-align: center;
-  height: 4vh;
-  width: 50vh;
+  height: 1.2em;
+    width: 14em;
   border-radius: 20px;
   font-family: "Roboto";
-  font-size: 3vh;
+  font-size: 1.5em;
 }
 
 .Email {
   margin-bottom: 25px;
   border-radius: 5px;
   text-align: center;
-  height: 4vh;
-  width: 50vh;
+  height: 1.2em;
+    width: 14em;
   border-radius: 20px;
   font-family: "Roboto";
-  font-size: 3vh;
+  font-size: 1.5em;
 }
 
 .Contraseña {
   margin-bottom: 25px;
   border-radius: 5px;
   text-align: center;
-  height: 4vh;
-  width: 50vh;
+  height: 1.2em;
+    width: 14em;
   border-radius: 20px;
   font-family: "Roboto";
-  font-size: 3vh;
+  font-size: 1.5em;
 }
 
 .botonEnviar {
   padding: 0.6em;
   width: 8em;
   border-radius: 20px;
-  font-size: 1.2em;
+  font-size: 1em;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
   color: #6f1d1b;
@@ -116,7 +115,7 @@ form {
   padding: 0.6em;
   width: 8em;
   border-radius: 20px;
-  font-size: 1.2em;
+  font-size: 1em;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
   color: #6f1d1b;
@@ -133,7 +132,7 @@ form {
   color: #ffe6a7;
 }
 .YaEstoyRegistrado {
-  margin-top: 30px;
+  padding: 2em;
 }
 .leyendas {
   display: inline-flex;
@@ -229,13 +228,8 @@ section a {
     color: #ffe6a7;
     text-decoration: none;
   }
-  .YaEstoyRegistrado {
-    margin-top: 30px;
-  }
-  .leyendas {
-    display: inline-flex;
-  }
-}
+ 
+ 
 @media (min-width: 1300px) {
   .Nombre {
     margin-bottom: 25px;
@@ -317,12 +311,8 @@ section a {
     font-size: 25px;
     color: #ffe6a7;
   }
-  .YaEstoyRegistrado {
-    margin-top: 30px;
-  }
-  .leyendas {
-    display: inline-flex;
-  }
+ 
+  
   .banner {
     height: 30vh;
     }
@@ -330,4 +320,5 @@ section a {
   .imagenBanner{
     height: 30vh;
    }
+}
 }
