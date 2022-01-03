@@ -15,6 +15,23 @@ body {
   font-size: 1.2rem;
 }
 
+.contentbolsa{
+display: flex;
+justify-content: flex-start;
+align-items: center;
+gap: 0;
+
+}
+
+.imgbolsa{
+  padding: 1em;
+}
+
+.imgbolsa1{
+  width: 20vw;
+}
+
+
 #article-pos {
   background-image: url(../image/cafelargo3.jpeg);
   height: 20vh;
@@ -26,6 +43,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 20vh;
+ 
 }
 
 #banner-txt {
@@ -48,7 +66,7 @@ h2 {
 .link {
   font-size: 0.8rem;
   font-family: "Roboto";
-  margin: 5px;
+  padding: 1.5em;
   text-decoration: none;
   color: #ffe6a7;
   transition: all 0.3s linear;
@@ -60,10 +78,11 @@ h2 {
 
 legend {
   font-size: 1.2rem;
-  margin: 0 0 5px;
+  padding: 1em;
 }
 p {
-  padding: 2px;
+  padding: 0.7em;
+  
 }
 /* section picture {
   width: 100px;
@@ -72,6 +91,7 @@ p {
 form fieldset {
   display: flex;
   flex-direction: column;
+  padding: 0.5em;
 }
 
 label {
@@ -91,11 +111,16 @@ form fieldset input {
 }
 .compra-actual {
   margin: 10px;
+  border: 4px #774544 inset;
+  border-radius: 20px;
 }
 
 .forma-pago {
   margin: 10px;
-  display: flex;
+  display: flex;  
+  border: 4px #774544 inset;
+  border-radius: 20px;
+  justify-content:flex-start;
 }
 
 .btn-buy {
@@ -106,7 +131,7 @@ form fieldset input {
   margin: 10px 0px;
   font-size: 20px;
   padding: 5px 10px;
-  transition: all 0.3 lineal;
+  cursor: pointer;
 }
 
 .btn-buy:hover {
@@ -117,6 +142,7 @@ form fieldset input {
 .chk-txt {
   margin: -18px 0 5px 27px;
   font-size: 0.9rem;
+  font-family: "Roboto";
 }
 
 .chk-input {
@@ -134,7 +160,8 @@ form fieldset input {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    margin: 9px 0px -10px 5px;
+    margin: 0;
+    padding: 1.4em;
   }
 
   .btn-buy {
@@ -149,6 +176,7 @@ form fieldset input {
   .chk-txt {
     margin: -18px 8px 5px 3px;
     font-size: 1.1rem;
+
   }
 
   .imgbolsacafe {
@@ -162,12 +190,13 @@ form fieldset input {
 
   }
   article p {
-    padding: 5px;
+    padding: 1.5em;
+    font-family: "Roboto";
   }
 
   legend {
-    font-size: 1.2rem;
-    margin: 0 0 20px;
+    font-size: 1.5em;
+    margin: 0 ;
     text-align: center;
   }
   .compra-actual {
@@ -175,26 +204,42 @@ form fieldset input {
     gap: 15px;
   }
 
+.forma-pago {
+  justify-content: center;
+  align-items: center;
+  height: 26.5vw;
+}
+
 }
 
 @media screen and (min-width: 1200px) {
   
   article p {
-    margin-left: 80px;
+    margin-left: 0;
     font-size: 1.3rem;
 
   }
 
- .link {
-    margin-left: 95px;
+  legend {
+    font-size: 2em;
+  }
 
+ .link {
+    margin-left: 0;
+
+  }
+
+  form fieldset {
+   
+    padding: 1.4em;
   }
 
   .flex-container {
     display: flex;
     justify-content: space-evenly;
     align-items:center;
-    height: 450px;
+    height: 60vh;
+    
   }
 
   .imgbolsacafe {
@@ -210,5 +255,11 @@ form fieldset input {
   .chk-txt {
     font-size: 1.3rem;
   }
-
+  .imgbolsa1 {
+    width: 16vw;
+}
+.contentbolsa{
+  gap: 0;
+  width: 43vw;
+}
 }

@@ -52,22 +52,27 @@
       </section>
       <article class="flex-container">
         <section class="compra-actual">
-          <picture>
+         <!-- <picture>
             <img
               class="imgbolsacafe ocultar"
               src="/image/bolsaCafeSinFondo.png"
               alt="Imagen Bolsa de Café"
             />
-          </picture>
+          </picture>-->
          
-          <article>
-            <p>Cantidad: 1/4</p>
-            <p>Precio: $1200</p>
-            <p>cantidad: 1</p>
-            <p>Total: $1200</p>
-            <a class="link" href="/productDetail">Agregar/Eliminar Producto</a>
-
+          <section class="contentbolsa">
+            <picture class="imgbolsa">
+              <img class="imgbolsa1" src="image/bolsita_de_cafe 2.jpg" alt="">
+            </picture>
+            <article class="contentext">
+            <p>CANTIDAD: </p>
+            <p>PRECIO:</p>
+            <p>CANTIDAD: </p>
+            <p>TOTAL: </p>
+            <a class="link" href="/productDetail">Agregar</a>
+            <a class="link" href="/productDetail">Eliminar Producto</a>
           </article>
+          </section>
         </section>
         <section class="forma-pago">
           <form action="/pagoyenvio" method="get">
@@ -89,6 +94,7 @@
                 value="Pago en Efectivo"
                 id="efectivo"
               />
+            
               <label class="chk-txt" for="efectivo">Pago en Efectivo</label>
               <input
                 class="chk-input"

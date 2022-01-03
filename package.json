@@ -4,14 +4,15 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "test": "nodemon src/app.js -e js,mjs,json,html,css",
+    "test": "nodemon src/app.js -e js,mjs,json,ejs,css",
     "start": "node src/app.js"
-  
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
