@@ -19,22 +19,13 @@ app.use(method("m"))
 
 
 app.use(require('./routes/home'));
+app.use(require('./routes/pagoyenvio'));
+app.use(require('./routes/productCart'));
+app.use(require('./routes/productDetail'));
+app.use(require('./routes/register'));
+app.use(require('./routes/login'));
 
 
-app.get("/productCart", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/productCart.ejs"));
-});
-app.get("/productDetail", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/productDetail.ejs"));
-});
 
-app.get("/pagoyenvio", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/pagoyenvio.ejs"));
-});
-app.get("/login", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/login.ejs"));
-});
 
-app.get("/register", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/register.ejs"));
-});
+
