@@ -1,6 +1,10 @@
 const controllers = {
 
-    register: (req,res)  => res.render('register')
+    register: (req,res)  => res.render('register', { 
+        style : ["css/register"],
+        tittle : "registro"
+
+    }) 
     
     }
     
