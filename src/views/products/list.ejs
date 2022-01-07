@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>LISTADO</title>
+
+
+</head>    
+<body>
+
+<main>
+<section>
+    <h2>LISTADO DE PRODUCTOS</h2>
+</section>
+<section>
+<% if (locals.products) { %> <!--CONSULTO SI AGREGO PRODUCTOS A LA LISTA --> 
+    <%  if (products.length > 0) { %>  <!--CONSULTO SI LA CANTIDAD DE PRODUCTOS ES MAYOR A 0 --> 
+
+<ul>
+<% products.forEach(product => { %>
+
+<a href="/products/<% product.id %> ">
+
+    <li> <% product.origen %> </li>
+    <li> <% product.tipoDeGrano %> </li>
+    <li> <% product.cantidad %> </li>
+    <li> <% product.precio %> </li>
+    
+
+</a>
+    
+<%  }) %> 
+
+</ul>
+
+
+<% } else { %> 
+
+    <h3>No hay pructos, agraga algunos!</h3>
+
+<% } %> 
+
+<% } else { %> 
+
+<h3>Hay pocos prodcutos, ingresa mas!</h3>
+
+<% } %>
+
+</section>
+</main>  
+ 
+
+</body>
+</html>
