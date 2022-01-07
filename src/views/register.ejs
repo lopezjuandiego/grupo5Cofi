@@ -1,70 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/register.css" rel="stylesheet">
-    <link href="css/footer.css" rel="stylesheet">
-    <link href="css/header.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>COFI Registro</title>
-</head>
-
+<%- include("./includes/head") %> 
 <body>
-    <header>
-        <section class="headerPrincipal">
-            <picture class="contenedorelementos1">
-                <img class="logo" src='image/logoFinal.jpg'>
-            </picture>
+    <%- include("./includes/header") %> 
 
-            <nav class="headerEnlaces">
-                <li id="lienlace"><a class="enlaces" href="/">INICIO</a></li>
-                <li id="lienlace"><a class="enlaces" href="productDetail">SUSCRIPCION</a></li>
-                <li id="lienlace"><a class="enlaces" href="#">TIENDA</a></li>
-                <li id="lienlace"><a class="enlaces" href="#">EDUCACION</a></li>
-                <li id="lienlace"><a class="enlaces" href="register">REGISTRATE</a></li>
-            </nav>
-
-            <picture class="contenedorelementos1">
-                <a class="iconos" href="productCart"><i class="fa-solid fa-cart-shopping"></i></a>          
-                <a class="iconos" href="login"><i class="fa-solid fa-circle-user"></i></a>
-            </picture>
-
-            <button class="contenedorelementos2">
-                <i class="fas fa-bars"></i>
-            </button>
-        </section>
-    </header>
     <main>
         <section class="banner">
             <article class="imagenBanner">
                 
-                <h1>REGISTRATE</h1>
+                <h1 id="banner-txt">REGISTRATE</h1>
             </article>
         </section>
         <form action="" method="post">
             <h2>DATOS PERSONALES</h2>
             <fieldset>
-                <input class="Nombre" type="text" placeholder="Nombre" name:Nombre id:nombre value="" required></input>
+                <input class="Nombre" type="text" placeholder="Nombre" name="nombre" id="nombre" value="" required>
             </fieldset>
             <fieldset>
-                <input class="Apellido" type="text" placeholder="Apellido" name:Apellido id:Apellido value=""
-                    required></input>
+                <input class="Apellido" type="text" placeholder="Apellido" name="apellido" id="Apellido" value=""
+                    required>
             </fieldset>
             <fieldset>
-                <input class="Email" type="text" placeholder="Email" name: Email id: Email value="" required></input>
+                <input class="Email" type="text" placeholder="Email" name="email" id="Email" value="" required> 
             </fieldset>
             <fieldset>
-                <input class="Contraseña" type="password" placeholder="Contraseña" name:password value=""
-                    required></input>
+                <input class="Contraseña" type="password" placeholder="Contraseña" name="password" value=""
+                    required>
             </fieldset>
             <fieldset>
-                <input class="Contraseña" type="password" placeholder="Repite Contraseña" name:password value=""
-                    required></input>
+                <input class="Contraseña" type="password" placeholder="Repite Contraseña" name="password" value=""
+                    required>
             </fieldset>
             <fieldset>
                 <button class="botonEnviar" type="ENVIAR">ENVIAR</button>
@@ -74,40 +39,14 @@
                 <a class="yaTengoUsuario" href="Ya estoy Registrado">Ya estoy Registrado</a>
             </section>
         </form>
-        </fieldset>
+        
 
 
 
 
 
     </main>
-    <footer>
-        <section class="footer">
-            <picture class="contendorQr">
-                <img class="imagenQr" src="image/qr.jpg" alt="">
-            </picture>
-
-            <nav class="footernav">
-                <li><a class="footerEnlace" href="">NOSOTROS</a></li>
-                <li><a class="footerEnlace" href="">LEGALES</a></li>
-            </nav>
-
-            <nav class="footernav1">
-                <li><a class="footerEnlace" href="login">MI CUENTA</a></li>
-                <li><a class="footerEnlace" href="">PREGUNTAS FRECUENTES</a></li>
-            </nav>
-
-            <picture class="footericonos">
-                <i class="fa-brands fa-whatsapp-square"></i>
-                <p class="footertexto">5555-COFI</p>
-                <i class="fa-brands fa-facebook-square"></i>
-                <p class="footertexto">COFICLUB</p>
-                <i class="fa-brands fa-instagram-square"></i>
-                <p class="footertexto">@COFICLUB</p>
-            </picture>
-        </section>
-    </footer>
-
+    <%- include("./includes/footer") %> 
 </body>
 
 </html>
