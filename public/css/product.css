@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    background-color: #6f1d1b;
+    height: 70vh;
+}
+
+/* BANNER */
+
+.contbannerlist{
+
+background-image: url(../image/cafelargo3.jpeg);
+height: 20vh;
+background-size: cover;
+background-repeat: no-repeat;
+width: 100vw;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.bannerlist{
+
+    font-family: "Dancing Script";
+    color: #ffe6a7;
+    font-size: 2em;
+
+}
+
+/* FIN BANNER */
+
+/* CUERPO */
+
+.contlistado{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+}
+
+.titulolist{
+
+font-family: "Roboto";
+color: #ffe6a7;
+font-size: 1.5em;
+
+}
+
+.contemoji{
+    font-size: 1.5em;
+    padding: 1em;
+    color: #ffe6a7;
+}
+
+/* FIN CUERPO */
+
+@media  (min-width: 768px) {
+
+    .bannerlist{
+
+        font-family: "Dancing Script";
+        color: #ffe6a7;
+        font-size: 4em;
+    
+    }
+
+    .titulolist{
+
+        font-family: "Roboto";
+        color: #ffe6a7;
+        font-size: 2em;
+        
+        }
+        
+        .contemoji{
+            font-size: 3em;
+            padding: 1em;
+            color: #ffe6a7;
+        }
+
+
+}

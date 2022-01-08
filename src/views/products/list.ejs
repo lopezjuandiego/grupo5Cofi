@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-    <title>LISTADO</title>
-
-
-</head>    
+    <%- include('../includes/head.ejs') %> 
+       
 <body>
-
+    <%- include("../includes/header") %> 
 <main>
-<section>
-    <h2>LISTADO DE PRODUCTOS</h2>
+<section class="contbannerlist">
+    <h2 class="bannerlist">LISTADO DE PRODUCTOS</h2>
 </section>
-<section>
+<section class="contlistado">
 <% if (locals.products) { %> <!--CONSULTO SI AGREGO PRODUCTOS A LA LISTA --> 
     <%  if (products.length > 0) { %>  <!--CONSULTO SI LA CANTIDAD DE PRODUCTOS ES MAYOR A 0 --> 
-
+        
 <ul>
 <% products.forEach(product => { %>
+
+<img src="" alt="">
 
 <a href="/products/<% product.id %> ">
 
@@ -39,19 +34,28 @@
 
 <% } else { %> 
 
-    <h3>No hay pructos, agraga algunos!</h3>
+    
+
+    <h3 class="titulolist">No hay pruductos, agraga algunos! </h3>
+    
 
 <% } %> 
 
 <% } else { %> 
 
-<h3>Hay pocos prodcutos, ingresa mas!</h3>
+<h3 class="titulolist">Hay pocos productos, ingresa mas!</h3>
 
 <% } %>
 
+<picture class="contemoji">
+<i class="far fa-dizzy"></i> 
+</picture>
+
 </section>
+
+
 </main>  
  
-
+<%- include("../includes/footer") %> 
 </body>
 </html>
