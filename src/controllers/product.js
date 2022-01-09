@@ -2,7 +2,7 @@ const controllers = {
 
     product: (req,res)  => res.render('products/list', {
 
-      styles: ['product'],
+      styles: ['product/product'],
       title: 'LISTADO',
      product: []
 
@@ -10,7 +10,7 @@ const controllers = {
 
     create: (req,res)  => res.render('products/create', {
 
-      styles: ['create'],
+      styles: ['product/create'],
       title: 'CREAR Y MODIFICAR',
 
     }),

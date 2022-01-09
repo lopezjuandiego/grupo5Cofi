@@ -5,28 +5,28 @@
 <body>
     <%- include("../includes/header") %> 
 <main>
- <section>
-     <h2>CREAR Y MODIFICAR</h2>
+ <section class="conttitle">
+     <h2 class="title">CREAR Y MODIFICAR</h2>
  </section>
- <section>
+ <section class="contformulario">
      <form action="/products/" method="post"></form>
-     <label for="origen">
-         <input type="text" name="origen" id="origen" placeholder="ORIGEN DE CAFE">
+     <label class="continput" for="origen">
+         <input class="forminput" type="text" name="origen" id="origen" placeholder="ORIGEN DE CAFE">
      </label>
-     <label for="tipoDeGrano">
-        <input type="text" name="tipoDeGrano" id="tipoDeGrano" placeholder="TIPO DE GRANO">
+     <label class="continput" for="tipoDeGrano">
+        <input class="forminput"  type="text" name="tipoDeGrano" id="tipoDeGrano" placeholder="TIPO DE GRANO">
     </label>
-    <label for="cantidad">
-        <input type="number" name="cantidad" id="cantidad" placeholder="CANTIDAD" min="0">
+    <label class="continput" for="cantidad">
+        <input class="forminput"  type="number" name="cantidad" id="cantidad" placeholder="CANTIDAD" min="0">
     </label>
-    <label for="precio">
-        <input type="number" name="precio" id="precio" placeholder="PRECIO" min="0">
+    <label class="continput" for="precio">
+        <input class="forminput"  type="number" name="precio" id="precio" placeholder="PRECIO" min="0">
     </label>
-    <label for="imagen">
-        <input type="file" name="imagen" id="imagen" >
+    <label class="continput" for="imagen">
+        <input class="forminput1" type="file" name="imagen" id="imagen" >
     </label>
-    <fieldset>
-        <button type="submit">ENVIAR</button>
+    <fieldset class="continput">
+        <button class="boton" type="submit">ENVIAR</button>
     </fieldset>
  </section>
 
