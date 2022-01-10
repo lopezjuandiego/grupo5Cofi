@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../includes/head.ejs') %> 
+       
+<body>
+    <%- include("../includes/header") %> 
+<main>
+<section class="contbannerlist">
+    <h2 class="bannerlist">LISTADO DE PRODUCTOS</h2>
+</section>
+<section class="contlistado">
+<% if (locals.products) { %> <!--CONSULTO SI AGREGO PRODUCTOS A LA LISTA --> 
+    <%  if (products.length > 0) { %>  <!--CONSULTO SI LA CANTIDAD DE PRODUCTOS ES MAYOR A 0 --> 
+        
+<ul>
+<% products.forEach(product => { %>
+
+<img src="" alt="">
+
+<a href="/products/<% product.id %> ">
+
+    <li> <% product.origen %> </li>
+    <li> <% product.tipoDeGrano %> </li>
+    <li> <% product.cantidad %> </li>
+    <li> <% product.precio %> </li>
+    <li> <% product.imagen %> </li>
+
+</a>
+    
+<%  }) %> 
+
+</ul>
+
+
+<% } else { %> 
+
+    
+
+    <h3 class="titulolist">No hay pruductos, agraga algunos! </h3>
+    
+
+<% } %> 
+
+<% } else { %> 
+
+<h3 class="titulolist">Hay pocos productos, ingresá más!</h3>
+
+<% } %>
+
+<picture class="contemoji">
+<i class="far fa-dizzy"></i> 
+</picture>
+
+</section>
+
+<picture class="contemojimas">
+    <a href="create"><i class="fas fa-plus-circle"></i></a>
+</picture>
+
+</main>  
+ 
+<%- include("../includes/footer") %> 
+</body>
+</html>

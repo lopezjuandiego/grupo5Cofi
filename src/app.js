@@ -24,6 +24,8 @@ app.use(require('./routes/productCart'));
 app.use(require('./routes/productDetail'));
 app.use(require('./routes/register'));
 app.use(require('./routes/login'));
+app.use(require('./routes/product'));
+
 
 
 
