@@ -1,1 +1,47 @@
-[]
+[
+    {
+        "id": 1,
+        "origen": "",
+        "grano": "",
+        "cantidad": "",
+        "precio":  "",
+        "oferta" : "",
+        "imagen" : []
+    },
+    {
+        "id": 2,
+        "origen": "",
+        "grano": "",
+        "cantidad": "",
+        "precio":  "",
+        "oferta" : "",
+        "imagen" : []
+    },
+    {
+        "id": 3,
+        "origen": "",
+        "grano": "",
+        "cantidad": "",
+        "precio":  "",
+        "oferta" : "",
+        "imagen" : []
+    },
+    {
+        "id": 4,
+        "origen": "",
+        "grano": "",
+        "cantidad": "",
+        "precio":  "",
+        "oferta" : "",
+        "imagen" : []
+    },
+    {
+        "id": 5,
+        "origen": "",
+        "grano": "",
+        "cantidad": "",
+        "precio":  "",
+        "oferta" : "",
+        "imagen" : []
+    }
+    ]
