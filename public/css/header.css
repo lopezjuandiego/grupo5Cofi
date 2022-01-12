@@ -125,7 +125,7 @@ color: #ffe6a7;
     }
 
     .headerEnlaces,#lienlace,.enlaces{
-        color: #e6b846;
+        
         display: inline-block;
         padding: 0 0.1em;
         font-size: 18px;
@@ -175,7 +175,7 @@ color: #ffe6a7;
 
 
     header {
-        background-color: #836c08;
+       
         font-family: 'Cinzel', serif;
     }
     .contenedorelementos2{
@@ -213,14 +213,11 @@ color: #ffe6a7;
         color: #ffe6a7;
         display: inline-block;
         padding: 0 1em;
-
         font-size: 1.1em;
-
         list-style: none;
         text-decoration: none;
         font-weight: bold;
-        transition: all 0.5s linear;
-        background-color: #302c2b;
+        transition: all 0.5s linear;       
         order: 0;
         margin-right: 0;
         height: 1.4em;
@@ -250,3 +247,4 @@ color: #ffe6a7;
             
         }
 }
+
