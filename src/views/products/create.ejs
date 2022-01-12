@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../includes/head.ejs') %> 
+       
+<body>
+    <%- include("../includes/header") %> 
+<main>
+ <section class="conttitle">
+     <h2 class="title">CREAR Y MODIFICAR</h2>
+ </section>
+ <section class="contformulario">
+     <form action="/products/" method="post"></form>
+     <label class="continput" for="origen">
+         <input class="forminput" type="text" name="origen" id="origen" placeholder="ORIGEN DE CAFE">
+     </label>
+     <label class="continput" for="tipoDeGrano">
+        <input class="forminput"  type="text" name="tipoDeGrano" id="tipoDeGrano" placeholder="TIPO DE GRANO">
+    </label>
+    <label class="continput" for="cantidad">
+        <input class="forminput"  type="number" name="cantidad" id="cantidad" placeholder="CANTIDAD" min="0">
+    </label>
+    <label class="continput" for="precio">
+        <input class="forminput"  type="number" name="precio" id="precio" placeholder="PRECIO" min="0">
+    </label>
+    <label class="continput" for="imagen">
+        <input class="forminput1" type="file" name="imagen" id="imagen" >
+    </label>
+    <fieldset class="continput">
+        <button class="boton" type="submit">ENVIAR</button>
+    </fieldset>
+ </section>
+
+</main>
+
+<%- include("../includes/footer") %> 
+</body>
+</html>    
+
