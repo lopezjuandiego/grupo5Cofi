@@ -1,8 +1,8 @@
 const controllers = {
 
     index: (req,res)  => res.render('home',{
-        style:["css/homes"] ,
-        tittle:home ,
+        styles: ["homes"],
+        title: "Home Cofi",
     })
     
     }

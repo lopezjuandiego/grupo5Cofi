@@ -1,9 +1,11 @@
 const controllers = {
 
     login: (req,res)  => res.render('login',{
-        style:["css/login"] ,
-        tittle:login ,
-    
+        styles : ["login"],
+        title: "Login",
     })
-}
+    
+    }
+    
+    
     module.exports = controllers;

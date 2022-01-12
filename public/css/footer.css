@@ -51,19 +51,19 @@ footer{
 
 .fa-whatsapp-square{
 font-size: 4em;
-color: #3fcf4b;
+color:goldenrod;
 cursor: pointer;
 }
 
 .fa-facebook-square{
     font-size: 4em;
-    color:#3f79cf;
+    color:goldenrod;
     cursor: pointer;
 }
 
 .fa-instagram-square{
     font-size: 4em;
-    color: #741b80;
+    color:goldenrod;
     cursor: pointer;
 }
 

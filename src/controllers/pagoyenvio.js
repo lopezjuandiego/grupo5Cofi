@@ -1,10 +1,10 @@
 const controllers = {
 
-    pagoyenvio: (req,res)  => res.render('pagoyenvio', { 
-        style : ["css/pagoyenvio"],
-        tittle : "pago y envio"
-
-    }) 
+    pagoyenvio: (req,res)  => res.render('pagoyenvio',{
+        styles : ["pagoyenvio"],
+        title: "Pago y envío",
+    })
+    
     
     }
     
