@@ -1,4 +1,11 @@
-**DAILY** 
+**DAILY - SPRINT 4 **
+*Daily 1 / Miércoles 12*
+Armamos el Trello y acordamos la agenda de trabajo.
+
+
+-------------------------------------------
+
+**DAILY - SPRINT 3** 
 *Daily 1 / Lunes 3*
 Al incorporarse Alexis al grupo, nos pusimos al día con él, le explicamos el proyecto, lo invitamos en Trello y Github.
 Comenzamos a trabajar las rutas, renombrar archivos HTML a EJS y a generar carpetas que nos faltaban.
