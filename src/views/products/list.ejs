@@ -15,8 +15,10 @@
 <ul>
 <% products.forEach(product => { %>
 
-<img src="" alt="">
-
+    <% if (product.image) { %>
+        <img src="/uploads/<%= product.image[0].url %>" alt=""> 
+        <% } %>                 
+        
 <a href="/products/<% product.id %> ">
 
     <li> <% product.origen %> </li>
