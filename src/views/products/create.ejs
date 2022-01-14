@@ -9,7 +9,7 @@
      <h2 class="title">CREAR Y MODIFICAR</h2>
  </section>
  <section class="contformulario">
-     <form action="/products/" method="post"></form>
+     <form action="/product/" enctype="multipart/form-data" method="post">
      <label class="continput" for="origen">
          <input class="forminput" type="text" name="origen" id="origen" placeholder="ORIGEN DE CAFE">
      </label>
@@ -28,10 +28,9 @@
     <fieldset class="continput">
         <button class="boton" type="submit">ENVIAR</button>
     </fieldset>
+</form> 
  </section>
-
 </main>
-
 <%- include("../includes/footer") %> 
 </body>
 </html>    

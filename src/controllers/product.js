@@ -10,16 +10,17 @@ const controllers = {
       products: product.all()
     }),
 
-   
-
     create: (req,res)  => res.render('products/create', {
 
       styles: ['product/create'],
       title: 'CREAR Y MODIFICAR',
 
     }),
-    save: (req,res)  => res.render(req.body) 
+    save: (req,res) => {
+      req.body.files = req.files;
+      let created = product.create(req.body)
+      return res.redirect('/products/'+created.id) //body es un objeto que dentro de el estan las propeidades que viajan o no en este contexto
+      },
     
-    }
-     
+}    
     module.exports = controllers

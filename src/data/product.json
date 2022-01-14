@@ -43,5 +43,14 @@
         "precio":  5000,
         "oferta" : false,
         "imagen" : []
+    },
+    {
+        "id": 6,
+        "origen": "quenia",
+        "tipoDeGrano": "medio",
+        "cantidad": 1000,
+        "precio":  5000,
+        "oferta" : false,
+        "imagen" : []
     }
     ]
