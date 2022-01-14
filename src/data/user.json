@@ -1,27 +1,24 @@
 [{
     "id": 1,
-    "nombre": "",
-    "apellido": "",
-    "mail": "",
-    "contraseña":  "",
+    "nombrecompleto": "Juan López",
+    "mail": "lopezjuandiego@gmail.com",
+    "contraseña":  "123456",
     "imagen" : []
  },
 
  {
-    "id": 1,
-    "nombre": "",
-    "apellido": "",
-    "mail": "",
-    "contraseña":  "",
+    "id": 2,
+    "nombrecompleto": "Alexis Vázquez",
+    "mail": "alexis.vazquez.ml@gmail.com",
+    "contraseña":  "654321",
     "imagen" : []
  },
 
  {
-    "id": 1,
-    "nombre": "",
-    "apellido": "",
-    "mail": "",
-    "contraseña":  "",
+    "id": 3,
+    "nombrecompleto": "Juan Manuel Pereyra",
+    "mail": "juanmanuelpereyra@gmail.com",
+    "contraseña":  "232323",
     "imagen" : []
  }
 ]

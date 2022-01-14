@@ -1,47 +1,47 @@
 [
     {
         "id": 1,
-        "origen": "",
-        "grano": "",
-        "cantidad": "",
-        "precio":  "",
-        "oferta" : "",
+        "origen": "Guatemala",
+        "tipoDeGrano": "fino",
+        "cantidad": 250,
+        "precio":  1800,
+        "oferta" : false,
         "imagen" : []
     },
     {
         "id": 2,
-        "origen": "",
-        "grano": "",
-        "cantidad": "",
-        "precio":  "",
-        "oferta" : "",
+        "origen": "Colombia",
+        "tipoDeGrano": "fino",
+        "cantidad": 500,
+        "precio":  3000,
+        "oferta" : true,
         "imagen" : []
     },
     {
         "id": 3,
-        "origen": "",
-        "grano": "",
-        "cantidad": "",
-        "precio":  "",
-        "oferta" : "",
+        "origen": "Brasil",
+        "tipoDeGrano": "grueso",
+        "cantidad": 250,
+        "precio":  1500,
+        "oferta" : true,
         "imagen" : []
     },
     {
         "id": 4,
-        "origen": "",
-        "grano": "",
-        "cantidad": "",
-        "precio":  "",
-        "oferta" : "",
+        "origen": "Etiopia",
+        "tipoDeGrano": "medio",
+        "cantidad": 750,
+        "precio":  5500,
+        "oferta" : false,
         "imagen" : []
     },
     {
         "id": 5,
-        "origen": "",
-        "grano": "",
-        "cantidad": "",
-        "precio":  "",
-        "oferta" : "",
+        "origen": "Costa Rica",
+        "tipoDeGrano": "medio",
+        "cantidad": 1000,
+        "precio":  5000,
+        "oferta" : false,
         "imagen" : []
     }
     ]

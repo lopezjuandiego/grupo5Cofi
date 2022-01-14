@@ -1,12 +1,16 @@
+const product = require ("../models/product")
+const file = require("../models/file")
+
 const controllers = {
 
-    product: (req,res)  => res.render('products/list', {
+    index: (req,res)  => res.render('products/list', {
 
       styles: ['product/product'],
       title: 'LISTADO',
-     product: []
-
+      products: product.all()
     }),
+
+   
 
     create: (req,res)  => res.render('products/create', {
 
@@ -14,8 +18,8 @@ const controllers = {
       title: 'CREAR Y MODIFICAR',
 
     }),
-    save: (req,res)  => res.render(req.body)
+    save: (req,res)  => res.render(req.body) 
     
     }
-    
-    module.exports = controllers;
+     
+    module.exports = controllers

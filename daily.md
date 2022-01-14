@@ -1,7 +1,13 @@
 **DAILY - SPRINT 4 **
 *Daily 1 / Miércoles 12*
-Armamos el Trello y acordamos la agenda de trabajo.
+Armamos el Trello y acordamos la agenda de trabajo y completamos estructura JSON.
 
+*Daily 2 / Jueves 13*
+Armamos JSON de productos y usuarios. Comenzamos a trabajar con CRUD **"Listado de productos"**.
+
+*Daily 3 / Viernes 14*
+Terminamos listado de productos. Nos demoró la vista, nos falto imprimir la lista con EJS <%= >
+Empezamos a trabajar con **/products/create (GET) - Formulario de creación de productos**
 
 -------------------------------------------
 
