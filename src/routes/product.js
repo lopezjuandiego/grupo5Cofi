@@ -10,9 +10,11 @@ const upload = multer({storage: multer.diskStorage({
 
 router.get('/product', controllers.index)
 router.get('/create', controllers.create)
-
 router.post('/product',[upload.any()], controllers.save) 
+router.get('/products/:id',controllers.show)
 
-
+router.get('/update/:id',controllers.update)
+router.put('/:id',controllers.modify)
+router.delete ('/',controllers.delete)
 
 module.exports = router;

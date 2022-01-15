@@ -1,48 +1,38 @@
 [
   {
-    "id": 1,
-    "origen": "Guatemala",
-    "tipoDeGrano": "fino",
-    "cantidad": 250,
-    "precio": 1800,
-    "oferta": false,
-    "imagen": []
-  },
-  {
-    "id": 2,
-    "origen": "Colombia",
-    "tipoDeGrano": "fino",
-    "cantidad": 500,
-    "precio": 3000,
-    "oferta": true,
-    "imagen": []
-  },
-  {
-    "id": 3,
-    "origen": "Brasil",
+    "id": 6,
+    "origen": "argentina",
     "tipoDeGrano": "grueso",
-    "cantidad": 250,
-    "precio": 1500,
-    "oferta": true,
-    "imagen": []
-  },
-  {
-    "id": 4,
-    "origen": "Etiopia",
-    "tipoDeGrano": "medio",
-    "cantidad": 750,
-    "precio": 5500,
+    "cantidad": 7777,
+    "precio": 9999,
     "oferta": false,
     "imagen": []
   },
   {
-    "id": 5,
-    "origen": "Costa Rica",
-    "tipoDeGrano": "medio",
-    "cantidad": 1000,
-    "precio": 5000,
+    "id": 7,
+    "origen": "argentina",
+    "tipoDeGrano": "grueso",
+    "cantidad": 7878,
+    "precio": 7878,
+    "oferta": false,
+    "imagen": []
+  },
+  {
+    "id": 8,
+    "origen": "juancho",
+    "tipoDeGrano": "chino",
+    "cantidad": 87878,
+    "precio": 87878,
+    "oferta": false,
+    "imagen": []
+  },
+  {
+    "id": 9,
+    "origen": "colombia",
+    "tipoDeGrano": "escobar",
+    "cantidad": 56565,
+    "precio": 32699,
     "oferta": false,
     "imagen": []
   }
-  
 ]
