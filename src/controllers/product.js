@@ -15,9 +15,7 @@ const controllers = {
     save: (req,res) => {
       req.body.files = req.files;
       let created = product.create(req.body)
-      return res.redirect('/products/'+created.id) //body es un objeto que dentro de el estan las propeidades que viajan o no en este contexto
-      },
-  
-    
-}    
+      return res.redirect("/")}
+}
+
     module.exports = controllers

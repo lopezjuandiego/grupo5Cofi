@@ -25,6 +25,7 @@ app.use(require('./routes/productDetail'));
 app.use(require('./routes/register'));
 app.use(require('./routes/login'));
 app.use(require('./routes/product'));
+app.use("/product", require('./routes/product'));
 
 
 

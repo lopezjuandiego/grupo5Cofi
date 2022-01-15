@@ -23,11 +23,11 @@ const model = {
     create: data => {
         let nuevoProducto = model.generate (data);
         let all = model.all ();
-        all.push (nuevoProducto);
+        all.push(nuevoProducto);
         model.write(all)
         return nuevoProducto
     },
-    search: (prop, value) => model.all().find(element => element[prop] == value)
+  
 }
 
 
