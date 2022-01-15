@@ -43,6 +43,87 @@
     "precio": 5000,
     "oferta": false,
     "imagen": []
+  },
+  {
+    "id": 6,
+    "origen": "quenia",
+    "tipoDeGrano": "medio",
+    "cantidad": 1000,
+    "precio": 5000,
+    "oferta": false,
+    "imagen": []
+  },
+  {
+    "id": 7,
+    "origen": "canada",
+    "tipoDeGrano": "medio",
+    "cantidad": 2345,
+    "precio": 450,
+    "oferta": false,
+    "imagen": []
+  },
+  {
+    "id": 8,
+    "origen": "canada",
+    "tipoDeGrano": "medio",
+    "cantidad": 2345,
+    "precio": 450,
+    "oferta": false,
+    "imagen": []
+  },
+  {
+    "id": 9,
+    "origen": "argentina",
+    "tipoDeGrano": "peludo",
+    "cantidad": 34,
+    "precio": 70000,
+    "oferta": false,
+    "imagen": []
+  },
+  {
+    "id": 10,
+    "origen": "noruego",
+    "tipoDeGrano": "medio",
+    "cantidad": 23,
+    "precio": 54444,
+    "oferta": false,
+    "imagen": []
+  },
+  {
+    "id": 11,
+    "origen": "yandqui",
+    "tipoDeGrano": "chico",
+    "cantidad": 3,
+    "precio": 55,
+    "oferta": false,
+    "imagen": []
+  },
+  {
+    "id": 12,
+    "origen": "colombia",
+    "tipoDeGrano": "ffff",
+    "cantidad": 3,
+    "precio": 3,
+    "oferta": false,
+    "imagen": []
+  },
+  {
+    "id": 13,
+    "origen": "juan",
+    "tipoDeGrano": "grande",
+    "cantidad": 21,
+    "precio": 34,
+    "oferta": false,
+    "imagen": []
+  },
+  {
+    "id": 14,
+    "origen": "juan2",
+    "tipoDeGrano": "grande",
+    "cantidad": 21,
+    "precio": 34,
+    "oferta": false,
+    "imagen": []
   }
 ]
  
