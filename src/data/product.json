@@ -124,14 +124,5 @@
     "precio": 34,
     "oferta": false,
     "imagen": []
-  },
-  {
-    "id": 15,
-    "origen": "nicaragua",
-    "tipoDeGrano": "32",
-    "cantidad": 54,
-    "precio": 432,
-    "oferta": false,
-    "imagen": []
   }
 ]
