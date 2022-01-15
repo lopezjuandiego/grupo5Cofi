@@ -14,6 +14,7 @@ app.set('views', path.resolve(__dirname, 'views'));
 
 
 app.use(express.static(path.resolve(__dirname, "../public")));
+app.use('/uploads',express.static(path.resolve(__dirname,"../uploads"))) 
 app.use(express.urlencoded({extended:true})) //Sirve para interpretar un formulario //
 app.use(method("m"))
 
@@ -26,9 +27,3 @@ app.use(require('./routes/register'));
 app.use(require('./routes/login'));
 app.use(require('./routes/product'));
 app.use("/product", require('./routes/product'));
-
-
-
-
-
-

@@ -1,38 +1,11 @@
 [
   {
-    "id": 1,
-    "origen": "Guatemala",
-    "tipoDeGrano": "fino",
-    "cantidad": 250,
-    "precio": 1800,
-    "oferta": false,
-    "imagen": []
-  },
-  {
-    "id": 2,
-    "origen": "Colombia",
-    "tipoDeGrano": "fino",
-    "cantidad": 500,
-    "precio": 3000,
-    "oferta": true,
-    "imagen": []
-  },
-  {
     "id": 3,
     "origen": "Brasil",
     "tipoDeGrano": "grueso",
     "cantidad": 250,
     "precio": 1500,
     "oferta": true,
-    "imagen": []
-  },
-  {
-    "id": 4,
-    "origen": "Etiopia",
-    "tipoDeGrano": "medio",
-    "cantidad": 750,
-    "precio": 5500,
-    "oferta": false,
     "imagen": []
   },
   {
@@ -46,82 +19,37 @@
   },
   {
     "id": 6,
-    "origen": "quenia",
-    "tipoDeGrano": "medio",
-    "cantidad": 1000,
-    "precio": 5000,
+    "origen": "argentina",
+    "tipoDeGrano": "grueso",
+    "cantidad": 7777,
+    "precio": 9999,
     "oferta": false,
     "imagen": []
   },
   {
     "id": 7,
-    "origen": "canada",
-    "tipoDeGrano": "medio",
-    "cantidad": 2345,
-    "precio": 450,
+    "origen": "argentina",
+    "tipoDeGrano": "grueso",
+    "cantidad": 7878,
+    "precio": 7878,
     "oferta": false,
     "imagen": []
   },
   {
     "id": 8,
-    "origen": "canada",
-    "tipoDeGrano": "medio",
-    "cantidad": 2345,
-    "precio": 450,
+    "origen": "juancho",
+    "tipoDeGrano": "chino",
+    "cantidad": 87878,
+    "precio": 87878,
     "oferta": false,
     "imagen": []
   },
   {
     "id": 9,
-    "origen": "argentina",
-    "tipoDeGrano": "peludo",
-    "cantidad": 34,
-    "precio": 70000,
-    "oferta": false,
-    "imagen": []
-  },
-  {
-    "id": 10,
-    "origen": "noruego",
-    "tipoDeGrano": "medio",
-    "cantidad": 23,
-    "precio": 54444,
-    "oferta": false,
-    "imagen": []
-  },
-  {
-    "id": 11,
-    "origen": "yandqui",
-    "tipoDeGrano": "chico",
-    "cantidad": 3,
-    "precio": 55,
-    "oferta": false,
-    "imagen": []
-  },
-  {
-    "id": 12,
     "origen": "colombia",
-    "tipoDeGrano": "ffff",
-    "cantidad": 3,
-    "precio": 3,
-    "oferta": false,
-    "imagen": []
-  },
-  {
-    "id": 13,
-    "origen": "juan",
-    "tipoDeGrano": "grande",
-    "cantidad": 21,
-    "precio": 34,
-    "oferta": false,
-    "imagen": []
-  },
-  {
-    "id": 14,
-    "origen": "juan2",
-    "tipoDeGrano": "grande",
-    "cantidad": 21,
-    "precio": 34,
+    "tipoDeGrano": "escobar",
+    "cantidad": 56565,
+    "precio": 32699,
     "oferta": false,
     "imagen": []
   },
