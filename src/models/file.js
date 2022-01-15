@@ -1,4 +1,4 @@
-/* const path = require("path")
+const path = require("path")
 const fs = require("fs")
 const model = {         
     file: path.resolve(__dirname, "../data","files.json"),       
@@ -19,4 +19,4 @@ const model = {
         return newImage
     },
  }
- module.exports = model; */
+ module.exports = model; 

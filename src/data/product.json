@@ -34,6 +34,15 @@
     "precio": 5500,
     "oferta": false,
     "imagen": []
+  },
+  {
+    "id": 5,
+    "origen": "Costa Rica",
+    "tipoDeGrano": "medio",
+    "cantidad": 1000,
+    "precio": 5000,
+    "oferta": false,
+    "imagen": []
   }
- 
 ]
+ 
