@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/product', controllers.index)
 router.get('/create', controllers.create)
-router.get('/', controllers.save) 
+router.get('/create', controllers.save) 
 
 
 

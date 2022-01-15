@@ -2,16 +2,12 @@ const product = require ("../models/product")
 const file = require("../models/file")
 
 const controllers = {
-
     index: (req,res)  => res.render('products/list', {
-
       styles: ['product/product'],
       title: 'LISTADO',
       products: product.all()
     }),
-
     create: (req,res)  => res.render('products/create', {
-
       styles: ['product/create'],
       title: 'CREAR Y MODIFICAR',
 
@@ -21,6 +17,7 @@ const controllers = {
       let created = product.create(req.body)
       return res.redirect('/products/'+created.id) //body es un objeto que dentro de el estan las propeidades que viajan o no en este contexto
       },
+  
     
 }    
     module.exports = controllers
