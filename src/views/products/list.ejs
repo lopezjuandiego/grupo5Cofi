@@ -4,62 +4,59 @@
        
 <body>
     <%- include("../includes/header") %> 
-<main>
-<section class="contbannerlist">
-    <h2 class="bannerlist">LISTADO DE PRODUCTOS</h2>
-</section>
-<section class="contlistado">
-<% if (locals.products) { %> <!--CONSULTO SI AGREGO PRODUCTOS A LA LISTA --> 
-    <%  if (products.length > 0) { %>  <!--CONSULTO SI LA CANTIDAD DE PRODUCTOS ES MAYOR A 0 --> 
+    <main>
+        <section class="contbannerlist">
+            <h2 class="bannerlist"><%= locals.title ? title : null %> </h2>
+
+        </section>
+        <section class="contlistado">
+        <% if (locals.products) { %> <!--CONSULTO SI AGREGO PRODUCTOS A LA LISTA --> 
+            <%  if (products.length > 0) { %>  <!--CONSULTO SI LA CANTIDAD DE PRODUCTOS ES MAYOR A 0 --> 
+                
+        <ul>
+        <% products.forEach(product => { %>
         
-<ul>
-<% products.forEach(product => { %>
-
-    <% if (product.image) { %>
-        <img src="/uploads/<%= product.image[0].url %>" alt=""> 
-        <% } %>                 
+       
         
-<a href="/products/<% product.id %> ">
-
-    <li> <% product.origen %> </li>
-    <li> <% product.tipoDeGrano %> </li>
-    <li> <% product.cantidad %> </li>
-    <li> <% product.precio %> </li>
-    <li> <% product.imagen %> </li>
-
-</a>
-    
-<%  }) %> 
-
-</ul>
-
-
-<% } else { %> 
-
-    
-
-    <h3 class="titulolist">No hay pruductos, agraga algunos! </h3>
-    
-
-<% } %> 
-
-<% } else { %> 
-
-<h3 class="titulolist">Hay pocos productos, ingresá más!</h3>
-
-<% } %>
-
-<picture class="contemoji">
-<i class="far fa-dizzy"></i> 
-</picture>
-
-</section>
-
-<picture class="contemojimas">
-    <a href="create"><i class="fas fa-plus-circle"></i></a>
-</picture>
-
-</main>  
+        <a href="/products/<%= product.id %> ">
+        
+            <span> <%= product.origen %> </span>
+            <span> <%= product.tipoDeGrano %> </span>
+            <span> <%= product.cantidad %> </span>
+            <span> <%= product.precio %> </span>
+            <span> <%= product.imagen %> </span>
+        
+        </a>
+            
+        <%  }) %> 
+        
+        </ul>
+        
+        
+        <% } else { %> 
+        
+            
+        
+            <h3 class="titulolist">Agregá algunos! </h3>
+            <i class="far fa-dizzy"></i> 
+        
+        <% } %> 
+        
+        <% } else { %> 
+        
+        <h3 class="titulolist">Hay pocos productos, ingresá más!</h3>
+        <i class="far fa-dizzy"></i> 
+        <% } %>
+        
+        
+        
+        </section>
+        
+        <picture class="contemojimas">
+            <a href="create"><i class="fas fa-plus-circle"></i></a>
+        </picture>
+        
+        </main>  
  
 <%- include("../includes/footer") %> 
 </body>

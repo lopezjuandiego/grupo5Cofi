@@ -1,47 +1,39 @@
 [
-    {
-        "id": 1,
-        "origen": "",
-        "grano": "",
-        "cantidad": "",
-        "precio":  "",
-        "oferta" : "",
-        "imagen" : []
-    },
-    {
-        "id": 2,
-        "origen": "",
-        "grano": "",
-        "cantidad": "",
-        "precio":  "",
-        "oferta" : "",
-        "imagen" : []
-    },
-    {
-        "id": 3,
-        "origen": "",
-        "grano": "",
-        "cantidad": "",
-        "precio":  "",
-        "oferta" : "",
-        "imagen" : []
-    },
-    {
-        "id": 4,
-        "origen": "",
-        "grano": "",
-        "cantidad": "",
-        "precio":  "",
-        "oferta" : "",
-        "imagen" : []
-    },
-    {
-        "id": 5,
-        "origen": "",
-        "grano": "",
-        "cantidad": "",
-        "precio":  "",
-        "oferta" : "",
-        "imagen" : []
-    }
-    ]
+  {
+    "id": 1,
+    "origen": "Guatemala",
+    "tipoDeGrano": "fino",
+    "cantidad": 250,
+    "precio": 1800,
+    "oferta": false,
+    "imagen": []
+  },
+  {
+    "id": 2,
+    "origen": "Colombia",
+    "tipoDeGrano": "fino",
+    "cantidad": 500,
+    "precio": 3000,
+    "oferta": true,
+    "imagen": []
+  },
+  {
+    "id": 3,
+    "origen": "Brasil",
+    "tipoDeGrano": "grueso",
+    "cantidad": 250,
+    "precio": 1500,
+    "oferta": true,
+    "imagen": []
+  },
+  {
+    "id": 4,
+    "origen": "Etiopia",
+    "tipoDeGrano": "medio",
+    "cantidad": 750,
+    "precio": 5500,
+    "oferta": false,
+    "imagen": []
+  }
+ 
+]

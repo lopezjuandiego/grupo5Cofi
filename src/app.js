@@ -14,6 +14,7 @@ app.set('views', path.resolve(__dirname, 'views'));
 
 
 app.use(express.static(path.resolve(__dirname, "../public")));
+app.use('/uploads',express.static(path.resolve(__dirname,"../uploads"))) 
 app.use(express.urlencoded({extended:true})) //Sirve para interpretar un formulario //
 app.use(method("m"))
 
@@ -24,10 +25,13 @@ app.use(require('./routes/productCart'));
 app.use(require('./routes/productDetail'));
 app.use(require('./routes/register'));
 app.use(require('./routes/login'));
-app.use(require('./routes/product'));
 
 
 
 
+const productRoutes = require("./routes/product") /*otra forma de usarlo en playground*/
+app.use("/products", productRoutes)
 
+const filesRoutes = require("./routes/product") /*otra forma de usarlo en playground*/
+app.use("/files", filesRoutes)
 
