@@ -7,7 +7,12 @@ Armamos JSON de productos y usuarios. Comenzamos a trabajar con CRUD **"Listado 
 
 *Daily 3 / Viernes 14*
 Terminamos listado de productos. Nos demoró la vista, nos falto imprimir la lista con EJS <%= >
-Empezamos a trabajar con **/products/create (GET) - Formulario de creación de productos**
+Empezamos y terminamos trabajar con **/products/create (GET) - Formulario de creación de productos**
+
+*Daily 4 / Viernes 15*
+Revisión de **/products/create (GET) - Formulario de creación de productos**. 
+Armado de vista del producto y update del mismo. 
+Problemas con el CSS del detalle y armado de CSS de listado.
 
 -------------------------------------------
 
