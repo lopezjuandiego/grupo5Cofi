@@ -27,11 +27,20 @@
     "imagen": []
   },
   {
-    "id": 9,
-    "origen": "colombia",
-    "tipoDeGrano": "escobar",
-    "cantidad": 56565,
-    "precio": 32699,
+    "id": 15,
+    "origen": "jamaica",
+    "tipoDeGrano": "fino",
+    "cantidad": 250,
+    "precio": 2000,
+    "oferta": false,
+    "imagen": []
+  },
+  {
+    "id": 16,
+    "origen": "Japón",
+    "tipoDeGrano": "medio",
+    "cantidad": 500,
+    "precio": 5000,
     "oferta": false,
     "imagen": []
   }

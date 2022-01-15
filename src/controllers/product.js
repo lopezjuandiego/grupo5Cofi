@@ -9,7 +9,7 @@ const controllers = {
     }),
     create: (req,res)  => res.render('products/create', {
       styles: ['product/create'],
-      title: 'CREAR Y MODIFICAR',
+      title: 'CREAR',
 
     }),
     save: (req,res) => {
@@ -21,7 +21,7 @@ const controllers = {
       show: (req,res) => {
         let result = product.search ('id', req.params.id)
         return result ? res.render('products/item',{
-            styles:["product/item"],                      
+            styles:["product/item", "footer", "header"],                      
             title: 'Café '+ result.origen,
             product: result
         }) : res.render ('error',{
