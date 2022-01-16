@@ -39,7 +39,7 @@ const controllers = {
   }),
 
   modify: (req,res) => {
-      let updated = product.update(req.params.id,req.body)
+      let updated = product.modify(req.params.id,req.body)
       return res.redirect('/product')
       },
 

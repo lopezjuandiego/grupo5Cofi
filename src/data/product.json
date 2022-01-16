@@ -28,10 +28,10 @@
   },
   {
     "id": 8,
-    "origen": "asdfasf",
-    "tipoDeGrano": "asfdasf",
-    "cantidad": 1,
-    "precio": 333,
+    "origen": "argentina",
+    "tipoDeGrano": "grueso",
+    "cantidad": 2000,
+    "precio": 80000,
     "oferta": false,
     "imagen": [
       1
