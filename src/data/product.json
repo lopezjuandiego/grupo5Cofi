@@ -25,5 +25,16 @@
     "precio": 144,
     "oferta": false,
     "imagen": []
+  },
+  {
+    "id": 8,
+    "origen": "asdfasf",
+    "tipoDeGrano": "asfdasf",
+    "cantidad": 1,
+    "precio": 333,
+    "oferta": false,
+    "imagen": [
+      1
+    ]
   }
 ]
