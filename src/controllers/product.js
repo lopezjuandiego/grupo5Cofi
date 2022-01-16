@@ -7,7 +7,7 @@ const controllers = {
 
       styles: ['product/product'],
       title: 'LISTADO',
-      products: product.all()
+      products: product.all().map(p => Object({...p, imagen : file.search("id",p.imagen)}))
     }),
 
     create: (req,res)  => res.render('products/create', {
@@ -25,7 +25,7 @@ const controllers = {
       show: (req,res) => {
         let result = product.search ('id', req.params.id)
         return result ? res.render('products/item',{
-            styles:["product/item", "footer", "header"],                      
+            styles:["product/item"],                      
             title: 'Café '+ result.origen,
             product: result
         }) : res.render ('error',{

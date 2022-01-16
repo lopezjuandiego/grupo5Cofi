@@ -1,13 +1,12 @@
 const path = require('path');
 const fs = require('fs');
-const file = require ('./file');
+const fileModel = require ('./file');
 
 const model = {
     file : path.resolve(__dirname, '../data/product.json'),
     read : () => fs.readFileSync(model.file),
     write: data => fs.writeFileSync(model.file,JSON.stringify(data,null,2)),
     all : () => JSON.parse(model.read()),
-
     
 
     generate: data => Object({
@@ -17,7 +16,7 @@ const model = {
         cantidad: parseInt(data.cantidad),
         precio: parseInt (data.precio),
         oferta: data.oferta ? true : false,
-        imagen: data.files.map (f => file.create(f).id)
+        imagen: data.files.map (file => fileModel.create(file).id) 
     }),
 
     create: data => {

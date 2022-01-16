@@ -18,47 +18,11 @@
     "imagen": []
   },
   {
-    "id": 6,
-    "origen": "argentina",
-    "tipoDeGrano": "grueso",
-    "cantidad": 7777,
-    "precio": 9999,
-    "oferta": false,
-    "imagen": []
-  },
-  {
     "id": 7,
-    "origen": "argentina",
-    "tipoDeGrano": "grueso",
-    "cantidad": 7878,
-    "precio": 7878,
-    "oferta": false,
-    "imagen": []
-  },
-  {
-    "id": 8,
-    "origen": "juancho",
-    "tipoDeGrano": "chino",
-    "cantidad": 87878,
-    "precio": 87878,
-    "oferta": false,
-    "imagen": []
-  },
-  {
-    "id": 15,
-    "origen": "jamaica",
-    "tipoDeGrano": "fino",
-    "cantidad": 250,
-    "precio": 2000,
-    "oferta": false,
-    "imagen": []
-  },
-  {
-    "id": 16,
-    "origen": "Japón",
+    "origen": "francia",
     "tipoDeGrano": "medio",
-    "cantidad": 500,
-    "precio": 5000,
+    "cantidad": 23,
+    "precio": 144,
     "oferta": false,
     "imagen": []
   }
