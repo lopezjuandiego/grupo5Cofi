@@ -7,13 +7,13 @@ const controllers = {
 
       styles: ['product/product'],
       title: 'LISTADO',
-      products: product.all()
+      products: product.all().map(p => Object({...p, imagen : file.search("id",p.imagen)}))
     }),
 
     create: (req,res)  => res.render('products/create', {
 
       styles: ['product/create'],
-      title: 'CREAR Y MODIFICAR',
+      title: 'CREAR',
 
     }),
     save: (req,res) => {
@@ -39,7 +39,7 @@ const controllers = {
   }),
 
   modify: (req,res) => {
-      let updated = product.update(req.params.id,req.body)
+      let updated = product.modify(req.params.id,req.body)
       return res.redirect('/product')
       },
 

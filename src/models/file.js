@@ -7,16 +7,16 @@ const model = {
     all: () => JSON.parse(model.read()),
     search: (prop, value) => model.all().find(element => element[prop] == value),
     generate: data => Object({
-        id: model.all().length == 0 ? 1 : model.all().pop().id +1, //llamo al metodo all que tiene la lista de mis productos
+        id: model.all().length == 0 ? 1 : model.all().pop().id +1, 
         url: data.filename,
         
     }),
     create: data => {
-        let newImage = model.generate(data);
+        let newImagen = model.generate(data);
         let all = model.all();
-        all.push(newImage);
+        all.push(newImagen);
         model.write(all)
-        return newImage
+        return newImagen
     },
  }
  module.exports = model; 

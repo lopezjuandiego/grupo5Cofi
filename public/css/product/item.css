@@ -3,3 +3,107 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+main{
+    background-color: #6f1d1b;
+    height: 80vh;
+}
+
+/* BANNER */
+
+.conttitle{
+
+background-image: url(../../image/cafelargo3.jpeg);
+height: 20vh;
+background-size: cover;
+background-repeat: no-repeat;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.title{
+
+    font-family: "Dancing Script";
+    color: #ffe6a7;
+    font-size: 2em;
+
+}
+
+/* FIN BANNER */
+
+/* FORMULARIO */
+
+.contformulario{
+
+    display: flex;
+    height: 57vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.continput{
+
+    padding: 1em;
+
+}
+
+.forminput{
+
+    height: 3em;
+    width: 30em;
+    padding: 0 4em;
+    border-radius: 10px;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+.forminput1{
+
+    font-size: 1em;
+    color: #ffe6a7;
+    
+}
+
+
+.boton{
+
+    background-color: #ffe6a7;
+    color: #432818;
+    font-size: 1em;
+    padding: 0.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.boton:hover{
+
+  background-color: #432818;
+  color: #ffe6a7;
+}
+
+
+/* FIN FORMULARIO */
+
+
+@media  (min-width: 768px) {
+
+
+    .title{
+
+        font-size: 4em;
+
+    }
+
+    .forminput{
+
+        height: 4em;
+        width: 43em;
+
+    }
+
+
+}

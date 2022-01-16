@@ -18,29 +18,11 @@
     "imagen": []
   },
   {
-    "id": 6,
-    "origen": "argentina",
-    "tipoDeGrano": "grueso",
-    "cantidad": 7777,
-    "precio": 9999,
-    "oferta": false,
-    "imagen": []
-  },
-  {
     "id": 7,
-    "origen": "argentina",
-    "tipoDeGrano": "grueso",
-    "cantidad": 7878,
-    "precio": 7878,
-    "oferta": false,
-    "imagen": []
-  },
-  {
-    "id": 9,
-    "origen": "colombia",
-    "tipoDeGrano": "escobar",
-    "cantidad": 56565,
-    "precio": 32699,
+    "origen": "francia",
+    "tipoDeGrano": "medio",
+    "cantidad": 23,
+    "precio": 144,
     "oferta": false,
     "imagen": []
   }

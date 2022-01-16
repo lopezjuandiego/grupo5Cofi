@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('../includes/head.ejs') %> 
+    <%- include('../includes/head') %> 
        
 <body>
     <%- include("../includes/header") %> 
     <main>
-        <section class="contbannerlist">
-            <h2 class="bannerlist"><%= locals.title ? title : null %> </h2>
+        <section class="conttitle">
+            <h2 class="title">PRODUCTO </h2>
         </section>
+        <section >
+            <h2 class="bannerlist"><%= locals.title ? title : null %> </h2>
+        </section> 
         <section>
             <article>
                 <ul>
@@ -22,7 +25,7 @@
             </article>
             <article>
                 <picture>
-                   <a href="/modify"><i class="fas fa-edit"></i></a>
+                   <a href="/modify/"><i class="fas fa-edit"></i></a>
                 </picture>
                 <form action="/product/?m=DELETE" method="post">
                     <input type="hidden" name="id" value="<%= product.id %>">
