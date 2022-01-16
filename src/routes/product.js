@@ -16,7 +16,7 @@ router.get('/product/:id',controllers.show)
 
 router.post('/',[upload.any()], controllers.save) 
 
-router.put('/modify/:id',controllers.modify)
+router.put('/:id',controllers.modify)
 router.delete ('/',controllers.delete)
 
 module.exports = router;

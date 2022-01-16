@@ -32,15 +32,15 @@ const controllers = {
           msg: 'Producto no encontrado'
       }) 
     },
-    update: (req,res) =>  res.render("products/modify", {
+    update: (req,res) =>  res.render("products/update", {
       styles:["product/create"],                        
       title: "Actualizar", 
       product : product.search ('id',req.params.id)
   }),
 
   modify: (req,res) => {
-      let updated = product.modify(req.params.id,req.body)
-      return res.redirect('/product')
+      let updated = product.update(req.params.id,req.body)
+      return res.redirect('/product/'+updated.id)
       },
 
       delete: (req,res) => {

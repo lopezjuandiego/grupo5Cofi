@@ -25,7 +25,7 @@
             </article>
             <article>
                 <picture>
-                   <a href="/product/"><i class="fas fa-edit"></i></a>
+                   <a href="/product/update/<%= product.id %>"><i class="fas fa-edit"></i></a>
                 </picture>
                 <form action="/product/?m=DELETE" method="post">
                     <input type="hidden" name="id" value="<%= product.id %>">
