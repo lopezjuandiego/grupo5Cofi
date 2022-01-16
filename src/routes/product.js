@@ -8,12 +8,13 @@ const upload = multer({storage: multer.diskStorage({
     filename: (req, file, cb) => cb(null, file.fieldname + '-' + Date.now () + path.extname(file.originalname))
 })})
 
-router.get('/product', controllers.index)
+router.get('/', controllers.index)
 router.get('/create', controllers.create)
-router.post('/product',[upload.any()], controllers.save) 
 router.get('/products/:id',controllers.show)
-
 router.get('/update/:id',controllers.update)
+
+
+router.post('/',[upload.any()], controllers.save) 
 router.put('/:id',controllers.modify)
 router.delete ('/',controllers.delete)
 

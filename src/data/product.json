@@ -36,15 +36,6 @@
     "imagen": []
   },
   {
-    "id": 8,
-    "origen": "juancho",
-    "tipoDeGrano": "chino",
-    "cantidad": 87878,
-    "precio": 87878,
-    "oferta": false,
-    "imagen": []
-  },
-  {
     "id": 9,
     "origen": "colombia",
     "tipoDeGrano": "escobar",
