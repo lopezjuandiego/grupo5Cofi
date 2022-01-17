@@ -4,7 +4,13 @@
        
 <body>
     <%- include("../includes/header") %> 
-    <main>
+    
+    <section id="article-pos">
+        <article class="flex-text">
+          
+        </article>
+      </section>
+        
         <section class="contbannerlist">
             <h2 class="bannerlist"><%= locals.title ? title : null %> </h2>
 
@@ -13,24 +19,23 @@
         <% if (locals.products) { %> <!--CONSULTO SI AGREGO PRODUCTOS A LA LISTA --> 
             <%  if (products.length > 0) { %>  <!--CONSULTO SI LA CANTIDAD DE PRODUCTOS ES MAYOR A 0 --> 
                 
-        <ul>
+
         <% products.forEach(product => { %>
         
        
         
         <a href="/products/<%= product.id %> ">
-        
-            <span> <%= product.origen %> </span>
-            <span> <%= product.tipoDeGrano %> </span>
-            <span> <%= product.cantidad %> </span>
-            <span> <%= product.precio %> </span>
-            <span> <%= product.imagen %> </span>
-        
+        <ul>
+            <li> Origen :  <%= product.origen %> </li>
+            <li> Tipo de grano : <%= product.tipoDeGrano %> </li>
+            <li> Cantidad :  <%= product.cantidad %> </li>
+            <li> Precio : <%= product.precio %> </li>
+            <li> <%= product.imagen %> </li>
+        </ul>
         </a>
             
         <%  }) %> 
-        
-        </ul>
+    
         
         
         <% } else { %> 
