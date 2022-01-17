@@ -10,7 +10,6 @@ const controllers = {
     create: (req,res)  => res.render('products/create', {
       styles: ['product/create'],
       title: 'CREAR',
-
     }),
     save: (req,res) => {
       req.body.files = req.files;
