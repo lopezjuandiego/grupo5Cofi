@@ -33,7 +33,7 @@ const controllers = {
       }) 
     },
     update: (req,res) =>  res.render("products/update", {
-      styles:["product/create"],                        
+      styles:["products/create"],                        
       title: "Actualizar", 
       product : product.search ('id',req.params.id)
   }),
@@ -43,6 +43,9 @@ const controllers = {
       return res.redirect('/product/'+updated.id)
       },
 
+
+
+
       delete: (req,res) => {
           product.delete(req.body.id);
           return res.redirect ('/product')
@@ -50,3 +53,6 @@ const controllers = {
 }
 
     module.exports = controllers
+
+
+  

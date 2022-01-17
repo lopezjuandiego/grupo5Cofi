@@ -10,10 +10,6 @@
   },
   {
     "id": 5,
-    "origen": "Costa Rica",
-    "tipoDeGrano": "medio",
-    "cantidad": 1000,
-    "precio": 5000,
     "oferta": false,
     "imagen": []
   },
@@ -28,13 +24,10 @@
   },
   {
     "id": 8,
-    "origen": "argentina",
-    "tipoDeGrano": "grueso",
-    "cantidad": 2000,
-    "precio": 80000,
     "oferta": false,
     "imagen": [
       1
-    ]
+    ],
+    "offert": false
   }
 ]
