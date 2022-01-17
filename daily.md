@@ -19,6 +19,12 @@ Desarrollo de MULTER sin éxito.
 *Daily 5 / Domingo 16*
 Revisión sin éxito de MULTER con Edu.
 Revisión y arreglo de rutas.
+Volvimos a revisar Multer y lo pudimos resolver. 
+Avanzamos con titulos dínamicos en el banner.
+Resolvimos error en ruteo de "modificar" pero no nos funciona la función.
+
+*Daily 6 / Lunes 17*
+
 
 
 -------------------------------------------

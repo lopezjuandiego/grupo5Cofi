@@ -1,28 +1,11 @@
 [
   {
     "id": 3,
-    "origen": "Brasil",
-    "tipoDeGrano": "grueso",
-    "cantidad": 250,
-    "precio": 1500,
-    "oferta": true,
-    "imagen": []
-  },
-  {
-    "id": 5,
-    "origen": "Costa Rica",
-    "tipoDeGrano": "medio",
-    "cantidad": 1000,
-    "precio": 5000,
     "oferta": false,
     "imagen": []
   },
   {
     "id": 7,
-    "origen": "francia",
-    "tipoDeGrano": "medio",
-    "cantidad": 23,
-    "precio": 144,
     "oferta": false,
     "imagen": []
   },
@@ -35,6 +18,17 @@
     "oferta": false,
     "imagen": [
       1
+    ]
+  },
+  {
+    "id": 9,
+    "origen": "japn",
+    "tipoDeGrano": "chino",
+    "cantidad": 32,
+    "precio": 123,
+    "oferta": false,
+    "imagen": [
+      2
     ]
   }
 ]
