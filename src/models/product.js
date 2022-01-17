@@ -28,16 +28,15 @@ const model = {
     },
 
     search: (prop, value) => model.all().find(element => element[prop] == value),
-
     update: (id,data) => {
         let all = model.all ();
         let update = all.map (e => {
-            if (e.id == id){
+            if (e.id === id){
                 e.origen = data.origen;
                 e.tipoDeGrano = data.tipoDeGrano;
                 e.cantidad = data.cantidad;
                 e.precio = data.precio;
-                e.oferta = data.oferta ? true : false;
+                e.offert = data.offert ? true : false;
                 return e
             }
             return e
@@ -46,6 +45,7 @@ const model = {
         model.write(update)
         let product = model.search ('id',id);
         return product
+   
     },
         delete: id => model.write(model.all().filter(e => e.id != id))
   

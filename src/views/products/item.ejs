@@ -6,11 +6,9 @@
     <%- include("../includes/header") %> 
     <main>
         <section class="conttitle">
-            <h2 class="title">PRODUCTO </h2>
+            <h2 class="title"><%= locals.title ? title : null %> </h2>
         </section>
-        <section >
-            <h2 class="bannerlist"><%= locals.title ? title : null %> </h2>
-        </section> 
+       
         <section>
             <article>
                 <ul>
