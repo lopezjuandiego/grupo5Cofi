@@ -1,56 +1,29 @@
 [
-    {
-        "id": 1,
-        "origen": "Guatemala",
-        "tipoDeGrano": "fino",
-        "cantidad": 250,
-        "precio":  1800,
-        "oferta" : false,
-        "imagen" : []
-    },
-    {
-        "id": 2,
-        "origen": "Colombia",
-        "tipoDeGrano": "fino",
-        "cantidad": 500,
-        "precio":  3000,
-        "oferta" : true,
-        "imagen" : []
-    },
-    {
-        "id": 3,
-        "origen": "Brasil",
-        "tipoDeGrano": "grueso",
-        "cantidad": 250,
-        "precio":  1500,
-        "oferta" : true,
-        "imagen" : []
-    },
-    {
-        "id": 4,
-        "origen": "Etiopia",
-        "tipoDeGrano": "medio",
-        "cantidad": 750,
-        "precio":  5500,
-        "oferta" : false,
-        "imagen" : []
-    },
-    {
-        "id": 5,
-        "origen": "Costa Rica",
-        "tipoDeGrano": "medio",
-        "cantidad": 1000,
-        "precio":  5000,
-        "oferta" : false,
-        "imagen" : []
-    },
-    {
-        "id": 6,
-        "origen": "kenia",
-        "tipoDeGrano": "medio",
-        "cantidad": 1000,
-        "precio":  5000,
-        "oferta" : false,
-        "imagen" : []
-    }
-    ]
+  {
+    "id": 3,
+    "origen": "Brasil",
+    "tipoDeGrano": "grueso",
+    "cantidad": 250,
+    "precio": 1500,
+    "oferta": true,
+    "imagen": []
+  },
+  {
+    "id": 5,
+    "oferta": false,
+    "imagen": []
+  },
+  {
+    "id": 7,
+    "oferta": false,
+    "imagen": []
+  },
+  {
+    "id": 8,
+    "oferta": false,
+    "imagen": [
+      1
+    ],
+    "offert": false
+  }
+]

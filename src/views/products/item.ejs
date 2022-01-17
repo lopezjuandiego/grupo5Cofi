@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../includes/head') %> 
+       
+<body>
+    <%- include("../includes/header") %> 
+    <main>
+        <section class="conttitle">
+            <h2 class="title"><%= locals.title ? title : null %> </h2>
+        </section>
+       
+        <section>
+            <article>
+                <ul>
+                <% if (product.oferta) { %> 
+              <h3>En Oferta!</h3>
+                 <% } %> 
+            <li><%= product.tipoDeGrano %></li>
+            <li><%= product.cantidad %></li>
+            <li>$ <%= product.precio %></li>
+            <li><%= product.imagen %></li>
+                </ul>
+            </article>
+            <article>
+                <picture>
+                   <a href="/product/update/<%= product.id %>"><i class="fas fa-edit"></i></a>
+                </picture>
+                <form action="/product/?m=DELETE" method="post">
+                    <input type="hidden" name="id" value="<%= product.id %>">
+                    <button type="submit">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </form>
+                   
+         </article>
+        </section>
+
+        
+        </main>  
+ 
+<%- include("../includes/footer") %> 
+</body>
+</html>

@@ -7,7 +7,25 @@ Armamos JSON de productos y usuarios. Comenzamos a trabajar con CRUD **"Listado 
 
 *Daily 3 / Viernes 14*
 Terminamos listado de productos. Nos demoró la vista, nos falto imprimir la lista con EJS <%= >
-Empezamos a trabajar con **/products/create (GET) - Formulario de creación de productos**
+Empezamos y terminamos trabajar con **/products/create (GET) - Formulario de creación de productos**
+
+*Daily 4 / Sábado 15*
+Revisión de **/products/create (GET) - Formulario de creación de productos**. 
+Armado de vista del producto, update y delete del mismo. 
+Problemas y resoluciión del CSS del detalle de producto.
+Armado de CSS de listado.
+Desarrollo de MULTER sin éxito.
+
+*Daily 5 / Domingo 16*
+Revisión sin éxito de MULTER con Edu.
+Revisión y arreglo de rutas.
+Volvimos a revisar Multer y lo pudimos resolver. 
+Avanzamos con titulos dínamicos en el banner.
+Resolvimos error en ruteo de "modificar" pero no nos funciona la función.
+
+*Daily 6 / Lunes 17*
+
+
 
 -------------------------------------------
 

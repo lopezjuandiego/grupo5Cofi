@@ -19,23 +19,29 @@
         <% if (locals.products) { %> <!--CONSULTO SI AGREGO PRODUCTOS A LA LISTA --> 
             <%  if (products.length > 0) { %>  <!--CONSULTO SI LA CANTIDAD DE PRODUCTOS ES MAYOR A 0 --> 
                 
-
-        <% products.forEach(product => { %>
         
-       
-        
-        <a href="/products/<%= product.id %> ">
+        <% products.forEach(product => { %>             
+            <article >
+           <a class="contentlista" href="/product/<%= product.id %> ">
         <ul>
-            <li> Origen :  <%= product.origen %> </li>
-            <li> Tipo de grano : <%= product.tipoDeGrano %> </li>
-            <li> Cantidad :  <%= product.cantidad %> </li>
-            <li> Precio : <%= product.precio %> </li>
+            <li> <%= product.origen %> </li>
+            <li> <%= product.tipoDeGrano %> </li>
+            <li> <%= product.cantidad %> </li>
+            <li> <%= product.precio %> </li>
             <li> <%= product.imagen %> </li>
+          
         </ul>
+   
         </a>
-            
-        <%  }) %> 
     
+          </article>
+        <%  }) %> 
+<<<<<<< HEAD
+    
+=======
+        
+
+>>>>>>> c43525fe19823fe0d4bff21b485ea9a52ea44acc
         
         
         <% } else { %> 
@@ -56,9 +62,11 @@
         
         
         </section>
-        
+      
+           
+         
         <picture class="contemojimas">
-            <a href="create"><i class="fas fa-plus-circle"></i></a>
+            <a href="/product/create"><i class="fas fa-plus-circle"></i></a> <!-- si agreagamos /product se rompe -->
         </picture>
         
         </main>  
