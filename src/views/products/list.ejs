@@ -4,25 +4,39 @@
        
 <body>
     <%- include("../includes/header") %> 
-    <main>
+    
+    <section id="article-pos">
+        <article class="flex-text">
+          
+        </article>
+      </section>
+        
         <section class="contbannerlist">
             <h2 class="bannerlist"><%= locals.title ? title : null %> </h2>
 
         </section>
+      
+        <picture class="contemojimas">
+            <a href="/product/create"><i class="fas fa-plus-circle"></i></a> <!-- si agreagamos /product se rompe -->
+        </picture>
+      
         <section class="contlistado">
         <% if (locals.products) { %> <!--CONSULTO SI AGREGO PRODUCTOS A LA LISTA --> 
             <%  if (products.length > 0) { %>  <!--CONSULTO SI LA CANTIDAD DE PRODUCTOS ES MAYOR A 0 --> 
                 
         
         <% products.forEach(product => { %>             
-            <article >
+            <article class="listagral" >
            <a class="contentlista" href="/product/<%= product.id %> ">
-        <ul>
-            <li> <%= product.origen %> </li>
-            <li> <%= product.tipoDeGrano %> </li>
-            <li> <%= product.cantidad %> </li>
-            <li> <%= product.precio %> </li>
-            <li> <%= product.imagen %> </li>
+            <% if (product.imagen) { %> 
+            <img class="contentimagen" src="/uploads/<%= product.imagen.url %> " alt="" srcset="">
+            <% } %> 
+      <ul class="contlis">
+            <li class="lilista">ORIGEN: <%= product.origen %> </li>
+            <li class="lilista">TIPO DE GRANO: <%= product.tipoDeGrano %> </li>
+            <li class="lilista">CANTIDAD: <%= product.cantidad %> gr</li>
+            <li class="lilista">PRECIO: $ <%= product.precio %> </li>          
+            
           
         </ul>
    
@@ -30,17 +44,17 @@
     
           </article>
         <%  }) %> 
-        
-
+    
         
         
         <% } else { %> 
         
             
-        
-            <h3 class="titulolist">Agregá algunos! </h3>
+        <section class="contsinproducto">
+            <h3 class="titulolist">Agregá algunos productos! </h3>
             <i class="far fa-dizzy"></i> 
-        
+        </section>
+
         <% } %> 
         
         <% } else { %> 
@@ -55,10 +69,7 @@
       
            
          
-        <picture class="contemojimas">
-            <a href="/product/create"><i class="fas fa-plus-circle"></i></a> <!-- si agreagamos /product se rompe -->
-        </picture>
-        
+      
         </main>  
  
 <%- include("../includes/footer") %> 

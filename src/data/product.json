@@ -1,28 +1,25 @@
 [
   {
-    "id": 3,
-    "origen": "Brasil",
-    "tipoDeGrano": "grueso",
-    "cantidad": 250,
-    "precio": 1500,
+    "id": 1,
+    "origen": "Mendoza",
+    "tipoDeGrano": "Fino",
+    "cantidad": "750",
+    "precio": "3000",
     "oferta": true,
-    "imagen": []
+    "imagen": [
+      4
+    ],
+    "offert": false
   },
   {
-    "id": 5,
-    "oferta": false,
-    "imagen": []
-  },
-  {
-    "id": 7,
-    "oferta": false,
-    "imagen": []
-  },
-  {
-    "id": 8,
+    "id": 2,
+    "origen": "Brasil",
+    "tipoDeGrano": "Medio",
+    "cantidad": "250",
+    "precio": "4500",
     "oferta": false,
     "imagen": [
-      1
+      5
     ],
     "offert": false
   }

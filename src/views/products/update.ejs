@@ -9,11 +9,11 @@
      <h2 class=""><%= locals.title ? title : null %></h2>
  </section>
  <section class="contformulario">
-     <form action="/product/<%= product.id %>?m=PUT"  enctype="multipart/form-data" method="POST">
+     <form action="/product/<%= product.id %>?m=PUT" method="POST"> <!-- SAQUÉ enctype="multipart/form-data" -->
      <label class="continput" for="origen">
          <input class="forminput" type="text" name="origen" id="origen" placeholder="ORIGEN DE CAFE" value="<%= product.origen %>">
      </label>
-     <label class="continput" for="tipoDeGrano">
+    <label class="continput" for="tipoDeGrano">
         <input class="forminput"  type="text" name="tipoDeGrano" id="tipoDeGrano" placeholder="TIPO DE GRANO" value="<%= product.tipoDeGrano %>">
     </label>
     <label class="continput" for="cantidad">
@@ -22,11 +22,11 @@
     <label class="continput" for="precio">
         <input class="forminput"  type="number" name="precio" id="precio" placeholder="PRECIO" min="0" value="<%= product.precio %>">
     </label>
-   <!-- <label class="continput" for="imagen">
+    <label class="continput" for="imagen">
         <input class="forminput1" type="file" name="imagen" id="imagen" multiple >
-    </label> -->
+    </label> 
     <fieldset class="continput">
-        <button class="boton" type="submit">MODIFICAR</button>
+        <button class="boton" type="submit">update</button>
     </fieldset>
 </form> 
  </section>
