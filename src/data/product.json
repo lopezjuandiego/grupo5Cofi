@@ -1,26 +1,20 @@
 [
   {
     "id": 1,
-    "origen": "Mendoza",
-    "tipoDeGrano": "Fino",
-    "cantidad": "750",
-    "precio": "3000",
-    "oferta": true,
-    "imagen": [
-      4
-    ],
-    "offert": false
+    "origen": "bart",
+    "tipoDeGrano": "simpson",
+    "cantidad": "555555",
+    "precio": "5555555",
+    "oferta": false,
+    "imagen": []
   },
   {
     "id": 2,
-    "origen": "Brasil",
-    "tipoDeGrano": "Medio",
-    "cantidad": "250",
-    "precio": "4500",
-    "oferta": false,
-    "imagen": [
-      5
-    ],
-    "offert": false
+    "origen": "Colombia",
+    "tipoDeGrano": "Grueso",
+    "cantidad": 250,
+    "precio": 4500,
+    "oferta": true,
+    "imagen": []
   }
 ]

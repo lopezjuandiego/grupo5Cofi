@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
     <%- include('../includes/head') %> 
-       
 <body>
     <%- include("../includes/header") %> 
     <main>
@@ -19,23 +18,23 @@
 
 
             <% if (product.oferta) { %> 
-                 <h3>En Oferta!</h3>
+                 <h3 class="titoferta">¡EN OFERTA!</h3>
             <% } %>  
-                 <ul>
-            <li>TIPO DE GRANO: <%= product.tipoDeGrano %></li>
-            <li>CANTIDAD: <%= product.cantidad %>GR</li>
-            <li>PRECIO: $ <%= product.precio %></li>            
+                 <ul class="cajaprod1">
+            <li class="tipograno">TIPO DE GRANO: <%= product.tipoDeGrano %></li>
+            <li class= "cant">CANTIDAD: <%= product.cantidad %> Gr.</li>
+            <li class="precio">PRECIO: $ <%= product.precio %></li>            
                 </ul>
             </article>
            
-            <article>
+            <article class="iconos1">
                 <picture>
                    <a href="/product/update/<%= product.id %>"><i class="fas fa-edit"></i></a>
                 </picture>
                 <form action="/product/?m=DELETE" method="post">
                     <input type="hidden" name="id" value="<%= product.id %>">
-                    <button type="submit">
-                        <i class="fas fa-trash"></i>
+                    <button class="tachito" type="submit">
+                        <a class="fas fa-trash-alt"></a>
                     </button>
                 </form>    
          </article>
