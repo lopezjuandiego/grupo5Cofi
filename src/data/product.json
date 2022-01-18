@@ -1,20 +1,69 @@
 [
   {
-    "id": 1,
-    "origen": "bart",
-    "tipoDeGrano": "simpson",
-    "cantidad": "555555",
-    "precio": "5555555",
+    "id": 2,
+    "origen": "Brasil",
+    "tipoDeGrano": "Medio",
+    "cantidad": "250",
+    "precio": "4500",
     "oferta": false,
-    "imagen": []
+    "imagen": [
+      5
+    ],
+    "offert": false
   },
   {
-    "id": 2,
-    "origen": "Colombia",
+    "id": 3,
+    "origen": "Chile",
     "tipoDeGrano": "Grueso",
-    "cantidad": 250,
-    "precio": 4500,
+    "cantidad": "1000",
+    "precio": "3000",
+    "oferta": false,
+    "imagen": [
+      10
+    ]
+  },
+  {
+    "id": 4,
+    "origen": "Ecuador",
+    "tipoDeGrano": "Fino",
+    "cantidad": "500",
+    "precio": "4500",
+    "oferta": false,
+    "imagen": [
+      11
+    ]
+  },
+  {
+    "id": 5,
+    "origen": "Colombia",
+    "tipoDeGrano": "Fino",
+    "cantidad": 750,
+    "precio": 4200,
+    "oferta": false,
+    "imagen": [
+      12
+    ]
+  },
+  {
+    "id": 6,
+    "origen": "Francia",
+    "tipoDeGrano": "Grueso",
+    "cantidad": "750",
+    "precio": "8700",
+    "oferta": false,
+    "imagen": [
+      13
+    ]
+  },
+  {
+    "id": 7,
+    "origen": "Argentina",
+    "tipoDeGrano": "Medio",
+    "cantidad": 500,
+    "precio": 1800,
     "oferta": true,
-    "imagen": []
+    "imagen": [
+      14
+    ]
   }
 ]

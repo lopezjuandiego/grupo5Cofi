@@ -2,20 +2,11 @@
 <html lang="es">
     <%- include('../includes/head') %> 
 <body>
-    <%- include("../includes/header") %> 
+        <%- include("../includes/header") %>
     <main>
-        <section class="conttitle">
-            <h2 class="title"><%= locals.title ? title : null %> </h2>
-        </section>
-       
-        <section>
-             <article>
-               
-
-                    <% if (product.imagen) { %> 
-                        <img class="contentimagen" src="/uploads/<%= product.imagen.url %> " alt="" srcset="">
-                        <% } %> 
-
+      <section class="conttitle">
+        <h2 class="title"><%= locals.title ? title : null %></h2>
+      </section>
 
             <% if (product.oferta) { %> 
                  <h3 class="titoferta">¡EN OFERTA!</h3>
@@ -40,9 +31,6 @@
          </article>
         </section>
 
-        
-        </main>  
- 
-<%- include("../includes/footer") %> 
-</body>
+    <%- include("../includes/footer") %>
+  </body>
 </html>

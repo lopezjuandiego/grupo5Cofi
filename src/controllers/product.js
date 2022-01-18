@@ -29,8 +29,9 @@ const controllers = {
     },
     update: (req,res) =>  res.render("products/update", {
       styles:["product/create"],                        
-      title: "Actualizar", 
-      product : product.search ('id',req.params.id)
+      title: "MODIFICAR", 
+      product :product.search ('id',req.params.id)      
+      
   }),
 
       modify: (req,res) => {
