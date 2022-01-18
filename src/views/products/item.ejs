@@ -1,50 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('../includes/head') %> 
-       
-<body>
-    <%- include("../includes/header") %> 
+  <%- include('../includes/head') %>
+
+  <body>
+    <%- include("../includes/header") %>
     <main>
-        <section class="conttitle">
-            <h2 class="title"><%= locals.title ? title : null %> </h2>
-        </section>
-       
-        <section>
-             <article>
-               
+      <section class="conttitle">
+        <h2 class="title"><%= locals.title ? title : null %></h2>
+      </section>
 
-                    <% if (product.imagen) { %> 
-                        <img class="contentimagen" src="/uploads/<%= product.imagen.url %> " alt="" srcset="">
-                        <% } %> 
-
-
-            <% if (product.oferta) { %> 
-                 <h3>En Oferta!</h3>
-            <% } %>  
-                 <ul>
+      <section>
+        <article>
+          <% if (product.oferta) { %>
+          <h3>En Oferta!</h3>
+          <% } %> <% if (product.imagen) { %>
+          <img src="/uploads/<%=product.imagen.url%> " alt="" srcset="" />
+          <% } %>
+          <ul>
             <li>TIPO DE GRANO: <%= product.tipoDeGrano %></li>
             <li>CANTIDAD: <%= product.cantidad %>GR</li>
-            <li>PRECIO: $ <%= product.precio %></li>            
-                </ul>
-            </article>
-           
-            <article>
-                <picture>
-                   <a href="/product/update/<%= product.id %>"><i class="fas fa-edit"></i></a>
-                </picture>
-                <form action="/product/?m=DELETE" method="post">
-                    <input type="hidden" name="id" value="<%= product.id %>">
-                    <button type="submit">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </form>
-                   
-         </article>
-        </section>
+            <li>PRECIO: $ <%= product.precio %></li>
+          </ul>
+        </article>
 
-        
-        </main>  
- 
-<%- include("../includes/footer") %> 
-</body>
+        <article>
+          <picture>
+            <a href="/product/update/<%= product.id %>"
+              ><i class="fas fa-edit"></i
+            ></a>
+          </picture>
+          <form action="/product/?m=DELETE" method="post">
+            <input type="hidden" name="id" value="<%= product.id %>" />
+            <button type="submit">
+              <i class="fas fa-trash"></i>
+            </button>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <%- include("../includes/footer") %>
+  </body>
 </html>

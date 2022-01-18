@@ -8,36 +8,50 @@
  <section class="conttitle">
     <h2 class="title"><%= locals.title ? title : null %> </h2>
 </section>
- <section class="contformulario">
+ <section class="contformulario">    
 
-    <form action="/product/" enctype="multipart/form-data" method="post">
+   <form class="formgral" action="/product/" enctype="multipart/form-data" method="post">
+
      <label class="continput" for="origen">
          <input class="forminput" type="text" name="origen" id="origen" placeholder="ORIGEN DE CAFE">
      </label>
 
-     <label  for="tipoDeGrano"> 
-        <input class="forminput"  list="tipoDeGrano"  id="tipoDeGrano" type="text" name="tipoDeGrano" placeholder="TIPO DE GRANO">
+     <label class="continput" for="tipoDeGrano">
+     <input class="forminput" type="text" list="tipoDeGrano" name="tipoDeGrano"  placeholder="TIPO DE GRANO">
+     <datalist id="tipoDeGrano">
+     <option value="Fino"></option>
+     <option value="Medio"></option>
+     <option value="Grueso"></option>     
+     </datalist>
+    </label> 
 
-    </label>
-   
+     <label class="continput" for="cantidad">
+     <input class="forminput" type="number" list="cantidad" name="cantidad"  placeholder="CANTIDAD">
+     <datalist id="cantidad">
+     <option value="250"></option>
+     <option value="500"></option>
+     <option value="750"></option>
+     <option value="1000"></option>
+     </datalist>
+    </label> 
 
-    <label class="continput" for="cantidad">
-        <input class="forminput"  type="number" name="cantidad" id="cantidad" placeholder="CANTIDAD" min="0">
-      
-    </label>
     <label class="continput" for="precio">
         <input class="forminput"  type="number" name="precio" id="precio" placeholder="PRECIO" min="0">
     </label>
-    <label  for="oferta"> OFERTA !
-        <input class="forminput" type="checkbox" name="oferta" id="oferta">
+
+    <label class="contchek" for="oferta">OFERTA !
+        <input class="formchek" type="checkbox" name="oferta" id="oferta">
     </label>
+
     <label class="continput" for="imagen">
         <input class="forminput1" type="file" name="imagen" id="imagen" multiple>
     </label> 
 
-    <fieldset class="continput">
-        <button class="boton" type="submit">ENVIAR</button>
-    </fieldset>
+    <fieldset class="continput1">    
+        <a class="boton1" href="/product">VOLVER</a>   
+        <button class="boton" type="submit">CREAR</button>
+    </fieldset>       
+
 </form> 
  </section>
 </main>

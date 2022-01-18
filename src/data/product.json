@@ -22,5 +22,27 @@
       5
     ],
     "offert": false
+  },
+  {
+    "id": 3,
+    "origen": "Chile",
+    "tipoDeGrano": "Grueso",
+    "cantidad": 1000,
+    "precio": 3000,
+    "oferta": true,
+    "imagen": [
+      10
+    ]
+  },
+  {
+    "id": 4,
+    "origen": "Ecuador",
+    "tipoDeGrano": "Medio",
+    "cantidad": 500,
+    "precio": 6500,
+    "oferta": false,
+    "imagen": [
+      11
+    ]
   }
 ]
