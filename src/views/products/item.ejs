@@ -10,18 +10,24 @@
         </section>
        
         <section>
-            <article>
-                
-                <% if (product.oferta) { %> 
-              <h3>En Oferta!</h3>
-                 <% } %> 
-                <ul>
-            <li><%= product.tipoDeGrano %></li>
-            <li><%= product.cantidad %></li>
-            <li>$ <%= product.precio %></li>
-            <li><%= product.imagen %></li>
+             <article>
+               
+
+                    <% if (product.imagen) { %> 
+                        <img class="contentimagen" src="/uploads/<%= product.imagen.url %> " alt="" srcset="">
+                        <% } %> 
+
+
+            <% if (product.oferta) { %> 
+                 <h3>En Oferta!</h3>
+            <% } %>  
+                 <ul>
+            <li>TIPO DE GRANO: <%= product.tipoDeGrano %></li>
+            <li>CANTIDAD: <%= product.cantidad %>GR</li>
+            <li>PRECIO: $ <%= product.precio %></li>            
                 </ul>
             </article>
+           
             <article>
                 <picture>
                    <a href="/product/update/<%= product.id %>"><i class="fas fa-edit"></i></a>

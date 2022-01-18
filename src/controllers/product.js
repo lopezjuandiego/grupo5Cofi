@@ -38,9 +38,10 @@ const controllers = {
       product : product.search ('id',req.params.id)
   }),
 
-  modify: (req,res) => {
-      product.update(req.params.id,req.body)
-      return res.redirect('/product/')
+      modify: (req,res) => {
+      let updated = product.update(req.params.id,req.body)
+      //return res.send(updated);
+      return res.redirect('/product/'+updated.id)
       },
 
       delete: (req,res) => {

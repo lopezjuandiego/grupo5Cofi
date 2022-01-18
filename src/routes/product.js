@@ -11,13 +11,13 @@ const router = express.Router();
 
 router.get('/', controllers.index)
 router.get('/product/create', controllers.create)
+router.get('/product/:id',controllers.show)
 
+router.get('/update/:id',controllers.update)
+router.put('/:id',controllers.modify) 
 
 router.post('/',[upload.any()], controllers.save) 
 
-router.get('/update/:id',controllers.update)
-router.get('/product/:id',controllers.show)
-router.put('/:id',controllers.modify)
 
 router.delete ('/',controllers.delete)
 

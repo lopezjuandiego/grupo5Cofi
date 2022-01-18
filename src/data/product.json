@@ -1,16 +1,26 @@
 [
   {
     "id": 1,
-    "tipoDeGrano": "",
-    "cantidad": null,
-    "precio": null,
-    "oferta": false,
-    "imagen": []
+    "origen": "Mendoza",
+    "tipoDeGrano": "Fino",
+    "cantidad": "750",
+    "precio": "3000",
+    "oferta": true,
+    "imagen": [
+      4
+    ],
+    "offert": false
   },
   {
     "id": 2,
-    "tipoDeGrano": "",
+    "origen": "Brasil",
+    "tipoDeGrano": "Medio",
+    "cantidad": "250",
+    "precio": "4500",
     "oferta": false,
-    "imagen": []
+    "imagen": [
+      5
+    ],
+    "offert": false
   }
 ]
