@@ -6,7 +6,7 @@
 
 main{
     background-color: #6f1d1b;
-    height: 75vh;
+    
 }
 
 /* BANNER */
@@ -27,7 +27,7 @@ align-items: center;
 
     font-family: "Dancing Script";
     color: #ffe6a7;
-    font-size: 2em;
+    font-size: 5em;
 
 }
 
@@ -38,9 +38,18 @@ align-items: center;
 .contlistado{
 
     display: flex;
+    flex-wrap: wrap;   
+    padding: 1.5em;
+    gap: 2em;
+}
+
+.contsinproducto{
+    display: flex;
+    height: 40vh;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    height: 45vh;
+    gap: 3em;
 }
 
 .titulolist{
@@ -54,7 +63,15 @@ font-size: 1.5em;
 .contentlista{
 
     color:#ffe6a7;
-    font-size: 3em
+    font-size: 1.5em;
+    text-decoration: none;
+    font-family: "Roboto";
+}
+
+.listagral{
+    padding:1em;
+    border: 4px #774544 inset;
+    border-radius: 20px;
 }
 
 .contemoji{
@@ -67,7 +84,7 @@ font-size: 1.5em;
 .contemojimas{
 
     font-size: 3em;
-    padding: 0 1.5em;    
+    padding: 1em;    
     display: flex;
     justify-content: flex-end;
     transition: all .3s ease-in-out;
@@ -83,12 +100,31 @@ font-size: 1.5em;
     color: #ffe6a7;
 }
 
+.fa-dizzy{
+    font-size:2em;
+    color: #ffe6a7;
+}
+
+.contlis{
+
+    padding: 0.5em 0 0;
+    
+}
+
+.lilista{
+    padding: 0.5em;
+}
+
+.contentimagen{
+    width: 16rem;
+    height: 25vh;
+}
 
 /* FIN CUERPO */
 
 @media  (min-width: 768px) {
 
-    .bannerlist{
+    .bannerlist {
 
         font-family: "Dancing Script";
         color: #ffe6a7;
@@ -113,7 +149,7 @@ font-size: 1.5em;
         .contemojimas{
 
             
-            padding: 0 3em;    
+            padding: 1em;    
           
         }
 

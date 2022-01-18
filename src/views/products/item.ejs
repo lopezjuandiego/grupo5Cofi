@@ -11,10 +11,11 @@
        
         <section>
             <article>
-                <ul>
+                
                 <% if (product.oferta) { %> 
               <h3>En Oferta!</h3>
                  <% } %> 
+                 <ul>
             <li><%= product.tipoDeGrano %></li>
             <li><%= product.cantidad %></li>
             <li>$ <%= product.precio %></li>
