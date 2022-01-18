@@ -37,7 +37,7 @@ const model = {
                 e.tipoDeGrano = data.tipoDeGrano;
                 e.cantidad = data.cantidad;
                 e.precio = data.precio;
-                e.offert = data.offert ? true : false;
+                e.oferta = data.oferta ? true : false;
                 return e
             }
             return e
