@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "origen": "Argentina",
-    "tipoDeGrano": "Grueso",
-    "cantidad": "500",
-    "precio": "3500",
+    "origen": "Mendoza",
+    "tipoDeGrano": "Fino",
+    "cantidad": "750",
+    "precio": "3000",
     "oferta": true,
     "imagen": [
       4

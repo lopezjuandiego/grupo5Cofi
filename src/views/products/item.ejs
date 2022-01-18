@@ -10,16 +10,17 @@
         </section>
        
         <section>
-            <article>
+             <article>
                 
                 <% if (product.oferta) { %> 
               <h3>En Oferta!</h3>
                  <% } %> 
+               
                  <ul>
             <li><%= product.tipoDeGrano %></li>
             <li><%= product.cantidad %></li>
             <li>$ <%= product.precio %></li>
-            <li><%= product.imagen %></li>
+            <!-- <li><%= product.imagen %></li> -->
                 </ul>
             </article>
             <article>
