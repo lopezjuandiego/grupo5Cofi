@@ -28,10 +28,11 @@ const model = {
     },
 
     search: (prop, value) => model.all().find(element => element[prop] == value),
+    
     update: (id,data) => {
-        let all = model.all ();
-        let update = all.map (e => {
-            if (e.id === id){
+        let all = model.all();
+        let updated = all.map (e => {
+            if (e.id == id){
                 e.origen = data.origen;
                 e.tipoDeGrano = data.tipoDeGrano;
                 e.cantidad = data.cantidad;
@@ -42,7 +43,7 @@ const model = {
             return e
         })
 
-        model.write(update)
+        model.write(updated)
         let product = model.search ('id',id);
         return product
    

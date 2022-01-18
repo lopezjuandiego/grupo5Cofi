@@ -9,7 +9,7 @@
      <h2 class=""><%= locals.title ? title : null %></h2>
  </section>
  <section class="contformulario">
-     <form action="/product/<%= product.id %>?m=PUT"  enctype="multipart/form-data" method="POST">
+     <form action="/product/<%= product.id %>?m=PUT" method="POST"> <!-- SAQUÉ enctype="multipart/form-data" -->
      <label class="continput" for="origen">
          <input class="forminput" type="text" name="origen" id="origen" placeholder="ORIGEN DE CAFE" value="<%= product.origen %>">
      </label>

@@ -24,6 +24,14 @@ Avanzamos con titulos dínamicos en el banner.
 Resolvimos error en ruteo de "modificar" pero no nos funciona la función.
 
 *Daily 6 / Lunes 17*
+Resolvimos estilos de Listado.
+Asociamos foto al producto
+Hicimos check de ofertas
+Probamos dropdown en categoria de tipo de grano y cantidad sin exito.
+
+
+*Daily 7 / Lunes 18*
+Solución del modificar producto que no actualizaba.
 
 
 

@@ -2,24 +2,26 @@
   {
     "id": 1,
     "origen": "Argentina",
-    "tipoDeGrano": "Fino",
-    "cantidad": 500,
-    "precio": 3500,
+    "tipoDeGrano": "Grueso",
+    "cantidad": "500",
+    "precio": "3500",
     "oferta": true,
     "imagen": [
       4
-    ]
+    ],
+    "offert": false
   },
   {
     "id": 2,
     "origen": "Brasil",
     "tipoDeGrano": "Grueso",
-    "cantidad": 750,
-    "precio": 4500,
+    "cantidad": "500",
+    "precio": "4500",
     "oferta": false,
     "imagen": [
       5
-    ]
+    ],
+    "offert": false
   },
   {
     "id": 3,
