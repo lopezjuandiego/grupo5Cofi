@@ -2,19 +2,14 @@ const product = require ("../models/product")
 const file = require("../models/file")
 
 const controllers = {
-
     index: (req,res)  => res.render('products/list', {
-
       styles: ['product/product'],
       title: 'LISTADO',
       products: product.all().map(p => Object({...p, imagen : file.search("id",p.imagen)}))
     }),
-
     create: (req,res)  => res.render('products/create', {
-
       styles: ['product/create'],
       title: 'CREAR',
-
     }),
     save: (req,res) => {
       req.body.files = req.files;
