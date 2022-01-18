@@ -19,7 +19,7 @@ const controllers = {
     save: (req,res) => {
       req.body.files = req.files;
       let created = product.create(req.body)
-      return res.redirect("/product")
+      return res.redirect("/product/" +created.id)
     },
 
       show: (req,res) => {
@@ -33,18 +33,15 @@ const controllers = {
       }) 
     },
     update: (req,res) =>  res.render("products/update", {
-      styles:["products/create"],                        
+      styles:["product/create"],                        
       title: "Actualizar", 
       product : product.search ('id',req.params.id)
   }),
 
   modify: (req,res) => {
-      let updated = product.update(req.params.id,req.body)
-      return res.redirect('/product/'+updated.id)
+      product.update(req.params.id,req.body)
+      return res.redirect('/product/')
       },
-
-
-
 
       delete: (req,res) => {
           product.delete(req.body.id);

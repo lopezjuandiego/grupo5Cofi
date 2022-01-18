@@ -12,7 +12,7 @@ const model = {
     generate: data => Object({
         id: model.all().length == 0 ? 1 : model.all().pop().id +1,
         origen: data.origen,
-        tipoDeGrano: data.tipoDeGrano,
+       tipoDeGrano: data.tipoDeGrano,
         cantidad: parseInt(data.cantidad),
         precio: parseInt (data.precio),
         oferta: data.oferta ? true : false,
@@ -29,21 +29,21 @@ const model = {
 
     search: (prop, value) => model.all().find(element => element[prop] == value),
     update: (id,data) => {
-        let all = model.all ();
-        let update = all.map (e => {
-            if (e.id === id){
-                e.origen = data.origen;
-                e.tipoDeGrano = data.tipoDeGrano;
+        let all = model.all();
+        let update = all.map(e => {
+            if (e.id == id){
+               e.origen = data.origen;
+               e.tipoDeGrano = data.tipoDeGrano;
                 e.cantidad = data.cantidad;
                 e.precio = data.precio;
-                e.offert = data.offert ? true : false;
-                return e
+                e.oferta = data.oferta ? true : false;
+                return e 
             }
             return e
         })
 
         model.write(update)
-        let product = model.search ('id',id);
+        let product = model.search('id',id);
         return product
    
     },
