@@ -2,24 +2,19 @@ const product = require ("../models/product")
 const file = require("../models/file")
 
 const controllers = {
-
     index: (req,res)  => res.render('products/list', {
-
       styles: ['product/product'],
       title: 'LISTADO',
       products: product.all().map(p => Object({...p, imagen : file.search("id",p.imagen)}))
     }),
-
     create: (req,res)  => res.render('products/create', {
-
       styles: ['product/create'],
       title: 'CREAR',
-
     }),
     save: (req,res) => {
       req.body.files = req.files;
       let created = product.create(req.body)
-      return res.redirect("/product")
+      return res.redirect("/product/" +created.id)
     },
 
       show: (req,res) => {
@@ -33,7 +28,7 @@ const controllers = {
       }) 
     },
     update: (req,res) =>  res.render("products/update", {
-      styles:["products/create"],                        
+      styles:["product/create"],                        
       title: "Actualizar", 
       product : product.search ('id',req.params.id)
   }),
@@ -43,9 +38,6 @@ const controllers = {
       //return res.send(updated);
       return res.redirect('/product/'+updated.id)
       },
-
-
-
 
       delete: (req,res) => {
           product.delete(req.body.id);

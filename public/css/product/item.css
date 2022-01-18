@@ -7,6 +7,7 @@
 main{
     background-color: #6f1d1b;
     height: 80vh;
+    color: #ffe6a7;
 }
 
 /* BANNER */
@@ -20,6 +21,7 @@ background-repeat: no-repeat;
 display: flex;
 justify-content: center;
 align-items: center;
+font-size: 2em;
 
 }
 
@@ -30,6 +32,7 @@ align-items: center;
     font-size: 2em;
 
 }
+
 
 /* FIN BANNER */
 
@@ -85,6 +88,69 @@ align-items: center;
   background-color: #432818;
   color: #ffe6a7;
 }
+.titoferta{
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    margin-bottom: 16px;
+    animation: titoferta 0.5s infinite alternate;
+}
+    @keyframes titoferta {
+        0%{
+            opacity:.0.8;
+        }
+        100%{
+            opacity:0;
+         }
+ }
+
+.fa-edit {
+    font-size: 3rem;
+    color: #ffe6a7;
+    margin-right: 3rem;
+    transition: all 0.3s linear;
+}
+
+.fa-edit:hover{
+    color: #432818;
+    
+    
+}
+.fa-trash-alt{
+    font-size: 3rem;
+    color:#ffe6a7 ;
+    background-color: #6f1d1b;
+    border: -10;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    
+}
+.fa-trash-alt:hover{
+    color: #432818;
+    
+    
+}
+.tachito{
+    border: none;
+}
+.iconos1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+}
+.cajaprod1{
+    border: 4px #774544 inset;
+    border-radius: 20px;
+    display: flex;
+    padding: 4rem;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 60%;
+    align-items: center;
+    margin: auto;
+    font-size: 3vh;
+}
 
 
 /* FIN FORMULARIO */
@@ -105,6 +171,17 @@ align-items: center;
         width: 43em;
 
     }
+
+    .cajaprod1{
+        padding: 9rem;
+        width: 60%;
+    }
+
+    .iconos1{
+        margin-top: 35px;
+    }
+
+    
 
 
 }

@@ -1,70 +1,20 @@
 [
   {
     "id": 1,
-    "origen": "Mendoza",
-    "tipoDeGrano": "Fino",
-    "cantidad": "750",
-    "precio": "3000",
-    "oferta": true,
-    "imagen": [
-      4
-    ],
-    "offert": false
+    "origen": "bart",
+    "tipoDeGrano": "simpson",
+    "cantidad": "555555",
+    "precio": "5555555",
+    "oferta": false,
+    "imagen": []
   },
   {
     "id": 2,
-    "origen": "Brasil",
-    "tipoDeGrano": "Grueso",
-    "cantidad": "500",
-    "precio": "4500",
-    "oferta": false,
-    "imagen": [
-      5
-    ],
-    "offert": false
-  },
-  {
-    "id": 3,
-    "origen": "Ecuador",
-    "tipoDeGrano": "Medio",
-    "cantidad": 1000,
-    "precio": 7000,
-    "oferta": false,
-    "imagen": [
-      6
-    ]
-  },
-  {
-    "id": 4,
-    "origen": "Chile",
-    "tipoDeGrano": "Fino",
-    "cantidad": 250,
-    "precio": 2300,
-    "oferta": true,
-    "imagen": [
-      7
-    ]
-  },
-  {
-    "id": 5,
     "origen": "Colombia",
-    "tipoDeGrano": "Medio",
-    "cantidad": 750,
-    "precio": 6200,
-    "oferta": false,
-    "imagen": [
-      8
-    ]
-  },
-  {
-    "id": 6,
-    "origen": "Francia",
-    "tipoDeGrano": "Fino",
-    "cantidad": 1000,
-    "precio": 4200,
+    "tipoDeGrano": "Grueso",
+    "cantidad": 250,
+    "precio": 4500,
     "oferta": true,
-    "imagen": [
-      9
-    ]
+    "imagen": []
   }
 ]
