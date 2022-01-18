@@ -5,7 +5,7 @@ const controllers = {
     index: (req,res)  => res.render('products/list', {
       styles: ['product/product'],
       title: 'LISTADO',
-      products: product.all()
+      products: product.all().map(p => Object({...p, imagen : file.search("id",p.imagen)}))
     }),
     create: (req,res)  => res.render('products/create', {
       styles: ['product/create'],
@@ -20,23 +20,26 @@ const controllers = {
       show: (req,res) => {
         let result = product.search ('id', req.params.id)
         return result ? res.render('products/item',{
-            styles:["product/item", "footer", "header"],                      
+            styles:["product/item"],                      
             title: 'Café '+ result.origen,
             product: result
         }) : res.render ('error',{
           msg: 'Producto no encontrado'
       }) 
     },
-    update: (req,res) =>  res.render("products/modify", {
-      styles:["product/create"],                        
+    update: (req,res) =>  res.render("products/update", {
+      styles:["products/create"],                        
       title: "Actualizar", 
       product : product.search ('id',req.params.id)
   }),
 
   modify: (req,res) => {
       let updated = product.update(req.params.id,req.body)
-      return res.redirect('/product')
+      return res.redirect('/product/'+updated.id)
       },
+
+
+
 
       delete: (req,res) => {
           product.delete(req.body.id);
@@ -45,3 +48,6 @@ const controllers = {
 }
 
     module.exports = controllers
+
+
+  
