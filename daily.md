@@ -6,7 +6,7 @@ Armamos el Trello y acordamos la agenda de trabajo y completamos estructura JSON
 Armamos JSON de productos y usuarios. Comenzamos a trabajar con CRUD **"Listado de productos"**.
 
 *Daily 3 / Viernes 14*
-Terminamos listado de productos. Nos demoró la vista, nos falto imprimir la lista con EJS <%= >
+Terminamos listado de productos. Nos demoró la vista, nos falto imprimir la lista con EJS <%= >.
 Empezamos y terminamos trabajar con **/products/create (GET) - Formulario de creación de productos**
 
 *Daily 4 / Sábado 15*
@@ -25,13 +25,19 @@ Resolvimos error en ruteo de "modificar" pero no nos funciona la función.
 
 *Daily 6 / Lunes 17*
 Resolvimos estilos de Listado.
-Asociamos foto al producto
-Hicimos check de ofertas
+Asociamos foto al producto.
+Hicimos check de ofertas.
 Probamos dropdown en categoria de tipo de grano y cantidad sin exito.
 
 
-*Daily 7 / Lunes 18*
+*Daily 7 / Martes 18*
 Solución del modificar producto que no actualizaba.
+Solución de dropdown en categoria de tipo de grano y cantidad.
+Estilos al ejs de crear y actualizar producto.
+No pudimos agregar la imagen del producto en el producto. Trabajamos en clase con Edu sobre el controlador
+
+*Daily 8 / Miércoles 19*
+Trabajamos sobre el agregado de la imagen en la vista del item. 
 
 
 

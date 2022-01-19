@@ -6,8 +6,8 @@
 
 main{
     background-color: #6f1d1b;
-    height: 80vh;
-    color: #ffe6a7;
+    
+    
 }
 
 /* BANNER */
@@ -38,15 +38,12 @@ font-size: 2em;
 
 /* FORMULARIO */
 
-.contformulario{
 
-    display: flex;
-    height: 57vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+.conteinfo{
+    padding: 2em;
+
 }
-
 
 .continput{
 
@@ -90,6 +87,7 @@ font-size: 2em;
 }
 .titoferta{
     display: flex;
+    color:#ffe6a7 ;
     justify-content: center;
     font-size: 3rem;
     margin-bottom: 16px;
@@ -134,23 +132,54 @@ font-size: 2em;
     border: none;
 }
 .iconos1{
-    display: flex;
-    align-items: center;
+    display: flex;    
     justify-content: center;
-    margin-top: 16px;
+    align-items: center;
+    padding: 3em;
+    gap: 15em;
+    position: relative;
 }
-.cajaprod1{
+ .cajaprod1{
     border: 4px #774544 inset;
     border-radius: 20px;
-    display: flex;
-    padding: 4rem;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    width: 60%;
-    align-items: center;
-    margin: auto;
     font-size: 3vh;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: stretch;
+    align-items: flex-end;
 }
+
+.itemtext{
+    padding: 0 2em;
+    color:#ffe6a7 ;
+    font-family: "Roboto";
+}
+
+.boton1{
+
+    background-color: #ffe6a7;
+    color: #432818;
+    font-size: 1.05em;;
+    padding: 0.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s linear;
+    text-decoration: none;
+    border-style: outset;
+    border-width: 3px;
+    border-color: #959595;
+    font-family: "Roboto";
+    position: absolute;
+    left: 3em;
+}                                          
+
+.boton1:hover{
+
+    background-color: #432818;
+    color: #ffe6a7;
+  }
 
 
 /* FIN FORMULARIO */
@@ -172,15 +201,7 @@ font-size: 2em;
 
     }
 
-    .cajaprod1{
-        padding: 9rem;
-        width: 60%;
-    }
-
-    .iconos1{
-        margin-top: 35px;
-    }
-
+   
     
 
 

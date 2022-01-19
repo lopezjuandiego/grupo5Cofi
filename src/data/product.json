@@ -1,3 +1,113 @@
 [
-  
+  {
+    "id": 2,
+    "origen": "Brasil",
+    "tipoDeGrano": "Medio",
+    "cantidad": "250",
+    "precio": "4500",
+    "oferta": false,
+    "imagen": [
+      5
+    ],
+    "offert": false
+  },
+  {
+    "id": 3,
+    "origen": "Chile",
+    "tipoDeGrano": "Grueso",
+    "cantidad": "1000",
+    "precio": "3000",
+    "oferta": false,
+    "imagen": [
+      10
+    ]
+  },
+  {
+    "id": 5,
+    "origen": "Colombia",
+    "tipoDeGrano": "Fino",
+    "cantidad": 750,
+    "precio": 4200,
+    "oferta": false,
+    "imagen": [
+      12
+    ]
+  },
+  {
+    "id": 6,
+    "origen": "Francia",
+    "tipoDeGrano": "Grueso",
+    "cantidad": "750",
+    "precio": "8700",
+    "oferta": false,
+    "imagen": [
+      13
+    ]
+  },
+  {
+    "id": 7,
+    "origen": "Argentina",
+    "tipoDeGrano": "Medio",
+    "cantidad": 500,
+    "precio": 1800,
+    "oferta": true,
+    "imagen": [
+      14
+    ]
+  },
+  {
+    "id": 8,
+    "origen": "Mexico",
+    "tipoDeGrano": "Fino",
+    "cantidad": 1000,
+    "precio": 8300,
+    "oferta": true,
+    "imagen": [
+      15
+    ]
+  },
+  {
+    "id": 9,
+    "origen": "Peru",
+    "tipoDeGrano": "Grueso",
+    "cantidad": 1000,
+    "precio": 3800,
+    "oferta": false,
+    "imagen": [
+      16
+    ]
+  },
+  {
+    "id": 10,
+    "origen": "Uruguay",
+    "tipoDeGrano": "Fino",
+    "cantidad": 250,
+    "precio": 3100,
+    "oferta": false,
+    "imagen": [
+      17
+    ]
+  },
+  {
+    "id": 11,
+    "origen": "Portugal",
+    "tipoDeGrano": "Medio",
+    "cantidad": 500,
+    "precio": 10600,
+    "oferta": true,
+    "imagen": [
+      18
+    ]
+  },
+  {
+    "id": 12,
+    "origen": "Ecuador",
+    "tipoDeGrano": "Medio",
+    "cantidad": 750,
+    "precio": 4500,
+    "oferta": true,
+    "imagen": [
+      19
+    ]
+  }
 ]

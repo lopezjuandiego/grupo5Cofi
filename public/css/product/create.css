@@ -39,9 +39,14 @@ align-items: center;
 
     display: flex;
     height: 57vh;
+    align-items: center;
+}
+
+.formgral{
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    width: 100%;
 }
 
 .continput{
@@ -67,6 +72,25 @@ align-items: center;
     
 }
 
+.contchek{
+
+    font-size: 1.5em;
+    color: #ffe6a7;
+    font-family: "Roboto";
+}
+
+.formchek{
+    font-size: 1em;
+    height: 1em;
+    width: 2em;
+}
+
+.continput1{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
 
 .boton{
 
@@ -77,13 +101,38 @@ align-items: center;
     border-radius: 10px;
     cursor: pointer;
     transition: all .3s linear;
+    border-style: outset;
+    border-width: 3px;
 }
 
 .boton:hover{
 
   background-color: #432818;
   color: #ffe6a7;
+  
 }
+
+.boton1{
+
+    background-color: #ffe6a7;
+    color: #432818;
+    font-size: 1.05em;;
+    padding: 0.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s linear;
+    text-decoration: none;
+    border-style: outset;
+    border-width: 3px;
+    border-color: #959595;
+    font-family: "Roboto";
+}                                          
+
+.boton1:hover{
+
+    background-color: #432818;
+    color: #ffe6a7;
+  }
 
 
 /* FIN FORMULARIO */

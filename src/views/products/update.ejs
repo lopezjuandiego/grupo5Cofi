@@ -5,29 +5,52 @@
 <body>
     <%- include("../includes/header") %> 
 <main>
- <section class="">
-     <h2 class=""><%= locals.title ? title : null %></h2>
+ <section class="conttitle">
+     <h2 class="title"><%= locals.title ? title : null %></h2>
  </section>
  <section class="contformulario">
-     <form action="/product/<%= product.id %>?m=PUT" method="POST"> <!-- SAQUÉ enctype="multipart/form-data" -->
+     <form class="formgral" action="/product/<%= product.id %>?m=PUT" method="POST">
+         
      <label class="continput" for="origen">
          <input class="forminput" type="text" name="origen" id="origen" placeholder="ORIGEN DE CAFE" value="<%= product.origen %>">
      </label>
-    <label class="continput" for="tipoDeGrano">
-        <input class="forminput"  type="text" name="tipoDeGrano" id="tipoDeGrano" placeholder="TIPO DE GRANO" value="<%= product.tipoDeGrano %>">
-    </label>
-    <label class="continput" for="cantidad">
-        <input class="forminput"  type="number" name="cantidad" id="cantidad" placeholder="CANTIDAD" min="0" value="<%= product.cantidad %>">
-    </label>
+    
+     <label class="continput" for="tipoDeGrano">
+        <input class="forminput" type="text" list="tipoDeGrano" name="tipoDeGrano"  placeholder="TIPO DE GRANO" value="<%= product.tipoDeGrano %>">
+        <datalist id="tipoDeGrano">
+        <option value="Fino"></option>
+        <option value="Medio"></option>
+        <option value="Grueso"></option>     
+        </datalist>
+       </label> 
+       
+       <label class="continput" for="cantidad">
+        <input class="forminput" type="number" list="cantidad" name="cantidad"  placeholder="CANTIDAD" value="<%= product.cantidad %>">>
+        <datalist id="cantidad">
+        <option value="250"></option>
+        <option value="500"></option>
+        <option value="750"></option>
+        <option value="1000"></option>
+        </datalist>
+       </label>    
+    
     <label class="continput" for="precio">
         <input class="forminput"  type="number" name="precio" id="precio" placeholder="PRECIO" min="0" value="<%= product.precio %>">
     </label>
+
+    <label class="contchek" for="oferta">OFERTA !
+        <input class="formchek" type="checkbox" name="oferta" id="oferta">
+    </label>
+
     <label class="continput" for="imagen">
         <input class="forminput1" type="file" name="imagen" id="imagen" multiple >
     </label> 
-    <fieldset class="continput">
-        <button class="boton" type="submit">update</button>
+
+    <fieldset class="continput1">
+        <a class="boton1" href="/product">VOLVER</a>  
+        <button class="boton" type="submit">MODIFICAR</button>
     </fieldset>
+
 </form> 
  </section>
 </main>
