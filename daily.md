@@ -30,11 +30,15 @@ Hicimos check de ofertas.
 Probamos dropdown en categoria de tipo de grano y cantidad sin exito.
 
 
-*Daily 7 / Lunes 18*
+*Daily 7 / Martes 18*
 Solución del modificar producto que no actualizaba.
 Solución de dropdown en categoria de tipo de grano y cantidad.
-Estilos al ejs de crear producto.
-No pudimos agregar la imagen del producto en el producto.
+Estilos al ejs de crear y actualizar producto.
+No pudimos agregar la imagen del producto en el producto. Trabajamos en clase con Edu sobre el controlador
+
+*Daily 8 / Miércoles 19*
+Trabajamos sobre el agregado de la imagen en la vista del item. 
+
 
 
 -------------------------------------------
