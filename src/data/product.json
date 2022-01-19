@@ -1,20 +1,3 @@
 [
-  {
-    "id": 1,
-    "origen": "bart",
-    "tipoDeGrano": "simpson",
-    "cantidad": "555555",
-    "precio": "5555555",
-    "oferta": false,
-    "imagen": []
-  },
-  {
-    "id": 2,
-    "origen": "Colombia",
-    "tipoDeGrano": "Grueso",
-    "cantidad": 250,
-    "precio": 4500,
-    "oferta": true,
-    "imagen": []
-  }
+  
 ]
