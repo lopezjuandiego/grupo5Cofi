@@ -125,6 +125,7 @@ align-items: center;
     border-style: outset;
     border-width: 3px;
     border-color: #959595;
+    font-family: "Roboto";
 }                                          
 
 .boton1:hover{
