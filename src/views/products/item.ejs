@@ -4,6 +4,7 @@
 
     <body>
         <%- include("../includes/header") %>
+<<<<<<< HEAD
             <main>
                 <section class="conttitle">
                     <h2 class="title">
@@ -40,3 +41,39 @@
     </body>
 
 </html>
+=======
+    <main>
+      <section class="conttitle">
+        <h2 class="title"><%= locals.title ? title : null %></h2>
+      </section>
+         <section>
+             <article class="conteinfo">
+            <% if (product.oferta) { %> 
+                 <h3 class="titoferta">¡EN OFERTA!</h3>
+            <% } %>  
+                 <ul class="cajaprod1">
+            <li class="itemtext">TIPO DE GRANO: <%= product.tipoDeGrano %></li>
+            <li class="itemtext">CANTIDAD: <%= product.cantidad %> Gr.</li>
+            <li class="itemtext">PRECIO: $ <%= product.precio %></li>            
+                </ul>
+            </article>
+           
+            <article class="iconos1">
+                <a class="boton1" href="/product">VOLVER</a> 
+                <picture>
+                   <a href="/product/update/<%= product.id %>"><i class="fas fa-edit"></i></a>
+                </picture>
+                <form action="/product/?m=DELETE" method="post">
+                    <input type="hidden" name="id" value="<%= product.id %>">
+                    <button class="tachito" type="submit">
+                        <a class="fas fa-trash-alt"></a>
+                    </button>
+                </form>    
+               
+         </article>
+        </section>
+    </main>
+    <%- include("../includes/footer") %>
+  </body>
+</html>
+>>>>>>> d2367299c9deba71d6a437806757b90da16d41f3
