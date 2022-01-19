@@ -8,16 +8,15 @@
     <main>
       <section id="article-pos">
         <article class="flex-text">
-          <p id="banner-txt">PRODUCTOS</p>
+          <p id="banner-txt">FORMAS DE PAGO</p>
         </article>
       </section>
 <section id="caja-pago">
-  <article>
-    <h1>FORMA DE PAGO</h1>
-  </article>
+  <article class= "cajachica">
+  <h2>PAGO CON TARJETA</h2>
     <article class="tipos-pago">
-      <h2>Pago con Tarjeta</h2>
-        <form action="/" method="post">
+      
+        <form class="cajainferior" action="/" method="post">
             <fieldset>
                 <legend class="ocultar">Tarjeta</legend>
                 <label for="tarjetipo">Tarjeta</label>
@@ -79,18 +78,16 @@
             </fieldset>
         </form>
       </article>
-  
+    </article>
     <article class="tipos-pago">
         <h2>Pago con Mercado Pago</h2>
         <button class="btn-buy" type="submit">Ir a MercadoPago</button>
 
     </article>
-    <article class="tipos-pago">
-        <h2>Pago por transferencia</h2>
-        <h3>Datos para transferencia:</h3>
-            <h3>Alias: COFI.CLUB.CAFE</h3>
+    <article class="tipos-pagos">
+        <h2>Pago por transferencia: Alias COFI.CLUB.CAFE</h2>
             <form action="/" method="post">
-            <fieldset>
+            <fieldset class= "imagendepago">
                 <legend class="ocultar">Subí el comprobante</legend>
                 <label for="transfer">Subí el comprobante</label>
                 <input type="file" name="comprobanteTransfer" id="transfer" required />
@@ -106,7 +103,7 @@
     <article>
         <h1>ENVÍO</h1>
     </article>
-    <form action="/" method="post">
+    <form class="cajainferior" action="/" method="post">
     <fieldset>
       <legend class="ocultar">ZonaGeográfica</legend>
       <label for="zona">Zona geográfica:</label>
@@ -124,12 +121,12 @@
         <input type="name" name="domicilio" id="domicilio" placeholder="Domicilio" required />
       </fieldset>
     
-      <fieldset>
+      <fieldset class="botonesabajo">
         <button class="btn-buy" type="submit">Finalizar compra</button>
         <button class="btn-buy" type="reset">Borrar</button>
     </fieldset>
   </form>
-</section>
+</section> 
 
     </main>
     <%- include("./includes/footer") %> 
