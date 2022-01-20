@@ -20,13 +20,11 @@ const controllers = {
       show: (req,res) => {
         
         let result = product.search ('id', req.params.id)
-        let productShow = Object({...result, imagen : result.imagen.map(imagen=> file.search("id",imagen))})
-       return res.send(productShow)
-       
-        return result ? res.render('products/item',{
+        let productShow = Object({...result, imagen : result.imagen.map(imagen=> file.search("id",imagen))})      
+            return result ? res.render('products/item',{
             styles:["product/item"],                      
             title: 'Café '+ result.origen,
-            product,
+            product: productShow
         }) : res.render ('error',{
           msg: 'Producto no encontrado'
       }) 
