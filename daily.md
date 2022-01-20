@@ -37,7 +37,8 @@ Estilos al ejs de crear y actualizar producto.
 No pudimos agregar la imagen del producto en el producto. Trabajamos en clase con Edu sobre el controlador
 
 *Daily 8 / Miércoles 19*
-Trabajamos sobre el agregado de la imagen en la vista del item. 
+Solucionamos el problema sobre el agregado  de la imagen en la vista del item. 
+Trabajamos sobre mejoras en el CSS general de las vistas para la entrega final.
 
 
 
