@@ -23,6 +23,7 @@ h1 {
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 20px;
+  padding: 11px;
 }
 h3{
   font-size: 0.8rem;
@@ -83,12 +84,48 @@ select{
   display: none;
 }
 
-#caja-pago, #caja-envio {
-  margin: 20px;
+#caja-pago{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+#caja-envio{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px;
+}
+.cajachica{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 23px;
+  padding: 0px;
+  height: 41vh;
+  width: 54vw;
+  border: 4px #774544 inset;
+}
+.cajainferior{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 12px;
 }
 
+
 .tipos-pago {
-  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 35px;
+  padding: 14px;
+}
+.tipos-pagos{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 26px;
 }
 
 .btn-buy {
@@ -105,6 +142,10 @@ select{
 .btn-buy:hover {
   background-color: #432818;
   color: #ffe6a7
+}
+
+.botonesabajo{
+  padding: 20px;
 }
 
 .chk-txt {
@@ -148,7 +189,17 @@ select{
 
 
 .tipos-pago {
-  margin: 25px 0 10px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 14px;
+}
+
+.tipos-pagos{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 37px;
 }
 
 label {

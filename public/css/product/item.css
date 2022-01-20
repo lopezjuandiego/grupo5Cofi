@@ -29,7 +29,7 @@ font-size: 2em;
 
     font-family: "Dancing Script";
     color: #ffe6a7;
-    font-size: 2em;
+    font-size: 12vw;
 
 }
 
@@ -42,7 +42,8 @@ font-size: 2em;
 
 .conteinfo{
     padding: 2em;
-
+    display: flex;
+    justify-content: center;
 }
 
 .continput{
@@ -90,7 +91,7 @@ font-size: 2em;
     color:#ffe6a7 ;
     justify-content: center;
     font-size: 3rem;
-    margin-bottom: 16px;
+    padding: 0.5em;
     animation: titoferta 0.5s infinite alternate;
 }
     @keyframes titoferta {
@@ -136,25 +137,31 @@ font-size: 2em;
     justify-content: center;
     align-items: center;
     padding: 3em;
-    gap: 15em;
+    gap: 9em;
     position: relative;
 }
  .cajaprod1{
     border: 4px #774544 inset;
     border-radius: 20px;
     font-size: 3vh;
-    height: 35vh;
+    height: 57vh;
+    width: 65%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
     justify-content: space-evenly;
-    align-content: stretch;
-    align-items: flex-end;
+    align-items: center;
+    
+ }
+.contimag{
+    width: 26vw;
 }
 
+
 .itemtext{
-    padding: 0 2em;
-    color:#ffe6a7 ;
+    padding: 0.5em;
+    color: #ffe6a7;
     font-family: "Roboto";
+    font-size: 4vw;
 }
 
 .boton1{
@@ -172,8 +179,9 @@ font-size: 2em;
     border-color: #959595;
     font-family: "Roboto";
     position: absolute;
-    left: 3em;
-}                                          
+    left: 3em;    
+    display:none
+}                                         
 
 .boton1:hover{
 
@@ -181,6 +189,7 @@ font-size: 2em;
     color: #ffe6a7;
   }
 
+  
 
 /* FIN FORMULARIO */
 
@@ -188,21 +197,55 @@ font-size: 2em;
 @media  (min-width: 768px) {
 
 
-    .title{
-
-        font-size: 4em;
-
+    .cajaprod1{
+        height: 45vh;
+        width: 80%;
+        flex-direction: row;
     }
-
-    .forminput{
-
-        height: 4em;
-        width: 43em;
-
-    }
-
    
+
+    .contimag{
+      width: 18vw;
+    }
+    
+    .itemtext{
+
+        padding: 1em;     
+        font-size: 2.3vw;
+    }
+    
+    .boton1{
+        display: block;
+    }
+
     
 
-
 }
+
+@media  (min-width: 1300px) {
+
+
+    .title{
+      
+        font-size: 7vw;
+
+        }
+    
+    .cajaprod1{
+
+        height: 57vh;
+        width: 65%;
+        flex-direction: row;
+    }
+   
+
+    .contimag{
+        width: 15vw;
+      }
+      
+      .iconos1{
+        gap: 15em;
+    }
+
+
+} 
