@@ -1,3 +1,10 @@
+**DAILY - SPRINT 5** 
+*Daily 1 / Viernes 21*
+Armamos el Trello y acordamos la agenda de trabajo.
+Instalamos nuevas dependencias. Creamos entidad de usuarios.
+
+
+------------------------------------------
 **DAILY - SPRINT 4 **
 *Daily 1 / Miércoles 12*
 Armamos el Trello y acordamos la agenda de trabajo y completamos estructura JSON.
