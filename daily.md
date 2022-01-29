@@ -1,3 +1,14 @@
+**Daily 4 - Sábado 29**
+Continuamos con la implementación del registro de usuario.
+
+**Daily 3 - Miércoles 26**
+Revisión de Trello en función de los comentarios de DH sobre el SPRINT.
+Definición de rutas de Login, Admin y Invitado.
+Continuamos con la implementación del registro de usuario.
+
+**Daily 2 - Lunes 24**
+Revisamos clases de usuario y comenzamos con la implementación del registro de usuario.
+
 **DAILY - SPRINT 5** 
 *Daily 1 / Viernes 21*
 Armamos el Trello y acordamos la agenda de trabajo.
@@ -5,6 +16,7 @@ Instalamos nuevas dependencias. Creamos entidad de usuarios.
 
 
 ------------------------------------------
+
 **DAILY - SPRINT 4 **
 *Daily 1 / Miércoles 12*
 Armamos el Trello y acordamos la agenda de trabajo y completamos estructura JSON.

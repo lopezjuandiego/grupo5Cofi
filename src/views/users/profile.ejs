@@ -6,9 +6,32 @@
         <%- include("../includes/header") %> 
 
     <main>
-   <h1>JUAN CAPO pero no cualquier JUAN, ojo!</h1>
+   <h1>NOS FALTA EL CSS</h1>
         
-    </main>
+    
+
+    <h2>Email: <%= user.email %> </h2>
+    <form action="/users/update/password" method="post"> <!--REVISAR ACTION-->
+        <input type="password" name="passanterior" id="passanterior" placeholder="Contraseña actual">
+        <input type="password" name="password" id="password">
+        <button type="submit">Actualizar contraseña</button>
+    </form>
+    <section> <!--REVISAR .avatar-->
+        <% if (user.avatar != null) { %>
+            <figure>
+                <img src="/avatars/<%= user.avatar %>" alt="photo <%= user.email %>">
+            </figure>
+        <% } else { %>
+            <figure>
+                <img src="/image/users/perfil.png" alt="photo <%= user.email %>">
+            </figure>
+        <% } %>
+        <form action="/users/upload/avatar" enctype="multipart/form-data" method="post"> <!--REVISAR ACTION-->
+            <input type="file" name="avatar" id="avatar">
+            <button type="submit">Actualizar foto de perfil</button>
+        </form>
+    </section>
+</main>
     <%- include("../includes/footer") %> 
 
 </body>
