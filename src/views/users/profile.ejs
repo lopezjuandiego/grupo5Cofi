@@ -6,31 +6,34 @@
         <%- include("../includes/header") %> 
 
     <main>
-   <h1>NOS FALTA EL CSS</h1>
+   <h1><%= user.nombre %>  <%= user.apellido %></h1>
         
-    
+   <h4>Email: <%= user.email %> </h4>
+   <form action="/users/update/password" method="post"> 
+       <input type="password" name="passanterior" id="passanterior" placeholder="Contraseña actual">
+       <input type="password" name="password" id="password">
+       <button type="submit">Actualizar contraseña</button>
+   </form>
+   <section> 
+       <% if (user.avatar != null) { %>
+           <figure>
+               <img src="/uploads/avatars/<%= user.avatar %>" alt="photo <%= user.email %>">
+           </figure>
+       <% } else { %>
+           <figure>
+               <img src="/image/users/perfil.png" alt="photo <%= user.email %>">
+           </figure>
+       <% } %>
+       <form action="/users/upload/avatar" enctype="multipart/form-data" method="post"> 
+           <input type="file" name="avatar" id="avatar">
+           <button type="submit">Actualizar foto de perfil</button>
+       </form>
+       <form action="/users/logout" method="post">
+        <button type="submit">SALIR</button>
+  </form>
+   </section>
 
-    <h2>Email: <%= user.email %> </h2>
-    <form action="/users/update/password" method="post"> <!--REVISAR ACTION-->
-        <input type="password" name="passanterior" id="passanterior" placeholder="Contraseña actual">
-        <input type="password" name="password" id="password">
-        <button type="submit">Actualizar contraseña</button>
-    </form>
-    <section> <!--REVISAR .avatar-->
-        <% if (user.avatar != null) { %>
-            <figure>
-                <img src="/avatars/<%= user.avatar %>" alt="photo <%= user.email %>">
-            </figure>
-        <% } else { %>
-            <figure>
-                <img src="/image/users/perfil.png" alt="photo <%= user.email %>">
-            </figure>
-        <% } %>
-        <form action="/users/upload/avatar" enctype="multipart/form-data" method="post"> <!--REVISAR ACTION-->
-            <input type="file" name="avatar" id="avatar">
-            <button type="submit">Actualizar foto de perfil</button>
-        </form>
-    </section>
+  
 </main>
     <%- include("../includes/footer") %> 
 
