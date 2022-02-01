@@ -1,3 +1,20 @@
 [
- 
+  {
+    "id": 1,
+    "nombre": "Fernando",
+    "apellido": "Campos",
+    "email": "fernando@gmail.com",
+    "password": "$2b$10$JY887rLhSCAKMrLPhWHJz./0KaC9Cb3z1fp/4EVEqdR6vqFY4O8yC",
+    "avatar": "avatar-1643751387460.jpg",
+    "admin": false
+  },
+  {
+    "id": 2,
+    "nombre": "martina",
+    "apellido": "beloso",
+    "email": "martina@email.com",
+    "password": "$2b$10$mqo0XI8nddEyxvBecs.0TeAf9q5cJ6OjS68wXjfJMWZ0SRuatL/L2",
+    "avatar": null,
+    "admin": false
+  }
 ]
