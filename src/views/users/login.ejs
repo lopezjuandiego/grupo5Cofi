@@ -38,19 +38,17 @@
                         <a class="olvidasteContraseña" href="¿Olvidaste la Contraseña?">¿Olvidaste la Contraseña?</a>
                         <a class="olvidasteUsuario" href="¿Olvidaste el Usuario?">¿Olvidaste el Usuario?</a>
                     </section>
+                    <section >
+                    <% if (locals.errors && errors.email) { %>
+                        <p><%= errors.email.msg %> </p>
+                       <% } %>
+                       
+                       <% if (locals.errors && errors.password) { %>
+                           <p><%= errors.password.msg %> </p>
+                          <% } %>
+                        </section>
                 </form>
-                <% if (locals.errors) { %>
-                    <% if (errors.email) { %>
-                        <p>
-                            <%= errors.email.msg %>
-                        </p>
-                        <% } %>
-                            <% if (errors.password) { %>
-                                <p>
-                                    <%= errors.password.msg %>
-                                </p>
-                                <% } %>
-                                    <% } %>
+              
 
             </main>
             <%- include("../includes/footer") %>

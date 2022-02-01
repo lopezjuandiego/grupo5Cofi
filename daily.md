@@ -1,3 +1,13 @@
+**Daily 7 - martes  1 de feb**
+CSS en validaciones de "Express-Validator" 
+
+**Daily 6 - Lunes 31**
+Implementamos Cookie y session y actualización de foto en usuario
+
+
+**Daily 5 - Sábado 30**
+Continuamos con la implementación del registro de usuario y login.
+
 **Daily 4 - Sábado 29**
 Continuamos con la implementación del registro de usuario.
 

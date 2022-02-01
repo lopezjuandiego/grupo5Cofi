@@ -141,6 +141,11 @@ section a {
   text-decoration: none;
 }
 
+.errorvalidacion{
+  font-size: 22px;
+  color: #ffe6a7;
+}
+
 @media (min-width: 768px) {
   .Nombre {
     margin-bottom: 25px;

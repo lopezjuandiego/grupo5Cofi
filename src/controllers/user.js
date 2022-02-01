@@ -1,5 +1,7 @@
 const user = require('../models/user');
 const validator = require('express-validator');
+const bcrypt = require('bcrypt');
+
 
 module.exports= {
 
@@ -9,17 +11,49 @@ module.exports= {
     }),
 
     access: (req, res) =>{
-        const errors = validator.validationResult(req);
-        if(errors.isEmpty()){
-            req.session.user = user.search('email', req.body.email);
-            req.body.remember ? res.cookie('user', req.session.user.email, {maxAge: 1000*60*60*24*7}) : null;
-            return res.redirect('/users/profile');
-        }else{
-            res.render('users/login',{
-                errors: errors.mapped(),
-                user: req.body
-            });
+    
+       
+        let errors = validator.validationResult(req); 
+
+        if (!errors.isEmpty()) {
+          return res.render("users/login", {
+            styles : ["login"],
+            errors: errors.mapped() 
+          });
         }
+    
+    
+        let exist = user.search("email", req.body.email);
+        if (!exist) {
+          return res.render("users/login", {
+            styles : ["login"],
+            errors: {
+              email: {
+                msg: "email sin registrar",
+              }
+            }
+          })
+        }
+    
+        if (!bcrypt.compareSync(req.body.password, exist.password)){ 
+          return res.render("users/login", {
+            styles : ["login"],
+            errors: {
+              password: {
+                msg: "Contraseña invalida",
+              }
+            }
+          })
+        }
+    
+        if(req.body.remember){
+            res.cookie("email",req.body.email,{maxAge:1000*60*60*24*30})
+        }
+        req.session.user = exist
+    
+        return res.redirect ("/users/profile") 
+    
+
     },
 
     register: (req,res)  => res.render('users/register' ,{
@@ -27,22 +61,36 @@ module.exports= {
         title: "Registro"
     }),
 
-    save: (req, res) =>{
-        const errors = validator.validationResult(req)
-        if(errors.isEmpty()){
-            const create = user.create(req.body);
-            res.redirect('/users/login');
-        }else{
-            return res.render('users/register', {
-                errors: errors.mapped(), 
-                user: req.body
-            });
-        }
-        //return errors.isEmpty() ? res.send(user.create(req.body)) : res.send(errors.mapped()) ;
+    save: (req, res) =>{ 
+      let errors = validator.validationResult(req); //trae los errores del resultado de las validciones
+
+      if (!errors.isEmpty()) {
+        return res.render("users/register", {
+          styles : ["register"],
+          errors: errors.mapped() 
+        })
+      }
+  
+      let exist = user.search("email", req.body.email);
+  
+      if (exist) {
+        return res.render("users/register", {
+          styles : ["register"],
+          errors: {
+            email: {
+              msg: "email ya registrado",
+            },
+          },
+        });
+      }
+  
+      let userRegistred = user.create(req.body);
+  
+      return res.redirect("/users/login")
     },
     
     profile: (req,res)  => res.render('users/profile',{
-        styles : ["product/item"], //chequeamos si este CSS es el que mejor nos funciona
+        styles : ["profile"], 
         title: "Perfil / Profile",
     }),
     

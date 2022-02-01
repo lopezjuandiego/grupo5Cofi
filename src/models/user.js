@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
-
+const validator = require('express-validator');
 
 const model = {
     file: path.resolve(__dirname, '../data/user.json'),
@@ -12,12 +12,15 @@ const model = {
     search: (prop,value) => model.get().find(user => user[prop] === value),
     generate: data => Object({
         id: model.get().length == 0 ? 1 : model.get().pop().id +1,
-
-        email: data.email,
-        password : bcrypt.hashSync(data.pass,10),
+        nombre:data.nombre,
+        apellido:data.apellido,
+        email: String(data.email),        
+        password:bcrypt.hashSync(data.password,10),                             
         avatar: data.avatar ? data.avatar : null,
-        admin: data.email.includes('@admin') ? true : false
+        admin: data.email.includes('@cofi') ? true : false,
+         
     }),
+    
     create: data => {
         const users = model.get();
         const user = model.generate(data);
@@ -30,7 +33,11 @@ const model = {
         const updates = users.map(user => user.id === id ? {...user, ...data} : user);
         model.save(updates);
         return updates.find(user => user.id === id);
-    }
-}
+    },
+
+   }
+
+
+
 
 module.exports = model;

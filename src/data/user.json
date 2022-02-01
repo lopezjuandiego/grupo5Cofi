@@ -1,24 +1,3 @@
-[{
-    "id": 1,
-    "nombrecompleto": "Juan López",
-    "mail": "lopezjuandiego@gmail.com",
-    "contraseña":  "123456",
-    "imagen" : []
- },
-
- {
-    "id": 2,
-    "nombrecompleto": "Alexis Vázquez",
-    "mail": "alexis.vazquez.ml@gmail.com",
-    "contraseña":  "654321",
-    "imagen" : []
- },
-
- {
-    "id": 3,
-    "nombrecompleto": "Juan Manuel Pereyra",
-    "mail": "juanmanuelpereyra@gmail.com",
-    "contraseña":  "232323",
-    "imagen" : []
- }
+[
+ 
 ]
