@@ -17,17 +17,21 @@
                 </h2>
 
             </section>
+         
+<% if (user != null && user.admin) { %>
+ 
+
 
             <picture class="contemojimas">
                 <a href="/product/create"><i class="fas fa-plus-circle"></i></a>
-                <!-- si agreagamos /product se rompe -->
+              
             </picture>
 
             <section class="contlistado">
                 <% if (locals.products) { %>
-                    <!--CONSULTO SI AGREGO PRODUCTOS A LA LISTA -->
+                    
                     <% if (products.length> 0) { %>
-                        <!--CONSULTO SI LA CANTIDAD DE PRODUCTOS ES MAYOR A 0 -->
+                        
                         <% products.forEach(product=> { %>
                             <article class="listagral">
                                 <a class="contentlista" href="/product/<%= product.id %> ">
@@ -43,38 +47,64 @@
                                                 <li class="lilista">CANTIDAD: <%= product.cantidad %> gr</li>
                                                 <li class="lilista">PRECIO: $ <%= product.precio %>
                                                 </li>
-
-
                                             </ul>
-
-                                </a>
-
+                                    </a>
                             </article>
                             <% }) %>
-
-
-
                                 <% } else { %>
-
-
                                     <section class="contsinproducto">
                                         <h3 class="titulolist">Agregá algunos productos! </h3>
                                         <i class="far fa-dizzy"></i>
                                     </section>
 
                                     <% } %>
-
                                         <% } else { %>
+                                            <h3 class="titulolist">Hay pocos productos, ingresá más!</h3>
+                                            <i class="far fa-dizzy"></i>
+                                            <% } %>
+                                        </section>
 
+               <% } else { %>
+
+                
+            <section class="contlistado">
+                <% if (locals.products) { %>
+                    
+                    <% if (products.length> 0) { %>
+                        
+                        <% products.forEach(product=> { %>
+                            <article class="listagral">
+                                <a class="contentlista" href="/product/<%= product.id %> ">
+                                    <% if (product.imagen) { %>
+                                        <img class="contentimagen" src="/uploads/<%= product.imagen.url %> " alt=""
+                                            srcset="">
+                                        <% } %>
+                                            <ul class="contlis">
+                                                <li class="lilista">ORIGEN: <%= product.origen %>
+                                                </li>
+                                                <li class="lilista">TIPO DE GRANO: <%= product.tipoDeGrano %>
+                                                </li>
+                                                <li class="lilista">CANTIDAD: <%= product.cantidad %> gr</li>
+                                                <li class="lilista">PRECIO: $ <%= product.precio %>
+                                                </li>
+                                            </ul>
+                                </a>
+                            </article>
+                            <% }) %>
+                                <% } else { %>
+                                    <section class="contsinproducto">
+                                        <h3 class="titulolist">Agregá algunos productos! </h3>
+                                        <i class="far fa-dizzy"></i>
+                                    </section>
+                                    <% } %>
+                                        <% } else { %>
                                             <h3 class="titulolist">Hay pocos productos, ingresá más!</h3>
                                             <i class="far fa-dizzy"></i>
                                             <% } %>
 
+                   </section>
 
-
-            </section>
-
-
+                           <% } %>
 
 
             </main>
