@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const bcrypt = require('bcrypt');
+
 
 const model = {
     file: path.resolve(__dirname, '../data/user.json'),
@@ -9,10 +11,10 @@ const model = {
     save: data => model.write(JSON.stringify(data, null, 2)),
     search: (prop,value) => model.get().find(user => user[prop] === value),
     generate: data => Object({
-        id: model.all().length == 0 ? 1 : model.all().pop().id +1,
+        id: model.get().length == 0 ? 1 : model.get().pop().id +1,
 
         email: data.email,
-        password: data.password,
+        password : bcrypt.hashSync(data.pass,10),
         avatar: data.avatar ? data.avatar : null,
         admin: data.email.includes('@admin') ? true : false
     }),
