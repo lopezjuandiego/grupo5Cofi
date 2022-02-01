@@ -8,21 +8,42 @@
          </picture>
 
          <nav class="headerEnlaces">
+             <% if (user != null) { %> 
              <li id="lienlace"><a class="enlaces" href="/">INICIO</a></li>
-             <li id="lienlace"><a class="enlaces" href="/productDetail">SUSCRIPCIÓN</a></li>
+             <li id="lienlace"><a class="enlaces" href="/productDetail">SUSCRIPCIÓN</a></li>   
              <li id="lienlace"><a class="enlaces" href="/product">TIENDA</a></li>
-             <li id="lienlace"><a class="enlaces" href="#">EDUCACIÓN</a></li>
+             <li id="lienlace"><a class="enlaces" href="#">EDUCACIÓN</a></li>         
              <li id="lienlace"><a class="enlaces" href="/users/register">REGISTRATE</a></li>
-         </nav>
-      
+         </nav>      
        <picture class="contenedorelementos1">
-           <a class="iconos" href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>          
-           <a class="iconos" href="/users/login"><i class="fa-solid fa-circle-user"></i></a>
-       </picture>
-   
+           <a class="iconos" href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>  
+           <% if (user.avatar != null) { %>
+            <figure>
+                <img src="/uploads/avatars/<%= user.avatar %>" alt="photo <%= user.email %>">
+            </figure>
+           
+       </picture> 
+       <% } else { %>   
+        <picture class="contenedorelementos1">                    
+            <a class="iconos" href="/users/login"><i class="fa-solid fa-circle-user"></i></a>
+        </picture>  
+      
+        <% } %> 
+
        <button class="contenedorelementos2">
            <i class="fas fa-bars"></i>
        </button>
+       <% } else { %>
+
+        <nav class="headerEnlaces">
+            <li id="lienlace"><a class="enlaces" href="/">INICIO</a></li>
+            <li id="lienlace"><a class="enlaces" href="/users/register">REGISTRATE</a></li>
+            <li id="lienlace"><a class="enlaces" href="/productDetail">SUSCRIPCIÓN</a></li>  
+             </nav>   
+        <picture class="contenedorelementos1">                    
+            <a class="iconos" href="/users/login"><i class="fa-solid fa-circle-user"></i></a>
+        </picture>         
+         <% } %>  
    </section>
 
 </header>
