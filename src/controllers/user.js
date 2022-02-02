@@ -5,9 +5,17 @@ const bcrypt = require('bcrypt');
 
 module.exports= {
 
+
+  index: (req,res)  => res.render('users/list', {
+    styles: ['login'],
+    title: 'LISTADO USUARIOS',
+    users: user.get().map
+  }),
+
     login: (req,res)  => res.render('users/login',{
         styles : ["login"],
         title: "Login",
+        
     }),
 
     access: (req, res) =>{
@@ -99,7 +107,7 @@ module.exports= {
         res.cookie('user', null, {maxAge: -1});
         return res.redirect('/users/login');
     },
-    uploadAvatar: (req, res) => {//chequear cambiar nombre avatar por fotoperdil cuando ande
+    uploadAvatar: (req, res) => {
         let update = user.update(req.session.user.id, {avatar: req.files ? req.files[0].filename : null});
         req.session.user = update;
         return res.redirect('/users/profile');
