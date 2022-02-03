@@ -1,3 +1,8 @@
+**Daily 8 - miércoles  2 de feb**
+Cambiamos la foto genérica.
+CSS de la vista de profile
+
+
 **Daily 7 - martes  1 de feb**
 CSS en validaciones de "Express-Validator" 
 Implementación de rutas de acceso según los distintos tipos de usuarios.

@@ -4,6 +4,9 @@
 **Sherlock Holmes**
 
 Link Heroku: https://cofi.herokuapp.com/
+Mail Administrador: @cofi.com
+Vista que se modifica como administrador: create y update. Unicamente el administrador puede crear nuevos productos, modificarlos y borrarlos.
+Usuario registrado puede ingresar a todo el sitio a excepción de "crear productos y modificarlos
 
 # *¿Qué productos o servicios vendemos?*
 
