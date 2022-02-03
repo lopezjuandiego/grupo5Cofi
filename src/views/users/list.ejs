@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../includes/head.ejs') %>
+<body>
+    <%- include("../includes/header") %>
+    <main>
+    <h1>ACA VA LA LISTA</h1>
+
+    <section id="article-pos">
+        <article class="flex-text">
+        </article>
+    </section>
+    <section class="contbannerlist">
+        <h2 class="bannerlist">
+            <%= locals.title ? title : null %>
+        </h2>
+
+    </section>     
+  
+    <section class="contlistado">
+      
+        
+                <% users.forEach(user => { %>
+               
+                    <ul >
+                        <li>ID: <%= user.id %> </li>
+                        <li>NOMBRE: <%= user.nombre %> </li>                                                                          
+                    </ul>  
+                                    
+                     <% }) %>
+               
+                                </section>   
+     </main>
+
+            <%- include("../includes/footer") %>
+    </body>
+
+</html>
