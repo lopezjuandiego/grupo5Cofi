@@ -25,6 +25,5 @@ router.post("/save",[save],user.save);
 router.post("/access",[login], user.access); 
 router.post("/upload/avatar",[access,upload.any()],user.uploadAvatar);
 
-router.put("/update/password", user.validatePassword);//borrar si no anda
 
 module.exports = router;
