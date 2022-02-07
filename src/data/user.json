@@ -10,19 +10,10 @@
   },
   {
     "id": 2,
-    "nombre": "Juan",
-    "apellido": "Perez",
-    "email": "juanperez@cofi.com",
-    "password": "$2b$10$iHGCBxtb/Ucw/G21qVIqduPoTQcvbCeNDHvsd0t4gQggyYY47Yn66",
-    "avatar": null,
-    "admin": true
-  },
-  {
-    "id": 3,
-    "nombre": "leo",
-    "apellido": "messi",
-    "email": "messi@cofi.com",
-    "password": "$2b$10$IYQ5p7vi1HlKnRm4smtmU.gYWz.FHG2hfpXeUq7SwHp.27usnQuZa",
+    "nombre": "juan",
+    "apellido": "lopez",
+    "email": "juan@cofi.com",
+    "password": "$2b$10$QGcfjj5NF3oRM2lrF1td6.i.RByUIFT6VCI7hhsfiY8VvW6huk/M.",
     "avatar": null,
     "admin": true
   }
