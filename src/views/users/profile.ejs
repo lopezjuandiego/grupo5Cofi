@@ -6,30 +6,31 @@
         <%- include("../includes/header") %> 
 
     <main>
-   <h1><%= user.nombre %>  <%= user.apellido %></h1>
+   <h1 class= "tituloprofile"><%= user.nombre %>  <%= user.apellido %></h1>
         
-   <h4>Email: <%= user.email %> </h4>
-   <form action="/users/update/password" method="post"> 
-       <input type="password" name="passanterior" id="passanterior" placeholder="Contraseña actual">
-       <input type="password" name="password" id="password">
-       <button type="submit">Actualizar contraseña</button>
-   </form>
+   <h4 class= "EmailUser">Email: <%= user.email %> </h4>
    <section> 
        <% if (user.avatar != null) { %>
-           <figure>
-               <img src="/uploads/avatars/<%= user.avatar %>" alt="photo <%= user.email %>">
+           <figure class="figura">
+               <img class="fotoAvatar" src="/uploads/avatars/<%= user.avatar %>" alt="photo <%= user.email %>">
            </figure>
        <% } else { %>
            <figure>
-               <img src="/image/users/perfil_usuario.jpg" alt="photo <%= user.email %>">
+               <img  class="avatar" src="/image/users/perfil.png" alt="photo <%= user.email %>">
            </figure>
        <% } %>
-       <form action="/users/upload/avatar" enctype="multipart/form-data" method="post"> 
-           <input type="file" name="avatar" id="avatar">
+       <form class= "foto" action="/users/upload/avatar" enctype="multipart/form-data" method="post"> 
+           <input class= "foteli" type="file" name="avatar" id="avatar">
            <button type="submit">Actualizar foto de perfil</button>
        </form>
+       <form class= "pass" action="/users/update/password" method="post"> 
+        <input type="password" name="passanterior" id="passanterior" placeholder="Contraseña actual">
+        <br>
+        <input type="password" name="password" id="password" placeholder="Nueva Contraseña">
+        <button class="actualizarpass" type="submit">Actualizar contraseña</button>
+    </form>
        <form action="/users/logout" method="post">
-        <button type="submit">SALIR</button>
+        <button class= "botonExit" type="submit">SALIR</button>
   </form>
    </section>
 
