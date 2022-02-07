@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -157,6 +156,25 @@ form {
 }
 section a {
   text-decoration: none;
+}
+.BarraBotones{
+  padding: 20px;
+}
+.check{
+  color: #ffe6a7;
+}
+#remember{
+  width: 28px;
+}
+.errormail{
+  color: #ffe6a7;
+  font-size: 30px;
+  padding: 14px;
+}
+.errorpass{
+  color: #ffe6a7;
+  font-size: 30px;
+  padding: 14px;
 }
 
 @media (min-width: 768px) {

@@ -19,20 +19,20 @@
   
     <section class="contlistado">
       
-        
-                <% users.forEach(user => { %>
-               
-                    <ul >
-                        <li>ID: <%= user.id %> </li>
-                        <li>NOMBRE: <%= user.nombre %> </li>                                                                          
-                    </ul>  
-                                    
-                     <% }) %>
+        <% for( let i = 0; i < data.length; i++ ) { %>
+            <li>
+                <a href=""><%= users[i].id %></a>
+            </li>
+            <% } %>
+              
                
                                 </section>   
+                            
      </main>
 
             <%- include("../includes/footer") %>
     </body>
 
 </html>
+
+

@@ -24,12 +24,12 @@
                     <fieldset>
                         <input class="Contraseña" type="password" placeholder="Contraseña" name="password" value="" required>
                     </fieldset>
-                    <fieldset>
-                        <input type="checkbox" name="remember" id="remember">
+                    <fieldset class="check">
+                        <input type="checkbox" name="remember" id="remember">Recordarme</input>
                     </fieldset>
 
 
-                    <fieldset>
+                    <fieldset class="BarraBotones">
                         <button class="botonEnviar" type="ENVIAR">INGRESAR</button>
                         <button class="botonReset" type="reset">BORRAR</button>
                     </fieldset>
@@ -39,11 +39,11 @@
                     </section>
                     <section >
                     <% if (locals.errors && errors.email) { %>
-                        <p><%= errors.email.msg %> </p>
+                        <p class="errormail"><%= errors.email.msg %> </p>
                        <% } %>
                        
                        <% if (locals.errors && errors.password) { %>
-                           <p><%= errors.password.msg %> </p>
+                           <p class="errorpass"><%= errors.password.msg %> </p>
                           <% } %>
                         </section>
                 </form>

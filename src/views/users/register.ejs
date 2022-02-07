@@ -38,11 +38,11 @@
                 </fieldset>
                
                 <section class="YaEstoyRegistrado">
-                    <a class="yaTengoUsuario" href="/users/login">Ya estoy Registrado</a>
+                    <a class="yaTengoUsuario" href="/users/login"></a>
                 </section>
                 <section>
                     <% if (locals.errors && errors.email) { %>
-                        <p><%= errors.email.msg %> </p>
+                        <p class= "errors"><%= errors.email.msg %> </p>
                        <% } %>
                        
                        <% if (locals.errors && errors.password) { %>

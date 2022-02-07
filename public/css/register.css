@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -142,9 +141,18 @@ section a {
 }
 
 .errorvalidacion{
-  font-size: 22px;
   color: #ffe6a7;
+  font-size: 30px;
+  padding: 14px;
+  
 }
+
+.errors{
+  color: #ffe6a7;
+  font-size: 30px;
+  padding: 14px;
+}
+  
 
 @media (min-width: 768px) {
   .Nombre {
