@@ -1,5 +1,13 @@
+**Daily 8 - miércoles  2 de feb**
+Cambiamos la foto genérica.
+CSS de la vista de profile
+
+
 **Daily 7 - martes  1 de feb**
 CSS en validaciones de "Express-Validator" 
+Implementación de rutas de acceso según los distintos tipos de usuarios.
+Implentación de foto de usuario en headear cuando estás logueado.
+Retoques generales.
 
 **Daily 6 - Lunes 31**
 Implementamos Cookie y session y actualización de foto en usuario
