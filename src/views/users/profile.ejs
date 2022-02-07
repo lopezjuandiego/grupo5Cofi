@@ -9,7 +9,7 @@
    <h1><%= user.nombre %>  <%= user.apellido %></h1>
         
    <h4>Email: <%= user.email %> </h4>
-   <form action="/users/update/password" method="post"> 
+   <form action="/users/update/password/?m=PUT" method="post"> 
        <input type="password" name="passanterior" id="passanterior" placeholder="Contraseña actual">
        <input type="password" name="password" id="password">
        <button type="submit">Actualizar contraseña</button>
