@@ -8,16 +8,7 @@
     <main>
    <h1 class= "tituloprofile"><%= user.nombre %>  <%= user.apellido %></h1>
         
-<<<<<<< HEAD
-   <h4>Email: <%= user.email %> </h4>
-   <form action="/users/update/password/?m=PUT" method="post"> 
-       <input type="password" name="passanterior" id="passanterior" placeholder="Contraseña actual">
-       <input type="password" name="password" id="password">
-       <button type="submit">Actualizar contraseña</button>
-   </form>
-=======
    <h4 class= "EmailUser">Email: <%= user.email %> </h4>
->>>>>>> bf5fda0758951ebc2f8ca4ac5600046e2fd0bc2b
    <section> 
        <% if (user.avatar != null) { %>
            <figure class="figura">
