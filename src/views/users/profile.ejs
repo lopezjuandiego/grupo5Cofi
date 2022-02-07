@@ -15,8 +15,8 @@
                <img class="fotoAvatar" src="/uploads/avatars/<%= user.avatar %>" alt="photo <%= user.email %>">
            </figure>
        <% } else { %>
-           <figure>
-               <img  class="avatar" src="/image/users/perfil.png" alt="photo <%= user.email %>">
+           <figure  class="figura">
+               <img  class="avatar" src="/image/users/perfil.jpg" alt="photo <%= user.email %>">
            </figure>
        <% } %>
        <form class= "foto" action="/users/upload/avatar" enctype="multipart/form-data" method="post"> 
