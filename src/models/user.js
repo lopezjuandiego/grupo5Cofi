@@ -14,7 +14,8 @@ const model = {
         id: model.get().length == 0 ? 1 : model.get().pop().id +1,
         nombre:data.nombre,
         apellido:data.apellido,
-        email: String(data.email),        
+        email: String(data.email),   
+        //passwordFake:data.password,    // borrar                         
         password:bcrypt.hashSync(data.password,10),                             
         avatar: data.avatar ? data.avatar : null,
         admin: data.email.includes('@cofi') ? true : false,

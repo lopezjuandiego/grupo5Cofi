@@ -1,6 +1,11 @@
+**Daily 9 - domingo 6 de febrero**
+Continuamos con  la vista para el administrador de todos los usuarios. Similar a la vista de productos
+Validación de doble contraseña, sin finalizar y "update contraseña" en profile, también sin terminar.
+
 **Daily 8 - miércoles  2 de feb**
 Cambiamos la foto genérica.
-CSS de la vista de profile
+CSS de la vista de profile y login y errores de "validator"CSS de la vista de profile
+Empezamos a trabajar, sin lograrlo, la vista para el administrador de todos los usuarios. Similar a la vista de productos
 
 
 **Daily 7 - martes  1 de feb**
@@ -14,7 +19,7 @@ Implementamos Cookie y session y actualización de foto en usuario
 
 
 **Daily 5 - Sábado 30**
-Continuamos con la implementación del registro de usuario y login.
+Continuamos y finalizamos con la implementación del registro de usuario y login.
 
 **Daily 4 - Sábado 29**
 Continuamos con la implementación del registro de usuario.

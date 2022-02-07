@@ -3,6 +3,8 @@ const validator = require('express-validator');
 const bcrypt = require('bcrypt');
 
 
+
+
 module.exports= {
 
 
@@ -42,7 +44,19 @@ module.exports= {
             }
           })
         }
-    
+    //revisar esto de aca abajo
+       /*  if ((req.body.passwordFake === req.body.password)){ 
+          return res.render("users/login", {
+            styles : ["login"],
+            errors: {
+              password: {
+                msg: "Contraseña invalida",
+              }
+            }
+          })
+        } */
+
+
         if (!bcrypt.compareSync(req.body.password, exist.password)){ 
           return res.render("users/login", {
             styles : ["login"],
@@ -96,6 +110,12 @@ module.exports= {
   
       return res.redirect("/users/login")
     },
+
+    modify: (req,res) => {
+      let updated = user.update(req.params.id,req.body)
+      //return res.send(updated);
+      return res.redirect('/users/login')
+      },
     
     profile: (req,res)  => res.render('users/profile',{
         styles : ["profile"], 
@@ -113,7 +133,10 @@ module.exports= {
         let update = user.update(req.session.user.id, {avatar: req.files ? req.files[0].filename : null});
         req.session.user = update;
         return res.redirect('/users/profile');
+    },
+//validando el pass - prueba
+    validatePassword : (req, res) => {
+      validator.check('Confirmar contraseña')
+      .equals(req.body.password)
     }
-
-    }
-    
+  }
