@@ -70,7 +70,7 @@ module.exports= {
     }),
 
     save: (req, res) =>{ 
-      let errors = validator.validationResult(req); //trae los errores del resultado de las validciones
+      let errors = validator.validationResult(req); 
 
       if (!errors.isEmpty()) {
         return res.render("users/register", {
