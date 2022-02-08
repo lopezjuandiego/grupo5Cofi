@@ -10,7 +10,6 @@ Cambiamos la foto genérica.
 CSS de la vista de profile y login y errores de "validator"CSS de la vista de profile
 Empezamos a trabajar, sin lograrlo, la vista para el administrador de todos los usuarios. Similar a la vista de productos
 
-
 **Daily 7 - martes  1 de feb**
 CSS en validaciones de "Express-Validator" 
 Implementación de rutas de acceso según los distintos tipos de usuarios.
