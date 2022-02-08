@@ -1,3 +1,6 @@
+**Daily 10 - martes 8 de febrero**
+Resolvimos "Repite contraseña" y empezamos a trabajar con el "update contraseña" en profile. Sigue sin  sin terminar la vista de usuarios registrados para administrador.
+
 **Daily 9 - domingo 6 de febrero**
 Continuamos con  la vista para el administrador de todos los usuarios. Similar a la vista de productos
 Validación de doble contraseña, sin finalizar y "update contraseña" en profile, también sin terminar.

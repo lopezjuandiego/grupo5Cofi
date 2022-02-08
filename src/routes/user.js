@@ -24,6 +24,7 @@ router.post("/logout", user.logout)
 router.post("/save",[save],user.save);
 router.post("/access",[login], user.access); 
 router.post("/upload/avatar",[access,upload.any()],user.uploadAvatar);
+router.post("/update/password", user.passwordUpdate)
 
 
 module.exports = router;

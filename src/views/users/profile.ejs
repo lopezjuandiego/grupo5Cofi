@@ -15,8 +15,8 @@
                <img class="fotoAvatar" src="/uploads/avatars/<%= user.avatar %>" alt="photo <%= user.email %>">
            </figure>
        <% } else { %>
-           <figure>
-               <img  class="avatar" src="/image/users/perfil.png" alt="photo <%= user.email %>">
+           <figure  class="figura">
+               <img  class="avatar" src="/image/users/perfil.jpg" alt="photo <%= user.email %>">
            </figure>
        <% } %>
        <form class= "foto" action="/users/upload/avatar" enctype="multipart/form-data" method="post"> 
@@ -26,7 +26,7 @@
        <form class= "pass" action="/users/update/password" method="post"> 
         <input type="password" name="passanterior" id="passanterior" placeholder="Contraseña actual">
         <br>
-        <input type="password" name="password" id="password" placeholder="Nueva Contraseña">
+        <input type="password" name="password" id="password" placeholder="Nueva Contraseña"><!--campo para revalidar pass-->
         <button class="actualizarpass" type="submit">Actualizar contraseña</button>
     </form>
        <form action="/users/logout" method="post">
