@@ -4,30 +4,71 @@
 <body>
     <%- include("../includes/header") %>
     <main>
-    <h1>ACA VA LA LISTA</h1>
+    
+                 
+ 
 
-    <section id="article-pos">
-        <article class="flex-text">
-        </article>
-    </section>
     <section class="contbannerlist">
         <h2 class="bannerlist">
             <%= locals.title ? title : null %>
         </h2>
 
-    </section>     
-  
-    <section class="contlistado">
-      
-        <% for( let i = 0; i < data.length; i++ ) { %>
-            <li>
-                <a href=""><%= users[i].id %></a>
-            </li>
-            <% } %>
-              
-               
-                                </section>   
-                            
+    </section>
+
+    <% if (user != null && user.admin) { %>
+ 
+
+        <section class="contlistado">
+            <% if (locals.users) { %>
+                
+                <% if (users.length > 0) { %>
+                    
+                    <% users.forEach(user=> { %>
+                        <article class="listagral">
+                            <a class="contentlista" href="/users/<%= user.id %> ">
+                                <% if (user.imagen) { %>
+                                    <img class="contentimagen" src="/uploads/<%= user.imagen.url %> " alt=""
+                                        srcset="">
+                                    <% } %>
+                                        <ul class="contlis">
+                                            <li class="lilista">NOMBRE: <%= user.nombre %>
+                                            </li>
+                                            <ul class="contlis">
+                                                <li class="lilista">APELLIDO: <%= user.apellido %>
+                                                </li>
+                                                <ul class="contlis">
+                                                    <li class="lilista">E-MAIL: <%= user.email %>
+                                                    </li>
+                                           
+                                        </ul>
+                                </a>
+                        </article>
+                        <% }) %>
+                            <% } else { %>
+                                <section class="contsinproducto">
+                                    <h3 class="titulolist">Agregá algunos productos! </h3>
+                                    <i class="far fa-dizzy"></i>
+                                </section>
+
+                                <% } %>
+                                    <% } else { %>
+                                        <h3 class="titulolist">Hay pocos productos, ingresá más!</h3>
+                                        <i class="far fa-dizzy"></i>
+                                        <% } %>
+                                    </section>
+
+           <% } else { %>
+
+            
+        <section class="contlistado">
+        <h1>Tenes que ser admin para ver la lista de usuarios</h1>
+               </section>
+
+                       <% } %>
+
+
+
+
      </main>
 
             <%- include("../includes/footer") %>

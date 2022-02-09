@@ -7,5 +7,14 @@
     "password": "$2b$10$6/MjCXZueGq5d5EFymM/6ubX3srxOnwN66I./AwTHgLtgLLVJnDDy",
     "avatar": "avatar-1644267173807.jpeg",
     "admin": true
+  },
+  {
+    "id": 2,
+    "nombre": "Juan",
+    "apellido": "López",
+    "email": "juan@cofi.com",
+    "password": "$2b$10$3bxS0MbSEQislSIBaQ78GO.cuY1JbOgKNZffCo43LLwCJ8FCP8VTG",
+    "avatar": "avatar-1644433757958.jpeg",
+    "admin": true
   }
 ]

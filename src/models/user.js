@@ -34,18 +34,12 @@ const model = {
         model.save(updates);
         return updates.find(user => user.id === id);
     },
-    
-    
     passwordEdit: data => {// buscar el usuario, guardarlo en una variable dentro de un objet (como create), borrarlo del json, y volverlo a crear con la nueva contraseño
         const users = model.get();
-        const user = model.generate(data);
-        users.push(user);
-        model.save(users);
-        return user;
+        const updates = users.map(user => user.password === password ? {...user, ...data} : user);
+        model.save(updates);
+        return updates.find(user => user.password === password);
     },
-   }
-
-
-
+}
 
 module.exports = model;

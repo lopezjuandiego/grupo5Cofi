@@ -1,4 +1,11 @@
-﻿**RETROESPECTIVA SPRINT 3**
+﻿**RETROESPECTIVA SPRINT 4**
+
+*Hacer más:* Pedir más ayuda a los docentes e insistir con la misma cuando no viene.
+*Continuar haciendo:* El esquema de reuniones diarias nos viene sirviendo. Seguir siendo compañeros y ayudarnos y explicarnos entre nosotos.
+*Hacer menos:* En determinadas circunstancias no nos escuchamos lo suficiente. 
+*Dejar de hacer:* No respetar los horarios cuando nos juntamos. 
+
+**RETROESPECTIVA SPRINT 3**
 *Comenzar a hacer:* Intentar aprovechar más el tiempo de trabajo y ser un poco más estrictos con los horarios comprometidos al trabajo en los encuentros
 *Hacer más:* En las dificultades, evaluar antes si tenemos que pedir ayuda a los docentes para asegurarnos de tenerlas. Aprovechar el teimpo de clase para sacarnos dudas.
 *Continuar haciendo:* El esquema de reuniones diarias nos viene sirviendo. Seguir siendo compañeros y ayudarnos y explicarnos entre nosotos.

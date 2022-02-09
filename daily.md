@@ -1,3 +1,7 @@
+**Daily 11 - miércoles 9 de febrero**
+Resolvimos la vista del listado de usuarios para el admin. Le falta estilo. 
+
+
 **Daily 10 - martes 8 de febrero**
 Resolvimos "Repite contraseña" y empezamos a trabajar con el "update contraseña" en profile. Sigue sin  sin terminar la vista de usuarios registrados para administrador.
 

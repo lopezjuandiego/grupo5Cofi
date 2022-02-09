@@ -8,8 +8,8 @@ module.exports= {
 
   index: (req,res)  => res.render('users/list', {
     styles: ['login'],
-    title: 'LISTADO USUARIOS',
-    users: user.get().map
+    title: 'USUARIOS REGISTRADOS',
+    users: user.get().map(p => Object({...p,  })) 
   }),
 
     login: (req,res)  => res.render('users/login',{
@@ -98,14 +98,11 @@ module.exports= {
         styles : ["register"],
         errors: {
           password: {
-            msg: "No coinciden las contraseñas",
+            msg: "Las contraseñas no coinciden",
           },
         },
       });
-
     }
-
-
       let userRegistred = user.create(req.body);
       return res.redirect("/users/login")
     },
@@ -118,9 +115,10 @@ module.exports= {
     }),
 
     passwordUpdate: (req,res) => {
-    let userToEdit = user.passwordToEdit(req.body);
-      return res.redirect("/users/login") //para loguearse con la nueva contraseña, hashear y revalidar
-    },
+    let userToEdit = user.passwordEdit(req.body,
+       //para loguearse con la nueva contraseña, hashear y revalidar
+    )},
+
     logout: (req, res) =>{
         delete req.session.user;
         res.cookie('user', null, {maxAge: -1});
