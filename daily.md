@@ -1,6 +1,11 @@
+**Daily 12 - miércoles 9 de febrero**
+Resolvimos algunas cuestiones de UX.
+Implementamos CSS de vista de usuarios para administrador.
+Prueba para que muestre foto en vista de usuarios (sin exito)
+Implementamos ruta parametrizada pero aunque funciona por ID, siempre muestra el mismo usuario.
+
 **Daily 11 - miércoles 9 de febrero**
 Resolvimos la vista del listado de usuarios para el admin. Le falta estilo. 
-
 
 **Daily 10 - martes 8 de febrero**
 Resolvimos "Repite contraseña" y empezamos a trabajar con el "update contraseña" en profile. Sigue sin  sin terminar la vista de usuarios registrados para administrador.

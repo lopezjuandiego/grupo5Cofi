@@ -1,101 +1,99 @@
-const user = require('../models/user');
-const validator = require('express-validator');
-const bcrypt = require('bcrypt');
+const validator = require("express-validator");
+const bcrypt = require("bcrypt");
+const file = require("../models/avatar");
+const user = require("../models/user");
 
 
-module.exports= {
+module.exports = {
+  index: (req, res) =>
+    res.render("users/list", {
+      styles: ["product/product"],
 
-
-  index: (req,res)  => res.render('users/list', {
-    styles: ['login'],
-    title: 'USUARIOS REGISTRADOS',
-    users: user.get().map(p => Object({...p,  })) 
-  }),
-
-    login: (req,res)  => res.render('users/login',{
-        styles : ["login"],
-        title: "Login",
-        
+      title: "USUARIOS REGISTRADOS",
+      users: user
+        .get()
+        .map((p) => Object({ ...p, })),
     }),
 
-    access: (req, res) =>{
-    
-       
-        let errors = validator.validationResult(req); 
-
-        if (!errors.isEmpty()) {
-          return res.render("users/login", {
-            styles : ["login"],
-            errors: errors.mapped() 
-          });
-        }
-    
-    
-        let exist = user.search("email", req.body.email);
-        if (!exist) {
-          return res.render("users/login", {
-            styles : ["login"],
-            errors: {
-              email: {
-                msg: "email sin registrar",
-              }
-            }
-          })
-        }
-    
-        if (!bcrypt.compareSync(req.body.password, exist.password)){ 
-          return res.render("users/login", {
-            styles : ["login"],
-            errors: {
-              password: {
-                msg: "Contraseña invalida",
-              }
-            }
-          })
-        }
-    
-        if(req.body.remember){
-            res.cookie("email",req.body.email,{maxAge:1000*60*60*24*30})
-        }
-        req.session.user = exist
-    
-        return res.redirect ("/users/profile") 
-    
-
-    },
-
-    register: (req,res)  => res.render('users/register' ,{
-        styles : ["register"],
-        title: "Registro",
+  login: (req, res) =>
+    res.render("users/login", {
+      styles: ["login"],
+      title: "Login",
     }),
-       
 
-    save: (req, res) =>{ 
-      let errors = validator.validationResult(req); 
+  access: (req, res) => {
+    let errors = validator.validationResult(req);
 
-      if (!errors.isEmpty()) {
-        return res.render("users/register", {
-          styles : ["register"],
-          errors: errors.mapped() 
-        })
-      }
-  
-      let exist = user.search("email", req.body.email);
-  
-      if (exist) {
-        return res.render("users/register", {
-          styles : ["register"],
-          errors: {
-            email: {
-              msg: "email ya registrado",
-            },
+    if (!errors.isEmpty()) {
+      return res.render("users/login", {
+        styles: ["login"],
+        errors: errors.mapped(),
+      });
+    }
+
+    let exist = user.search("email", req.body.email);
+    if (!exist) {
+      return res.render("users/login", {
+        styles: ["login"],
+        errors: {
+          email: {
+            msg: "email sin registrar",
           },
-        });
-      }
-      
-    if (req.body.password != req.body.password2){
+        },
+      });
+    }
+
+    if (!bcrypt.compareSync(req.body.password, exist.password)) {
+      return res.render("users/login", {
+        styles: ["login"],
+        errors: {
+          password: {
+            msg: "Contraseña invalida",
+          },
+        },
+      });
+    }
+
+    if (req.body.remember) {
+      res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 });
+    }
+    req.session.user = exist;
+
+    return res.redirect("/users/profile");
+  },
+
+  register: (req, res) =>
+    res.render("users/register", {
+      styles: ["register"],
+      title: "Registro",
+    }),
+
+  save: (req, res) => {
+    let errors = validator.validationResult(req);
+
+    if (!errors.isEmpty()) {
       return res.render("users/register", {
-        styles : ["register"],
+        styles: ["register"],
+        errors: errors.mapped(),
+      });
+    }
+
+    let exist = user.search("email", req.body.email);
+
+    if (exist) {
+      return res.render("users/register", {
+        styles: ["register"],
+        errors: {
+          email: {
+            msg: "email ya registrado",
+          },
+        },
+      });
+    }
+
+    if (req.body.password != req.body.password2) {
+      return res.render("users/register", {
+        styles: ["register"],
         errors: {
           password: {
             msg: "Las contraseñas no coinciden",
@@ -103,32 +101,50 @@ module.exports= {
         },
       });
     }
-      let userRegistred = user.create(req.body);
-      return res.redirect("/users/login")
-    },
-    
-    
-    profile: (req,res)  => res.render('users/profile',{
-        styles : ["profile"], 
-        title: "Perfil / Profile",
-        
+    let userRegistred = user.create(req.body);
+    return res.redirect("/users/login");
+  },
+
+  profile: (req, res) =>
+    res.render("users/profile", {
+      styles: ["profile"],
+      title: "Perfil / Profile",
     }),
 
+   
+    /* CUANDO USAMOS ESTA OPCION SIEMPRE VA AL ELSE
+  showUser: (req,res) => {
+        
+      let result = user.search ('id', req.params.id)
+      let userShow = Object({...result, })      
+          return result ? res.render('users/profile',{
+          styles:["product/item"],                      
+          title: 'Usuario: '+ result.email,
+          user: userShow
+      }) : res.send("Hola Capo")
+       res.render ('error',{
+        msg: 'Usuario inexistente'
+    })  */
+  
+
+
+  /* 
+ EDITAR PASSWORD
     passwordUpdate: (req,res) => {
     let userToEdit = user.passwordEdit(req.body,
        //para loguearse con la nueva contraseña, hashear y revalidar
-    )},
+    )}, */
 
-    logout: (req, res) =>{
-        delete req.session.user;
-        res.cookie('user', null, {maxAge: -1});
-        return res.redirect('/users/login');
-    },
-    uploadAvatar: (req, res) => {
-        let update = user.update(req.session.user.id, {avatar: req.files ? req.files[0].filename : null});
-        req.session.user = update;
-        return res.redirect('/users/profile');
-    },
-  }
-
-    
+  logout: (req, res) => {
+    delete req.session.user;
+    res.cookie("user", null, { maxAge: -1 });
+    return res.redirect("/users/login");
+  },
+  uploadAvatar: (req, res) => {
+    let update = user.update(req.session.user.id, {
+      avatar: req.files ? req.files[0].filename : null,
+    });
+    req.session.user = update;
+    return res.redirect("/users/profile");
+  },
+};

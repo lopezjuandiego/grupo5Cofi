@@ -36,10 +36,6 @@
                     <button class="botonEnviar" type="ENVIAR">ENVIAR</button>
                     <button class="botonReset" type="reset">BORRAR</button>
                 </fieldset>               
-                <section class="YaEstoyRegistrado">
-                    <a class="yaTengoUsuario" href="/users/login"></a>
-                </section>
-
                 <section>
                 
                     <% if (locals.errors && errors.email) { %>
@@ -50,6 +46,11 @@
                            <p class="errorvalidacion"><%= errors.password.msg %> </p>
                           <% } %>
                 </section>
+                <section class="YaEstoyRegistrado">
+                    <a class="yaTengoUsuario" href="/users/login"></a>
+                </section>
+
+             
 
             </form>          
     
