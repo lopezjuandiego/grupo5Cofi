@@ -9,7 +9,7 @@ const model = {
     write: data => fs.writeFileSync(model.file, data),
     get: () => JSON.parse(model.read()),
     save: data => model.write(JSON.stringify(data, null, 2)),
-    search: (prop,value) => model.get().find(user => user[prop] === value),
+    search: (prop,value) => model.get().find(user => user[prop] == value),
     generate: data => Object({
         id: model.get().length == 0 ? 1 : model.get().pop().id +1,
         nombre:data.nombre,

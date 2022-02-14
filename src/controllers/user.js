@@ -1,6 +1,5 @@
 const validator = require("express-validator");
 const bcrypt = require("bcrypt");
-const file = require("../models/avatar");
 const user = require("../models/user");
 
 
@@ -112,21 +111,18 @@ module.exports = {
     }),
 
    
-    /* CUANDO USAMOS ESTA OPCION SIEMPRE VA AL ELSE
   showUser: (req,res) => {
         
       let result = user.search ('id', req.params.id)
-      let userShow = Object({...result, })      
-          return result ? res.render('users/profile',{
-          styles:["product/item"],                      
-          title: 'Usuario: '+ result.email,
-          user: userShow
-      }) : res.send("Hola Capo")
-       res.render ('error',{
+          return result ? res.render("users/profile",{
+          styles:["profile"],                      
+          title: 'Usuario: '+ result.email, 
+          user: result }) 
+       : 
+        res.render ('error',{
         msg: 'Usuario inexistente'
-    })  */
-  
-
+    })     
+  },
 
   /* 
  EDITAR PASSWORD

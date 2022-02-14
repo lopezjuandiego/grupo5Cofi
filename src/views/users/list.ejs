@@ -14,7 +14,7 @@
                 </section>
 
                 <% if (user !=null && user.admin) { %>
-
+ 
 
                     <section class="contlistado">
                         <% if (locals.users) { %>
@@ -23,15 +23,13 @@
 
                                 <% users.forEach(user=> { %>
                                     <article class="listagral">
-                                        <a class="contentlista" href="/users/<%= user.id %> ">
+                                        <a class="contentlista" href="/users/profile/<%= user.id %> ">
                                             <% if (user.avatar) { %>
-                                               <!--REVISAR ESTA LINEA PARA QUE MUESTRE LA FOTO-->
-                                                <img class="contentimagen" src="/uploads/avatars<%= user.avatar %> "
+                                                <img class="contentimagen" src="/uploads/avatars/<%= user.avatar %> "
                                                     alt="" srcset="">
                                                 <% } %>
                                                     <ul class="contlis">
-                                                        <li class="lilista">ID: <%= user.id %>
-                                                        </li>
+                                                       
                                                         <li class="lilista">NOMBRE: <%= user.nombre %>
                                                         </li>
 
@@ -40,15 +38,13 @@
 
                                                         <li class="lilista">E-MAIL: <%= user.email %>
                                                         </li>
-                                                        <!--REVISAR ESTA LINEA PARA QUE MUESTRE LA FOTO-->
-                                                        <li class="lilista">FOTO: <%= user.avatar %>
-                                                        </li>
+                                                       
 
                                                     </ul>
                                         </a>
                                     </article>
                                     <% }) %>
-                                        <% } else { %>
+                              <!--           <% } else { %>
                                             <section class="contsinproducto">
                                                 <h3 class="titulolist">Agregá algunos productos! </h3>
                                                 <i class="far fa-dizzy"></i>
@@ -59,7 +55,7 @@
                                                     <h3 class="titulolist">Hay pocos productos, ingresá más!</h3>
                                                     <i class="far fa-dizzy"></i>
                                                     <% } %>
-                    </section>
+                    </section> -->
 
                     <% } else { %>
 
@@ -67,6 +63,11 @@
                         <section class="contlistado">
                             <h1 class="titulolist">Tenés que ser admin para ver la lista de usuarios</h1>
                         </section>
+                        <form action="/users/logout" method="post">
+                            <button class= "boton-logout" type="submit">LOGOUT</button>
+                      </form>
+                        
+
 
                         <% } %>
 

@@ -1,4 +1,7 @@
-**Daily 12 - miércoles 9 de febrero**
+**Daily 13 - lunes de febrero**
+Resolvimos vista por ID de usuario y foto de usuario.
+
+**Daily 12 - viernes 11 de febrero**
 Resolvimos algunas cuestiones de UX.
 Implementamos CSS de vista de usuarios para administrador.
 Prueba para que muestre foto en vista de usuarios (sin exito)

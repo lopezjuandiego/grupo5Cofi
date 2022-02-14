@@ -32,7 +32,16 @@
     "apellido": "Almodovar",
     "email": "pedro@almodovar.com",
     "password": "$2b$10$fn6q0ZbZi5R56PcHlbPF0eFN25zcG8MWX4vzmh9NYhTKD6t.i3NAW",
-    "avatar": null,
+    "avatar": "avatar-1644779706993.jpeg",
     "admin": false
+  },
+  {
+    "id": 5,
+    "nombre": "ricardo",
+    "apellido": "López",
+    "email": "ricardo@cofi.com",
+    "password": "$2b$10$jYzsfYyDLLYuZlJY3Jymuu6z5kRXJJqUnFxclM6gTC9QQzQkTDeoa",
+    "avatar": null,
+    "admin": true
   }
 ]

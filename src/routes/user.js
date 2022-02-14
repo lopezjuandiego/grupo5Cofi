@@ -17,8 +17,7 @@ router.get('/login', user.login)
 router.get('/register', user.register)
 router.get('/index', user.index)
 router.get('/profile',[access], user.profile)
-router.get('/:id',[access],user.profile) 
-//router.get('/:id',[access],user.showUser) //cuando uso esta ruta y método, me va al ELSE del IF
+router.get('/profile/:id',[access],user.showUser) 
 
 router.post("/logout", user.logout)
 router.post("/save",[save],user.save);
