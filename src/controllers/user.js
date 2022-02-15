@@ -76,7 +76,7 @@ module.exports= {
         return res.redirect ("/users/profile") 
     
 
-    },
+      },
 
     register: (req,res)  => res.render('users/register' ,{
         styles : ["register"],
