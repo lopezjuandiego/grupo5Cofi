@@ -1,4 +1,8 @@
-**Daily 13 - lunes de febrero**
+**Daily 14 - martes 15 de febrero**
+Corrección de error en vista de Login en checkbox.
+Revisión final del SPRINT
+
+**Daily 13 - lunes 14 de febrero**
 Resolvimos vista por ID de usuario y foto de usuario.
 
 **Daily 12 - viernes 11 de febrero**
