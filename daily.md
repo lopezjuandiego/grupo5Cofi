@@ -1,3 +1,20 @@
+**DAILY - SPRINT 6** 
+
+*Daily 3 / Jueves 18*
+Revisamos DER propuestos con el profesor, definimos uno y la 
+terminamos de armar.
+
+*Daily 2 / Jueves 17*
+Revisamos DER propuestos con el profesor, definimos uno y la 
+terminamos de armar.
+
+*Daily 1 / Martes 15*
+Armamos el Trello y acordamos la agenda de trabajo.
+
+**DAILY - SPRINT 6** 
+------------------------------------------
+**DAILY - SPRINT 5** 
+
 **Daily 14 - martes 15 de febrero**
 Corrección de error en vista de Login en checkbox.
 Revisión final del SPRINT
