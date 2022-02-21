@@ -28,18 +28,16 @@
                     <input class="Contraseña" type="password" placeholder="Contraseña" name="password" value=""
                         required>
                 </fieldset>
-               <!--<fieldset>
-                    <input class="Contraseña" type="password" placeholder="Repite Contraseña" name="password" value=""
+        <fieldset>
+                    <input class="Contraseña" type="password" placeholder="Repite Contraseña" name="password2" value=""
                         required>
-                </fieldset>--> 
+                </fieldset> 
                  <fieldset>
                     <button class="botonEnviar" type="ENVIAR">ENVIAR</button>
                     <button class="botonReset" type="reset">BORRAR</button>
                 </fieldset>               
-                <section class="YaEstoyRegistrado">
-                    <a class="yaTengoUsuario" href="/users/login"></a>
-                </section>
                 <section>
+                
                     <% if (locals.errors && errors.email) { %>
                         <p class= "errors"><%= errors.email.msg %> </p>
                        <% } %>
@@ -48,6 +46,11 @@
                            <p class="errorvalidacion"><%= errors.password.msg %> </p>
                           <% } %>
                 </section>
+                <section class="YaEstoyRegistrado">
+                    <a class="yaTengoUsuario" href="/users/login"></a>
+                </section>
+
+             
 
             </form>          
     

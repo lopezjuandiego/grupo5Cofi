@@ -15,16 +15,15 @@ const upload = multer({storage: storage});
 
 router.get('/login', user.login)
 router.get('/register', user.register)
-router.get('/profile',[access], user.profile)
 router.get('/index', user.index)
-
-
+router.get('/profile',[access], user.profile)
+router.get('/profile/:id',[access],user.showUser) 
 
 router.post("/logout", user.logout)
 router.post("/save",[save],user.save);
 router.post("/access",[login], user.access); 
 router.post("/upload/avatar",[access,upload.any()],user.uploadAvatar);
+//router.post("/update/password", user.passwordUpdate) no llegamos a hacerlo
 
-router.put("/update/password", user.validatePassword);//borrar si no anda
 
 module.exports = router;

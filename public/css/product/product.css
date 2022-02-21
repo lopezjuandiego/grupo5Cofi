@@ -116,9 +116,28 @@ font-size: 1.5em;
 }
 
 .contentimagen{
+    object-fit: cover;
     width: 16rem;
     height: 25vh;
 }
+
+.boton-logout {
+    
+    background-color: #ffe6a7;
+    color: #432818;
+    font-size: 1.05em;
+    padding: 0.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s linear;
+    text-decoration: none;
+    border-style: outset;
+    border-width: 3px;
+    border-color: #959595;
+    font-family: "Roboto";
+    
+}
+
 
 /* FIN CUERPO */
 

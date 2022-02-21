@@ -33,7 +33,6 @@ app.use(require('./routes/home'));
 app.use(require('./routes/pagoyenvio'));
 app.use(require('./routes/productCart'));
 app.use(require('./routes/productDetail'));
-//app.use(require('./routes/user'));
 app.use(require('./routes/product'));//sacamos linea y se rompe
 app.use("/product", require('./routes/product'));
 app.use("/users", require('./routes/user'));

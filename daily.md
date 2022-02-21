@@ -1,3 +1,18 @@
+**Daily 13 - lunes de febrero**
+Resolvimos vista por ID de usuario y foto de usuario.
+
+**Daily 12 - viernes 11 de febrero**
+Resolvimos algunas cuestiones de UX.
+Implementamos CSS de vista de usuarios para administrador.
+Prueba para que muestre foto en vista de usuarios (sin exito)
+Implementamos ruta parametrizada pero aunque funciona por ID, siempre muestra el mismo usuario.
+
+**Daily 11 - miércoles 9 de febrero**
+Resolvimos la vista del listado de usuarios para el admin. Le falta estilo. 
+
+**Daily 10 - martes 8 de febrero**
+Resolvimos "Repite contraseña" y empezamos a trabajar con el "update contraseña" en profile. Sigue sin  sin terminar la vista de usuarios registrados para administrador.
+
 **Daily 9 - domingo 6 de febrero**
 Continuamos con  la vista para el administrador de todos los usuarios. Similar a la vista de productos
 Validación de doble contraseña, sin finalizar y "update contraseña" en profile, también sin terminar.
@@ -6,7 +21,6 @@ Validación de doble contraseña, sin finalizar y "update contraseña" en profil
 Cambiamos la foto genérica.
 CSS de la vista de profile y login y errores de "validator"CSS de la vista de profile
 Empezamos a trabajar, sin lograrlo, la vista para el administrador de todos los usuarios. Similar a la vista de productos
-
 
 **Daily 7 - martes  1 de feb**
 CSS en validaciones de "Express-Validator" 

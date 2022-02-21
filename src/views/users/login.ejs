@@ -33,19 +33,20 @@
                         <button class="botonEnviar" type="ENVIAR">INGRESAR</button>
                         <button class="botonReset" type="reset">BORRAR</button>
                     </fieldset>
+                    <section >
+                        <% if (locals.errors && errors.email) { %>
+                            <p class="errormail"><%= errors.email.msg %> </p>
+                           <% } %>
+                           
+                           <% if (locals.errors && errors.password) { %>
+                               <p class="errorpass"><%= errors.password.msg %> </p>
+                              <% } %>
+                            </section>
                     <section class="leyendas">
                         <a class="olvidasteContraseña" href="">¿Olvidaste la Contraseña?</a>
                         <a class="olvidasteUsuario" href="">¿Olvidaste el Usuario?</a>
                     </section>
-                    <section >
-                    <% if (locals.errors && errors.email) { %>
-                        <p class="errormail"><%= errors.email.msg %> </p>
-                       <% } %>
-                       
-                       <% if (locals.errors && errors.password) { %>
-                           <p class="errorpass"><%= errors.password.msg %> </p>
-                          <% } %>
-                        </section>
+                 
                 </form>
               
 

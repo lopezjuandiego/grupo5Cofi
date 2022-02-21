@@ -7,6 +7,41 @@
     "password": "$2b$10$6/MjCXZueGq5d5EFymM/6ubX3srxOnwN66I./AwTHgLtgLLVJnDDy",
     "avatar": "avatar-1644267173807.jpeg",
     "admin": true
+  },
+  {
+    "id": 2,
+    "nombre": "Juan",
+    "apellido": "López",
+    "email": "juan@cofi.com",
+    "password": "$2b$10$3bxS0MbSEQislSIBaQ78GO.cuY1JbOgKNZffCo43LLwCJ8FCP8VTG",
+    "avatar": "avatar-1644433757958.jpeg",
+    "admin": true
+  },
+  {
+    "id": 3,
+    "nombre": "admin",
+    "apellido": "admin",
+    "email": "admin@cofi.com",
+    "password": "$2b$10$SoXwfzYLpnY0o7edAOaqnu.l1kLxXg0Z623WBD7zZAAtji7kXnTOy",
+    "avatar": "avatar-1644674658936.jpg",
+    "admin": true
+  },
+  {
+    "id": 4,
+    "nombre": "Pedro",
+    "apellido": "Almodovar",
+    "email": "pedro@almodovar.com",
+    "password": "$2b$10$fn6q0ZbZi5R56PcHlbPF0eFN25zcG8MWX4vzmh9NYhTKD6t.i3NAW",
+    "avatar": "avatar-1644779706993.jpeg",
+    "admin": false
+  },
+  {
+    "id": 5,
+    "nombre": "ricardo",
+    "apellido": "López",
+    "email": "ricardo@cofi.com",
+    "password": "$2b$10$jYzsfYyDLLYuZlJY3Jymuu6z5kRXJJqUnFxclM6gTC9QQzQkTDeoa",
+    "avatar": null,
+    "admin": true
   }
- 
 ]
