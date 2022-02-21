@@ -6,6 +6,9 @@
           <img class="logo" src= '/image/logoFinal.jpg'>
 
          </picture>
+         <button class="contenedorelementos2">
+            <i class="fas fa-bars"></i>
+        </button> 
 
          <nav class="headerEnlaces">
              <% if (user != null) { %> 
@@ -34,20 +37,21 @@
       
         <% } %> 
 
-       <button class="contenedorelementos2">
-           <i class="fas fa-bars"></i>
-       </button>
+       
        <% } else { %>
 
-        <nav class="headerEnlaces">
+        <nav class="headerEnlaces header-nav">
             <li id="lienlace"><a class="enlaces" href="/">INICIO</a></li>
             <li id="lienlace"><a class="enlaces" href="/users/register">REGISTRATE</a></li>
             <li id="lienlace"><a class="enlaces" href="/productDetail">SUSCRIPCIÓN</a></li>  
              </nav>   
         <picture class="contenedorelementos1">                    
             <a class="iconos" href="/users/login"><i class="fa-solid fa-circle-user"></i></a>
-        </picture>         
+        </picture> 
+              
          <% } %>  
+
+         <script  src="/js/header.js"></script>
    </section>
 
 </header>
