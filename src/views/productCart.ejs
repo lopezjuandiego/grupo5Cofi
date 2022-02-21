@@ -1,87 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include("./includes/head") %> 
-    <body>
-        <%- include("./includes/header") %> 
+<%- include("./includes/head") %>
 
- 
-    <main>
-      <section id="article-pos">
-        <article class="flex-text">
-          <p id="banner-txt">PRODUCTOS</p>
-        </article>
-      </section>
-      <article class="flex-container">
-        <section class="compra-actual">
-         <!-- <picture>
-            <img
-              class="imgbolsacafe ocultar"
-              src="/image/bolsaCafeSinFondo.png"
-              alt="Imagen Bolsa de Café"
-            />
-          </picture>-->
-         
-          <section class="contentbolsa">
-            <picture class="imgbolsa">
-              <img class="imgbolsa1" src="image/bolsita_de_cafe 2.jpg" alt="">
-            </picture>
-            <article class="contentext">
-            <p>CANTIDAD: </p>
-            <p>PRECIO:</p>
-            <p>CANTIDAD: </p>
-            <p>TOTAL: </p>
-            <a class="link" href="/productDetail">Agregar</a>
-            <a class="link" href="/productDetail">Eliminar Producto</a>
+  <body>
+    <%- include("./includes/header") %>
+
+
+      <main>
+        <section id="article-pos">
+          <article class="flex-text">
+            <p id="banner-txt">PRODUCTOS</p>
           </article>
+        </section>
+        <article class="flex-container">
+          <section class="compra-actual">
+
+
+            <section class="contentbolsa">
+              <picture class="imgbolsa">
+                <img class="imgbolsa1" src="image/bolsita_de_cafe 2.jpg" alt="">
+              </picture>
+              <article class="contentext">
+                <p>CANTIDAD: </p>
+                <p>PRECIO:</p>
+                <p>CANTIDAD: </p>
+                <p>TOTAL: </p>
+                <a class="link" href="/productDetail">Agregar</a>
+                <a class="link" href="/productDetail">Eliminar Producto</a>
+              </article>
+            </section>
           </section>
-        </section>
-        <section class="forma-pago">
-          <form action="/pagoyenvio" method="get">
-            <fieldset>
-              <legend>Forma de pago</legend>
-              <label class="ocultar"> Forma de pago</label>
-              <input
-                class="chk-input"
-                type="radio"
-                name="Tarjeta"
-                value="Pago con Tarjeta"
-                id="tarjeta"
-              />
-              <label class="chk-txt" for="tarjeta">Pago con Tarjeta</label>
-              <input
-                class="chk-input"
-                type="radio"
-                name="Efectivo"
-                value="Pago en Efectivo"
-                id="efectivo"
-              />
-            
-              <label class="chk-txt" for="efectivo">Pago en Efectivo</label>
-              <input
-                class="chk-input"
-                type="radio"
-                name="MercadoPago"
-                value="MercadoPago"
-                id="mercadoPago"
-              />
-              <label class="chk-txt" for="mercadoPago">MercadoPago</label>
-              <input
-                class="chk-input"
-                type="radio"
-                name="Transferencia"
-                value="Transferencia"
-                id="transferencia"
-              />
-              <label class="chk-txt" for="transferencia">Transferencia</label>
-            </fieldset>
-            <fieldset>
-              <button class="btn-buy" type="submit">Finalizar compra</button>
-            </fieldset>
-          </form>
-        </section>
-      </article>
-    </main>
-    <%- include("./includes/footer") %> 
+          <section class="forma-pago">
+            <form action="/pagoyenvio" method="get">
+              <fieldset>
+                <legend>Forma de pago</legend>
+                <label class="ocultar"> Forma de pago</label>
+                <input class="chk-input" type="radio" name="Tarjeta" value="Pago con Tarjeta" id="tarjeta" />
+                <label class="chk-txt" for="tarjeta">Pago con Tarjeta</label>
+                <input class="chk-input" type="radio" name="Efectivo" value="Pago en Efectivo" id="efectivo" />
+
+                <label class="chk-txt" for="efectivo">Pago en Efectivo</label>
+                <input class="chk-input" type="radio" name="MercadoPago" value="MercadoPago" id="mercadoPago" />
+                <label class="chk-txt" for="mercadoPago">MercadoPago</label>
+                <input class="chk-input" type="radio" name="Transferencia" value="Transferencia" id="transferencia" />
+                <label class="chk-txt" for="transferencia">Transferencia</label>
+              </fieldset>
+              <fieldset>
+                <button class="btn-buy" type="submit">Finalizar compra</button>
+              </fieldset>
+            </form>
+          </section>
+        </article>
+      </main>
+      <%- include("./includes/footer") %>
 
   </body>
+
 </html>

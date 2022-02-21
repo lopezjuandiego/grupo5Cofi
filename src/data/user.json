@@ -43,5 +43,14 @@
     "password": "$2b$10$jYzsfYyDLLYuZlJY3Jymuu6z5kRXJJqUnFxclM6gTC9QQzQkTDeoa",
     "avatar": null,
     "admin": true
+  },
+  {
+    "id": 6,
+    "nombre": "juan",
+    "apellido": "pereyra",
+    "email": "juanpereyra@cofi.com",
+    "password": "$2b$10$zdfx5muRfNNCk/RBIrUDSOUynk8p0iv6fK01cQewZbLjn7n7iyusW",
+    "avatar": "avatar-1645304987919.jpg",
+    "admin": true
   }
 ]
