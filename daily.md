@@ -1,8 +1,11 @@
 **DAILY - SPRINT 6** 
 
-*Daily 3 / Jueves 18*
-Revisamos DER propuestos con el profesor, definimos uno y la 
-terminamos de armar.
+*Daily  / Lunes 21*
+Creación de modelos de database.
+
+*Daily 3 / Sábado 19*
+Armamos SQL de estructura y data.
+Instalamos dependencias.
 
 *Daily 2 / Jueves 17*
 Revisamos DER propuestos con el profesor, definimos uno y la 
