@@ -1,5 +1,10 @@
 **DAILY - SPRINT 6** 
 
+*Daily  / Miércoles 23*
+Revisión y corrección de los modelos de database.
+Agregamos relación en la tabla de usuarios
+Empezamos a plantear el CRUD de usuarios.
+
 *Daily  / Lunes 21*
 Creación de modelos de database.
 
