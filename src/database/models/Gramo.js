@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Gramos'; 
+    let alias = 'Gramo'; 
     let cols = {
         ID: {
             type: dataTypes.INTEGER,
@@ -20,7 +20,8 @@ module.exports = (sequelize, dataTypes) => {
         updatedAt: 'updated_at',
         deletedAt: false
     }
-    const Gramos = sequelize.define(alias,cols,config);
+    const Gramo = sequelize.define(alias,cols,config);
+    return Gramo
 
     /*Movie.associate = function (models) {
         Movie.belongsTo(models.Genre, { // models.Genre -> Genres es el valor de alias en genres.js

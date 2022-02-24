@@ -2,6 +2,7 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const user = require('../controllers/user');
+const userDb = require('../controllers/user')
 const save = require('../middlewares/save');
 const login = require('../middlewares/login');
 const access = require('../middlewares/access');
@@ -13,7 +14,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage});
 
-router.get('/login', user.login)
+//cambiar rutas a userDb cuando este listo el CRUD de usuario DB y chequear nombre del método
+router.get('/login', user.login) 
 router.get('/register', user.register)
 router.get('/index', user.index)
 router.get('/profile',[access], user.profile)
