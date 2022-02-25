@@ -1,5 +1,9 @@
 **DAILY - SPRINT 6** 
 
+
+*Daily  / Jueves 24*
+Terminamos de revisar los modelos y de setear las tablas asociadas que nos faltaban. Chequeamos los TableName.
+
 *Daily  / Miércoles 23*
 Revisión y corrección de los modelos de database.
 Agregamos relación en la tabla de usuarios
@@ -19,7 +23,6 @@ terminamos de armar.
 *Daily 1 / Martes 15*
 Armamos el Trello y acordamos la agenda de trabajo.
 
-**DAILY - SPRINT 6** 
 ------------------------------------------
 **DAILY - SPRINT 5** 
 
