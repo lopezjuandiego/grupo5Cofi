@@ -15,28 +15,21 @@ module.exports = (sequelize, dataTypes) => {
     
     };
     let config = {
-        timestamps: false,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false
-    }
+        tableName: 'gramos',
+        timestamps: false,    
+        }
+
     const Gramo = sequelize.define(alias,cols,config);
-    return Gramo
+    
 
-    /*Movie.associate = function (models) {
-        Movie.belongsTo(models.Genre, { // models.Genre -> Genres es el valor de alias en genres.js
-            as: "genre",
-            foreignKey: "genre_id"
+    Gramo.associate = function (models) {
+        Gramo.belongsTo(models.Product, {
+            as: "productGramo",
+            foreignKey: "CantidadID"
         })
 
-        Movie.belongsToMany(models.Actor, { // models.Actor -> Actors es el valor de alias en actor.js
-            as: "actors",
-            through: 'actor_movie',
-            foreignKey: 'movie_id',
-            otherKey: 'actor_id',
-            timestamps: false
-        })
+      
     }
 
-    return Movie*/
+    return Gramo
 };

@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+window.addEventListener('load', function() {
 
 let navHamburguesa = document.querySelector('.contenedorelementos2')
 let navMenu = document.querySelector('headerEnlaces')
