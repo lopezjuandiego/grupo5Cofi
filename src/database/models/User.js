@@ -35,14 +35,12 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         timestamps: false,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false
+        tableName: 'usuarios'
     }
     const User = sequelize.define(alias,cols,config);
 
     User.associate = function (models) {
-        User.belongsTo(models.Imagenes, { 
+        User.belongsTo(models.Imagen, { 
             as: "avatar",
             foreignKey: "avatarID"
         })

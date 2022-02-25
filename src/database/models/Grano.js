@@ -16,27 +16,19 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         timestamps: false,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false
+        tableName: 'grano'
     }
     const Grano = sequelize.define(alias,cols,config);
-    return Grano
+    
 
-    /*Movie.associate = function (models) {
-        Movie.belongsTo(models.Genre, { // models.Genre -> Genres es el valor de alias en genres.js
-            as: "genre",
-            foreignKey: "genre_id"
+    Grano.associate = function (models) {
+        Grano.belongsTo(models.Product, { 
+            as: "productGrano",
+            foreignKey: "GranoID"
         })
 
-        Movie.belongsToMany(models.Actor, { // models.Actor -> Actors es el valor de alias en actor.js
-            as: "actors",
-            through: 'actor_movie',
-            foreignKey: 'movie_id',
-            otherKey: 'actor_id',
-            timestamps: false
-        })
+      
     }
 
-    return Movie*/
+    return Grano
 };

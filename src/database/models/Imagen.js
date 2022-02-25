@@ -21,16 +21,18 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         timestamps: false,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false
+       tableName: 'imagenes'
     }
     const Imagen = sequelize.define(alias,cols,config);
 
-    User.associate = function (models) {
-        User.belongsTo(models.User, { 
-            as: "Imagen",
-            foreignKey: "UserID"
+    Imagen.associate = function (models) {
+        Imagen.belongsTo(models.User, { 
+            as: "imagenUser",
+            foreignKey: "avatarID"
+        })
+        Imagen.belongsTo(models.Product, { 
+            as:'imagenProduct',
+            foreignKey:'ImagenID'
         })
 
     return Imagen;

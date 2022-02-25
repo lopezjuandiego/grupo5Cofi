@@ -39,9 +39,7 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         timestamps: false,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false
+        tableName: 'productos'
     }
     const Product = sequelize.define(alias,cols,config);
 
@@ -58,7 +56,7 @@ module.exports = (sequelize, dataTypes) => {
             
         }),
 
-        Product.belongsTo(models.Cantidad, { 
+        Product.belongsTo(models.Gramo, { 
             as: "cantidad",            
             foreignKey: 'CantidadID',
             
