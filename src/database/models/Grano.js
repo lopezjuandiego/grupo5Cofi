@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
         },
        
         tipoDeGrano: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.INTEGER,
             allowNull: false
         },
     

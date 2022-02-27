@@ -3,17 +3,16 @@ const bcrypt = require("bcrypt");
 const user = require("../models/user"); 
 //Comentar a futuro. No estoy tan seguro que haya q borrarlo porque acá esta el hasheo del pass
 
-
 const path = require('path');
-const db = require('../database/models');
-const sequelize = db.sequelize;
-const { Op } = require("sequelize");
+//const db = require('../database/models');
+//const sequelize = db.sequelize;
+//const { Op } = require("sequelize");
 
  //Aqui dispongo las rutas para trabajar con el CRUD
-
+/*
  const userDb = {
 //REVISAR ADD
- add: function (req, res) {
+  add: function (req, res) {
   let tablaImagen = Imagen.findAll();
   
   Promise
@@ -21,21 +20,21 @@ const { Op } = require("sequelize");
   .then((imagenes) => {
       return res.render(path.resolve(__dirname, '..', 'views',  'register'), {imagenes})})
   .catch(error => res.send(error))
-},
+}, 
 create: function (req,res) {
-  Movies
+  db.User
   .create(
       {
-          title: req.body.title,
-          rating: req.body.rating,
-          awards: req.body.awards,
-          release_date: req.body.release_date,
-          length: req.body.length,
-          genre_id: req.body.genre_id
+          nombre: req.body.nombre,
+          apellido: req.body.apellido,
+          email: req.body.email,
+          password: req.body.password,
+          avatar: req.body.avatar,
+          admin: req.body.admin
       }
   )
   .then(()=> {
-      return res.redirect('/movies')})            
+      return res.redirect('/login')})            
   .catch(error => res.send(error))
 },
 edit: function(req,res) {

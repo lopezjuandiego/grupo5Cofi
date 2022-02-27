@@ -1,5 +1,10 @@
 **DAILY - SPRINT 6** 
 
+*Daily  / Sábado 27*
+Resolvimos un problema con los modelos.
+
+*Daily  / Viernes 25*
+Avanzamos con el CRUD de usuarios sin exito.
 
 *Daily  / Jueves 24*
 Terminamos de revisar los modelos y de setear las tablas asociadas que nos faltaban. Chequeamos los TableName.
