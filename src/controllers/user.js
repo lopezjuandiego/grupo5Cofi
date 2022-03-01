@@ -18,8 +18,6 @@ module.exports = {
           })
         })
 },
-
-
  /* index: (req, res) =>
     res.render("users/list", {
       styles: ["product/product"],

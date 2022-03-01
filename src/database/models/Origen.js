@@ -22,14 +22,14 @@ module.exports = (sequelize, dataTypes) => {
 
   
 
-   /* Origen.associate = function (models) {
+   Origen.associate = function (models) {
         Origen.belongsTo(models.Product, { 
             as: "productOrigen",
-            foreignKey: "OrigenID"
+            foreignKey: "Origen"
         })
 
       
     }
-*/
+
     return Origen
 };

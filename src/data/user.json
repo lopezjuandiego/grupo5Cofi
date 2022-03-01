@@ -52,5 +52,14 @@
     "password": "$2b$10$zdfx5muRfNNCk/RBIrUDSOUynk8p0iv6fK01cQewZbLjn7n7iyusW",
     "avatar": "avatar-1645304987919.jpg",
     "admin": true
+  },
+  {
+    "id": 7,
+    "nombre": "alexi",
+    "apellido": "sancho",
+    "email": "alexis@cofi.com",
+    "password": "$2b$10$gHPk2IFQHJ9kLTYQcaFCYenyOPp.IIftcMG0BZWBVT9VuH5L0b7XO",
+    "avatar": null,
+    "admin": true
   }
 ]

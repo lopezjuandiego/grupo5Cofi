@@ -29,7 +29,8 @@ module.exports = (sequelize, dataTypes) => {
         },
         avatar: {
             type: dataTypes.INTEGER,
-            foreignKey: true
+            foreignKey: true,
+            allowNull: true
         }
        
     };
@@ -39,14 +40,14 @@ module.exports = (sequelize, dataTypes) => {
     }
     const User = sequelize.define(alias,cols,config);
 
-   /* User.associate = function (models) {
+    User.associate = function (models) {
         User.belongsTo(models.Imagen, { 
-            as: "avatar",
-            foreignKey: "avatarID"
+            as: "avatarImagen",
+            foreignKey: "avatar"
         })
 
       
-    }*/
+    }
 
     return User
 };
