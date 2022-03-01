@@ -28,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         Oferta: {
-            type:dataTypes.TINYINT,
+            type:dataTypes.BOOLEAN,
         },
         ImagenID: {
             type: dataTypes.INTEGER,
@@ -43,7 +43,7 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Product = sequelize.define(alias,cols,config);
 
-    Product.associate = function (models) {
+   /* Product.associate = function (models) {
 
         Product.belongsTo(models.Origen, { 
             as: "origen",
@@ -67,7 +67,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'ImagenID',
             
         })
-    }
+    }*/
 
     return Product
 };

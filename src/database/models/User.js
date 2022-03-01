@@ -9,23 +9,23 @@ module.exports = (sequelize, dataTypes) => {
         },
        
         nombre: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         apellido: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         email: {
-            type: dataTypes.TEXT,
+            type: dataTypes.STRING,
             allowNull: false
         },
         password: {
-            type: dataTypes.TEXT,
+            type: dataTypes.STRING,
             allowNull: false
         },
         admin: {
-            type:dataTypes.TINYINT,
+            type:dataTypes.BOOLEAN,
         },
         avatar: {
             type: dataTypes.INTEGER,
@@ -39,14 +39,14 @@ module.exports = (sequelize, dataTypes) => {
     }
     const User = sequelize.define(alias,cols,config);
 
-    User.associate = function (models) {
+   /* User.associate = function (models) {
         User.belongsTo(models.Imagen, { 
             as: "avatar",
             foreignKey: "avatarID"
         })
 
       
-    }
+    }*/
 
     return User
 };

@@ -21,14 +21,14 @@ module.exports = (sequelize, dataTypes) => {
     const Grano = sequelize.define(alias,cols,config);
     
 
-    Grano.associate = function (models) {
+    /*Grano.associate = function (models) {
         Grano.belongsTo(models.Product, { 
             as: "productGrano",
             foreignKey: "GranoID"
         })
 
       
-    }
+    }*/
 
     return Grano
 };

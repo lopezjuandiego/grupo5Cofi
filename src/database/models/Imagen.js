@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
         },
        
         Url: {
-            type: dataTypes.TEXT,
+            type: dataTypes.STRING,
             allowNull: false
         },
 
@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Imagen = sequelize.define(alias,cols,config);
 
-    Imagen.associate = function (models) {
+   /* Imagen.associate = function (models) {
         Imagen.belongsTo(models.User, { 
             as: "imagenUser",
             foreignKey: "avatarID"
@@ -33,8 +33,7 @@ module.exports = (sequelize, dataTypes) => {
         Imagen.belongsTo(models.Product, { 
             as:'imagenProduct',
             foreignKey:'ImagenID'
-        })
+        })*/
 
     return Imagen;
      }
-};

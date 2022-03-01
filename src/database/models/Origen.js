@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
         },
        
         Pais: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
             allowNull: false
         },
     
@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
 
   
 
-    Origen.associate = function (models) {
+   /* Origen.associate = function (models) {
         Origen.belongsTo(models.Product, { 
             as: "productOrigen",
             foreignKey: "OrigenID"
@@ -30,6 +30,6 @@ module.exports = (sequelize, dataTypes) => {
 
       
     }
-
+*/
     return Origen
 };

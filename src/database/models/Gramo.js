@@ -22,14 +22,14 @@ module.exports = (sequelize, dataTypes) => {
     const Gramo = sequelize.define(alias,cols,config);
     
 
-    Gramo.associate = function (models) {
+   /* Gramo.associate = function (models) {
         Gramo.belongsTo(models.Product, {
             as: "productGramo",
             foreignKey: "CantidadID"
         })
 
       
-    }
+    }*/
 
     return Gramo
 };
