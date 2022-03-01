@@ -1,6 +1,11 @@
 **DAILY - SPRINT 6** 
 
 *Daily  / Sábado 27*
+Quedaron funcionando todos los modelos y sus asociaciones.
+Empezamos el CRUD de usuarios
+
+
+*Daily  / Sábado 27*
 Resolvimos un problema con los modelos.
 
 *Daily  / Viernes 25*

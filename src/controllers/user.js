@@ -7,7 +7,10 @@ const db = require("../database/models")
 module.exports = {
 
  index: (req, res) => {
-    db.User.findAll()
+    db.User.findAll({      
+     //include: ['avatarImagen']
+  }
+    )
         .then(users => {
           res.render("users/list", {
             styles: ["product/product"],
@@ -17,6 +20,7 @@ module.exports = {
               
           })
         })
+        .catch(error => res.send(error))
 },
  /* index: (req, res) =>
     res.render("users/list", {
