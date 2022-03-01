@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-02-2022 a las 00:06:49
+-- Tiempo de generación: 01-03-2022 a las 21:40:26
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.1
 
@@ -71,7 +71,7 @@ INSERT INTO `grano` (`ID`, `tipoDeGrano`) VALUES
 CREATE TABLE `imagenes` (
   `ID` int(11) NOT NULL,
   `Url` text NOT NULL,
-  `Type` varchar(255) NOT NULL
+  `Type` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -79,7 +79,8 @@ CREATE TABLE `imagenes` (
 --
 
 INSERT INTO `imagenes` (`ID`, `Url`, `Type`) VALUES
-(1, 'cafe.jpg', 'product');
+(1, 'cafe.jpg', 0),
+(2, 'https://www.eluniverso.com/resizer/4h-C6XtEQfpFIqvz-rJbv8KjtCc=/1007x670/smart/filters:quality(70)/cloudfront-us-east-1.images.arcpublishing.com/eluniverso/SL2NKWVRHNBJFNUR6QTAAGQDAA.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -141,18 +142,17 @@ CREATE TABLE `usuarios` (
   `email` text NOT NULL,
   `password` text NOT NULL,
   `admin` tinyint(1) NOT NULL DEFAULT 0,
-  `avatarID` int(11) DEFAULT NULL
+  `avatar` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`ID`, `nombre`, `apellido`, `email`, `password`, `admin`, `avatarID`) VALUES
+INSERT INTO `usuarios` (`ID`, `nombre`, `apellido`, `email`, `password`, `admin`, `avatar`) VALUES
 (9, 'juan', 'lopez', 'juanlopez@cofi.com', 'a123456', 1, NULL),
-(10, 'fernando', 'campos', 'fernando@cofi.com', 'a123456', 1, NULL),
-(11, 'juanma', 'pereyra', 'juanma@cofi.com', 'a123456', 1, NULL),
-(12, 'Alexis', 'Vazquez', 'alexis@cofi.com', 'a123456', 1, NULL);
+(10, 'fernando', 'campos', 'fernando@cofi.com', 'a123456', 1, 2),
+(11, 'juanma', 'pereyra', 'juanma@cofi.com', 'a123456', 1, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -197,7 +197,7 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `avatarID` (`avatarID`);
+  ADD UNIQUE KEY `avatar` (`avatar`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -219,7 +219,7 @@ ALTER TABLE `grano`
 -- AUTO_INCREMENT de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `origen`
@@ -247,16 +247,16 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `productos`
 --
 ALTER TABLE `productos`
+  ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`ImagenID`) REFERENCES `imagenes` (`ID`),
   ADD CONSTRAINT `productos_ibfk_2` FOREIGN KEY (`CantidadID`) REFERENCES `gramos` (`ID`),
   ADD CONSTRAINT `productos_ibfk_3` FOREIGN KEY (`OrigenID`) REFERENCES `origen` (`ID`),
-  ADD CONSTRAINT `productos_ibfk_4` FOREIGN KEY (`GranoID`) REFERENCES `grano` (`ID`),
-  ADD CONSTRAINT `productos_ibfk_5` FOREIGN KEY (`ImagenID`) REFERENCES `imagenes` (`ID`);
+  ADD CONSTRAINT `productos_ibfk_4` FOREIGN KEY (`GranoID`) REFERENCES `grano` (`ID`);
 
 --
 -- Filtros para la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`avatarID`) REFERENCES `imagenes` (`ID`);
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`avatar`) REFERENCES `imagenes` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
