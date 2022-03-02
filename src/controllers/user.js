@@ -1,6 +1,6 @@
 const validator = require("express-validator");
 const bcrypt = require("bcrypt");
-//const user = require("../models/user");
+const user = require("../models/user");
 const path = require('path');
 const db = require("../database/models")
 
@@ -23,7 +23,6 @@ module.exports = {
       .catch(error => res.send(error))
   },
 
-
   login: (req, res) =>
     res.render("users/login", {
       styles: ["login"],
@@ -32,8 +31,9 @@ module.exports = {
 
     access: (req, res) => {
         db.User.findOne({
+          where : { email : req.body.email
           
-        }
+        }}
         )
           .then(users => {
             let errors = validator.validationResult(req);
@@ -44,15 +44,16 @@ module.exports = {
               });
             }
 
-            //probar si funciona esto FindOne + Where
-            let exist = db.User.findOne({
+            
+            // user.search("email", req.body.email); Esto estaba antes
+            //probar si funciona esto FindAll + Where
+            let exist = db.User.findAll({
               where: {
                 email : req.body.email
               }
             }
             )
             
-           // user.search("email", req.body.email); 
             if (!exist) {
               return res.render("users/login", {
                 styles: ["login"],
@@ -64,7 +65,7 @@ module.exports = {
               });
             }
         
-            if (!bcrypt.compareSync(req.body.password, exist.password)) {
+         /*   if (!bcrypt.compareSync(req.body.password, exist.password)) {
               return res.render("users/login", {
                 styles: ["login"],
                 errors: {
@@ -73,7 +74,7 @@ module.exports = {
                   },
                 },
               });
-            }
+            }  */
         
             if (req.body.remember) {
               res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 });
@@ -87,6 +88,57 @@ module.exports = {
           .catch(error => res.send(error))
       },
 
+      register: (req, res) =>
+      res.render("users/register", {
+        styles: ["register"],
+        title: "Registro",
+      }),
+
+      save: (req, res) => {
+db.User.create({
+  nombre:req.body.nombre,
+  apellido:req.body.apellido,
+  email: req.body.email,   
+  password:bcrypt.hashSync(data.password,10),                             
+  avatar: data.avatar ? data.avatar : null,
+  admin: req.body.email.includes('@cofi') ? true : false,
+})
+
+        let errors = validator.validationResult(req);
+    
+        if (!errors.isEmpty()) {
+          return res.render("users/register", {
+            styles: ["register"],
+            errors: errors.mapped(),
+          });
+        }
+    
+        let exist = user.search("email", req.body.email);
+    
+        if (exist) {
+          return res.render("users/register", {
+            styles: ["register"],
+            errors: {
+              email: {
+                msg: "email ya registrado",
+              },
+            },
+          });
+        }
+    
+        if (req.body.password != req.body.password2) {
+          return res.render("users/register", {
+            styles: ["register"],
+            errors: {
+              password: {
+                msg: "Las contraseñas no coinciden",
+              },
+            },
+          });
+        }
+        let userRegistred = user.create(req.body);
+        return res.redirect("/users/login");
+      },
 
 
   /* index: (req, res) =>
@@ -147,7 +199,7 @@ module.exports = {
 
     return res.redirect("/users/profile");
   },
-*/
+
   
 register: (req, res) =>
     res.render("users/register", {
@@ -191,6 +243,8 @@ register: (req, res) =>
     let userRegistred = user.create(req.body);
     return res.redirect("/users/login");
   },
+
+  */
 
   profile: (req, res) =>
     res.render("users/profile", {

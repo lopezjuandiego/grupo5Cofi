@@ -1,6 +1,11 @@
 **DAILY - SPRINT 6** 
 
-*Daily  / Sábado 27*
+*Daily  / Miércoles 2*
+Continuamos con  CRUD de usuarios.
+Index y login funcionan. 
+Hay que revisar acces.
+
+*Daily  / Martes 1*
 Quedaron funcionando todos los modelos y sus asociaciones.
 Empezamos el CRUD de usuarios.
 Index y login funcionan. Hay que revisar acces.
