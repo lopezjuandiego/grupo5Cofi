@@ -1,6 +1,6 @@
 const validator = require("express-validator");
 const bcrypt = require("bcrypt");
-const user = require("../models/user"); 
+//const user = require("../models/user"); 
 const path = require('path');
 const db = require("../database/models")
 
@@ -18,33 +18,73 @@ module.exports = {
           })
         })
 },
- /* index: (req, res) =>
-    res.render("users/list", {
-      styles: ["product/product"],
 
-      title: "USUARIOS REGISTRADOS",
-      users: user
-        .get()
-        .map((p) => Object({ ...p, })),
-    }),*/
+    login: (req,res) => {
+      db.User.findAll()
+      .then(users => {
+        res.render('users/login',{
+          styles: ["login"],
+          title: "Login",
+          users: users
+        })
 
-  login: (req, res) =>
-    res.render("users/login", {
-      styles: ["login"],
-      title: "Login",
-    }),
-
+      })
+    },
+ 
   access: (req, res) => {
+    db.User.findOne({
+      where: {
+        email: req.body.email
+      }
+    })
+    .then(users => {      
+    
+    
+   
     let errors = validator.validationResult(req);
+
+    if (!errors.isEmpty()) {
+       res.render("users/login", {
+        styles: ["login"],
+        errors: errors.mapped(),
+        
+      });
+      if (!users) {
+        return res.render("users/login", {
+          styles: ["login"],
+          errors: {
+            email: {
+              msg: "Email sin registrar",
+            },
+          },
+          
+        });
+    }
+      
+    } else {
+
+     res.render("users/profile", {
+      styles: ["profile"],
+      title: "Perfil / Profile",       
+      users:users
+    });
+    }
+  
+  })
+  },
+
+   /* let errors = validator.validationResult(req);
 
     if (!errors.isEmpty()) {
       return res.render("users/login", {
         styles: ["login"],
         errors: errors.mapped(),
+        users:users
       });
+      
     }
-
-    let exist = user.search("email", req.body.email);
+    
+    let exist = users.search("email", req.body.email);
     if (!exist) {
       return res.render("users/login", {
         styles: ["login"],
@@ -53,10 +93,11 @@ module.exports = {
             msg: "email sin registrar",
           },
         },
+        
       });
     }
 
-    if (!bcrypt.compareSync(req.body.password, exist.password)) {
+   if (!bcrypt.compareSync(req.body.password, exist.password)) {
       return res.render("users/login", {
         styles: ["login"],
         errors: {
@@ -70,10 +111,9 @@ module.exports = {
     if (req.body.remember) {
       res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 });
     }
-    req.session.user = exist;
-
-    return res.redirect("/users/profile");
-  },
+    req.session.user = exist;*/
+   
+  
 
   register: (req, res) =>
     res.render("users/register", {
@@ -85,7 +125,7 @@ module.exports = {
     let errors = validator.validationResult(req);
 
     if (!errors.isEmpty()) {
-      return res.render("users/register", {
+      return res.render("users/register", {   
         styles: ["register"],
         errors: errors.mapped(),
       });
@@ -118,14 +158,30 @@ module.exports = {
     return res.redirect("/users/login");
   },
 
-  profile: (req, res) =>
-    res.render("users/profile", {
-      styles: ["profile"],
-      title: "Perfil / Profile",
-    }),
+   profile: (req,res) => {
+      db.User.findAll()
+      .then(users => {
+        res.render('users/profile',{
+          styles: ["profile"],
+          title: "Perfil / Profile",
+          users: users
+        })
 
+      })
+    },
    
-  showUser: (req,res) => {
+    showUser: (req,res) => {
+      db.User.findByPk(req.params.id)
+      .then(users => {
+        res.render('users/profile',{
+          styles: ["profile"],
+          title: 'Usuario: '+ result.email,
+          users: users
+        })
+
+      })
+    },
+ /* showUser: (req,res) => {
         
       let result = user.search ('id', req.params.id)
           return result ? res.render("users/profile",{
@@ -136,7 +192,7 @@ module.exports = {
         res.render ('error',{
         msg: 'Usuario inexistente'
     })     
-  }, 
+  }, */
 
     passwordUpdate: (req,res) => {
     let userToEdit = user.passwordEdit(req.body,
