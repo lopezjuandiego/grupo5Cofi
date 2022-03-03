@@ -38,9 +38,7 @@ module.exports = {
       }
     })
     .then(users => {      
-    
-    
-   
+         
     let errors = validator.validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -62,42 +60,19 @@ module.exports = {
     }
       
     } else {
+     
+      if (req.body.remember) {
+        res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 });
+      }
+      req.session.user = users;
 
-     res.render("users/profile", {
-      styles: ["profile"],
-      title: "Perfil / Profile",       
-      users:users
-    });
+     res.redirect("/users/profile");
     }
   
   })
   },
 
-   /* let errors = validator.validationResult(req);
-
-    if (!errors.isEmpty()) {
-      return res.render("users/login", {
-        styles: ["login"],
-        errors: errors.mapped(),
-        users:users
-      });
-      
-    }
-    
-    let exist = users.search("email", req.body.email);
-    if (!exist) {
-      return res.render("users/login", {
-        styles: ["login"],
-        errors: {
-          email: {
-            msg: "email sin registrar",
-          },
-        },
-        
-      });
-    }
-
-   if (!bcrypt.compareSync(req.body.password, exist.password)) {
+  /* if (!bcrypt.compareSync(req.body.password, exist.password)) {
       return res.render("users/login", {
         styles: ["login"],
         errors: {
@@ -106,23 +81,39 @@ module.exports = {
           },
         },
       });
-    }
+    }*/
 
-    if (req.body.remember) {
-      res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 });
-    }
-    req.session.user = exist;*/
    
-  
+   
+      register: (req,res) => {
+      db.User.findAll()
+      .then(users => {
+        res.render('users/register',{
+          styles: ["register"],
+          title: "Registro",
+          users: users
+        })
 
-  
-register: (req, res) =>
-    res.render("users/register", {
-      styles: ["register"],
-      title: "Registro",
-    }),
+      })
+    },
 
-  save: (req, res) => {
+    save: (req, res) => {
+      db.User.create({
+
+          id: req.body.id,             
+          nombre: req.body.nombre,                
+          apellido: req.body.apellido,                
+          email:  req.body.email,                            
+          password:  req.body.password.bcrypt.hashSync(data.password,10),             
+          //password2: req.body.password2, 
+          admin: req.body.email.includes('@cofi') ? true : false,  
+      })
+
+      .then(() => {
+      return res.redirect('/login')
+      })
+    },
+ /* save: (req, res) => {
     let errors = validator.validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -157,7 +148,8 @@ register: (req, res) =>
     }
     let userRegistred = user.create(req.body);
     return res.redirect("/users/login");
-  },
+  
+  },*/
 
    profile: (req,res) => {
       db.User.findAll()
@@ -195,19 +187,7 @@ register: (req, res) =>
     })     
   }, */
 
-  showUser: (req, res) => {
 
-    let result = user.search('id', req.params.id)
-    return result ? res.render("users/profile", {
-      styles: ["profile"],
-      title: 'Usuario: ' + result.email,
-      user: result
-    })
-      :
-      res.render('error', {
-        msg: 'Usuario inexistente'
-      })
-  },
 /*no lo hicimos andar 
   passwordUpdate: (req, res) => {
     let userToEdit = user.passwordEdit(req.body,
