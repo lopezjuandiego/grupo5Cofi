@@ -1,13 +1,5 @@
 [
-  {
-    "id": 1,
-    "nombre": "Fernando",
-    "apellido": "Campos",
-    "email": "fernando@cofi.com",
-    "password": "$2b$10$6/MjCXZueGq5d5EFymM/6ubX3srxOnwN66I./AwTHgLtgLLVJnDDy",
-    "avatar": "avatar-1644267173807.jpeg",
-    "admin": true
-  },
+ 
   {
     "id": 2,
     "nombre": "Juan",
