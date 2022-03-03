@@ -1,203 +1,81 @@
 const validator = require("express-validator");
-//const bcrypt = require("bcrypt");
-//const user = require("../models/user");
+const bcrypt = require("bcrypt");
+//const user = require("../models/user"); 
 const path = require('path');
 const db = require("../database/models")
 
 module.exports = {
 
-  index: (req, res) => {
+ index: (req, res) => {
     db.User.findAll()
-     // include: ['avatarImagen']
-    
-    
-      .then(users => {
-        res.render("users/list", {
-          styles: ["product/product"],
-
-          title: "USUARIOS REGISTRADOS",
-          users: users
-
-        })
-      })
-      .catch(error => res.send(error))
-  },
-
-  login: (req, res) =>{
-  db.User.findAll()
-  .then (users => {
-    res.render("users/login", {
-      styles: ["login"],
-      title: "Login",
-      users: users
-    })
-    })
-    .catch(error => res.send(error))
-  },
-    access: (req, res) => {
-        db.User.findOne({
-          where : { email : req.body.email
-        }}
-        )
-          .then(users => {
-            let errors = validator.validationResult(req);
-            if (!errors.isEmpty()) {
-              return res.render("users/login", {
-                styles: ["login"],
-                errors: errors.mapped(),
-              });
-            }
-            
-            //user.search("email", req.body.email); Esto estaba antes
-            //probar si funciona esto FindAll + Where
-            let exist = db.User.findAll({
-              where: {
-                email : req.body.email
-              }
-            }
-            )
-            
-            if (!exist) {
-              return res.render("users/login", {
-                styles: ["login"],
-                errors: {
-                  email: {
-                    msg: "email sin registrar",
-                  },
-                },
-              });
-            }
-     /*    
-          if (!bcrypt.compareSync(req.body.password, exist.password)) {
-              return res.render("users/login", {
-                styles: ["login"],
-                errors: {
-                  password: {
-                    msg: "Contraseña invalida",
-                  },
-                },
-              });
-            }   */
-        
-            if (req.body.remember) {
-              res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 });
-            }
-            req.session.user = exist;
-        
-            return res.redirect("/users/profile");
- 
-          })
-
-          .catch(error => res.send(error))
-      },
-
-      register: (req, res) =>{
-        db.User.findAll()
-        .then (users => {
-          res.render("users/register", {
-            styles: ["register"],
-            title: "Registro",
+        .then(users => {
+          res.render("users/list", {
+            styles: ["product/product"],
+      
+            title: "USUARIOS REGISTRADOS",
             users: users
+              
           })
-          })
-          .catch(error => res.send(error))
-        },
+        })
+},
 
-   /*    register: (req, res) =>
-      res.render("users/register", {
-        styles: ["register"],
-        title: "Registro",
-      }), */
+    login: (req,res) => {
+      db.User.findAll()
+      .then(users => {
+        res.render('users/login',{
+          styles: ["login"],
+          title: "Login",
+          users: users
+        })
 
-      save: (req, res) => {
-db.User.create({
-  nombre:req.body.nombre,
-  apellido:req.body.apellido,
-  email: req.body.email,   
-  password: req.body.password,
-  //password:bcrypt.hashSync(data.password,10),                             
-  avatar: data.avatar ? data.avatar : null,
-  admin: req.body.email.includes('@cofi') ? true : false,
-})
-
-        let errors = validator.validationResult(req);
-    
-        if (!errors.isEmpty()) {
-          return res.render("users/register", {
-            styles: ["register"],
-            errors: errors.mapped(),
-          });
-        }
-    
-        let exist = user.search("email", req.body.email);
-    
-        if (exist) {
-          return res.render("users/register", {
-            styles: ["register"],
-            errors: {
-              email: {
-                msg: "email ya registrado",
-              },
-            },
-          });
-        }
-    
-        if (req.body.password != req.body.password2) {
-          return res.render("users/register", {
-            styles: ["register"],
-            errors: {
-              password: {
-                msg: "Las contraseñas no coinciden",
-              },
-            },
-          });
-        }
-        let userRegistred = user.create(req.body);
-        return res.redirect("/users/login");
-      },
-
-
-  /* index: (req, res) =>
-      res.render("users/list", {
-        styles: ["product/product"],
-  
-        title: "USUARIOS REGISTRADOS",
-        users: user
-          .get()
-          .map((p) => Object({ ...p, })),
-      }),
-  
-  
-      login: (req, res) =>
-      res.render("users/login", {
-        styles: ["login"],
-        title: "Login",
-      }),
-  
-
+      })
+    },
+ 
   access: (req, res) => {
+    db.User.findOne({
+      where: {
+        email: req.body.email
+      }
+    })
+    .then(users => {      
+    
+    
+   
     let errors = validator.validationResult(req);
 
     if (!errors.isEmpty()) {
-      return res.render("users/login", {
+       res.render("users/login", {
         styles: ["login"],
         errors: errors.mapped(),
+        
       });
-    }
-
-    let exist = user.search("email", req.body.email);
-    if (!exist) {
-      return res.render("users/login", {
-        styles: ["login"],
-        errors: {
-          email: {
-            msg: "email sin registrar",
+      if (!users) {
+        return res.render("users/login", {
+          styles: ["login"],
+          errors: {
+            email: {
+              msg: "Email sin registrar",
+            },
           },
-        },
-      });
+          
+        });
     }
+      
+    } else {
 
-    if (!bcrypt.compareSync(req.body.password, exist.password)) {
+     res.render("users/profile", {
+      styles: ["profile"],
+      title: "Perfil / Profile",       
+      users:users
+    });
+    }
+  
+  })
+  },
+
+   /* 
+
+   if (!bcrypt.compareSync(req.body.password, exist.password)) {
       return res.render("users/login", {
         styles: ["login"],
         errors: {
@@ -211,29 +89,40 @@ db.User.create({
     if (req.body.remember) {
       res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 });
     }
-    req.session.user = exist;
+    req.session.user = exist;*/
+   
 
-    return res.redirect("/users/profile");
-  },
-
-  
 register: (req, res) =>
     res.render("users/register", {
       styles: ["register"],
       title: "Registro",
     }),
 
+
   save: (req, res) => {
+    db.User.create({
+              id: req.body.id,
+              nombre: req.body.nombre,
+              apellido: req.body.apellido,
+              email: req.body.email,
+              password: req.body.password,
+              password2: req.body.password2,
+              admin: req.body.email.includes('@cofi') ? true : false,
+    })
+    .then(()=> {
+          return res.redirect('/login')})            
+      .catch(error => res.send(error))
+
     let errors = validator.validationResult(req);
 
     if (!errors.isEmpty()) {
-      return res.render("users/register", {
+      return res.render("users/register", {   
         styles: ["register"],
         errors: errors.mapped(),
       });
     }
 
-    let exist = user.search("email", req.body.email);
+    /* let exist = user.search("email", req.body.email);
 
     if (exist) {
       return res.render("users/register", {
@@ -244,7 +133,7 @@ register: (req, res) =>
           },
         },
       });
-    }
+    } */
 
     if (req.body.password != req.body.password2) {
       return res.render("users/register", {
@@ -256,18 +145,46 @@ register: (req, res) =>
         },
       });
     }
-    let userRegistred = user.create(req.body);
-    return res.redirect("/users/login");
+ /*    let userRegistred = user.create(req.body);
+    return res.redirect("/users/login"); */
+  
   },
 
-  */
+   profile: (req,res) => {
+      db.User.findAll()
+      .then(users => {
+        res.render('users/profile',{
+          styles: ["profile"],
+          title: "Perfil / Profile",
+          users: users
+        })
 
-  profile: (req, res) =>
-    res.render("users/profile", {
-      styles: ["profile"],
-      title: "Perfil / Profile",
-    }),
+      })
+    },
+   
+    showUser: (req,res) => {
+      db.User.findByPk(req.params.id)
+      .then(users => {
+        res.render('users/profile',{
+          styles: ["profile"],
+          title: 'Usuario: '+ result.email,
+          users: users
+        })
 
+      })
+    },
+ /* showUser: (req,res) => {
+        
+      let result = user.search ('id', req.params.id)
+          return result ? res.render("users/profile",{
+          styles:["profile"],                      
+          title: 'Usuario: '+ result.email, 
+          user: result }) 
+       : 
+        res.render ('error',{
+        msg: 'Usuario inexistente'
+    })     
+  }, */
 
   showUser: (req, res) => {
 

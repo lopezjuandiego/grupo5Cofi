@@ -1,5 +1,10 @@
 **DAILY - SPRINT 6** 
 
+*Daily  / Jueves 3*
+Continuamos con  CRUD de usuarios.
+Index  login  acces y register funciona. 
+
+
 *Daily  / Miércoles 2*
 Continuamos con  CRUD de usuarios.
 Index y login funcionan. 
