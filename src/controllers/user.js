@@ -39,8 +39,6 @@ module.exports = {
     })
     .then(users => {      
     
-    
-   
     let errors = validator.validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -59,18 +57,18 @@ module.exports = {
           },
           
         });
-    }
+    }//revisar llave
       
     } else {
 
-     res.render("users/profile", {
-      styles: ["profile"],
-      title: "Perfil / Profile",       
-      users:users
-    });
+     
+    
+    if (req.body.remember) {
+      res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 });
     }
-  
-  })
+    req.session.user = users;
+    res.redirect("/users/profile");
+      }  })
   },
 
    /* 
@@ -86,10 +84,7 @@ module.exports = {
       });
     }
 
-    if (req.body.remember) {
-      res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 });
-    }
-    req.session.user = exist;*/
+    */
    
 
 register: (req, res) =>
@@ -105,13 +100,13 @@ register: (req, res) =>
               nombre: req.body.nombre,
               apellido: req.body.apellido,
               email: req.body.email,
-              password: req.body.password,
-              password2: req.body.password2,
+              password: req.body.password.bcrypt.hashSync(data.password,10),
+              //password2: req.body.password2,
               admin: req.body.email.includes('@cofi') ? true : false,
     })
     .then(()=> {
           return res.redirect('/login')})            
-      .catch(error => res.send(error))
+      
 
     let errors = validator.validationResult(req);
 
