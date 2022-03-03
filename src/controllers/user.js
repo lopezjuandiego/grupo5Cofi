@@ -19,17 +19,11 @@ module.exports = {
         })
 },
 
-    login: (req,res) => {
-      db.User.findAll()
-      .then(users => {
-        res.render('users/login',{
-          styles: ["login"],
-          title: "Login",
-          users: users
-        })
-
-      })
-    },
+login: (req, res) =>
+res.render("users/login", {
+  styles: ["login"],
+  title: "Login",
+}),
  
   access: (req, res) => {
     db.User.findOne({
@@ -69,9 +63,8 @@ module.exports = {
     req.session.user = users;
     res.redirect("/users/profile");
       }  })
-  },
 
-   /* 
+   
 
    if (!bcrypt.compareSync(req.body.password, exist.password)) {
       return res.render("users/login", {
@@ -84,9 +77,10 @@ module.exports = {
       });
     }
 
-    */
+    
    
-
+  },
+  
 register: (req, res) =>
     res.render("users/register", {
       styles: ["register"],
