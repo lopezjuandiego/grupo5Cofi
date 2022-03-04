@@ -130,13 +130,13 @@ register: (req, res) =>
           },
         },
       });
-    } else  {
+    } 
 
-      password2 = bcrypt.hashSync(req.body.password,10)
+      
 
       return res.redirect('/users/login')
      
-    }
+    
 
     //let userRegistred = user.create(req.body);       
    
@@ -157,37 +157,27 @@ register: (req, res) =>
    
     showUser: (req,res) => {
       db.User.findByPk(req.params.id)
-      .then(users => {
-        res.render('users/profile',{
-          styles: ["profile"],
-          title: 'Usuario: '+ result.email,
-          users: users
-        })
 
+      .then(users => {let result = db.User.findOne({
+        where: {
+          id: req.body.id
+        }
       })
+      return result ? res.render("users/profile",{
+        styles:["profile"],                      
+        title: 'Usuario: '+ result.email, 
+        user: users,
+      }) 
+      : 
+      res.render ('error',{
+      msg: 'Usuario inexistente'
+  }) 
+ 
+})
+.catch(error => res.send(error))
+    
     },
-    /* showUser: (req,res) => {
-        
-      let result = user.search ('id', req.params.id)
-          return result ? res.render("users/profile",{
-          styles:["profile"],                      
-          title: 'Usuario: '+ result.email, 
-          user: result }) 
-       : 
-        res.render ('error',{
-        msg: 'Usuario inexistente'
-    })     
-  }, */
-
-
-/*no lo hicimos andar 
-  passwordUpdate: (req, res) => {
-    let userToEdit = user.passwordEdit(req.body,
-      //para loguearse con la nueva contraseña, hashear y revalidar
-    )
-  },
-*/
-
+   
   logout: (req, res) => {
     delete req.session.user;
     res.cookie("user", null, { maxAge: -1 });

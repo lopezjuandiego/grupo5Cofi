@@ -21,7 +21,7 @@
 
                             <% if (users.length> 0) { %>
 
-                                <% users.forEach(user=> { %>
+                                <% users.forEach(user => { %>
                                     <article class="listagral">
                                         <a class="contentlista" href="/users/profile/<%= user.id %> ">
                                             <% if (user.avatar) { %>
@@ -44,36 +44,27 @@
                                         </a>
                                     </article>
                                     <% }) %>
-                              <!--           <% } else { %>
-                                            <section class="contsinproducto">
-                                                <h3 class="titulolist">Agregá algunos productos! </h3>
-                                                <i class="far fa-dizzy"></i>
-                                            </section>
-
-                                            <% } %>
-                                                <% } else { %>
-                                                    <h3 class="titulolist">Hay pocos productos, ingresá más!</h3>
-                                                    <i class="far fa-dizzy"></i>
-                                                    <% } %>
-                    </section> -->
-
+                 
+                                    <% } %>
+                                    <% } %>
+                                    
                     <% } else { %>
 
+                    <section class="contlistado">
+                        <h1 class="titulolist">Tenés que ser admin para ver la lista de usuarios</h1>
+                    </section>
+                    <form action="/users/logout" method="post">
+                        <button class= "boton-logout" type="submit">LOGOUT</button>
+                  </form>
+                    
 
-                        <section class="contlistado">
-                            <h1 class="titulolist">Tenés que ser admin para ver la lista de usuarios</h1>
-                        </section>
-                        <form action="/users/logout" method="post">
-                            <button class= "boton-logout" type="submit">LOGOUT</button>
-                      </form>
+
+                    
+                    
+
                         
 
-
                         <% } %>
-
-
-
-
             </main>
 
             <%- include("../includes/footer") %>

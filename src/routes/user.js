@@ -2,7 +2,6 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const user = require('../controllers/user');
-const userDb = require('../controllers/user')
 const save = require('../middlewares/save');
 const login = require('../middlewares/login');
 const access = require('../middlewares/access');
