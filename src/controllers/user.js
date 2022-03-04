@@ -146,9 +146,11 @@ register: (req, res) =>
   },
 
    profile: (req,res) => {
+
+     
           res.render('users/profile',{
           styles: ["profile"],
-          title: "Perfil / Profile",
+          title: "Perfil /" + req.body.nombre,
           
         })
 
@@ -165,7 +167,7 @@ register: (req, res) =>
       })
       return result ? res.render("users/profile",{
         styles:["profile"],                      
-        title: 'Usuario: '+ result.email, 
+        title: 'Usuario: '+ users.nombre, 
         user: users,
       }) 
       : 
@@ -177,7 +179,42 @@ register: (req, res) =>
 .catch(error => res.send(error))
     
     },
+
+    edit: (req, res) => {
+
+      db.User.findByPk(req.params.id)
+      .then(users => {
+        res.render('users/ #',{users:users})
+      })
+    },
+
+    update: (req, res) =>{
+      
+      db.User.update({
+
+        nombre: req.body.nombre,
+        apellido: req.body.apellido,
+        email: req.body.email,       
+        admin: req.body.email.includes('@cofi') ? true : false,
+      },{
+        where:{
+          id: req.params.id
+        }
+      })
+      
+      res.redirect('/users/edit' + req.params.id)
+    },
    
+    delete: (req,res) => {
+
+      db.User.destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+      res.redirect('/users/list')
+    },
+
   logout: (req, res) => {
     delete req.session.user;
     res.cookie("user", null, { maxAge: -1 });
