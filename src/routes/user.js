@@ -19,12 +19,12 @@ router.get('/register', user.register)
 router.get('/index', user.list)
 router.get('/profile',[access], user.profile)
 router.get('/profile/:id',[access],user.showUser) 
-
+//router.get('/profile/delete/:id', user.delete);
 router.post("/logout", user.logout)
 router.post("/save",[save],user.save);
 router.post("/access",[login], user.access); 
 router.post("/upload/avatar",[access,upload.any()],user.uploadAvatar); 
-//router.post("/update/password", user.passwordUpdate) no llegamos a hacerlo
 
+//router.delete('/profile/delete/:id', user.destroy);
 
 module.exports = router;

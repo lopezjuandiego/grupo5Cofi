@@ -79,7 +79,6 @@ res.render("users/login", {
       .catch(error => res.send(error))
    
   },
-  
 register: (req, res) =>
     res.render("users/register", {
       styles: ["register"],
@@ -121,7 +120,8 @@ register: (req, res) =>
       });
     } 
 
-    if (req.body.password != req.body.password2) {
+
+  if (req.body.password != req.body.password2) {
       return res.render("users/register", {
         styles: ["register"],
         errors: {
@@ -184,7 +184,8 @@ register: (req, res) =>
     return res.redirect("/users/login");
   },
   uploadAvatar: (req, res) => {
-    let update = db.Imagen.findAll(req.session.user.id, {
+    let update = db.User.findAll(req.session.user.id, {
+      include : ["avatarImagen"],
       avatar: req.files ? req.files[0].filename : null,
     });
     req.session.user = update;
