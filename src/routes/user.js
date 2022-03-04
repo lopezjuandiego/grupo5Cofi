@@ -17,7 +17,7 @@ const upload = multer({storage: storage});
 
 router.get('/login', user.login) 
 router.get('/register', user.register)
-router.get('/index', user.index)
+router.get('/index', user.list)
 router.get('/profile',[access], user.profile)
 router.get('/profile/:id',[access],user.showUser) 
 

@@ -6,17 +6,17 @@
         <%- include("../includes/header") %> 
 
     <main>
-   <h1 class= "tituloprofile"><%= users.nombre %>  <%= users.apellido %></h1>
+   <h1 class= "tituloprofile"><%= user.nombre %>  <%= user.apellido %></h1>
         
-   <h4 class= "EmailUser">Email: <%= users.email %> </h4>
+   <h4 class= "EmailUser">Email: <%= user.email %> </h4>
    <section> 
-       <% if (users.avatar != null) { %>
+       <% if (user.avatar != null) { %>
            <figure class="figura">
-               <img class="fotoAvatar" src="/uploads/avatars/<%= users.avatar %>" alt="photo <%= users.email %>">
+               <img class="fotoAvatar" src="/uploads/avatars/<%= user.avatar %>" alt="photo <%= user.email %>">
            </figure>
        <% } else { %>
            <figure  class="figura">
-               <img  class="avatar" src="/image/users/perfil.jpg" alt="photo <%= users.email %>">
+               <img  class="avatar" src="/image/users/perfil.jpg" alt="photo <%= user.email %>">
            </figure>
        <% } %>
        <form class= "foto" action="/users/upload/avatar" enctype="multipart/form-data" method="post"> 
