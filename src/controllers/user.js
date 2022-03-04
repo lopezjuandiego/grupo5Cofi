@@ -6,7 +6,7 @@ const db = require("../database/models")
 
 module.exports = {
 
- index: (req, res) => {
+ list: (req, res) => {
     db.User.findAll()
         .then(users => {
           res.render("users/list", {
@@ -25,6 +25,7 @@ res.render("users/login", {
   title: "Login",
 }),
  
+
   access: (req, res) => {
     db.User.findOne({
       where: {
@@ -40,8 +41,8 @@ res.render("users/login", {
         styles: ["login"],
         errors: errors.mapped(),
         
-      });
-      if (!users) {
+      })
+     } if (!users) {
         return res.render("users/login", {
           styles: ["login"],
           errors: {
@@ -50,23 +51,11 @@ res.render("users/login", {
             },
           },
           
-        });
-    }//revisar llave
-      
-    } else {
+        })
+         
+   }    
 
-     
-    
-    if (req.body.remember) {
-      res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 });
-    }
-    req.session.user = users;
-    res.redirect("/users/profile");
-      }  })
-
-    
-/* 
-   if (!bcrypt.compareSync(req.body.password, exist.password)) {
+   if (!bcrypt.compareSync(req.body.password, users.password)) {
       return res.render("users/login", {
         styles: ["login"],
         errors: {
@@ -75,9 +64,19 @@ res.render("users/login", {
           },
         },
       });
-    } */
 
-    
+    } else {
+               
+      if (req.body.remember) {
+        res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 })
+      }
+      req.session.user = users
+      return res.redirect("/users/profile")
+      
+        }  
+      })
+
+      .catch(error => res.send(error))
    
   },
 register: (req, res) =>
@@ -93,14 +92,14 @@ register: (req, res) =>
               nombre: req.body.nombre,
               apellido: req.body.apellido,
               email: req.body.email,
-              password: req.body.password.bcrypt.hashSync(data.password,10),
-              //password2: req.body.password2,
+              password:bcrypt.hashSync(req.body.password,10),
+              password2: req.body.password2,
               admin: req.body.email.includes('@cofi') ? true : false,
+              avatar: req.body.avatar ? req.body.avatar : null,
     })
-    .then(()=> {
-          return res.redirect('/login')})            
-      
-
+    
+    .then(users => {
+                          
     let errors = validator.validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -109,10 +108,8 @@ register: (req, res) =>
         errors: errors.mapped(),
       });
     }
-
-    /* let exist = user.search("email", req.body.email);
-
-    if (exist) {
+     
+    if (!users) {
       return res.render("users/register", {
         styles: ["register"],
         errors: {
@@ -121,9 +118,10 @@ register: (req, res) =>
           },
         },
       });
-    } */
+    } 
 
-    if (req.body.password != req.body.password2) {
+
+  if (req.body.password != req.body.password2) {
       return res.render("users/register", {
         styles: ["register"],
         errors: {
@@ -132,36 +130,48 @@ register: (req, res) =>
           },
         },
       });
+    } else  {
+
+      password2 = bcrypt.hashSync(req.body.password2,10)
+
+      return res.redirect('/users/login')
+     
     }
- /*    let userRegistred = user.create(req.body);
-    return res.redirect("/users/login"); */
+
+    //let userRegistred = user.create(req.body);       
+   
+  })
+  .catch(error => res.send(error))
   
   },
 
    profile: (req,res) => {
-      db.User.findAll()
-      .then(users => {
-        res.render('users/profile',{
+          res.render('users/profile',{
           styles: ["profile"],
           title: "Perfil / Profile",
-          users: users,
+          
         })
 
-      })
-    },
+      },
+    
    
     showUser: (req,res) => {
-      db.User.findByPk(req.params.id)
+      let userId = req.params.id
+      db.User.findByPk(userId) 
+        //,{include : [{association : "avatarImagen"}]})
       .then(users => {
-        res.render('users/profile',{
-          styles: ["profile"],
-          title: 'Usuario: '+ result.email,
-          users: users
-        })
+        res.render("users/profile",{
+          styles:["profile"],                      
+          title: 'Usuario: '+ users.email, 
+          users: users }) 
+       console.log (userId)
+  })
+  .catch(error => res.send(error))
+ 
+},
+ 
 
-      })
-    },
- /* showUser: (req,res) => {
+    /* showUser: (req,res) => {
         
       let result = user.search ('id', req.params.id)
           return result ? res.render("users/profile",{
@@ -173,35 +183,32 @@ register: (req, res) =>
         msg: 'Usuario inexistente'
     })     
   }, */
-
-  showUser: (req, res) => {
-
-    let result = user.search('id', req.params.id)
-    return result ? res.render("users/profile", {
-      styles: ["profile"],
-      title: 'Usuario: ' + result.email,
-      user: result
-    })
-      :
-      res.render('error', {
-        msg: 'Usuario inexistente'
-      })
+  /* delete: function (req,res) {
+    let userId = req.params.id;
+    db.User.findByPk(userId)
+    .then(users => {
+      return res.render('/users/login', {Movie})
+  })
+.catch(error => res.send(error))
   },
-/*no lo hicimos andar 
-  passwordUpdate: (req, res) => {
-    let userToEdit = user.passwordEdit(req.body,
-      //para loguearse con la nueva contraseña, hashear y revalidar
-    )
-  },
-*/
 
-  logout: (req, res) => {
+destroy: function (req,res) {
+    let userId = req.params.id;
+    db.destroy({where: {id: userId}, force: true}) // force: true es para asegurar que se ejecute la acción
+    .then(()=>{
+      return res.redirect('/users/login')
+   })
+    .catch(error => res.send(error))
+}, */
+ 
+logout: (req, res) => {
     delete req.session.user;
     res.cookie("user", null, { maxAge: -1 });
     return res.redirect("/users/login");
   },
   uploadAvatar: (req, res) => {
-    let update = user.update(req.session.user.id, {
+    let update = db.User.findAll(req.session.user.id, {
+      include : ["avatarImagen"],
       avatar: req.files ? req.files[0].filename : null,
     });
     req.session.user = update;
