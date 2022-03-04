@@ -64,8 +64,8 @@ res.render("users/login", {
     res.redirect("/users/profile");
       }  })
 
-   
-
+    
+/* 
    if (!bcrypt.compareSync(req.body.password, exist.password)) {
       return res.render("users/login", {
         styles: ["login"],
@@ -75,12 +75,11 @@ res.render("users/login", {
           },
         },
       });
-    }
+    } */
 
     
    
   },
-  
 register: (req, res) =>
     res.render("users/register", {
       styles: ["register"],
@@ -145,7 +144,7 @@ register: (req, res) =>
         res.render('users/profile',{
           styles: ["profile"],
           title: "Perfil / Profile",
-          users: users
+          users: users,
         })
 
       })
