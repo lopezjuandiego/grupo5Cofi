@@ -100,3 +100,55 @@ main{
     color: #ffe6a7;
     cursor: pointer;
   }
+  .botonBorrar{
+    display: flex;
+    background-color: #ffe6a7;
+    color: #432818;
+    font-size: 1.05em;
+    padding: 0.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s linear;
+    text-decoration: none;
+    border-style: outset;
+    border-width: 3px;
+    border-color: #959595;
+    font-family: "Roboto";
+    margin-left: 10px;
+    margin-bottom: 12px;
+    width: 70px;
+  }
+  .botonBorrar:hover{
+    background-color: #432818;
+    color: #ffe6a7;
+  }
+  .fa-edit{
+    font-size: 3rem;
+    color: #ffe6a7;
+    margin-right: 3rem;
+    transition: all 0.3s linear;
+    display: flex;
+    justify-content: center;
+  }
+  .fa-edit:hover{
+    color: #432818;
+  }
+
+  .fa-trash-alt{
+    font-size: 3rem;
+    color:#ffe6a7 ;
+    background-color: #6f1d1b;
+    border: -10;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    
+}
+.fa-trash-alt:hover{
+    color: #432818;
+   }
+
+  .editYtrash{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
