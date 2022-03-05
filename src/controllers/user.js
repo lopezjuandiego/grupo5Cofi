@@ -160,11 +160,12 @@ register: (req, res) =>
     showUser: (req,res) => {
       db.User.findByPk(req.params.id)
 
-      .then(users => {let result = db.User.findOne({
+      .then(users =>
+        
+        {let result = db.User.findOne({
         where: {
-          id: req.body.id
-        }
-      })
+          email : req.cookies && req.cookies.user ?  req.cookies.user : null
+        }})
       return result ? res.render("users/profile",{
         styles:["profile"],                      
         title: 'Usuario: '+ users.nombre, 
@@ -174,7 +175,7 @@ register: (req, res) =>
       res.render ('error',{
       msg: 'Usuario inexistente'
   }) 
- 
+  
 })
 .catch(error => res.send(error))
     

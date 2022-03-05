@@ -1,5 +1,15 @@
 **DAILY - SPRINT 6** 
 
+
+*Daily  / Sábado 5*
+Resolvimos un problema con showUser que se rompía.
+Empezamos a retrabajar las vistas para probar update y delete. 
+Empezamos a armar CRUD de productos.
+
+*Daily  / Viernes 4*
+Continuamos con  CRUD de usuarios.
+Resolvimos showUser y dejamos planteados update y delete. Estos dos falta probarlos.
+
 *Daily  / Jueves 3*
 Continuamos con  CRUD de usuarios.
 Index  login  acces y register funciona. 
