@@ -12,7 +12,7 @@ const model = {
     generate: data => Object({
         id: model.all().length == 0 ? 1 : model.all().pop().id +1,
         origen: data.origen,
-       tipoDeGrano: data.tipoDeGrano,
+        tipoDeGrano: data.tipoDeGrano,
         cantidad: parseInt(data.cantidad),
         precio: parseInt (data.precio),
         oferta: data.oferta ? true : false,

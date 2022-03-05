@@ -10,7 +10,7 @@ const router = express.Router();
 })}) 
 
 
-router.get('/', controllers.index)
+router.get('/', controllers.list)
 router.get('/product/create',[access], controllers.create)
 router.get('/product/:id',[access],controllers.show)
 

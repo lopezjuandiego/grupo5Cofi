@@ -47,24 +47,24 @@ module.exports = (sequelize, dataTypes) => {
 
         Product.belongsTo(models.Origen, { 
             as: "origen",
-            foreignKey: "Origen"
+            foreignKey: "OrigenID"
         }),
 
         Product.belongsTo(models.Grano, { 
             as: "grano",            
-            foreignKey: 'Grano',
+            foreignKey: 'GranoID',
             
         }),
 
         Product.belongsTo(models.Gramo, { 
             as: "cantidad",            
-            foreignKey: 'Cantidad',
+            foreignKey: 'CantidadID',
             
         }),
 
         Product.belongsTo(models.Imagen, { 
             as: "imagen",            
-            foreignKey: 'Imagen',
+            foreignKey: 'ImagenID',
             
         })
     }
