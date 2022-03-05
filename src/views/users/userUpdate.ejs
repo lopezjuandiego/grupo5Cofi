@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../includes/head.ejs') %> 
+       
+<body>
+    <%- include("../includes/header") %> 
+<main>
+ <section class="conttitle">
+     <h2 class="title"><%= locals.title ? title : null %></h2>
+ </section>
+ <section class="contformulario">
+     <form class="formgral" action="/users/<%= user.id %>?m=PUT" method="POST">
+         
+     <label class="continput" for="nombre">
+         <input class="forminput" type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%= user.nombre %>">
+     </label>
+    
+     <label class="continput" for="apellido">
+        <input class="forminput" type="text"  name="apellido"  placeholder="APELLIDO" value="<%= user.apellido %>">
+       </label> 
+       
+       <label class="continput" for="email">
+        <input class="forminput" type="text"  name="email"  placeholder="EMAIL" value="<%= user.email %>">
+       </label>    
+
+    <fieldset class="continput1">
+        <a href="/users/profile/<%= user.id %>"><i class="fas fa-edit"></i></a>
+    </fieldset>
+    <a class="boton1" href="/login">VOLVER</a>  
+
+</form> 
+ </section>
+</main>
+<%- include("../includes/footer") %> 
+</body>
+</html>    

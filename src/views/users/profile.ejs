@@ -32,12 +32,20 @@
         
         <button class="actualizarpass" type="submit">Actualizar contraseña</button>
     </form>-->
-    <a class="botonExit" href="/users/delete/<%= user.id %>">Borrar</a>
+    <section class="editYtrash">
+    <article class="iconoEdit">
+        <fieldset>
+            <a class="fas fa-edit" href="/users/update/<%= user.id %>"></a>                                                           
+        </fieldset>
+    </article>
+    <a class="fas fa-trash-alt" href="/users/delete/<%= user.id %>"></a>
        <form action="/users/logout" method="post">
+           <form action="/product/?m=DELETE" method="post">
+        <input type="hidden" name="id" value="<%= user.id %>" />
+    </form>
+    </section>        
         <button class= "botonExit" type="submit">SALIR</button>
-  </form>
-
-   </section>
+        </section>
 
   
 </main>

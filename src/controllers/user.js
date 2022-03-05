@@ -184,9 +184,13 @@ register: (req, res) =>
     edit: (req, res) => {
 
       db.User.findByPk(req.params.id)
-      .then(users => {
-        res.render('users/ #',{users:users})
+      .then(users => { 
+        res.render('users/userUpdate',{
+          styles:["profile"],
+          title: 'Usuario: '+ users.nombre,
+          users:users})
       })
+      .catch(error => res.send(error))
     },
 
     update: (req, res) =>{
@@ -196,14 +200,14 @@ register: (req, res) =>
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         email: req.body.email,       
-        admin: req.body.email.includes('@cofi') ? true : false,
+        //admin: req.body.email.include('@cofi') ? true : false,
       },{
         where:{
           id: req.params.id
         }
       })
       
-      res.redirect('/users/edit' + req.params.id)
+      res.redirect('/users/update/' + req.params.id)
     },
    
     delete: (req,res) => {
