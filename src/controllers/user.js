@@ -217,7 +217,7 @@ register: (req, res) =>
           id: req.params.id
         }
       })
-      res.redirect('/users/list')
+      res.redirect('/users/index')
     },
 
   logout: (req, res) => {

@@ -26,8 +26,8 @@ router.post("/logout", user.logout)
 router.post("/save",[save],user.save);
 router.post("/access",[login], user.access); 
 router.post("/upload/avatar",[access,upload.any()],user.uploadAvatar); 
-router.post("/update/:id", [access],user.update)
-router.post('/profile/:id', user.delete);
+router.put("/update/:id", [access],user.update)
+router.delete('/delete/:id', user.delete);
 
 
 module.exports = router;

@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include("../includes/head") %> 
+<%- include("../includes/head") %>
+
     <body>
-        <%- include("../includes/header") %> 
+        <%- include("../includes/header") %>
 
-    <main>
-   <h1 class= "tituloprofile"><%= user.nombre %>  <%= user.apellido %></h1>
-        
-   <h4 class= "EmailUser">Email: <%= user.email %> </h4>
-   <section> 
-       <% if (user.avatar != null) { %>
-           <figure class="figura">
-               <img class="fotoAvatar" src="/uploads/avatars/<%= user.avatar %>" alt="photo <%= user.email %>">
-           </figure>
-       <% } else { %>
-           <figure  class="figura">
-               <img  class="avatar" src="/image/users/perfil.jpg" alt="photo <%= user.email %>">
-           </figure>
-       <% } %>
-       <form class= "foto" action="/users/upload/avatar" enctype="multipart/form-data" method="post"> 
-           <input class= "foteli" type="file" name="avatar" id="avatar">
-           <button type="submit">Actualizar foto de perfil</button>
-       </form>
-       <!-- <form class= "pass" action="/users/update/password" method="post"> 
-        <input type="password" name="passanterior" id="passanterior" placeholder="Contraseña actual">
-        <br>
-        <input type="password" name="password" id="password" placeholder="Nueva Contraseña">
-       campo para revalidar pass>
-        <input type="password" name="password2" id="RepetirPassword" placeholder="Repetir Contraseña">
-        
-        <button class="actualizarpass" type="submit">Actualizar contraseña</button>
-    </form>-->
-    <section class="editYtrash">
-    <article class="iconoEdit">
-        <fieldset>
-            <a class="fas fa-edit" href="/users/update/<%= user.id %>"></a>                                                           
-        </fieldset>
-    </article>
-    <a class="fas fa-trash-alt" href="/users/delete/<%= user.id %>"></a>
-       <form action="/users/logout" method="post">
-           <form action="/product/?m=DELETE" method="post">
-        <input type="hidden" name="id" value="<%= user.id %>" />
-    </form>
-    </section>        
-        <button class= "botonExit" type="submit">SALIR</button>
-        </section>
+            <main>
+                <h1 class="tituloprofile">
+                    <%= user.nombre %>
+                        <%= user.apellido %>
+                </h1>
 
-  
-</main>
-    <%- include("../includes/footer") %> 
+                <h4 class="EmailUser">Email: <%= user.email %>
+                </h4>
+                <section>
+                    <% if (user.avatar !=null) { %>
+                        <figure class="figura">
+                            <img class="fotoAvatar" src="/uploads/avatars/<%= user.avatar %>"
+                                alt="photo <%= user.email %>">
+                        </figure>
+                        <% } else { %>
+                            <figure class="figura">
+                                <img class="avatar" src="/image/users/perfil.jpg" alt="photo <%= user.email %>">
+                            </figure>
+                            <% } %>
 
-</body>
+                                <form class="foto" action="/users/upload/avatar" enctype="multipart/form-data"
+                                    method="post">
+                                    <input class="foteli" type="file" name="avatar" id="avatar">
+                                    <button type="submit">Actualizar foto de perfil</button>
+
+
+                                    <section class="editYtrash">
+                                        <article class="iconoEdit">
+                                            <fieldset>
+                                                <a class="fas fa-edit" href="/users/update/<%= user.id %>"></a>
+                                            </fieldset>
+                                        </article>
+
+                                    </section>
+                                </form>
+                                <form action="/users/logout" method="post">
+                                    <button class="botonExit" type="submit">SALIR</button>
+                                </form>
+
+                                <form action="/users/delete/ <%= user.id %> ?m=DELETE" method="post">
+                                    <button class="tachito" type="submit">
+                                        <a class="fas fa-trash-alt"></a>
+                                    </button>
+                                </form>
+
+
+                </section>
+
+
+            </main>
+            <%- include("../includes/footer") %>
+
+    </body>
 
 </html>
