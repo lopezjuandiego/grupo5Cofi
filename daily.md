@@ -3,8 +3,11 @@
 
 *Daily  / Sábado 5*
 Resolvimos un problema con showUser que se rompía.
-Empezamos a retrabajar las vistas para probar update y delete. 
+Dejamos funcionando de  update y delete en USER. Faltan termianr las vistas 
 Empezamos a armar CRUD de productos.
+Armamos LIST de productos y modificamos LIST.ejs en productos
+Cambiamos modelos de Producto. Modificamos modelos de Origen, Imagen, Gramo y grano de BelongTo a HasMany.
+Empezamos a trabajar con el CREATE
 
 *Daily  / Viernes 4*
 Continuamos con  CRUD de usuarios.
