@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
        
         tipoDeGrano: {
             type: dataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
     
     };

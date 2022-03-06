@@ -10,42 +10,50 @@ const controllers = {
       include: [ "origen", "grano","cantidad","imagen"],
     })
         .then(products => {
-          res.render("products/list", {
+          //res.send (products)
+             res.render("products/list", {
             styles: ["product/product"],
       
             title: "USUARIOS REGISTRADOS",
             products: products
               
-          })                   
+          })                    
         })
         .catch(error => res.send(error))
 },
 
 
-create: (req, res) => res.render('products/create', {
-  styles: ['product/create'],
-  title: 'CREAR',
-}),
+create: (req, res) => Promise.all([db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
+.then(([origenes, granos, gramos])=> {
+  res.render('products/create', {
+    styles: ['product/create'],
+    title: 'NUEVO PRODUCTO',
+    origenes: origenes,
+    granos: granos,
+    gramos: gramos
+})
+})
+/* 
+}) */,
 
 save: (req, res) => {
-  //req.body.files = req.files;
   db.Product.create({
 
-      id: req.body.id,
       OrigenID: req.body.origen,
       GranoID: req.body.tipoDeGrano,
       CantidadID: req.body.cantidad,
       Precio: req.body.precio,
       Oferta: req.body.oferta ? true : false,
-      //ASI ESTÁ EN EL JS DE PRODUCT - imagen: req.body.files.map (file => fileModel.create(file).id)
-      //ASI ESTÁ EN EL USER -avatar: req.body.avatar ? req.body.avatar : null,
-
+      //ImagenID: req.body.imagen ? req.body.imagen : null,
+      //ImagenID: req.body.files.map (file => fileModel.create(file).id)
   })
-    //let created = product.create(req.body)
-  return res.redirect("/product")
+ 
+  .then(()=> {
+    //res.send(cafe)})
+    return res.redirect('/product')})            
+  .catch(error => res.send(error))
 },
-
-
+  
   /*
   save js
   save: (req, res) => {
@@ -53,8 +61,6 @@ save: (req, res) => {
     let created = product.create(req.body)
     return res.redirect("/product/" + created.id)
   },
-  HASTA ACÁ LLEGUE
---------------
 */
 
   show: (req, res) => {

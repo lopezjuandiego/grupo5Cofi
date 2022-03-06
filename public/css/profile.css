@@ -118,6 +118,144 @@ main{
     margin-bottom: 12px;
     width: 70px;
   }
+
+  /vista de UserUpdate/
+  .botonBorrar:hover{
+    background-color: #432818;
+    color: #ffe6a7;
+  }
+  .fa-edit{
+    font-size: 3rem;
+    color: #ffe6a7;
+    margin-right: 3rem;
+    transition: all 0.3s linear;
+    display: flex;
+    justify-content: center;
+  }
+  .fa-edit:hover{
+    color: #432818;
+  }
+
+  .fa-trash-alt{
+    font-size: 3rem;
+    color:#ffe6a7 ;
+    background-color: #6f1d1b;
+    border: -10;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+
+  .tachito{
+    border: none;
+  }
+.fa-trash-alt:hover{
+    color: #432818;
+   }
+
+  .editYtrash{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .formgral{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    font-family: "Roboto";
+    font-size: 2.5em;
+  }
+  .continput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 23px;
+    text-align: center;
+    height: 4vh;
+    width: 62vh;
+    border-radius: 33px;
+    font-family: "Roboto";
+    padding: 34px;
+  }
+  .continput1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 60px;
+  }
+
+  .forminput{
+    text-align: center;
+    height: 4vh;
+    width: 57vh;
+    border-radius: 20px;
+    font-family: "Roboto";
+    font-size: 3vh;
+    padding: 17px;
+  }
+
+  .boton1{
+    padding: 0.6em;
+    width: 5em;
+    border-radius: 20px;
+    font-size: 29px;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    color: #6f1d1b;
+    background-color: #ffe6a7;
+    transition: all 0.3s linear;
+    text-align: center;
+    margin-left: 80px;
+    text-decoration: none;
+  }
+  .boton1:hover{
+    color: #ffe6a7;
+    background-color: rgb(67, 40, 24);
+   }
+
+  .boton{
+    padding: 0.6em;
+    width: 7em;
+    border-radius: 20px;
+    font-size: 24px;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    color: #6f1d1b;
+    background-color: #ffe6a7;
+    transition: all 0.3s linear;
+    text-align: center;
+  }
+  .boton:hover{
+    color: #ffe6a7;
+    background-color: rgb(67, 40, 24);
+   }
+
+
+
+  /* viejo
+  
+  .botonBorrar{
+    display: flex;
+    background-color: #ffe6a7;
+    color: #432818;
+    font-size: 1.05em;
+    padding: 0.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s linear;
+    text-decoration: none;
+    border-style: outset;
+    border-width: 3px;
+    border-color: #959595;
+    font-family: "Roboto";
+    margin-left: 10px;
+    margin-bottom: 12px;
+    width: 70px;
+  }
   .botonBorrar:hover{
     background-color: #432818;
     color: #ffe6a7;
@@ -151,4 +289,4 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
+  } */

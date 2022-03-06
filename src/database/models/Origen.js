@@ -8,9 +8,9 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
        
-        Pais: {
+        country: {
             type: dataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
     
     };

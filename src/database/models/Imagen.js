@@ -30,10 +30,10 @@ module.exports = (sequelize, dataTypes) => {
             as: "users",
             foreignKey: "avatar"
         })
-        Imagen.hasMany(models.Product, { 
+       Imagen.hasMany(models.Product, { 
             as:'products',
             foreignKey:'ImagenID'
-        })
+        }) 
     }
     return Imagen;
      }
