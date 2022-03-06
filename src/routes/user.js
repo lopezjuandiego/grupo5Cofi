@@ -20,7 +20,7 @@ router.get('/index', user.list)
 router.get('/profile',[access], user.profile)
 router.get('/profile/:id',[access],user.showUser) 
 router.get('/update/:id',[access],user.edit)
-//router.get('/profile/delete/:id', user.delete);
+
 
 router.post("/logout", user.logout)
 router.post("/save",[save],user.save);
