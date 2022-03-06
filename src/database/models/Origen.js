@@ -23,9 +23,9 @@ module.exports = (sequelize, dataTypes) => {
   
 
    Origen.associate = function (models) {
-        Origen.belongsTo(models.Product, { 
-            as: "productOrigen",
-            foreignKey: "Origen"
+        Origen.hasMany(models.Product, { 
+            as: "products",
+            foreignKey: "OrigenID"
         })
 
       

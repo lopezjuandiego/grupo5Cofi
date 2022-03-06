@@ -22,9 +22,9 @@ module.exports = (sequelize, dataTypes) => {
     
 
     Grano.associate = function (models) {
-        Grano.belongsTo(models.Product, { 
-            as: "productGrano",
-            foreignKey: "Grano"
+        Grano.hasMany(models.Product, { 
+            as: "products",
+            foreignKey: "GranoID"
         })
 
       

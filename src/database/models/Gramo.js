@@ -23,9 +23,9 @@ module.exports = (sequelize, dataTypes) => {
     
 
     Gramo.associate = function (models) {
-        Gramo.belongsTo(models.Product, {
-            as: "productGramo",
-            foreignKey: "Cantidad"
+        Gramo.hasMany(models.Product, {
+            as: "products",
+            foreignKey: "CantidadID"
         })
 
       

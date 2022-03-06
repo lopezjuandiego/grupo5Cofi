@@ -37,16 +37,16 @@
                             <article class="listagral">
                                 <a class="contentlista" href="/product/<%= product.id %> ">
                                     <% if (product.imagen) { %>
-                                        <img class="contentimagen" src="/uploads/<%= product.imagen.url %> " alt=""
+                                        <img class="contentimagen" src="/uploads/<%= product.imagen.Url %> " alt=""
                                             srcset="">
                                         <% } %>
                                             <ul class="contlis">
-                                                <li class="lilista">ORIGEN: <%= product.origen %>
+                                                <li class="lilista">ORIGEN: <%= product.origen.Pais %>
                                                 </li>
-                                                <li class="lilista">TIPO DE GRANO: <%= product.tipoDeGrano %>
+                                                <li class="lilista">TIPO DE GRANO: <%= product.grano.tipoDeGrano %>
                                                 </li>
-                                                <li class="lilista">CANTIDAD: <%= product.cantidad %> gr</li>
-                                                <li class="lilista">PRECIO: $ <%= product.precio %>
+                                                <li class="lilista">CANTIDAD: <%= product.cantidad.Cantidad %> gr</li>
+                                                <li class="lilista">PRECIO: $ <%= product.Precio %>
                                                 </li>
                                             </ul>
                                     </a>
@@ -77,16 +77,16 @@
                             <article class="listagral">
                                 <a class="contentlista" href="/product/<%= product.id %> ">
                                     <% if (product.imagen) { %>
-                                        <img class="contentimagen" src="/uploads/<%= product.imagen.url %> " alt=""
+                                        <img class="contentimagen" src="/uploads/<%= product.imagen.Url %> " alt=""
                                             srcset="">
                                         <% } %>
                                             <ul class="contlis">
-                                                <li class="lilista">ORIGEN: <%= product.origen %>
+                                                <li class="lilista">ORIGEN: <%= product.origen.Pais %>
                                                 </li>
-                                                <li class="lilista">TIPO DE GRANO: <%= product.tipoDeGrano %>
+                                                <li class="lilista">TIPO DE GRANO: <%= product.grano.tipoDeGrano %>
                                                 </li>
-                                                <li class="lilista">CANTIDAD: <%= product.cantidad %> gr</li>
-                                                <li class="lilista">PRECIO: $ <%= product.precio %>
+                                                <li class="lilista">CANTIDAD: <%= product.cantidad.Cantidad %> gr</li>
+                                                <li class="lilista">PRECIO: $ <%= product.Precio %>
                                                 </li>
                                             </ul>
                                 </a>
