@@ -13,7 +13,7 @@ const controllers = {
           res.render("products/list", {
             styles: ["product/product"],
       
-            title: "USUARIOS REGISTRADOS",
+            title: "LISTADO DE PRODUCTOS",
             products: products
               
           })                   
@@ -22,9 +22,15 @@ const controllers = {
 },
 
 
-create: (req, res) => res.render('products/create', {
-  styles: ['product/create'],
-  title: 'CREAR',
+create: (req, res) => Promise.all([db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
+.then(([origenes, granos, gramos])=> {
+  res.render('products/create', {
+    styles: ['product/create'],
+    title: 'NUEVO PRODUCTO',
+    origenes: origenes,
+    granos: granos,
+    gramos: gramos
+})
 }),
 
 save: (req, res) => {
@@ -37,12 +43,15 @@ save: (req, res) => {
       CantidadID: req.body.cantidad,
       Precio: req.body.precio,
       Oferta: req.body.oferta ? true : false,
-      //ASI ESTÁ EN EL JS DE PRODUCT - imagen: req.body.files.map (file => fileModel.create(file).id)
+      ImagenID: req.body.avatar ? req.body.avatar : null,
       //ASI ESTÁ EN EL USER -avatar: req.body.avatar ? req.body.avatar : null,
 
   })
-    //let created = product.create(req.body)
-  return res.redirect("/product")
+    
+      return res.redirect("/product")
+
+    
+  //return res.redirect("/product")
 },
 
 

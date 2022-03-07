@@ -4,36 +4,36 @@ module.exports = (sequelize, dataTypes) => {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            allowNull: false,
+            
             autoIncrement: true
         },
        
         OrigenID: {
             type: dataTypes.INTEGER,
-            foreignKey: true,
-            allowNull: false
+            //foreignKey: true,
+            
         },
         GranoID: {
             type: dataTypes.INTEGER,
-            foreignKey: true,
-            allowNull: false
+           // foreignKey: true,
+           
         },
         CantidadID: {
             type: dataTypes.INTEGER,
-            foreignKey: true,
-            allowNull: false
+          //  foreignKey: true,
+            
         },
         Precio: {
             type: dataTypes.BIGINT,
-            allowNull: false
+           
         },
         Oferta: {
             type:dataTypes.BOOLEAN,
         },
-        ImagenID: {
+       ImagenID: {
             type: dataTypes.INTEGER,
-            foreignKey: true,
-            allowNull: false
+           // foreignKey: true,
+            allowNull: true
         }
        
     };
@@ -60,9 +60,9 @@ module.exports = (sequelize, dataTypes) => {
             as: "cantidad",            
             foreignKey: 'CantidadID',
             
-        }),
+        })
 
-        Product.belongsTo(models.Imagen, { 
+      Product.belongsTo(models.Imagen, { 
             as: "imagen",            
             foreignKey: 'ImagenID',
             

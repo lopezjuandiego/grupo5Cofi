@@ -12,9 +12,18 @@
 
    <form class="formgral" action="/product/" enctype="multipart/form-data" method="post">
 
-     <label class="continput" for="origen">
-         <input class="forminput" type="text" name="origen" id="origen" placeholder="ORIGEN DE CAFE">
+    <label class="continput" for="origen">
+        
+        <select class="forminput" name="origen" id="origen">
+            <% origenes.forEach(element => { %>
+             <option value="<%= element.id %>"> <%= element.Pais %> </option>
+            <% }) %>
+            </select>
      </label>
+
+     <!--<label class="continput" for="origen">
+         <input class="forminput" type="text" name="origen" id="origen" placeholder="ORIGEN DE CAFE">
+     </label>-->
 
      <label class="continput" for="tipoDeGrano">
      <input class="forminput" type="text" list="tipoDeGrano" name="tipoDeGrano"  placeholder="TIPO DE GRANO">
@@ -34,6 +43,8 @@
      <option value="1000"></option>
      </datalist>
     </label> 
+
+  
 
     <label class="continput" for="precio">
         <input class="forminput"  type="number" name="precio" id="precio" placeholder="PRECIO" min="0">

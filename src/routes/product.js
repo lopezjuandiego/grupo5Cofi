@@ -17,7 +17,7 @@ router.get('/product/:id',[access],controllers.show)
 router.get('/update/:id',[access],controllers.update)
 router.put('/:id',[access],controllers.modify) 
 
-router.post('/',[upload.any()], controllers.save) 
+router.post('/',[access], controllers.save) 
 
 
 router.delete ('/',controllers.delete)

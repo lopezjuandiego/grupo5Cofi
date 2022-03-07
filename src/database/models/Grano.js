@@ -4,13 +4,13 @@ module.exports = (sequelize, dataTypes) => {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            allowNull: false,
+            
             autoIncrement: true
         },
        
         tipoDeGrano: {
             type: dataTypes.INTEGER,
-            allowNull: false
+         
         },
     
     };
