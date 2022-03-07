@@ -32,9 +32,7 @@ create: (req, res) => Promise.all([db.Origen.findAll(), db.Grano.findAll(), db.G
     granos: granos,
     gramos: gramos
 })
-})
-/* 
-}) */,
+}),
 
 save: (req, res) => {
   db.Product.create({
@@ -67,7 +65,7 @@ show : (req, res) => {
 })
 },
   
-/* edit: (req, res) => {
+edit: (req, res) => {
   let productId = req.params.id
   let productPK = db.Product.findByPk(productId,{
     include: [ "origen", "grano","cantidad"],
@@ -75,7 +73,7 @@ show : (req, res) => {
   Promise
   .all([productPK, db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
   .then(([product, origenes, granos, gramos])=> {
-     res.render('products/item', {
+     res.render('products/update', {
       styles: ['product/item'],
       title: 'PRODUCTO',
       product: product,
@@ -85,22 +83,26 @@ show : (req, res) => {
   }) 
 })
 .catch(error => res.send(error))
+}, 
 
-},  */
-
-
-  update: (req, res) => res.render("products/update", {
-    styles: ["product/create"],
-    title: "MODIFICAR",
-    product: product.search('id', req.params.id)
-
-  }),
-
-  modify: (req, res) => {
-    let updated = product.update(req.params.id, req.body)
-    //return res.send(updated);
-    return res.redirect('/product/' + updated.id)
-  },
+update: function (req,res) {
+  db.Product.update(
+      {
+        OrigenID: req.body.origen,
+        GranoID: req.body.tipoDeGrano,
+        CantidadID: req.body.cantidad,
+        Precio: req.body.precio,
+        Oferta: req.body.oferta ? true : false,
+      },
+      {
+          where: {
+            id: req.params.id}
+      })
+  .then(()=> {
+      return res.redirect('/product')
+    })            
+  .catch(error => res.send(error))
+},
 
   delete: (req,res) => {
     db.Product.destroy({

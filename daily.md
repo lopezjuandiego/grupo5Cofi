@@ -2,7 +2,8 @@
 
 *Daily  / Lunes 7*
 Creamos vista y controller de producto individual y quedo funcionando.
-Metodo Delete funcionando
+Metodo Edit, Updte y Delete funcionando
+Values en productos para modificar funcionando menos grano. Hay que aplicar en USER lo mismo
 
 *Daily  / Domingo 6*
 Dejamos fucionando create y save en PRODUCTOS. 
