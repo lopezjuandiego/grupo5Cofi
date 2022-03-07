@@ -13,27 +13,29 @@
         <h2 class="title"><%= locals.title ? title : null %></h2>
       </section>
          <section>
-           <article>
+          <article>
             <% if (product.oferta) { %> 
                 <h3 class="titoferta">¡EN OFERTA!</h3>
            <% } %>  
-           </article>
-
+           </article> 
+           
              <article class="conteinfo">               
                              
                <section class="cajaprod1">
                    
-                <article >
-                <% product.imagen.forEach(product => { %>                              
-                            
-                    <img class="contimag" src="/uploads/<%= product.url %>" >                  
-                                                                                                   
-               <%  }) %>   
-                 </article>
-                 <ul>
-                <li class="itemtext">TIPO DE GRANO: <%= product.tipoDeGrano %></li>
-                <li class="itemtext">CANTIDAD: <%= product.cantidad %> Gr.</li>
-                <li class="itemtext">PRECIO: $ <%= product.precio %></li>  
+               
+                 <ul> 
+
+                    <li class="lilista">ORIGEN: <%= product.origen ? product.origen.country : null%>
+                    </li>
+                <li class="lilista">TIPO DE GRANO: <%= product.grano ? product.grano.tipoDeGrano : null %>
+                </li>
+                <li class="lilista">CANTIDAD: <%= product.cantidad ? product.cantidad.Cantidad : null %> gr</li>
+                <li class="lilista">PRECIO: $ <%= product.Precio %>
+
+
+
+
             </ul>  
                     </section>
                 </article>

@@ -1,5 +1,10 @@
 **DAILY - SPRINT 6** 
 
+*Daily  / Lunes 7*
+Creamos vista de producto individual
+
+*Daily  / Domingo 6*
+Dejamos fucionando create y save en PRODUCTOS. 
 
 *Daily  / Sábado 5*
 Resolvimos un problema con showUser que se rompía.
@@ -23,7 +28,7 @@ Continuamos con  CRUD de usuarios.
 Index y login funcionan. 
 Hay que revisar acces.
 
-*Daily  / Martes 1*
+*Daily  / Martes 1 Marzo*
 Quedaron funcionando todos los modelos y sus asociaciones.
 Empezamos el CRUD de usuarios.
 Index y login funcionan. Hay que revisar acces.

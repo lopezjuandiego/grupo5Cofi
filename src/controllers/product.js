@@ -14,7 +14,7 @@ const controllers = {
              res.render("products/list", {
             styles: ["product/product"],
       
-            title: "USUARIOS REGISTRADOS",
+            title: "PRODUCTOS",
             products: products
               
           })                    
@@ -49,21 +49,35 @@ save: (req, res) => {
   })
  
   .then(()=> {
-    //res.send(cafe)})
     return res.redirect('/product')})            
   .catch(error => res.send(error))
 },
   
-  /*
-  save js
-  save: (req, res) => {
-    req.body.files = req.files;
-    let created = product.create(req.body)
-    return res.redirect("/product/" + created.id)
-  },
-*/
+show: (req, res) => {
+  let productId = req.params.id
+  let productPK = db.Product.findByPk(productId,{
+    include: [ "origen", "grano","cantidad"],
+  })
+  Promise
+  .all([productPK, db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
+  .then(([product, origenes, granos, gramos])=> {
+     res.render('products/item', {
+      styles: ['product/item'],
+      title: 'PRODUCTO',
+      product: product,
+      origenes: origenes,
+      granos: granos,
+      gramos: gramos
+  }) 
+})
+.catch(error => res.send(error))
 
-  show: (req, res) => {
+},
+
+
+
+
+  /* show: (req, res) => {
 
     let result = product.search('id', req.params.id)
     let productShow = Object({ ...result, imagen: result.imagen.map(imagen => file.search("id", imagen)) })
@@ -74,7 +88,8 @@ save: (req, res) => {
     }) : res.render('error', {
       msg: 'Producto no encontrado'
     })
-  },
+  }, */
+
   update: (req, res) => res.render("products/update", {
     styles: ["product/create"],
     title: "MODIFICAR",
