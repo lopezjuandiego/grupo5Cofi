@@ -1,6 +1,5 @@
 const validator = require("express-validator");
 const bcrypt = require("bcrypt");
-//const user = require("../models/user"); 
 const path = require('path');
 const db = require("../database/models")
 
@@ -207,7 +206,7 @@ register: (req, res) =>
         }
       })
       
-      res.redirect('/users/profile')
+      res.redirect('/users/index')
     },
    
     delete: (req,res) => {

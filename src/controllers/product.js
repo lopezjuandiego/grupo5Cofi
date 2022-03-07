@@ -52,8 +52,22 @@ save: (req, res) => {
     return res.redirect('/product')})            
   .catch(error => res.send(error))
 },
+
+show : (req, res) => {
+  db.Product.findByPk(req.params.id,
+      {
+          include : ["origen", "grano","cantidad"]
+      })
+      .then(product => {
+        res.render('products/item', {
+          styles: ['product/item'],
+          title: 'PRODUCTO',
+          product: product,
+      });
+})
+},
   
-show: (req, res) => {
+/* edit: (req, res) => {
   let productId = req.params.id
   let productPK = db.Product.findByPk(productId,{
     include: [ "origen", "grano","cantidad"],
@@ -72,7 +86,7 @@ show: (req, res) => {
 })
 .catch(error => res.send(error))
 
-},
+},  */
 
 
   update: (req, res) => res.render("products/update", {
