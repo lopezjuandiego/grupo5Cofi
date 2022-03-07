@@ -45,12 +45,14 @@
                     <picture>
                        <a href="/product/update/<%= product.id %>"><i class="fas fa-edit"></i></a>
                     </picture>
-                    <form action="/product/?m=DELETE" method="post">
-                        <input type="hidden" name="id" value="<%= product.id %>">
-                        <button class="tachito" type="submit">
-                            <a class="fas fa-trash-alt"></a>
-                        </button>
-                    </form>        
+
+                    <form action="/product/delete/ <%= product.id %> ?m=DELETE" method="post">
+                      <button class="tachito" type="submit">
+                          <a class="fas fa-trash-alt"></a>
+                      </button>
+                  </form>
+
+                    
                                                           
                       </article>
         </section>

@@ -75,21 +75,6 @@ show: (req, res) => {
 },
 
 
-
-
-  /* show: (req, res) => {
-
-    let result = product.search('id', req.params.id)
-    let productShow = Object({ ...result, imagen: result.imagen.map(imagen => file.search("id", imagen)) })
-    return result ? res.render('products/item', {
-      styles: ["product/item"],
-      title: 'Café ' + result.origen,
-      product: productShow
-    }) : res.render('error', {
-      msg: 'Producto no encontrado'
-    })
-  }, */
-
   update: (req, res) => res.render("products/update", {
     styles: ["product/create"],
     title: "MODIFICAR",
@@ -103,10 +88,14 @@ show: (req, res) => {
     return res.redirect('/product/' + updated.id)
   },
 
-  delete: (req, res) => {
-    product.delete(req.body.id);
-    return res.redirect('/product')
-  }
+  delete: (req,res) => {
+    db.Product.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    res.redirect('/product')
+  },
 }
 
 module.exports = controllers

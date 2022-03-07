@@ -16,6 +16,6 @@ router.get('/product/:id',[access],controllers.show)
 router.get('/update/:id',[access],controllers.update)
 router.post('/product/save',[upload.any()], controllers.save) 
 router.put('/:id',[access],controllers.modify) 
-router.delete ('/',controllers.delete)
+router.delete('/delete/:id',controllers.delete)
 
 module.exports = router;

@@ -1,7 +1,8 @@
 **DAILY - SPRINT 6** 
 
 *Daily  / Lunes 7*
-Creamos vista de producto individual
+Creamos vista y controller de producto individual y quedo funcionando.
+Metodo Delete funcionando
 
 *Daily  / Domingo 6*
 Dejamos fucionando create y save en PRODUCTOS. 
