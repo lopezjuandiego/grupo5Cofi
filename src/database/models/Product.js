@@ -11,30 +11,30 @@ module.exports = (sequelize, dataTypes) => {
         OrigenID: {
             type: dataTypes.INTEGER,
             //foreignKey: true,
-            
+           // allowNull: false
         },
         GranoID: {
             type: dataTypes.INTEGER,
-           // foreignKey: true,
-           
+            //foreignKey: true,
+            //allowNull: true
         },
         CantidadID: {
             type: dataTypes.INTEGER,
-          //  foreignKey: true,
-            
+            //foreignKey: true,
+            //allowNull: falsetrue
         },
         Precio: {
-            type: dataTypes.BIGINT,
-           
+            type: dataTypes.INTEGER,
+            allowNull: false
         },
         Oferta: {
             type:dataTypes.BOOLEAN,
         },
-       ImagenID: {
+      /*   ImagenID: {
             type: dataTypes.INTEGER,
-           // foreignKey: true,
+            foreignKey: true,
             allowNull: true
-        }
+        } */
        
     };
     let config = {
@@ -62,11 +62,11 @@ module.exports = (sequelize, dataTypes) => {
             
         })
 
-      Product.belongsTo(models.Imagen, { 
+       Product.belongsTo(models.Imagen, { 
             as: "imagen",            
             foreignKey: 'ImagenID',
             
-        })
+        }) 
     }
 
     return Product

@@ -10,13 +10,14 @@ const controllers = {
       include: [ "origen", "grano","cantidad","imagen"],
     })
         .then(products => {
-          res.render("products/list", {
+          //res.send (products)
+             res.render("products/list", {
             styles: ["product/product"],
       
             title: "LISTADO DE PRODUCTOS",
             products: products
               
-          })                   
+          })                    
         })
         .catch(error => res.send(error))
 },
@@ -34,39 +35,48 @@ create: (req, res) => Promise.all([db.Origen.findAll(), db.Grano.findAll(), db.G
 }),
 
 save: (req, res) => {
-  //req.body.files = req.files;
   db.Product.create({
 
-      id: req.body.id,
       OrigenID: req.body.origen,
       GranoID: req.body.tipoDeGrano,
       CantidadID: req.body.cantidad,
       Precio: req.body.precio,
       Oferta: req.body.oferta ? true : false,
-      ImagenID: req.body.avatar ? req.body.avatar : null,
-      //ASI ESTÁ EN EL USER -avatar: req.body.avatar ? req.body.avatar : null,
-
+      //ImagenID: req.body.imagen ? req.body.imagen : null,
+      
   })
+ 
+  .then(()=> {
     
-      return res.redirect("/product")
-
-    
-  //return res.redirect("/product")
+    return res.redirect('/product')})            
+  .catch(error => res.send(error))
 },
 
+show: (req,res) => {
+ Promise.all([db.Grano.findAll()])
 
-  /*
-  save js
-  save: (req, res) => {
-    req.body.files = req.files;
-    let created = product.create(req.body)
-    return res.redirect("/product/" + created.id)
-  },
-  HASTA ACÁ LLEGUE
---------------
-*/
+  .then(product =>{
+    
+  //res.send(granos)
+    res.render("products/item",{
+    styles:["product/item"],                      
+    title: 'Cafe ' , 
+    product: product,
+    
+  }) 
+ 
+}) 
 
-  show: (req, res) => {
+
+.catch(error => res.send(error))
+
+},
+
+ /*let result = db.User.findOne({
+  where: {
+    email : req.cookies && req.cookies.user ?  req.cookies.user : null
+  }})*/
+ /* show: (req, res) => {
 
     let result = product.search('id', req.params.id)
     let productShow = Object({ ...result, imagen: result.imagen.map(imagen => file.search("id", imagen)) })
@@ -77,7 +87,7 @@ save: (req, res) => {
     }) : res.render('error', {
       msg: 'Producto no encontrado'
     })
-  },
+  },*/
   update: (req, res) => res.render("products/update", {
     styles: ["product/create"],
     title: "MODIFICAR",

@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
        
         Cantidad: {
             type: dataTypes.INTEGER,
-            
+            allowNull: true
         },
     
     };

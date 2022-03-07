@@ -9,8 +9,8 @@ module.exports = (sequelize, dataTypes) => {
         },
        
         Pais: {
-            type: dataTypes.STRING,
-           
+            type: dataTypes.INTEGER,
+            allowNull: true
         },
     
     };

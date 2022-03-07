@@ -207,7 +207,7 @@ register: (req, res) =>
         }
       })
       
-      res.redirect('/users/update/' + req.params.id)
+      res.redirect('/users/profile')
     },
    
     delete: (req,res) => {

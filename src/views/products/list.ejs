@@ -41,11 +41,11 @@
                                             srcset="">
                                         <% } %>
                                             <ul class="contlis">
-                                                <li class="lilista">ORIGEN: <%= product.origen.Pais %>
+                                                <li class="lilista">ORIGEN: <%= product.origen ? product.origen.Pais : null%>
                                                 </li>
-                                                <li class="lilista">TIPO DE GRANO: <%= product.grano.tipoDeGrano %>
+                                                <li class="lilista">TIPO DE GRANO: <%= product.grano ? product.grano.tipoDeGrano : null %>
                                                 </li>
-                                                <li class="lilista">CANTIDAD: <%= product.cantidad.Cantidad %> gr</li>
+                                                <li class="lilista">CANTIDAD: <%= product.cantidad ? product.cantidad.Cantidad : null %> gr</li>
                                                 <li class="lilista">PRECIO: $ <%= product.Precio %>
                                                 </li>
                                             </ul>
@@ -81,11 +81,11 @@
                                             srcset="">
                                         <% } %>
                                             <ul class="contlis">
-                                                <li class="lilista">ORIGEN: <%= product.origen.Pais %>
+                                                <li class="lilista">ORIGEN: <%= product.origen %>
                                                 </li>
-                                                <li class="lilista">TIPO DE GRANO: <%= product.grano.tipoDeGrano %>
+                                                <li class="lilista">TIPO DE GRANO: <%= product.grano %>
                                                 </li>
-                                                <li class="lilista">CANTIDAD: <%= product.cantidad.Cantidad %> gr</li>
+                                                <li class="lilista">CANTIDAD: <%= product.cantidad %> gramos</li>
                                                 <li class="lilista">PRECIO: $ <%= product.Precio %>
                                                 </li>
                                             </ul>
