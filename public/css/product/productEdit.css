@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+main{
+    background-color: #6f1d1b;
+    
+    
+}
+
+/* BANNER */
+
+.conttitle{
+
+background-image: url(../../image/cafelargo3.jpeg);
+height: 20vh;
+background-size: cover;
+background-repeat: no-repeat;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 2em;
+
+}
+
+.title{
+
+    font-family: "Dancing Script";
+    color: #ffe6a7;
+    font-size: 12vw;
+
+}
+
+
+/* FIN BANNER */
+
+/* FORMULARIO */
+
+
+
+.conteinfo{
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.continput{
+
+    padding: 1em;
+
+}
+
+.forminput{
+
+    height: 4em;
+    width: 23em;
+    padding: 0 4em;
+    border-radius: 10px;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+.forminput1{
+
+    font-size: 1em;
+    color: #ffe6a7;
+    
+}
+
+
+.boton{
+
+    background-color: #ffe6a7;
+    color: #432818;
+    font-size: 1em;
+    padding: 0.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.boton:hover{
+
+  background-color: #432818;
+  color: #ffe6a7;
+}
+
+.fa-edit {
+    font-size: 3rem;
+    color: #ffe6a7;
+    margin-right: 3rem;
+    transition: all 0.3s linear;
+}
+
+.fa-edit:hover{
+    color: #432818;
+    
+    
+}
+.fa-trash-alt{
+    font-size: 3rem;
+    color:#ffe6a7 ;
+    background-color: #6f1d1b;
+    border: -10;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    
+}
+.fa-trash-alt:hover{
+    color: #432818;
+    
+    
+}
+.tachito{
+    border: none;
+}
+.iconos1{
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    padding: 3em;
+    gap: 9em;
+    position: relative;
+}
+ .cajaprod1{
+    border: 4px #774544 inset;
+    border-radius: 20px;
+    font-size: 3vh;
+    height: 57vh;
+    width: 65%;
+    display: flex;
+    flex-direction: column;    
+    justify-content: space-evenly;
+    align-items: center;
+    
+ }
+.contimag{
+    width: 26vw;
+}
+
+
+.itemtext{
+    padding: 0.5em;
+    color: #ffe6a7;
+    font-family: "Roboto";
+    font-size: 4vw;
+}
+
+.boton1{
+
+    background-color: #ffe6a7;
+    color: #432818;
+    font-size: 1.05em;;
+    padding: 0.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s linear;
+    text-decoration: none;
+    border-style: outset;
+    border-width: 3px;
+    border-color: #959595;
+    font-family: "Roboto";
+    position: absolute;
+    left: 3em;    
+    display:none
+}                                         
+
+.boton1:hover{
+
+    background-color: #432818;
+    color: #ffe6a7;
+  }
+
+  .contformulario{
+
+    display: flex;
+    height: 57vh;
+    align-items: center;
+}
+
+.formgral{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* FIN FORMULARIO */
+
+
+@media  (min-width: 768px) {
+
+
+    .cajaprod1{
+        height: 45vh;
+        width: 80%;
+        flex-direction: row;
+    }
+   
+
+    .contimag{
+      width: 18vw;
+    }
+    
+    .itemtext{
+
+        padding: 1em;     
+        font-size: 2.3vw;
+    }
+    
+    .boton1{
+        display: block;
+    }
+    .forminput {
+        height: 4em;
+        width: 43em;
+    }
+    
+
+}
+
+@media  (min-width: 1300px) {
+
+
+    .title{
+      
+        font-size: 7vw;
+
+        }
+    
+    .cajaprod1{
+
+        height: 57vh;
+        width: 65%;
+        flex-direction: row;
+    }
+   
+
+    .contimag{
+        width: 15vw;
+      }
+      
+      .iconos1{
+        gap: 15em;
+    }
+
+
+} 

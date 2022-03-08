@@ -192,7 +192,7 @@ register: (req, res) =>
       db.User.findByPk(req.params.id)
       .then(users => { 
         res.render('users/userUpdate',{
-          styles:["profile"],
+          styles:["userUpdate"],
           title: 'Usuario: '+ users.nombre,
           users:users})
       })
@@ -221,10 +221,9 @@ register: (req, res) =>
       db.User.destroy({
         where: {
           id: req.params.id,
-          
-        },
-      
-      })
+          },
+                 
+        })
       
       res.redirect('/users/index')
     },

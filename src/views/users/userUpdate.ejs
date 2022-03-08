@@ -5,29 +5,30 @@
 <body>
     <%- include("../includes/header") %> 
 <main>
- <section class="conttitle">
+ <section class="contTitle">
      <h2 class="title"><%= locals.title ? title : null %></h2>
  </section>
- <section class="contformulario">
+ <section >
      
      <form class="formgral" action="/users/update/<%= user.id %>?m=PUT" method="POST">
          
      <label class="continput" for="nombre">
-         <input class="forminput" type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%= user.nombre %>">
+         <input class="forminput" type="text" name="nombre" id="nombre" placeholder="Cambiar nombre" value="<%= user.nombre %>">
      </label>
     
      <label class="continput" for="apellido">
-        <input class="forminput" type="text"  name="apellido"  placeholder="APELLIDO" value="<%= user.apellido %>">
+        <input class="forminput" type="text"  name="apellido"  placeholder="Cambiar apellido" value="<%= user.apellido %>" >
        </label> 
        
        <label class="continput" for="email">
-        <input class="forminput" type="text"  name="email"  placeholder="EMAIL" value="<%= user.email %>">
+        <input class="forminput" type="text"  name="email"  placeholder="Cambiar email" value=" <%= user.email %> ">
        </label>    
 
     <fieldset class="continput1">
-        <button classs="boton" type="submit">MODIFICAR
-        </button>
+        
         <a class="boton1" href="/users/profile/ <%= user.id %> ">VOLVER</a>  
+        <button class="boton1" type="submit">MODIFICAR</button>
+
     </fieldset>
   
 

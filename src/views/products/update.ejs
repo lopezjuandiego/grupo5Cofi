@@ -8,12 +8,8 @@
  <section class="conttitle">
      <h2 class="title"><%= locals.title ? title : null %></h2>
  </section>
-
-
  
  <section class="contformulario">
-
-
 
     <form class="formgral" action="/product/update/<%= product.id %>?m=PUT"  method="post">
 
@@ -33,9 +29,7 @@
                 <option value="<%= element.id %>"> <%= element.tipoDeGrano  %> </option>
                <% }) %>
                </select>
-        </label>
-   
-   
+        </label>     
    
         <label class="continput" for="cantidad">
            
@@ -43,10 +37,9 @@
                <% gramos.forEach(element => { %>
                 <option <%= element.id == product.cantidad.id ? "selected" : null %> value="<%= element.id %>"> <%= element.Cantidad %> </option>
                <% }) %>
-               </select>
-   
-      
-   
+               </select>  
+            </label>
+
        <label class="continput" for="precio">
            <input class="forminput"  type="number" name="precio" id="precio" placeholder="PRECIO" min="0" value="<%= product.Precio%>" />
        </label>
@@ -59,57 +52,13 @@
            <input class="forminput1" type="file" name="imagen" id="imagen" multiple>
        </label>  
    
-       <fieldset class="continput1">    
-   
+       <fieldset class="continput1">       
            <button class="boton" type="submit">MODIFICAR</button>
+           <a class="boton1" href="/product">VOLVER</a>  
        </fieldset>       
-       <a class="boton1" href="/product">VOLVER</a>   
-   </form>
-    <!--
------
-     <form class="formgral" action="/product/<%= product.id %>?m=PUT" method="POST">
-         
-     <label class="continput" for="origen">
-         <input class="forminput" type="text" name="origen" id="origen" placeholder="ORIGEN DE CAFE" value="<%= product.origen %>">
-     </label>
-    
-     <label class="continput" for="tipoDeGrano">
-        <input class="forminput" type="text" list="tipoDeGrano" name="tipoDeGrano"  placeholder="TIPO DE GRANO" value="<%= product.tipoDeGrano %>">
-        <datalist id="tipoDeGrano">
-        <option value="Fino"></option>
-        <option value="Medio"></option>
-        <option value="Grueso"></option>     
-        </datalist>
-       </label> 
        
-       <label class="continput" for="cantidad">
-        <input class="forminput" type="number" list="cantidad" name="cantidad"  placeholder="CANTIDAD" value="<%= product.cantidad %>">>
-        <datalist id="cantidad">
-        <option value="250"></option>
-        <option value="500"></option>
-        <option value="750"></option>
-        <option value="1000"></option>
-        </datalist>
-       </label>    
+   </form>
     
-    <label class="continput" for="precio">
-        <input class="forminput"  type="number" name="precio" id="precio" placeholder="PRECIO" min="0" value="<%= product.precio %>">
-    </label>
-
-    <label class="contchek" for="oferta">OFERTA !
-        <input class="formchek" type="checkbox" name="oferta" id="oferta">
-    </label>
-
-    <label class="continput" for="imagen">
-        <input class="forminput1" type="file" name="imagen" id="imagen" multiple >
-    </label> 
-
-    <fieldset class="continput1">
-        <a class="boton1" href="/product">VOLVER</a>  
-        <button class="boton" type="submit">MODIFICAR</button>
-    </fieldset>
-
-</form> -->
  </section>
 </main>
 <%- include("../includes/footer") %> 

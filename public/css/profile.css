@@ -125,7 +125,7 @@ main{
 
  .contenticon{
     text-align: center;
-    padding: 1em;
+    padding: 0;
  }
   .botonBorrar:hover{
     background-color: #432818;
@@ -134,12 +134,18 @@ main{
   .fa-edit{
     font-size: 3rem;
     color: #ffe6a7;
-    padding: 0 2em;
+    padding: 0 0.5em;
     transition: all 0.3s linear;
     
   }
   .fa-edit:hover{
     color: #432818;
+  }
+
+  #avatar{
+    width: 6em;
+    font-size: 18px;
+    color: #ffe6a7;
   }
 
   .fa-trash-alt{
@@ -149,7 +155,7 @@ main{
     border: -10;
     cursor: pointer;
     transition: all 0.3s linear;
-    padding: 0 2em;
+    padding: 0 0.5em;
   }
 
   .tachito{
@@ -242,58 +248,23 @@ main{
    }
 
 
+   @media  (min-width: 768px) {
 
-  /* viejo
-  
-  .botonBorrar{
-    display: flex;
-    background-color: #ffe6a7;
-    color: #432818;
-    font-size: 1.05em;
-    padding: 0.5em;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all .3s linear;
-    text-decoration: none;
-    border-style: outset;
-    border-width: 3px;
-    border-color: #959595;
-    font-family: "Roboto";
-    margin-left: 10px;
-    margin-bottom: 12px;
-    width: 70px;
-  }
-  .botonBorrar:hover{
-    background-color: #432818;
-    color: #ffe6a7;
-  }
-  .fa-edit{
-    font-size: 3rem;
-    color: #ffe6a7;
-    margin-right: 3rem;
-    transition: all 0.3s linear;
-    display: flex;
-    justify-content: center;
-  }
-  .fa-edit:hover{
-    color: #432818;
-  }
-
-  .fa-trash-alt{
-    font-size: 3rem;
-    color:#ffe6a7 ;
-    background-color: #6f1d1b;
-    border: -10;
-    cursor: pointer;
-    transition: all 0.3s linear;
-    
-}
-.fa-trash-alt:hover{
-    color: #432818;
+    .fa-trash-alt{
+      padding: 0 2em
+    }
+    .fa-edit{
+      padding: 0 2em
+    }
+    .contenticon{
+      text-align: center;
+      padding: 1em;
    }
 
-  .editYtrash{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  } */
+   #avatar{
+    width: 23em;
+    font-size: 1em;
+  }
+
+
+   }

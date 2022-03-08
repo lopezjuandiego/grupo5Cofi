@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    background-color: #6f1d1b;
+    height: 80vh;
+}
+
+/* BANNER */
+
+.contTitle{
+
+background-image: url(../../image/cafelargo3.jpeg);
+height: 20vh;
+background-size: cover;
+background-repeat: no-repeat;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.title{
+
+    font-family: "Dancing Script";
+    color: #ffe6a7;
+    font-size: 3.5em;
+
+}
+
+/* FIN BANNER */
+
+/* FORMULARIO */
+
+
+
+.formgral{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    height: 32em;
+    justify-content: space-evenly;
+}
+
+.continput{
+
+    padding: 1em;
+
+}
+
+.forminput{
+
+    height: 4em;
+    width: 23em;
+    padding: 0 4em;
+    border-radius: 10px;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+/*.forminput1{
+
+    font-size: 1em;
+    color: #ffe6a7;
+    
+}
+*/
+.contchek{
+
+    font-size: 1.5em;
+    color: #ffe6a7;
+    font-family: "Roboto";
+}
+
+.formchek{
+    font-size: 1em;
+    height: 1em;
+    width: 2em;
+}
+
+.continput1{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.boton{
+
+    background-color: #ffe6a7;
+    color: #432818;
+    font-size: 1em;
+    padding: 0.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s linear;
+    border-style: outset;
+    border-width: 3px;
+}
+
+.boton:hover{
+
+  background-color: #432818;
+  color: #ffe6a7;
+  
+}
+
+.boton1{
+
+    background-color: #ffe6a7;
+    color: #432818;
+    font-size: 1.05em;;
+    padding: 0.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s linear;
+    text-decoration: none;
+    border-style: outset;
+    border-width: 3px;
+    border-color: #959595;
+    font-family: "Roboto";
+}                                          
+
+.boton1:hover{
+
+    background-color: #432818;
+    color: #ffe6a7;
+  }
+
+
+/* FIN FORMULARIO */
+
+
+@media  (min-width: 768px) {
+
+
+    .title{
+
+        font-size: 6.5em;
+
+    }
+
+    .forminput{
+
+        height: 4em;
+        width: 43em;
+
+    }
+
+
+}
+
+@media  (min-width: 1300px){
+
+    .title{
+
+        font-size: 8em;
+
+    }
+
+
+}

@@ -42,7 +42,7 @@ save: (req, res) => {
       CantidadID: req.body.cantidad,
       Precio: req.body.precio,
       Oferta: req.body.oferta ? true : false,
-      ImagenID: req.files[0].filename
+     // ImagenID: req.files[0].filename
          /*.then(imagen => {
           db.Product.update({ImagenID: imagen.id},{
           where: {
@@ -52,10 +52,10 @@ save: (req, res) => {
         
 })
 
-  .then(product => {
+  .then(() => {
     
     //res.send(imagen)
-    return res.redirect('/product'+ product.id)
+    return res.redirect('/product')
   })  
 
   .catch(error => res.send(error))
@@ -85,7 +85,7 @@ edit: (req, res) => {
   .all([productPK, db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
   .then(([product, origenes, granos, gramos])=> {
      res.render('products/update', {
-      styles: ['product/item'],
+      styles: ['product/productEdit'],
       title: 'EDITAR PRODUCTO',
       product: product,
       origenes: origenes,
