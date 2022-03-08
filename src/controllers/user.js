@@ -217,12 +217,18 @@ register: (req, res) =>
     },
    
     delete: (req,res) => {
-
+      db.Imagen.destroy({
+        where: {
+         Url: req.files[0].filename
+          },
+            force: true     
+        })
+           
       db.User.destroy({
         where: {
           id: req.params.id,
           },
-                 
+            force: true     
         })
       
       res.redirect('/users/index')
@@ -257,6 +263,23 @@ register: (req, res) =>
           res.redirect('/users/profile')
         })                  
     }      
-  }
+  },
 
-};
+  search :  (req, res) => {
+  
+   // let buscar = req.body.buscar;
+  db.User.findAll({ 
+    where: { 
+      apellido: { [Op.like]: "%" +  + "%" } } })
+    .then(users => {
+      res.render('users/profile' + users.id,{
+        styles: ["profile"],
+        title: 'Resultado',
+        user:users
+      })
+      
+    });
+
+}
+
+}
