@@ -42,20 +42,18 @@ save: (req, res) => {
       CantidadID: req.body.cantidad,
       Precio: req.body.precio,
       Oferta: req.body.oferta ? true : false,
-     // ImagenID: req.files[0].filename
-         /*.then(imagen => {
-          db.Product.update({ImagenID: imagen.id},{
-          where: {
-            id:req.session.user.id
-          }
-          })   */       
+     ImagenID: req.files[0].filename,type:1 
+            
+           
+       
+        
         
 })
 
-  .then(() => {
+  .then((product) => {
     
-    //res.send(imagen)
-    return res.redirect('/product')
+    res.send(product)
+    //return res.redirect('/product')
   })  
 
   .catch(error => res.send(error))

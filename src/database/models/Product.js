@@ -33,7 +33,7 @@ module.exports = (sequelize, dataTypes) => {
         ImagenID: {
             type: dataTypes.INTEGER,
             
-            allowNull: true
+            //allowNull: true
         } 
        
     };
