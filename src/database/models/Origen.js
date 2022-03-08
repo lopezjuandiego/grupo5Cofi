@@ -8,7 +8,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
        
-        Pais: {
+        country: {
             type: dataTypes.INTEGER,
             allowNull: true
         },

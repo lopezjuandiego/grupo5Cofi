@@ -1,5 +1,12 @@
 **DAILY - SPRINT 6** 
 
+*Daily  / Lunes 7*
+Creamos vista y controller de producto individual y quedo funcionando.
+Metodo Edit, Updte y Delete funcionando
+Values en productos para modificar funcionando menos grano. Hay que aplicar en USER lo mismo
+
+*Daily  / Domingo 6*
+Dejamos fucionando create y save en PRODUCTOS. 
 
 *Daily  / Sábado 5*
 Resolvimos un problema con showUser que se rompía.
@@ -23,7 +30,7 @@ Continuamos con  CRUD de usuarios.
 Index y login funcionan. 
 Hay que revisar acces.
 
-*Daily  / Martes 1*
+*Daily  / Martes 1 Marzo*
 Quedaron funcionando todos los modelos y sus asociaciones.
 Empezamos el CRUD de usuarios.
 Index y login funcionan. Hay que revisar acces.

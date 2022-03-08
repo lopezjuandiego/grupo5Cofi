@@ -14,7 +14,7 @@ const controllers = {
              res.render("products/list", {
             styles: ["product/product"],
       
-            title: "LISTADO DE PRODUCTOS",
+            title: "PRODUCTOS",
             products: products
               
           })                    
@@ -42,69 +42,87 @@ save: (req, res) => {
       CantidadID: req.body.cantidad,
       Precio: req.body.precio,
       Oferta: req.body.oferta ? true : false,
-      //ImagenID: req.body.imagen ? req.body.imagen : null,
-      
-  })
- 
-  .then(()=> {
+      ImagenID: req.files[0].filename
+         /*.then(imagen => {
+          db.Product.update({ImagenID: imagen.id},{
+          where: {
+            id:req.session.user.id
+          }
+          })   */       
+        
+})
+
+  .then(product => {
     
-    return res.redirect('/product')})            
+    //res.send(imagen)
+    return res.redirect('/product'+ product.id)
+  })  
+
+  .catch(error => res.send(error))
+  
+
+},
+show : (req, res) => {
+  db.Product.findByPk(req.params.id,
+      {
+          include : ["origen", "grano","cantidad","imagen"]
+      })
+      .then(product => {
+        res.render('products/item', {
+          styles: ['product/item'],
+          title: 'Cafe  ' + product.origen.country,
+          product: product,
+      });
+})
+},
+  
+edit: (req, res) => {
+  let productId = req.params.id
+  let productPK = db.Product.findByPk(productId,{
+    include: [ "origen", "grano","cantidad"],
+  })
+  Promise
+  .all([productPK, db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
+  .then(([product, origenes, granos, gramos])=> {
+     res.render('products/update', {
+      styles: ['product/item'],
+      title: 'EDITAR PRODUCTO',
+      product: product,
+      origenes: origenes,
+      granos: granos,
+      gramos: gramos
+  }) 
+})
+.catch(error => res.send(error))
+}, 
+
+update: function (req,res) {
+  db.Product.update(
+      {
+        OrigenID: req.body.origen,
+        GranoID: req.body.tipoDeGrano,
+        CantidadID: req.body.cantidad,
+        Precio: req.body.precio,
+        Oferta: req.body.oferta ? true : false,
+      },
+      {
+          where: {
+            id: req.params.id}
+      })
+  .then(()=> {
+      return res.redirect('/product')
+    })            
   .catch(error => res.send(error))
 },
 
-show: (req,res) => {
- Promise.all([db.Grano.findAll()])
-
-  .then(product =>{
-    
-  //res.send(granos)
-    res.render("products/item",{
-    styles:["product/item"],                      
-    title: 'Cafe ' , 
-    product: product,
-    
-  }) 
- 
-}) 
-
-
-.catch(error => res.send(error))
-
-},
-
- /*let result = db.User.findOne({
-  where: {
-    email : req.cookies && req.cookies.user ?  req.cookies.user : null
-  }})*/
- /* show: (req, res) => {
-
-    let result = product.search('id', req.params.id)
-    let productShow = Object({ ...result, imagen: result.imagen.map(imagen => file.search("id", imagen)) })
-    return result ? res.render('products/item', {
-      styles: ["product/item"],
-      title: 'Café ' + result.origen,
-      product: productShow
-    }) : res.render('error', {
-      msg: 'Producto no encontrado'
+  delete: (req,res) => {
+    db.Product.destroy({
+      where: {
+        id: req.params.id
+      }
     })
-  },*/
-  update: (req, res) => res.render("products/update", {
-    styles: ["product/create"],
-    title: "MODIFICAR",
-    product: product.search('id', req.params.id)
-
-  }),
-
-  modify: (req, res) => {
-    let updated = product.update(req.params.id, req.body)
-    //return res.send(updated);
-    return res.redirect('/product/' + updated.id)
+    res.redirect('/product')
   },
-
-  delete: (req, res) => {
-    product.delete(req.body.id);
-    return res.redirect('/product')
-  }
 }
 
 module.exports = controllers

@@ -13,16 +13,22 @@
         <h2 class="title"><%= locals.title ? title : null %></h2>
       </section>
          <section>
-       
-         
+          <article>
+            <% if (product.oferta) { %> 
+                <h3 class="titoferta">¡EN OFERTA!</h3>
+           <% } %>  
+           </article> 
+           
              <article class="conteinfo">               
                              
-               <section class="cajaprod1">
-               
-             <ul>
-                <li class="itemtext">TIPO DE GRANO: <%= grano.tipoDeGrano  %></li>
-                <li class="itemtext">CANTIDAD: <%= product.cantidad ? product.cantidad.Cantidad : null %> Gr.</li>
-                <li class="itemtext">PRECIO: $ <%= product.Precio %></li>  
+               <section class="cajaprod1">                   
+            
+             <ul> 
+                    
+                <li class="itemtext">TIPO DE GRANO: <%= product.grano ? product.grano.tipoDeGrano : null %></li>                
+                <li class="itemtext">CANTIDAD: <%= product.cantidad ? product.cantidad.Cantidad : null %> gr</li>
+                <li class="itemtext">PRECIO: $ <%= product.Precio %>
+
             </ul>  
                
             
@@ -32,14 +38,16 @@
                 <article class="iconos1">
                     <a class="boton1" href="/product">VOLVER</a> 
                     <picture>
-                       <a href="/product/update/<%= product.id %>"><i class="fas fa-edit"></i></a>
+                       <a href="/product/edit/<%= product.id %>"><i class="fas fa-edit"></i></a>
                     </picture>
-                    <form action="/product/?m=DELETE" method="post">
-                        <input type="hidden" name="id" value="<%= product.id %>">
-                        <button class="tachito" type="submit">
-                            <a class="fas fa-trash-alt"></a>
-                        </button>
-                    </form>        
+
+                    <form action="/product/delete/ <%= product.id %> ?m=DELETE" method="post">
+                      <button class="tachito" type="submit">
+                          <a class="fas fa-trash-alt"></a>
+                      </button>
+                  </form>
+
+                    
                                                           
                       </article>
         </section>

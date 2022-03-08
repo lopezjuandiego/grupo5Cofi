@@ -32,8 +32,7 @@ module.exports = (sequelize, dataTypes) => {
             type:dataTypes.BOOLEAN,
         },
         avatar: {
-            type: dataTypes.INTEGER,
-            foreignKey: true,
+            type: dataTypes.INTEGER,            
             allowNull: true
         }
        
@@ -46,7 +45,7 @@ module.exports = (sequelize, dataTypes) => {
 
     User.associate = function (models) {
         User.belongsTo(models.Imagen, { 
-           /* as: "avatar",*/
+            as: "avatars",
             foreignKey: "avatar"
         })
 

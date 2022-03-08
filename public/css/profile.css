@@ -119,7 +119,14 @@ main{
     width: 70px;
   }
 
-  /vista de UserUpdate/
+  .contentfoto{
+    padding: 2.5em;
+  }
+
+ .contenticon{
+    text-align: center;
+    padding: 1em;
+ }
   .botonBorrar:hover{
     background-color: #432818;
     color: #ffe6a7;
@@ -127,10 +134,9 @@ main{
   .fa-edit{
     font-size: 3rem;
     color: #ffe6a7;
-    margin-right: 3rem;
+    padding: 0 2em;
     transition: all 0.3s linear;
-    display: flex;
-    justify-content: center;
+    
   }
   .fa-edit:hover{
     color: #432818;
@@ -143,6 +149,7 @@ main{
     border: -10;
     cursor: pointer;
     transition: all 0.3s linear;
+    padding: 0 2em;
   }
 
   .tachito{

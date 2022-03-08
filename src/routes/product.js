@@ -11,11 +11,11 @@ const router = express.Router();
 
 
 router.get('/', controllers.list)
-router.get('/product/create',[access], controllers.create)
-router.get('/product/:id',[access],controllers.show)
-router.get('/update/:id',[access],controllers.update)
-router.post('/product/save',[upload.any()], controllers.save) 
-router.put('/:id',[access],controllers.modify) 
-router.delete ('/',controllers.delete)
+router.get('/create',[access], controllers.create)
+router.get('/:id',[access],controllers.show)
+router.get('/edit/:id',[access],controllers.edit)
+router.post('/save',[upload.any()], controllers.save) 
+router.put('/update/:id',[access],controllers.update) 
+router.delete('/delete/:id',controllers.delete)
 
 module.exports = router;

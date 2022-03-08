@@ -1,19 +1,22 @@
 const validator = require("express-validator");
 const bcrypt = require("bcrypt");
-//const user = require("../models/user"); 
 const path = require('path');
 const db = require("../database/models")
 
 module.exports = {
 
  list: (req, res) => {
-    db.User.findAll()
+   
+    db.User.findAll({
+      include:['avatars']
+    })
         .then(users => {
           res.render("users/list", {
             styles: ["product/product"],
       
             title: "USUARIOS REGISTRADOS",
             users: users
+            
               
           })
         })
@@ -95,7 +98,7 @@ register: (req, res) =>
               password:bcrypt.hashSync(req.body.password,10),
               password2: req.body.password2,
               admin: req.body.email.includes('@cofi') ? true : false,
-              avatar: req.body.avatar ? req.body.avatar : null,
+              avatar: req.body.avatar,
     })
     
     .then(users => {
@@ -147,22 +150,25 @@ register: (req, res) =>
 
    profile: (req,res) => {
 
-     
+    db.User.findByPk(req.session.user.id,{
+      include:['avatars']
+    })   
+         .then (user => {  
           res.render('users/profile',{
           styles: ["profile"],
           title: "Perfil /" + req.body.nombre,
-          
+          user:user
         })
-
+      }) 
       },
     
-   
+         
     showUser: (req,res) => {
-      db.User.findByPk(req.params.id)
+      db.User.findByPk(req.params.id,{include:['avatars']})
+      
+      .then(users =>  {     
 
-      .then(users =>
-        
-        {let result = db.User.findOne({
+        let result = db.User.findOne({
         where: {
           email : req.cookies && req.cookies.user ?  req.cookies.user : null
         }})
@@ -207,16 +213,19 @@ register: (req, res) =>
         }
       })
       
-      res.redirect('/users/profile')
+      res.redirect('/users/index')
     },
    
     delete: (req,res) => {
 
       db.User.destroy({
         where: {
-          id: req.params.id
-        }
+          id: req.params.id,
+          
+        },
+      
       })
+      
       res.redirect('/users/index')
     },
 
@@ -225,12 +234,30 @@ register: (req, res) =>
     res.cookie("user", null, { maxAge: -1 });
     return res.redirect("/users/login");
   },
-  uploadAvatar: (req, res) => {
-    let update = db.User.findAll(req.session.user.id, {
-      include : ["avatarImagen"],
-      avatar: req.files ? req.files[0].filename : null,
-    });
-    req.session.user = update;
-    return res.redirect("/users/profile");
-  },
+
+
+   uploadAvatar: (req, res) => {
+
+    if(req.files && req.files.length > 0){
+      db.Imagen.create({Url:
+        req.files[0].filename,type:2})
+        .then(imagen => {
+          db.User.update({avatar: imagen.id},{
+          where: {
+            id:req.session.user.id
+          }
+          })          
+         .then(update => {
+            (req.session.user.id)
+            
+          })
+          .then(user => {
+            req.session.user = user           
+            })
+            
+          res.redirect('/users/profile')
+        })                  
+    }      
+  }
+
 };

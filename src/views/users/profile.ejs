@@ -16,40 +16,39 @@
                 </h4>
                 <section>
                     <% if (user.avatar !=null) { %>
+                        
                         <figure class="figura">
-                            <img class="fotoAvatar" src="/uploads/avatars/<%= user.avatar %>"
-                                alt="photo <%= user.email %>">
+                            <img class="fotoAvatar" src="/uploads/avatars/<%= user.avatars.Url %>"
+                                alt="photo <%= user.email %>" >
                         </figure>
+                       
                         <% } else { %>
                             <figure class="figura">
                                 <img class="avatar" src="/image/users/perfil.jpg" alt="photo <%= user.email %>">
                             </figure>
                             <% } %>
-
-                                <form class="foto" action="/users/upload/avatar" enctype="multipart/form-data"
-                                    method="post">
-                                    <input class="foteli" type="file" name="avatar" id="avatar">
-                                    <button type="submit">Actualizar foto de perfil</button>
-
-
-                                    <section class="editYtrash">
-                                        <article class="iconoEdit">
-                                            <fieldset>
-                                                <a class="fas fa-edit" href="/users/update/<%= user.id %>"></a>
-                                            </fieldset>
-                                        </article>
-
-                                    </section>
+                            <section class="editYtrash">
+                                <form  action="/users/upload/avatar" enctype="multipart/form-data" method="post">
+                                   <article class="contentfoto">
+                                    <input  type="file" name="avatar" id="avatar">
+                                    <button  type="submit">Actualizar foto de perfil</button>                                                                  
+                                </article>
+                                <article  class="contenticon">   
+                                    <a class="fas fa-edit" href="/users/update/<%= user.id %>"></a>                                                                                                                           
+                                       <form action="/users/delete/ <%= user.id %> ?m=DELETE" method="post">                                           
+                                            <button class="tachito"  type="submit">
+                                                <a class="fas fa-trash-alt"></a>
+                                            </button>
+                                        </form>
+                                        
+                                    </article>  
                                 </form>
+                            </section>
                                 <form action="/users/logout" method="post">
                                     <button class="botonExit" type="submit">SALIR</button>
                                 </form>
 
-                                <form action="/users/delete/ <%= user.id %> ?m=DELETE" method="post">
-                                    <button class="tachito" type="submit">
-                                        <a class="fas fa-trash-alt"></a>
-                                    </button>
-                                </form>
+                             
 
 
                 </section>

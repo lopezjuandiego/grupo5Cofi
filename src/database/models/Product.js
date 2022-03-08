@@ -30,11 +30,11 @@ module.exports = (sequelize, dataTypes) => {
         Oferta: {
             type:dataTypes.BOOLEAN,
         },
-      /*   ImagenID: {
+        ImagenID: {
             type: dataTypes.INTEGER,
-            foreignKey: true,
+            
             allowNull: true
-        } */
+        } 
        
     };
     let config = {
