@@ -20,11 +20,15 @@
            </article> 
            
              <article class="conteinfo">               
-                             
+       
+
                <section class="cajaprod1">                   
             
              <ul> 
-                    
+                  <% if (product.imagen != null) { %>
+                    <img class="contimag" src="/uploads/<%= product.imagen.Url %>" >
+                  <% } %>
+
                 <li class="itemtext">TIPO DE GRANO: <%= product.grano ? product.grano.tipoDeGrano : null %></li>                
                 <li class="itemtext">CANTIDAD: <%= product.cantidad ? product.cantidad.Cantidad : null %> gr</li>
                 <li class="itemtext">PRECIO: $ <%= product.Precio %>
