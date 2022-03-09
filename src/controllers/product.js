@@ -33,33 +33,27 @@ create: (req, res) => Promise.all([db.Origen.findAll(), db.Grano.findAll(), db.G
     gramos: gramos
 })
 }),
-
-save: (req, res) => {
-  db.Product.create({
-
-      OrigenID: req.body.origen,
-      GranoID: req.body.tipoDeGrano,
-      CantidadID: req.body.cantidad,
-      Precio: req.body.precio,
-      Oferta: req.body.oferta ? true : false,
-     ImagenID: req.files[0].filename,type:1 
-            
-           
-       
-        
-        
-})
-
-  .then((product) => {
-    
-    res.send(product)
-    //return res.redirect('/product')
-  })  
-
+save: (req,res) => {
+  db.Imagen.create({
+      Url: req.files[0].filename
+  })
+  .then(cafeImagen => {
+      db.Product.create({
+        OrigenID: req.body.origen,
+        GranoID: req.body.tipoDeGrano,
+        CantidadID: req.body.cantidad,
+        Precio: req.body.precio,
+        Oferta: req.body.oferta ? true : false,
+        ImagenID: cafeImagen.id,
+          
+      })
+      .then(() => {
+          return res.redirect('/product')
+  })
   .catch(error => res.send(error))
-  
-
+})
 },
+
 show : (req, res) => {
   db.Product.findByPk(req.params.id,
       {
@@ -121,6 +115,8 @@ update: function (req,res) {
     })
     res.redirect('/product')
   },
+
+ 
 }
 
 module.exports = controllers

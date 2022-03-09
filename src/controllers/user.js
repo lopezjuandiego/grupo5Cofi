@@ -1,7 +1,8 @@
 const validator = require("express-validator");
 const bcrypt = require("bcrypt");
 const path = require('path');
-const db = require("../database/models")
+const db = require("../database/models");
+const Op = db.Sequelize.Op
 
 module.exports = {
 
@@ -217,13 +218,13 @@ register: (req, res) =>
     },
    
     delete: (req,res) => {
-      db.Imagen.destroy({
+    /*  db.Imagen.destroy({
         where: {
          Url: req.files[0].filename
           },
             force: true     
         })
-           
+           */
       db.User.destroy({
         where: {
           id: req.params.id,
@@ -231,7 +232,11 @@ register: (req, res) =>
             force: true     
         })
       
-      res.redirect('/users/index')
+.then((error) => { 
+  res.send(error)
+     // res.redirect('/users/index')
+})
+.catch((error) => res.send(error));
     },
 
   logout: (req, res) => {
@@ -265,7 +270,7 @@ register: (req, res) =>
     }      
   },
 
-  search :  (req, res) => {
+/* search :  (req, res) => {
   
    // let buscar = req.body.buscar;
   db.User.findAll({ 
@@ -280,6 +285,6 @@ register: (req, res) =>
       
     });
 
-}
+}*/
 
 }
