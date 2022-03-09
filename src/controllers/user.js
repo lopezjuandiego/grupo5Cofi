@@ -207,7 +207,7 @@ register: (req, res) =>
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         email: req.body.email,       
-        //admin: req.body.email.include('@cofi') ? true : false,
+        
       },{
         where:{
           id: req.params.id
@@ -218,25 +218,32 @@ register: (req, res) =>
     },
    
     delete: (req,res) => {
-    /*  db.Imagen.destroy({
-        where: {
-         Url: req.files[0].filename
-          },
-            force: true     
+   
+
+      db.User.findByPk(req.params.id)
+      .then((user) => {
+        db.User.destroy({
+          where:{
+            id: user.id
+          }
         })
-           */
-      db.User.destroy({
-        where: {
-          id: req.params.id,
-          },
-            force: true     
-        })
-      
-.then((error) => { 
-  res.send(error)
-     // res.redirect('/users/index')
-})
-.catch((error) => res.send(error));
+        .then(respuesta => {
+          db.Imagen.destroy({
+            where: {
+              id: user.avatar,
+              },                   
+            })
+
+            .then(() => { 
+              res.redirect('/users/index')
+            }) 
+
+        .catch ((error) => res.send(error));      
+      })
+         .catch ((error) => res.send(error));
+      })
+         .catch ((error) => res.send(error));
+
     },
 
   logout: (req, res) => {
@@ -250,7 +257,7 @@ register: (req, res) =>
 
     if(req.files && req.files.length > 0){
       db.Imagen.create({Url:
-        req.files[0].filename,type:2})
+        req.files[0].filename,Type:2})
         .then(imagen => {
           db.User.update({avatar: imagen.id},{
           where: {
@@ -265,7 +272,7 @@ register: (req, res) =>
             req.session.user = user           
             })
             
-          res.redirect('/users/profile')
+          res.redirect('/users/login')
         })                  
     }      
   },

@@ -18,6 +18,12 @@
                 </h2>
 
             </section>
+
+            <form class="search"  action="/profile/search/<%= user.id %> " method="GET">
+                <i class="fas fa-search"></i>
+                <input  class ="barraB" type="search" name="buscar" placeholder="Buscar por Producto">
+                <button class="boton1" type="submit">Buscar</button>
+              </form>
          
 <% if (user != null && user.admin) { %>
  
@@ -80,15 +86,15 @@
                                         <img class="contentimagen" src="/uploads/<%= product.imagen.Url %> " alt=""
                                             srcset="">
                                         <% } %>
-                                            <ul class="contlis">
-                                                <li class="lilista">ORIGEN: <%= product.origen %>
-                                                </li>
-                                                <li class="lilista">TIPO DE GRANO: <%= product.grano %>
-                                                </li>
-                                                <li class="lilista">CANTIDAD: <%= product.cantidad %> gramos</li>
-                                                <li class="lilista">PRECIO: $ <%= product.Precio %>
-                                                </li>
-                                            </ul>
+                                        <ul class="contlis">
+                                            <li class="lilista">ORIGEN: <%= product.origen ? product.origen.country : null%>
+                                            </li>
+                                            <li class="lilista">TIPO DE GRANO: <%= product.grano ? product.grano.tipoDeGrano : null %>
+                                            </li>
+                                            <li class="lilista">CANTIDAD: <%= product.cantidad ? product.cantidad.Cantidad : null %> gr</li>
+                                            <li class="lilista">PRECIO: $ <%= product.Precio %>
+                                            </li>
+                                        </ul>
                                 </a>
                             </article>
                             <% }) %>

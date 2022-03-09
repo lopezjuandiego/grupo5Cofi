@@ -19,23 +19,20 @@
            <% } %>  
            </article> 
            
-             <article class="conteinfo">               
-       
+             <article class="conteinfo">              
+                   
+               <section class="cajaprod1"> 
 
-               <section class="cajaprod1">                   
+                <% if (product.imagen != null) { %>
+                  <img class="contimag" src="/uploads/<%= product.imagen.Url %>" >
+                <% } %>                 
             
              <ul> 
-                  <% if (product.imagen != null) { %>
-                    <img class="contimag" src="/uploads/<%= product.imagen.Url %>" >
-                  <% } %>
-
                 <li class="itemtext">TIPO DE GRANO: <%= product.grano ? product.grano.tipoDeGrano : null %></li>                
                 <li class="itemtext">CANTIDAD: <%= product.cantidad ? product.cantidad.Cantidad : null %> gr</li>
                 <li class="itemtext">PRECIO: $ <%= product.Precio %>
-
             </ul>  
-               
-            
+                           
                     </section>
                 </article>
                
