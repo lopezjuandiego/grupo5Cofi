@@ -35,7 +35,7 @@ create: (req, res) => Promise.all([db.Origen.findAll(), db.Grano.findAll(), db.G
 }),
 save: (req,res) => {
   db.Imagen.create({
-      Url: req.files[0].filename
+      Url: req.files[0].filename,Type:1
   })
   .then(cafeImagen => {
       db.Product.create({

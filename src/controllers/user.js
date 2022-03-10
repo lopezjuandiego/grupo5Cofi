@@ -272,7 +272,7 @@ register: (req, res) =>
             req.session.user = user           
             })
             
-          res.redirect('/users/login')
+          res.redirect('/users/index')
         })                  
     }      
   },
