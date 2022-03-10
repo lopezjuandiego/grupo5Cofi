@@ -29,6 +29,7 @@
                             <% } %>
                             <section class="editYtrash">
 
+                                <article > 
                                 <form  action="/users/upload/avatar" enctype="multipart/form-data" method="post">
                                   
                                     <input  type="file" name="avatar" id="avatar">
@@ -36,15 +37,16 @@
                                     <button class="botonExit"  type="submit">Actualizar</button>                                                                  
                               
                                 </form> 
-                                   
-                                        <a href="/users/edit/<%= user.id %>" ><i class="fa fa-edit"></i></a>
+                            </article>
+                            <article class="contenticonos">
+                                     <a href="/users/edit/<%= user.id %>" ><i class="fa fa-edit"></i></a>
 
                                 <form action="/users/delete/<%= user.id %>?m=DELETE" method="post">                                           
                                             <button class="tachito"  type="submit">
                                                 <a class="fas fa-trash-alt"></a>
                                             </button>
                                  </form>                                      
-                                                                    
+                                </article>                              
                             </section>
                                 <form action="/users/logout" method="post">
                                     <button class="botonExit" type="submit">SALIR</button>

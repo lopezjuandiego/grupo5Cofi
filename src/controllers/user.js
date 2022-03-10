@@ -231,10 +231,12 @@ register: (req, res) =>
           db.Imagen.destroy({
             where: {
               id: user.avatar,
-              },                   
+              },     
+                         
             })
-
+              
             .then(() => { 
+              
               res.redirect('/users/index')
             }) 
 
@@ -272,26 +274,31 @@ register: (req, res) =>
             req.session.user = user           
             })
             
-          res.redirect('/users/login')
+          res.redirect('/users/profile')
         })                  
     }      
   },
 
-/* search :  (req, res) => {
+search :  (req, res) => {
   
-   // let buscar = req.body.buscar;
+   // let buscar = req.body.apellido;
+
   db.User.findAll({ 
     where: { 
-      apellido: { [Op.like]: "%" +  + "%" } } })
+      apellido: { [Op.like]: "%p%" } 
+    } 
+    })
     .then(users => {
-      res.render('users/profile' + users.id,{
+     /* res.render('users/profile', {
         styles: ["profile"],
         title: 'Resultado',
-        user:users
-      })
-      
+        users:users
+
+        
+      })*/
+      res.send(users)
     });
 
-}*/
+}
 
 }
