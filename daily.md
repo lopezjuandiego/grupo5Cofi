@@ -1,8 +1,12 @@
 **DAILY - SPRINT 7** 
 
-**DAILY - SPRINT 6** 
+
 
 *DAILY - SPRINT 6* 
+
+Daily  / Jueves 10
+Search en user funcional.
+Implementando sin terminar Search en Product
 
 Daily  / Miércoles 9
 Foto en producto y user.

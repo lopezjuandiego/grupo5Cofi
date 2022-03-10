@@ -16,7 +16,7 @@
                 <% if (user !=null && user.admin) { %>
  
                    
-                    <form class="search"  action="/profile/<%= user.id %>" method="post">
+                    <form class="search"  action="/users/search" method="get">
                       <i class="fas fa-search"></i>
                       <input  class ="barraB" type="search" name="buscar" placeholder="Buscar por Apellido">
                       <button class="boton1" type="submit">Buscar</button>

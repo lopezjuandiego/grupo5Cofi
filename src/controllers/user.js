@@ -275,30 +275,26 @@ register: (req, res) =>
             })
             
           res.redirect('/users/profile')
-        })                  
+        }) 
+        .catch ((error) => res.send(error));                 
     }      
   },
 
 search :  (req, res) => {
-  
-   // let buscar = req.body.apellido;
 
   db.User.findAll({ 
     where: { 
-      apellido: { [Op.like]: "%p%" } 
+      apellido: { [Op.like]: "%" + req.query.buscar + "%" }    
     } 
     })
     .then(users => {
-     /* res.render('users/profile', {
+      res.render('users/search', {
         styles: ["profile"],
         title: 'Resultado',
-        users:users
-
-        
-      })*/
-      res.send(users)
-    });
-
+        users : users
+      })
+//      res.send(users)
+    })
+    .catch ((error) => res.send(error));
 }
-
 }
