@@ -107,16 +107,37 @@ update: function (req,res) {
   .catch(error => res.send(error))
 },
 
-  delete: (req,res) => {
+delete: (req,res) => {
+   
+
+  db.Product.findByPk(req.params.id)
+  
+    .then((products) => {
     db.Product.destroy({
-      where: {
-        id: req.params.id
+      where:{
+        id: products.id
       }
     })
-    res.redirect('/product')
-  },
+    .then(imagens => {
+      db.Imagen.destroy({
+        where: {
+          id: products.ImagenID,
+          },                   
+        })
 
- 
+        .then(() => { 
+         
+          res.redirect('/product')
+        }) 
+
+    .catch ((error) => res.send(error));      
+  })
+     .catch ((error) => res.send(error));
+  })
+     .catch ((error) => res.send(error));
+
+},
+
 }
 
 module.exports = controllers

@@ -42,16 +42,16 @@
                        <a href="/product/edit/<%= product.id %>"><i class="fas fa-edit"></i></a>
                     </picture>
 
-                    <form action="/product/delete/ <%= product.id %> ?m=DELETE" method="post">
+                    <form action="/product/delete/<%= product.id %>?m=DELETE" method="post">
                       <button class="tachito" type="submit">
                           <a class="fas fa-trash-alt"></a>
                       </button>
-                  </form>
-
-                    
+                  </form>                    
                                                           
                       </article>
         </section>
+
+      
 
         <% }else { %>
 

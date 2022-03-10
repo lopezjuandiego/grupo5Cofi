@@ -17,13 +17,13 @@ main{
     align-items: center;
     color: #ffe6a7;
     font-family: "Dancing Script";
-    font-size: 8vw;
+    font-size: 13vw;
 }
 .EmailUser{
     display: flex;
     justify-content: center;
     color: #ffe6a7;
-    font-size: 3vw;
+    font-size: 7vw;
     font-family: Roboto, "Helvetica Neue",;
     padding: 12px;
 }
@@ -167,8 +167,9 @@ main{
 
   .editYtrash{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em;
   }
 
   .formgral{
@@ -247,6 +248,12 @@ main{
     background-color: rgb(67, 40, 24);
    }
 
+  
+
+   .contenticonos{
+    display: flex;
+    padding: 3em 0 0;
+   }
 
    @media  (min-width: 768px) {
 
@@ -265,6 +272,14 @@ main{
     width: 23em;
     font-size: 1em;
   }
-
+  .tituloprofile{
+   
+    font-size: 8vw;
+}
+.EmailUser{
+  
+  font-size: 3vw;
+  
+}
 
    }
