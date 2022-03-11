@@ -138,6 +138,39 @@ font-size: 1.5em;
     
 }
 
+.search{
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+}
+
+
+
+.fa-search{
+    font-size: 28px;
+}
+
+.boton1{
+    background-color: #ffe6a7;
+    color: #432818;
+    font-size: 1em;
+    padding: 0.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s linear;
+    border-style: outset;
+    border-width: 3px;
+}
+.barraB{
+    height: 3em;
+    width: 24em;
+    padding: 0 4em;
+    border-radius: 10px;
+    font-family: "Roboto";
+    font-weight: bold;
+    
+}
+
 
 /* FIN CUERPO */
 

@@ -42,7 +42,7 @@ save: (req, res) => {
       CantidadID: req.body.cantidad,
       Precio: req.body.precio,
       Oferta: req.body.oferta ? true : false,
-     ImagenID: req.files[0].filename,type:1 
+     //ImagenID: req.files[0].filename,type:1 
             
            
        
@@ -50,10 +50,10 @@ save: (req, res) => {
         
 })
 
-  .then((product) => {
+  .then(() => {
     
-    res.send(product)
-    //return res.redirect('/product')
+    //res.send(product)
+    return res.redirect('/product')
   })  
 
   .catch(error => res.send(error))
