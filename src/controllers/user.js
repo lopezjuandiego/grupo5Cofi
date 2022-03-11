@@ -281,9 +281,9 @@ register: (req, res) =>
   },
 
 search :  (req, res) => {
-
-  db.User.findAll({ 
-    where: { 
+  db.User.findAll(
+   {   
+      where: { 
       apellido: { [Op.like]: "%" + req.query.buscar + "%" }    
     } 
     })

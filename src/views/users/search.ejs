@@ -8,7 +8,7 @@
             <main>
                 <section>
                     <% if (users.length > 0) { %>
-                        <article ">Hay <%= users.length %> con ese Apellido/s</article>
+                        <article ">Hay <%= users.length %> registrados con ese Apellido/s</article>
          
             <% users.forEach(element => { %>
                 <article class=" listagral">
@@ -36,7 +36,7 @@
                         <% }) %>
 
                             <% } else { %>
-                                <article>No hay resultados para esta búsqueda</article>
+                                <article>No se encontraron usuarios</article>
                                 <% }%>
 
                                     <article class="iconos1">

@@ -1,7 +1,7 @@
 //const product = require("../models/product")
 const db = require("../database/models")
 const file = require("../models/file")
-
+const Op = db.Sequelize.Op
 const controllers = {
 
  
@@ -138,8 +138,30 @@ delete: (req,res) => {
 
 },
 
+search :  (req, res) => {
+
+ db.Product.findAll({ include: [ "origen", "grano","cantidad"],
+})
+Promise
+.all([db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
+.then( ([product, origenes, granos, gramos])=> {
+db.Product.findAll({
+where: { 
+      OrigenID: { [Op.like]: "%" + req.query.buscar + "%" }    
+    } 
+    })
+    .then(cafe => {
+     /*  res.render('products/search', {
+        styles: ["profile"],
+        title: 'Resultado',
+        cafe : cafe
+      }) */
+    res.send(cafe)
+    })
+    .catch ((error) => res.send(error));
+ })
+ }
 }
 
 module.exports = controllers
-
 

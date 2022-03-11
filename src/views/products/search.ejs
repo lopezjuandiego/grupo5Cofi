@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../includes/head") %>
+
+    <body>
+        <%- include("../includes/header") %>
+
+            <main>
+                <section>
+                    <% if (cafe.length > 0) { %>
+                        <article ">Hay <%= cafe.length %> cafes con ese Origen/s</article>
+         
+            <% cafe.forEach(element => { %>
+                <article class=" listagral">
+                            <a class="contentlista" href="/users/profile/<%= element.id %> ">
+                                <% if (cafe.imagen) { %>
+                                    <img class="contentimagen" src="/uploads/avatars/<%= element.imagen.Url %> " alt=""
+                                        srcset="">
+                                    <% } %>
+                                        <ul class="contlis">
+                                            <li class="itemtext">ORIGEN: <%= element.origen.country, %></li> 
+                                            <li class="itemtext">TIPO DE GRANO: <%= element.grano.tipoDeGrano %></li>                
+                                            <li class="itemtext">CANTIDAD: <%= element.cantidad.Cantidad  %> gr</li>
+                                            <li class="itemtext">PRECIO: $ <%= element.Precio %>
+                                        </ul>  
+                            </a>
+                        </article>
+
+                        <% }) %>
+
+                            <% } else { %>
+                                <article>No hay resultados para esta búsqueda</article>
+                                <% }%>
+
+                                    <article class="iconos1">
+                                        <a class="boton1" href="/products/list">VOLVER</a>
+                                    </article>
+
+
+                </section>
+            </main>
+            <%- include("../includes/footer") %>
+    </body>
+
+</html>
