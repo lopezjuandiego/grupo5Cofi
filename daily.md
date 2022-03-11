@@ -4,6 +4,10 @@
 
 *DAILY - SPRINT 6* 
 
+Daily  / Viernes 11
+Search en user funcional con mejores. Busca por nombre y apellido
+Search en Product implementado controller y vista, pero no funciona la búsqueda
+
 Daily  / Jueves 10
 Search en user funcional.
 Implementando sin terminar Search en Product

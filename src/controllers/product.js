@@ -75,7 +75,7 @@ edit: (req, res) => {
   })
   Promise
   .all([productPK, db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
-  .then(([product, origenes, granos, gramos])=> {
+  .then(([product, origenes, granos, gramos]) => {
      res.render('products/update', {
       styles: ['product/productEdit'],
       title: 'EDITAR PRODUCTO',
@@ -139,28 +139,32 @@ delete: (req,res) => {
 },
 
 search :  (req, res) => {
-
- db.Product.findAll({ include: [ "origen", "grano","cantidad"],
-})
-Promise
-.all([db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
-.then( ([product, origenes, granos, gramos])=> {
-db.Product.findAll({
+let cofiSearch = db.Product.findAll({
+      include : ["origen", "grano","cantidad"],
 where: { 
-      OrigenID: { [Op.like]: "%" + req.query.buscar + "%" }    
-    } 
-    })
-    .then(cafe => {
-     /*  res.render('products/search', {
-        styles: ["profile"],
-        title: 'Resultado',
-        cafe : cafe
-      }) */
-    res.send(cafe)
+      OrigenID: { [Op.like]: "%" + req.query.buscar + "%" },
+      GranoID: { [Op.like]: "%" + req.query.buscar + "%" },
+      //GramoID: { [Op.like]: "%" + req.query.buscar + "%" }    
+    
+    }
+  })
+
+Promise
+    .all([cofiSearch, db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
+    .then(([cafe, origenes, grano, gramos]) => {
+      return res.render('products/search', {
+        styles: ["product/productEdit"],
+        title: 'RESULTADO ',
+        cafe : cafe,
+        origenes: origenes,
+        grano: grano, 
+        gramos: gramos,        
+      }); 
+    //res.send(cafe)
     })
     .catch ((error) => res.send(error));
- })
- }
+
+}
 }
 
 module.exports = controllers

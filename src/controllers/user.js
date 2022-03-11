@@ -283,10 +283,21 @@ register: (req, res) =>
 search :  (req, res) => {
   db.User.findAll(
    {   
-      where: { 
-      apellido: { [Op.like]: "%" + req.query.buscar + "%" }    
-    } 
-    })
+      where: { [Op.or]: [
+        {
+          nombre: {
+            [Op.like]:"%" + req.query.buscar + "%"
+          }
+        },
+        {
+          apellido: {
+            [Op.like]: "%" + req.query.buscar + "%"
+          }
+        }
+      ]
+    }
+  }
+  )
     .then(users => {
       res.render('users/search', {
         styles: ["profile"],
@@ -298,3 +309,5 @@ search :  (req, res) => {
     .catch ((error) => res.send(error));
 }
 }
+
+

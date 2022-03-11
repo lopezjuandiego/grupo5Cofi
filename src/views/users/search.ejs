@@ -8,24 +8,21 @@
             <main>
                 <section>
                     <% if (users.length > 0) { %>
-                        <article ">Hay <%= users.length %> registrados con ese Apellido/s</article>
+                        <article class="EmailUser ">Hay <%= users.length %> usuario/s registrado/s </article>
          
             <% users.forEach(element => { %>
                 <article class=" listagral">
-                            <a class="contentlista" href="/users/profile/<%= element.id %> ">
-                                <% if (users.avatar) { %>
-                                    <img class="contentimagen" src="/uploads/avatars/<%= element.avatars.Url %> " alt=""
-                                        srcset="">
-                                    <% } %>
+                            <a class="searchlista" href="/users/profile/<%= element.id %> ">
+                              
                                         <ul class="contlis">
 
-                                            <li class="lilista">NOMBRE: <%= element.nombre %>
+                                            <li class="searchUser">NOMBRE: <%= element.nombre %>
                                             </li>
 
-                                            <li class="lilista">APELLIDO: <%= element.apellido %>
+                                            <li class="searchUser">APELLIDO: <%= element.apellido %>
                                             </li>
 
-                                            <li class="lilista">E-MAIL: <%= element.email %>
+                                            <li class="searchUser">E-MAIL: <%= element.email %>
                                             </li>
 
 

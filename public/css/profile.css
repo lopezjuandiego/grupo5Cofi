@@ -19,6 +19,14 @@ main{
     font-family: "Dancing Script";
     font-size: 13vw;
 }
+
+.listagral{
+  padding:1em;
+  border: 4px #774544 inset;
+  border-radius: 20px;
+  margin-top: 15px;
+}
+
 .EmailUser{
     display: flex;
     justify-content: center;
@@ -26,6 +34,26 @@ main{
     font-size: 7vw;
     font-family: Roboto, "Helvetica Neue",;
     padding: 12px;
+}
+
+.searchUser{
+  display: flex;
+  justify-content: center;
+  color: #ffe6a7;
+  font-size: 30px;
+  font-family: Roboto, "Helvetica Neue",;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.searchLista{
+  margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
 }
 .figura{
     display: flex;
@@ -216,7 +244,7 @@ main{
     padding: 0.6em;
     width: 5em;
     border-radius: 20px;
-    font-size: 29px;
+    font-size: 20px;
     font-family: "Roboto", sans-serif;
     cursor: pointer;
     color: #6f1d1b;
