@@ -1,7 +1,7 @@
 //const product = require("../models/product")
 const db = require("../database/models")
 const file = require("../models/file")
-
+const Op = db.Sequelize.Op
 const controllers = {
 
  
@@ -33,33 +33,27 @@ create: (req, res) => Promise.all([db.Origen.findAll(), db.Grano.findAll(), db.G
     gramos: gramos
 })
 }),
-
-save: (req, res) => {
-  db.Product.create({
-
-      OrigenID: req.body.origen,
-      GranoID: req.body.tipoDeGrano,
-      CantidadID: req.body.cantidad,
-      Precio: req.body.precio,
-      Oferta: req.body.oferta ? true : false,
-     //ImagenID: req.files[0].filename,type:1 
-            
-           
-       
-        
-        
-})
-
-  .then(() => {
-    
-    //res.send(product)
-    return res.redirect('/product')
-  })  
-
+save: (req,res) => {
+  db.Imagen.create({
+      Url: req.files[0].filename,Type:1
+  })
+  .then(cafeImagen => {
+      db.Product.create({
+        OrigenID: req.body.origen,
+        GranoID: req.body.tipoDeGrano,
+        CantidadID: req.body.cantidad,
+        Precio: req.body.precio,
+        Oferta: req.body.oferta ? true : false,
+        ImagenID: cafeImagen.id,
+          
+      })
+      .then(() => {
+          return res.redirect('/product')
+  })
   .catch(error => res.send(error))
-  
-
+})
 },
+
 show : (req, res) => {
   db.Product.findByPk(req.params.id,
       {
@@ -81,7 +75,7 @@ edit: (req, res) => {
   })
   Promise
   .all([productPK, db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
-  .then(([product, origenes, granos, gramos])=> {
+  .then(([product, origenes, granos, gramos]) => {
      res.render('products/update', {
       styles: ['product/productEdit'],
       title: 'EDITAR PRODUCTO',
@@ -113,16 +107,65 @@ update: function (req,res) {
   .catch(error => res.send(error))
 },
 
-  delete: (req,res) => {
+delete: (req,res) => {
+   
+
+  db.Product.findByPk(req.params.id)
+  
+    .then((products) => {
     db.Product.destroy({
-      where: {
-        id: req.params.id
+      where:{
+        id: products.id
       }
     })
-    res.redirect('/product')
-  },
+    .then(imagens => {
+      db.Imagen.destroy({
+        where: {
+          id: products.ImagenID,
+          },                   
+        })
+
+        .then(() => { 
+         
+          res.redirect('/product')
+        }) 
+
+    .catch ((error) => res.send(error));      
+  })
+     .catch ((error) => res.send(error));
+  })
+     .catch ((error) => res.send(error));
+
+},
+
+search :  (req, res) => {
+let cofiSearch = db.Product.findAll({
+      include : ["origen", "grano","cantidad"],
+where: { 
+      OrigenID: { [Op.like]: "%" + req.query.buscar + "%" },
+      GranoID: { [Op.like]: "%" + req.query.buscar + "%" },
+      //GramoID: { [Op.like]: "%" + req.query.buscar + "%" }    
+    
+    }
+  })
+
+Promise
+    .all([cofiSearch, db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
+    .then(([cafe, origenes, grano, gramos]) => {
+      return res.render('products/search', {
+        styles: ["product/productEdit"],
+        title: 'RESULTADO ',
+        cafe : cafe,
+        origenes: origenes,
+        grano: grano, 
+        gramos: gramos,        
+      }); 
+    //res.send(cafe)
+    })
+    .catch ((error) => res.send(error));
+
+}
 }
 
 module.exports = controllers
-
 

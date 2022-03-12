@@ -1,4 +1,26 @@
-**DAILY - SPRINT 6** 
+**DAILY - SPRINT 7** 
+
+
+
+*DAILY - SPRINT 6* 
+
+Daily  / Viernes 11
+Search en user funcional con mejores. Busca por nombre y apellido
+Search en Product implementado controller y vista, pero no funciona la búsqueda
+
+Daily  / Jueves 10
+Search en user funcional.
+Implementando sin terminar Search en Product
+
+Daily  / Miércoles 9
+Foto en producto y user.
+Delete en producto y user.
+Arregos de CSS
+
+Daily  / Martes 8
+Agregamos foto de usuario pero se rompé el Delete
+Planteamos SEARCH
+Arregos de CSS
 
 *Daily  / Lunes 7*
 Creamos vista y controller de producto individual y quedo funcionando.

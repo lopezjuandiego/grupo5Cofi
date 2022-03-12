@@ -1,7 +1,8 @@
 const validator = require("express-validator");
 const bcrypt = require("bcrypt");
 const path = require('path');
-const db = require("../database/models")
+const db = require("../database/models");
+const Op = db.Sequelize.Op
 
 module.exports = {
 
@@ -206,7 +207,7 @@ register: (req, res) =>
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         email: req.body.email,       
-        //admin: req.body.email.include('@cofi') ? true : false,
+        
       },{
         where:{
           id: req.params.id
@@ -217,21 +218,34 @@ register: (req, res) =>
     },
    
     delete: (req,res) => {
-      db.Imagen.destroy({
-        where: {
-         Url: req.files[0].filename
-          },
-            force: true     
+   
+
+      db.User.findByPk(req.params.id)
+      .then((user) => {
+        db.User.destroy({
+          where:{
+            id: user.id
+          }
         })
-           
-      db.User.destroy({
-        where: {
-          id: req.params.id,
-          },
-            force: true     
-        })
-      
-      res.redirect('/users/index')
+        .then(respuesta => {
+          db.Imagen.destroy({
+            where: {
+              id: user.avatar,
+              },     
+                         
+            })
+              
+            .then(() => { 
+              
+              res.redirect('/users/index')
+            }) 
+
+        .catch ((error) => res.send(error));      
+      })
+         .catch ((error) => res.send(error));
+      })
+         .catch ((error) => res.send(error));
+
     },
 
   logout: (req, res) => {
@@ -245,7 +259,7 @@ register: (req, res) =>
 
     if(req.files && req.files.length > 0){
       db.Imagen.create({Url:
-        req.files[0].filename,type:2})
+        req.files[0].filename,Type:2})
         .then(imagen => {
           db.User.update({avatar: imagen.id},{
           where: {
@@ -261,25 +275,39 @@ register: (req, res) =>
             })
             
           res.redirect('/users/profile')
-        })                  
+        }) 
+        .catch ((error) => res.send(error));                 
     }      
   },
 
-  search :  (req, res) => {
-  
-   // let buscar = req.body.buscar;
-  db.User.findAll({ 
-    where: { 
-      apellido: { [Op.like]: "%" +  + "%" } } })
+search :  (req, res) => {
+  db.User.findAll(
+   {   
+      where: { [Op.or]: [
+        {
+          nombre: {
+            [Op.like]:"%" + req.query.buscar + "%"
+          }
+        },
+        {
+          apellido: {
+            [Op.like]: "%" + req.query.buscar + "%"
+          }
+        }
+      ]
+    }
+  }
+  )
     .then(users => {
-      res.render('users/profile' + users.id,{
+      res.render('users/search', {
         styles: ["profile"],
         title: 'Resultado',
-        user:users
+        users : users
       })
-      
-    });
-
+//      res.send(users)
+    })
+    .catch ((error) => res.send(error));
+}
 }
 
-}
+
