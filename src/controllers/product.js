@@ -139,33 +139,36 @@ delete: (req,res) => {
 },
 
 search :  (req, res) => {
-let cofiSearch = db.Product.findAll({
-      include : ["origen", "grano","cantidad"],
-where: { 
-      OrigenID: { [Op.like]: "%" + req.query.buscar + "%" },
-      GranoID: { [Op.like]: "%" + req.query.buscar + "%" },
-      //GramoID: { [Op.like]: "%" + req.query.buscar + "%" }    
-    
-    }
-  })
 
-Promise
-    .all([cofiSearch, db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
-    .then(([cafe, origenes, grano, gramos]) => {
+  db.Origen.findOne({
+     where: { 
+       country: { [Op.like]: "%" + req.query.buscar + "%" },
+           }
+   })
+   
+     .then(country => { 
+    db.Product.findAll({   
+     include : ["origen", "grano","cantidad"], 
+         where: { 
+           OrigenID: country.id,
+           
+               }
+     }) 
+     .then(cafe => {
       return res.render('products/search', {
-        styles: ["product/productEdit"],
-        title: 'RESULTADO ',
-        cafe : cafe,
-        origenes: origenes,
-        grano: grano, 
-        gramos: gramos,        
-      }); 
-    //res.send(cafe)
-    })
-    .catch ((error) => res.send(error));
-
-}
-}
-
-module.exports = controllers
-
+         styles: ['product/item'],
+         title: 'Cafe  ',
+         cafe: cafe,
+         
+     })
+    
+   })
+ })
+   .catch ((error) => res.send(error));
+ 
+ }
+ 
+ 
+ }
+ 
+ module.exports = controllers

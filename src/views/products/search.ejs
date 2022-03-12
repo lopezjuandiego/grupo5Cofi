@@ -13,14 +13,11 @@
             <% cafe.forEach(element => { %>
                 <article class=" listagral">
                             <a class="contentlista" href="/users/profile/<%= element.id %> ">
-                                <% if (cafe.imagen) { %>
-                                    <img class="contentimagen" src="/uploads/avatars/<%= element.imagen.Url %> " alt=""
-                                        srcset="">
-                                    <% } %>
+                               
                                         <ul class="contlis">
-                                            <li class="itemtext">ORIGEN: <%= element.origen %></li> 
+                                            <li class="itemtext">ORIGEN: <%= element.country %></li> 
                                             <li class="itemtext">TIPO DE GRANO: <%= element.grano %></li>                
-                                            <li class="itemtext">CANTIDAD: <%= element.cantidad  %> gr</li>
+                                            <li class="itemtext">PESO: <%= element.cantidad  %> gr</li>
                                             <li class="itemtext">PRECIO: $ <%= element.Precio %>
                                         </ul>  
                             </a>
