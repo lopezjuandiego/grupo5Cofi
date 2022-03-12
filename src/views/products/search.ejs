@@ -6,22 +6,27 @@
         <%- include("../includes/header") %>
 
             <main>
-                <section>
+                <section class="conttitle">
+                <h1 class="title">RESULTADO DE BUSQUEDA</h1>
+                </section>
+                <section >
                     <% if (cafe.length > 0) { %>
-                        <article ">Hay <%= cafe.length %> cafes con ese Origen/s</article>
+                        <h3 class="title-busqueda">Hay <%= cafe.length %> cafes con ese Origen, grano o peso</h3>
          
             <% cafe.forEach(element => { %>
-                <article class=" listagral">
-                            <a class="contentlista" href="/users/profile/<%= element.id %> ">
+                <section class= "conteinfo">
+                    <article class="cajaprod1">
+                            <a class="itemtext" href="/product/<%= element.id %> ">
                                
-                                        <ul class="contlis">
-                                            <li class="itemtext">ORIGEN: <%= element.country %></li> 
-                                            <li class="itemtext">TIPO DE GRANO: <%= element.grano %></li>                
-                                            <li class="itemtext">PESO: <%= element.cantidad  %> gr</li>
+                                        <ul >
+                                            <li class="itemtext">ORIGEN: <%= element.origen.country %></li> 
+                                            <li class="itemtext">TIPO DE GRANO: <%= element.grano.tipoDeGrano %></li>                
+                                            <li class="itemtext">CANTIDAD: <%= element.cantidad.Cantidad  %> gr</li>
                                             <li class="itemtext">PRECIO: $ <%= element.Precio %>
                                         </ul>  
                             </a>
                         </article>
+                        </section>
 
                         <% }) %>
 

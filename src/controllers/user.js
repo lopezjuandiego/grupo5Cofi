@@ -304,7 +304,7 @@ search :  (req, res) => {
         title: 'Resultado',
         users : users
       })
-//      res.send(users)
+    
     })
     .catch ((error) => res.send(error));
 }

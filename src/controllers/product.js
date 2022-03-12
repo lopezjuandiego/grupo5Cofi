@@ -139,36 +139,88 @@ delete: (req,res) => {
 },
 
 search :  (req, res) => {
+ db.Origen.findOne({
+    where: { 
+      country: { [Op.like]: "%" + req.query.buscar + "%" },
+          }
+  })
+  
+    .then(country => { 
+   db.Product.findAll({   
+    include : ["origen", "grano","cantidad"], 
+        where: { 
+          OrigenID: country.id,
+          
+              }
+    }) 
+    .then(cafe => {
+     return res.render('products/search', {
+        styles: ['product/item'],
+        title: 'Café   ',
+        cafe: cafe,
+        
+    })
+  })
+})
+  .catch ((error) => res.send(error));
+
+} 
+}
+
+module.exports = controllers
+
+/* 
+para probar busqueda simultanea
+search :  (req, res) => {
 
   db.Origen.findOne({
-     where: { 
-       country: { [Op.like]: "%" + req.query.buscar + "%" },
-           }
-   })
-   
-     .then(country => { 
+    where: { 
+      country: { [Op.like]: "%" + req.query.buscar + "%" },
+      //tipoDeGrano: { [Op.like]: "%" + req.query.buscar + "%" },
+      Cantidad: { [Op.like]: "%" + req.query.buscar + "%" },
+          }
+  })
+  
+    .then(country => { 
+   db.Product.findAll({   
+    include : ["origen", "grano","cantidad"], 
+        where: { 
+          OrigenID: country.id,
+          
+              }
+    })
+  }) 
+
+   .then(grano => { 
     db.Product.findAll({   
      include : ["origen", "grano","cantidad"], 
          where: { 
-           OrigenID: country.id,
+           GranoID: grano.id,
            
                }
-     }) 
-     .then(cafe => {
-      return res.render('products/search', {
-         styles: ['product/item'],
-         title: 'Cafe  ',
-         cafe: cafe,
-         
      })
-    
-   })
- })
-   .catch ((error) => res.send(error));
- 
- }
- 
- 
- }
- 
- module.exports = controllers
+   })  
+
+   .then(peso => { 
+    db.Product.findAll({   
+     include : ["origen", "grano","cantidad"], 
+         where: { 
+           Cantidad: peso.id,
+           
+               }
+     })
+   }) 
+    .then(cafe => {
+     return res.render('products/search', {
+        styles: ['product/item'],
+        title: 'Café   ',
+        cafe: cafe,
+        
+    })
+   
+  })
+//})
+  .catch ((error) => res.send(error));
+
+}
+ */
