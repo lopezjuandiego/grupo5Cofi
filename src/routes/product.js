@@ -12,6 +12,7 @@ const router = express.Router();
 
 router.get('/', controllers.list)
 router.get('/create',[access], controllers.create)
+router.get('/search/', controllers.search)
 router.get('/:id',[access],controllers.show)
 router.get('/edit/:id',[access],controllers.edit)
 router.post('/save',[upload.any()], controllers.save) 

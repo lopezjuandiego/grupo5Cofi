@@ -281,20 +281,33 @@ register: (req, res) =>
   },
 
 search :  (req, res) => {
-
-  db.User.findAll({ 
-    where: { 
-      apellido: { [Op.like]: "%" + req.query.buscar + "%" }    
-    } 
-    })
+  db.User.findAll(
+   {   
+      where: { [Op.or]: [
+        {
+          nombre: {
+            [Op.like]:"%" + req.query.buscar + "%"
+          }
+        },
+        {
+          apellido: {
+            [Op.like]: "%" + req.query.buscar + "%"
+          }
+        }
+      ]
+    }
+  }
+  )
     .then(users => {
       res.render('users/search', {
         styles: ["profile"],
         title: 'Resultado',
         users : users
       })
-//      res.send(users)
+    
     })
     .catch ((error) => res.send(error));
 }
 }
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../includes/head") %>
+
+    <body>
+        <%- include("../includes/header") %>
+
+            <main>
+                <section class="conttitle">
+                <h1 class="title">RESULTADO DE BUSQUEDA</h1>
+                </section>
+                <section >
+                    <% if (cafe.length > 0) { %>
+                        <h3 class="title-busqueda">Hay <%= cafe.length %> cafes con ese Origen/s</h3>
+         
+            <% cafe.forEach(element => { %>
+                <section class= "conteinfo">
+                    <article class="cajaprod1">
+                            <a class="itemtext" href="/product/<%= element.id %> ">
+                                <% if (cafe.imagen) { %>
+                                    <img  src="/uploads/avatars/<%= element.imagen.Url %> " alt=""
+                                        srcset="">
+                                    <% } %>
+                                        <ul >
+                                            <li class="itemtext">ORIGEN: <%= element.origen.country %></li> 
+                                            <li class="itemtext">TIPO DE GRANO: <%= element.grano.tipoDeGrano %></li>                
+                                            <li class="itemtext">CANTIDAD: <%= element.cantidad.Cantidad  %> gr</li>
+                                            <li class="itemtext">PRECIO: $ <%= element.Precio %>
+                                        </ul>  
+                            </a>
+                        </article>
+                        </section>
+
+                        <% }) %>
+
+                            <% } else { %>
+                                <article>No hay resultados para esta búsqueda</article>
+                                <% }%>
+
+                                    <article class="iconos1">
+                                        <a class="boton1" href="/product/">VOLVER</a>
+                                    </article>
+
+
+                </section>
+            </main>
+            <%- include("../includes/footer") %>
+    </body>
+
+</html>

@@ -102,6 +102,13 @@ font-size: 2em;
             opacity:0;
          }
  }
+ .title-busqueda{
+    display: flex;
+    color:#ffe6a7 ;
+    justify-content: center;
+    font-size: 3rem;
+    padding: 0.5em;
+ }
 
 .fa-edit {
     font-size: 3rem;
@@ -162,6 +169,7 @@ font-size: 2em;
     color: #ffe6a7;
     font-family: "Roboto";
     font-size: 4vw;
+    text-decoration: none;
 }
 
 .boton1{
