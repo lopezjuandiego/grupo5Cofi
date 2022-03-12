@@ -6,7 +6,7 @@
 
 Daily  / Viernes 11
 Search en user funcional con mejores. Busca por nombre y apellido
-Search en Product implementado controller y vista, pero no funciona la búsqueda
+Search en Product implementado 
 
 Daily  / Jueves 10
 Search en user funcional.

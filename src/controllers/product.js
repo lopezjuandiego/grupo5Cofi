@@ -139,33 +139,88 @@ delete: (req,res) => {
 },
 
 search :  (req, res) => {
-let cofiSearch = db.Product.findAll({
-      include : ["origen", "grano","cantidad"],
-where: { 
-      OrigenID: { [Op.like]: "%" + req.query.buscar + "%" },
-      GranoID: { [Op.like]: "%" + req.query.buscar + "%" },
-      //GramoID: { [Op.like]: "%" + req.query.buscar + "%" }    
-    
-    }
+ db.Origen.findOne({
+    where: { 
+      country: { [Op.like]: "%" + req.query.buscar + "%" },
+          }
   })
-
-Promise
-    .all([cofiSearch, db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
-    .then(([cafe, origenes, grano, gramos]) => {
-      return res.render('products/search', {
-        styles: ["product/productEdit"],
-        title: 'RESULTADO ',
-        cafe : cafe,
-        origenes: origenes,
-        grano: grano, 
-        gramos: gramos,        
-      }); 
-    //res.send(cafe)
+  
+    .then(country => { 
+   db.Product.findAll({   
+    include : ["origen", "grano","cantidad"], 
+        where: { 
+          OrigenID: country.id,
+          
+              }
+    }) 
+    .then(cafe => {
+     return res.render('products/search', {
+        styles: ['product/item'],
+        title: 'Café   ',
+        cafe: cafe,
+        
     })
-    .catch ((error) => res.send(error));
+  })
+})
+  .catch ((error) => res.send(error));
 
-}
+} 
 }
 
 module.exports = controllers
 
+/* 
+para probar busqueda simultanea
+search :  (req, res) => {
+
+  db.Origen.findOne({
+    where: { 
+      country: { [Op.like]: "%" + req.query.buscar + "%" },
+      //tipoDeGrano: { [Op.like]: "%" + req.query.buscar + "%" },
+      Cantidad: { [Op.like]: "%" + req.query.buscar + "%" },
+          }
+  })
+  
+    .then(country => { 
+   db.Product.findAll({   
+    include : ["origen", "grano","cantidad"], 
+        where: { 
+          OrigenID: country.id,
+          
+              }
+    })
+  }) 
+
+   .then(grano => { 
+    db.Product.findAll({   
+     include : ["origen", "grano","cantidad"], 
+         where: { 
+           GranoID: grano.id,
+           
+               }
+     })
+   })  
+
+   .then(peso => { 
+    db.Product.findAll({   
+     include : ["origen", "grano","cantidad"], 
+         where: { 
+           Cantidad: peso.id,
+           
+               }
+     })
+   }) 
+    .then(cafe => {
+     return res.render('products/search', {
+        styles: ['product/item'],
+        title: 'Café   ',
+        cafe: cafe,
+        
+    })
+   
+  })
+//})
+  .catch ((error) => res.send(error));
+
+}
+ */
