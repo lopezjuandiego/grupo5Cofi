@@ -11,16 +11,13 @@
                 </section>
                 <section >
                     <% if (cafe.length > 0) { %>
-                        <h3 class="title-busqueda">Hay <%= cafe.length %> cafes con ese Origen/s</h3>
+                        <h3 class="title-busqueda">Hay <%= cafe.length %> cafes con ese Origen, grano o peso</h3>
          
             <% cafe.forEach(element => { %>
                 <section class= "conteinfo">
                     <article class="cajaprod1">
                             <a class="itemtext" href="/product/<%= element.id %> ">
-                                <% if (cafe.imagen) { %>
-                                    <img  src="/uploads/avatars/<%= element.imagen.Url %> " alt=""
-                                        srcset="">
-                                    <% } %>
+                               
                                         <ul >
                                             <li class="itemtext">ORIGEN: <%= element.origen.country %></li> 
                                             <li class="itemtext">TIPO DE GRANO: <%= element.grano.tipoDeGrano %></li>                
