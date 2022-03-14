@@ -142,7 +142,7 @@ register: (req, res) =>
      
     
 
-    //let userRegistred = user.create(req.body);       
+    let userRegistred = user.create(req.body);       
    
   })
   .catch(error => res.send(error))
