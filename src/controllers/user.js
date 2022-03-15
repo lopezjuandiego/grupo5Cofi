@@ -94,6 +94,20 @@ register: (req, res) =>
 
     let errors = validator.validationResult(req);
     if (errors.isEmpty()) {
+
+      if (req.body.password != req.body.password2) {
+        return res.render("users/register", {
+          styles: ["register"],
+          errors: {
+            password: {
+              msg: "Las contraseñas no coinciden",
+            },
+          },
+        });
+      } 
+        return res.redirect('/users/login'),
+        
+       
     db.User.create({
               id: req.body.id,
               nombre: req.body.nombre,
@@ -114,31 +128,19 @@ register: (req, res) =>
       });
     }
      
-    if (!users) {
+ /*    if (!users) {
       return res.render("users/register", {
         styles: ["register"],
         errors: {
           email: {
-            msg: "email ya registrado",
+            msg: "El email  ya está registrado",
           },
         },
       });
-    } 
+    }  */
 
 
-  if (req.body.password != req.body.password2) {
-      return res.render("users/register", {
-        styles: ["register"],
-        errors: {
-          password: {
-            msg: "Las contraseñas no coinciden",
-          },
-        },
-      });
-    } 
-      return res.redirect('/users/login')
-//    let userRegistred = user.create(req.body);       
-     
+
   
   },
 

@@ -13,30 +13,25 @@ const validations = [
     validator.body('email')
     .notEmpty().withMessage('Tenés que completar el campo de Email')
     .isEmail().withMessage('El email no es válido')
-    .custom (() => { const search = (req, res) => {
-        db.User.findOne( {
-            where: {
-            email : req.body.email
-            
-        }} )            
-        .then((value) => {
-            return value ? Promise.reject('El email ya esta registrado') : Promise.resolve();
+    .custom(value => {
+        return db.User.findOne({
+             where: {email: value}
         })
-    }
-    }),
-
-        //let search = user.search('email', value);
-       // return search ? Promise.reject('El email ya esta registrado') : Promise.resolve();
+             .then(user => {
+                  if(user) return Promise.reject('El email ya se encuentra registrado en nuestro sistema')
+             })
+       }),
+      
     
     validator.body('password')
     .notEmpty().withMessage('Tenés que completar el campo de contraseña')
-    .isLength({min: 8}).withMessage('La contraseña debe tener al menos 6 caracteres')
-    .matches(/^.*(?=.{6,})(?=.*[a-zA-Z]).*$/).withMessage('Debe tener al menos 6 caracteres y una o más letras'),
+    .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres')
+    .matches(/^.*(?=.{8,})(?=.*[a-zA-Z]).*$/).withMessage('Debe tener al menos 8 caracteres y una o más letras'),
 
     validator.body('password2')
     .notEmpty().withMessage('Tenés que completar el campo de repetir contraseña')
-    .isLength({min: 8}).withMessage('La contraseña debe tener al menos 6 caracteres')
-    .matches(/^.*(?=.{6,})(?=.*[a-zA-Z]).*$/).withMessage('Debe tener al menos 6 caracteres y una o más letras')
+    .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres')
+    .matches(/^.*(?=.{8,})(?=.*[a-zA-Z]).*$/).withMessage('Debe tener al menos 8 caracteres y una o más letras')
 ]
 
 module.exports = validations;
