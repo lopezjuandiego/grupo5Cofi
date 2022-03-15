@@ -1,6 +1,13 @@
 **DAILY - SPRINT 7** 
 
+Daily  / Lunes 15
+Resolvimos validaciones del BACK para que no cree el usuario antes de validar.
 
+Daily  / Lunes 14
+Implementadas las validaciones en el BACKEND de LOGIN tanto en email como password para.
+Iniciamos a realizar las validaciones de REGISTER en BACKEND, funcionan pero encontramos que 
+de todos modos crea el usuario.
+Empezamos a implenar también validaciones desde el FRONTEND en el login.
 
 *DAILY - SPRINT 6* 
 
