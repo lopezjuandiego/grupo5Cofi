@@ -1,7 +1,7 @@
 **DAILY - SPRINT 7** 
 
 Daily  / Lunes 15
-Trabajamos sobre las validaciones para que no cree el usuario antes de validar.
+Resolvimos validaciones del BACK para que no cree el usuario antes de validar.
 
 Daily  / Lunes 14
 Implementadas las validaciones en el BACKEND de LOGIN tanto en email como password para.

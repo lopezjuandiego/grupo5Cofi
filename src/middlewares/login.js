@@ -8,7 +8,7 @@ const validations = [
        
     validator.body('password')
     .notEmpty().withMessage('Tenés que completar el campo de contraseña')
-    .isLength({min: 6}).withMessage('La contraseña debe tener al menos 6 caracteres') 
+    .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres') 
     ]
 
 module.exports = validations;

@@ -91,6 +91,9 @@ register: (req, res) =>
 
 
   save: (req, res) => {
+
+    let errors = validator.validationResult(req);
+    if (errors.isEmpty()) {
     db.User.create({
               id: req.body.id,
               nombre: req.body.nombre,
@@ -102,11 +105,9 @@ register: (req, res) =>
               avatar: req.body.avatar,
     })
     
-    .then(users => {
-                          
-    let errors = validator.validationResult(req);
-
-    if (!errors.isEmpty()) {
+    .then(user => res.redirect('/users/login'))
+    .catch(error => res.send(error))
+  }else {                          
       return res.render("users/register", {   
         styles: ["register"],
         errors: errors.mapped(),
@@ -135,17 +136,9 @@ register: (req, res) =>
         },
       });
     } 
-
-      
-
       return res.redirect('/users/login')
+//    let userRegistred = user.create(req.body);       
      
-    
-
-    let userRegistred = user.create(req.body);       
-   
-  })
-  .catch(error => res.send(error))
   
   },
 
