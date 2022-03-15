@@ -176,6 +176,10 @@ section a {
   font-size: 30px;
   padding: 14px;
 }
+input.error{
+  background-color: rgb(235, 104, 104)
+}
+
 
 @media (min-width: 768px) {
 

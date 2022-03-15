@@ -15,14 +15,14 @@
                 </section>
 
 
-                <form action="/users/access" method="post">
+                <form action="/users/access" method="post" id="login">
 
                     <h2>INGRESA TUS DATOS</h2>
                     <fieldset>
-                        <input class="Email" type="text" placeholder="Email" name="email" id="Email" value="" required>
+                        <input class="Email" type="text" placeholder="Email" name="email" id="email" value="">
                     </fieldset>
                     <fieldset>
-                        <input class="Contraseña" type="password" placeholder="Contraseña" name="password" value="" required>
+                        <input class="Contraseña" type="password" placeholder="Contraseña" id="password" name="password" value="">
                     </fieldset>
                     <fieldset class="check">
                         <label for="">Recordame</label>
@@ -31,7 +31,7 @@
 
 
                     <fieldset class="BarraBotones">
-                        <button class="botonEnviar" type="ENVIAR">INGRESAR</button>
+                        <button class="botonEnviar" type="submit">INGRESAR</button>
                         <button class="botonReset" type="reset">BORRAR</button>
                     </fieldset>
                     <section >
@@ -52,8 +52,9 @@
               
 
             </main>
+            
             <%- include("../includes/footer") %>
-
+            <script src = "../../../js/login.js"></script>
     </body>
 
 </html>
