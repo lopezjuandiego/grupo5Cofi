@@ -15,29 +15,34 @@
             <form action="/users/save" method="post">
                 <h2>DATOS PERSONALES</h2>
                 <fieldset>
-                    <input class="Nombre" type="text" placeholder="Nombre" name="nombre" id="nombre" value="" required>
+                    <input class="Nombre" type="text" placeholder="Nombre" name="nombre" id="nombre" value="" >
                 </fieldset>
                 <fieldset>
                     <input class="Apellido" type="text" placeholder="Apellido" name="apellido" id="Apellido" value=""
-                        required>
+                        >
                 </fieldset>
                 <fieldset>
-                    <input class="Email" type="text" placeholder="Email" name="email" id="Email" value="" required> 
+                    <input class="Email" type="text" placeholder="Email" name="email" id="Email" value="" > 
                 </fieldset>
                 <fieldset>
                     <input class="Contraseña" type="password" placeholder="Contraseña" name="password" value=""
-                        required>
+                        >
                 </fieldset>
         <fieldset>
                     <input class="Contraseña" type="password" placeholder="Repite Contraseña" name="password2" value=""
-                        required>
+                        >
                 </fieldset> 
                  <fieldset>
                     <button class="botonEnviar" type="submit">ENVIAR</button>
                     <button class="botonReset" type="reset">BORRAR</button>
                 </fieldset>               
                 <section>
-                
+                    <% if (locals.errors && errors.nombre) { %>
+                        <p class= "errors"><%= errors.nombre.msg %> </p>
+                       <% } %>
+                       <% if (locals.errors && errors.apellido) { %>
+                        <p class= "errors"><%= errors.apellido.msg %> </p>
+                       <% } %>
                     <% if (locals.errors && errors.email) { %>
                         <p class= "errors"><%= errors.email.msg %> </p>
                        <% } %>
@@ -45,6 +50,9 @@
                        <% if (locals.errors && errors.password) { %>
                            <p class="errorvalidacion"><%= errors.password.msg %> </p>
                           <% } %>
+                          <% if (locals.errors && errors.password2) { %>
+                            <p class="errorvalidacion"><%= errors.password2.msg %> </p>
+                           <% } %>
                 </section>
                 <section class="YaEstoyRegistrado">
                     <a class="yaTengoUsuario" href="/users/login"></a>
