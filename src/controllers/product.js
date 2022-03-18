@@ -1,4 +1,5 @@
 //const product = require("../models/product")
+const validator = require("express-validator");
 const db = require("../database/models")
 const file = require("../models/file")
 const Op = db.Sequelize.Op
@@ -32,11 +33,32 @@ create: (req, res) => Promise.all([db.Origen.findAll(), db.Grano.findAll(), db.G
     granos: granos,
     gramos: gramos
 })
+
 }),
 save: (req,res) => {
+ 
+  let errors = validator.validationResult(req)
+  
+ if (!errors.isEmpty()) {
+    Promise.all([db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
+.then(([origenes, granos, gramos])=> {
+  res.render('products/create', {
+    styles: ['product/create'],
+    title: 'NUEVO PRODUCTO',
+    origenes: origenes,
+    granos: granos,
+    gramos: gramos,
+    errors: errors.mapped(),
+    oldData: req.body
+})
+
+})
+      
+  } else {
   db.Imagen.create({
       Url: req.files[0].filename,Type:1
   })
+  
   .then(cafeImagen => {
       db.Product.create({
         OrigenID: req.body.origen,
@@ -52,6 +74,10 @@ save: (req,res) => {
   })
   .catch(error => res.send(error))
 })
+  }
+
+
+
 },
 
 show : (req, res) => {

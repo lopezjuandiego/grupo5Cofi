@@ -17,12 +17,12 @@ const validations = [
         return db.User.findOne({
              where: {email: value}
         })
-             .then(user => {
-                  if(user) return Promise.reject('El email ya se encuentra registrado en nuestro sistema')
-             })
+             .then(() => {
+                  return Promise.reject('El email ya se encuentra registrado en nuestro sistema')
+              })
        }),
       
-    
+   
     validator.body('password')
     .notEmpty().withMessage('Tenés que completar el campo de contraseña')
     .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres')

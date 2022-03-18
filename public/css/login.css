@@ -177,7 +177,10 @@ section a {
   padding: 14px;
 }
 input.error{
-  background-color: rgb(235, 104, 104)
+  background-color: #eb6868
+}
+input.success{
+  background-color: #68eb68
 }
 
 
