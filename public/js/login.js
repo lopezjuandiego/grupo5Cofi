@@ -11,21 +11,23 @@ window.onload = function() {
             fieldEmail.classList.remove ("success");
             fieldEmail.classList.add ("focus");
             let value = e.target.value
-            console.log(value);
+            //console.log(value);
             if (value.length < 1 ){
                 fieldEmail.classList.add ("error")
                 
             }
-            let regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+            let regex = /^[a-zA-Z0-9] + @[a-z-0-9-] + \.[a-z-.]+$/
             if (!regex.test(value)){
                 fieldEmail.classList.add ("error")
-            
+               
+
         } else{ 
             fieldEmail.classList.add ("success")
+
         } 
-        /* loginForm.addEventListener ("submit", function (e){
+       /* loginForm.addEventListener ("submit", function (e){
             e.preventDefault()
-    }) */
+    })*/
      })
 
     fieldPassword.addEventListener ("keydown",  (e) =>{
@@ -33,14 +35,15 @@ window.onload = function() {
         fieldPassword.classList.remove ("success");
         fieldPassword.classList.add ("focus");
         let value = e.target.value
-        console.log(value);
+       // console.log(value);
         if (value.length < 1 ){
             fieldPassword.classList.add ("error")
         }
         let regex = /^.{6,50}$/
         if (!regex.test(value)){
             fieldPassword.classList.add ("error")
-        
+           
+       
     } else{ 
         fieldPassword.classList.add ("success")
     }

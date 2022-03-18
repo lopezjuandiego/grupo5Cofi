@@ -23,7 +23,7 @@ const validations = [
              })
        }),
       
-    
+   
     validator.body('password')
     .notEmpty().withMessage('Tenés que completar el campo de contraseña')
     .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres')

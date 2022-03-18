@@ -134,6 +134,12 @@ align-items: center;
     color: #ffe6a7;
   }
 
+  .errormail{
+    color: #ffe6a7;
+    font-size: 20px;
+    padding: 14px;
+  }
+
 
 /* FIN FORMULARIO */
 
