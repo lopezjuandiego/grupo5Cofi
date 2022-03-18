@@ -23,9 +23,9 @@ window.onload = function() {
         } else{ 
             fieldEmail.classList.add ("success")
         } 
-        loginForm.addEventListener ("submit", function (e){
+        /* loginForm.addEventListener ("submit", function (e){
             e.preventDefault()
-    })
+    }) */
      })
 
     fieldPassword.addEventListener ("keydown",  (e) =>{
@@ -37,7 +37,7 @@ window.onload = function() {
         if (value.length < 1 ){
             fieldPassword.classList.add ("error")
         }
-        let regex = /^.{8,50}$/
+        let regex = /^.{6,50}$/
         if (!regex.test(value)){
             fieldPassword.classList.add ("error")
         

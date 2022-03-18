@@ -18,7 +18,8 @@ const validations = [
              where: {email: value}
         })
              .then(user => {
-                  if(user) return Promise.reject('El email ya se encuentra registrado en nuestro sistema')
+                  if(user) 
+                  return Promise.reject('El email ya se encuentra registrado en nuestro sistema')
              })
        }),
       
@@ -30,6 +31,7 @@ const validations = [
 
     validator.body('password2')
     .notEmpty().withMessage('Tenés que completar el campo de repetir contraseña')
+
     .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres')
     .matches(/^.*(?=.{8,})(?=.*[a-zA-Z]).*$/).withMessage('Debe tener al menos 8 caracteres y una o más letras')
 ]

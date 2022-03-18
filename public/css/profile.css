@@ -276,7 +276,11 @@ main{
     background-color: rgb(67, 40, 24);
    }
 
-  
+   .errors{
+    color: #ffe6a7;
+    font-size: 30px;
+    padding: 14px;
+  }
 
    .contenticonos{
     display: flex;

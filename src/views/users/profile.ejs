@@ -16,43 +16,51 @@
                 </h4>
                 <section>
                     <% if (user.avatar !=null) { %>
-                        
+
                         <figure class="figura">
                             <img class="fotoAvatar" src="/uploads/avatars/<%= user.avatars.Url %>"
-                                alt="photo <%= user.email %>" >
+                                alt="photo <%= user.email %>">
                         </figure>
-                       
+
                         <% } else { %>
                             <figure class="figura">
                                 <img class="avatar" src="/image/users/perfil.jpg" alt="photo <%= user.email %>">
                             </figure>
                             <% } %>
-                            <section class="editYtrash">
+                                <section class="editYtrash">
 
-                                <article > 
-                                <form  action="/users/upload/avatar" enctype="multipart/form-data" method="post">
-                                  
-                                    <input  type="file" name="avatar" id="avatar">
-                                    
-                                    <button class="botonExit"  type="submit">Actualizar</button>                                                                  
-                              
-                                </form> 
-                            </article>
-                            <article class="contenticonos">
-                                     <a href="/users/edit/<%= user.id %>" ><i class="fa fa-edit"></i></a>
+                                    <article>
+                                        <form action="/users/upload/avatar" enctype="multipart/form-data" method="post">
 
-                                <form action="/users/delete/<%= user.id %>?m=DELETE" method="post">                                           
-                                            <button class="tachito"  type="submit">
+                                            <input type="file" name="avatar" id="avatar">
+
+                                            <button class="botonExit" type="submit">Actualizar</button>
+
+                                            <% if (locals.errors && errors.avatar) { %>
+                                                <p class="errors">
+                                                    <%= errors.avatar.msg %>
+                                                </p>
+                                                <% } %>
+
+                                        </form>
+
+
+                                    </article>
+                                    <article class="contenticonos">
+                                        <a href="/users/edit/<%= user.id %>"><i class="fa fa-edit"></i></a>
+
+                                        <form action="/users/delete/<%= user.id %>?m=DELETE" method="post">
+                                            <button class="tachito" type="submit">
                                                 <a class="fas fa-trash-alt"></a>
                                             </button>
-                                 </form>                                      
-                                </article>                              
-                            </section>
+                                        </form>
+                                    </article>
+                                </section>
                                 <form action="/users/logout" method="post">
                                     <button class="botonExit" type="submit">SALIR</button>
                                 </form>
 
-                             
+
 
 
                 </section>
