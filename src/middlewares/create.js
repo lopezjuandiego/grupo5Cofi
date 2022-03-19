@@ -6,7 +6,7 @@ const validations = [
 
     validator.body('precio')
     .notEmpty().withMessage('Debe ingresar un precio al producto')
-    .isLength({min: 2}).withMessage('El precio debe contener al menos 2 digitos'),
+    .isLength({min: 3}).withMessage('El precio debe contener al menos 3 digitos'),
 
 
  validator.body('imagen')
