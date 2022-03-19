@@ -56,7 +56,7 @@
         </label>
 
     <label class="continput" for="precio">
-        <input class="forminput"  type="number" name="precio" id="precio" placeholder="PRECIO" 
+        <input class="forminput inputPrecio"  type="number" name="precio" id="precio" placeholder="PRECIO" 
         value="<%= locals.oldData ? oldData.precio : null%>"
          >
         
@@ -84,8 +84,9 @@
     </fieldset>       
      
 </form> 
-
+    
  </section>
+ <script src = "../js/productCreate.js"></script>
 </main>
 <%- include("../includes/footer") %> 
 </body>

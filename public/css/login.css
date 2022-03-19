@@ -176,12 +176,19 @@ section a {
   font-size: 30px;
   padding: 14px;
 }
+
+
 input.error{
-  background-color: #eb6868
+  border: 6.6px solid rgb(235, 104, 104)
 }
 input.success{
-  background-color: #68eb68
+  border: 6.6px solid rgb(104, 235, 148)
 }
+
+
+
+
+
 
 
 @media (min-width: 768px) {
