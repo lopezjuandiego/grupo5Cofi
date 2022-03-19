@@ -7,28 +7,33 @@ window.onload = function() {
 
 
         fieldEmail.addEventListener ("keydown",  (e) =>{
-            fieldEmail.classList.remove ("error");
-            fieldEmail.classList.remove ("success");
-            fieldEmail.classList.add ("focus");
-            let value = e.target.value
-            //console.log(value);
-            if (value.length < 1 ){
-                fieldEmail.classList.add ("error")
-                
-            }
-            let regex = /^[a-zA-Z0-9] + @[a-z-0-9-] + \.[a-z-.]+$/
-            if (!regex.test(value)){
-                fieldEmail.classList.add ("error")
-               
+           
+           // fieldEmail.classList.remove ("error");
+           // fieldEmail.classList.remove ("success");
+             //fieldEmail.classList.add ("focus");
+          
+           let emailValido = fieldEmail.value.trim()
 
+            if (emailValido.length < 3 ){
+                fieldEmail.classList.add ("error")
+                fieldEmail.classList.remove ("success")
+               }
+
+            let regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+            
+            if (!regex.test(emailValido)){
+                fieldEmail.classList.add ("error")
+                fieldEmail.classList.remove("success")
+               
         } else{ 
             fieldEmail.classList.add ("success")
 
         } 
-       /* loginForm.addEventListener ("submit", function (e){
+       
+      /*  loginForm.addEventListener ("submit", function (e){
             e.preventDefault()
-    })*/
-     })
+           
+     })*/
 
     fieldPassword.addEventListener ("keydown",  (e) =>{
         fieldPassword.classList.remove ("error");
@@ -51,46 +56,7 @@ window.onload = function() {
     
 })
  
- }          
+})
+} 
 
 
-
-
-
-    
-            
-               
-        
-               
-    
-                
-    
-    
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
