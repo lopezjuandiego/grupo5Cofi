@@ -16,35 +16,49 @@
      <label class="continput" for="origen">
       
         <select class="forminput" name="origen" id="origen">
+            <option value="">Seleccioná un origen</option>
             <% origenes.forEach(element => { %>
-                <option value="<%= element.id %>" <%= locals.oldData && (element.country === oldData.country ) ? "selected" : null  %> > <%= element.country %> </option>
+                <option value="<%= element.id %>" 
+                    <%= locals.oldData && (element.country === oldData.country ) ? "selected" : null  %> > 
+                    <%= element.country %> </option>
                <% }) %>
-   
-   
             </select>
+            <% if (locals.errors && errors.origen) { %>
+                <p class="errormail"><%= errors.origen.msg %> </p>
+               <% } %>
      </label>
 
      <label class="continput" for="origen">
         
         <select class="forminput" name="tipoDeGrano" id="tipoDeGrano">
+            <option value="">Seleccioná una molienda</option>
             <% granos.forEach(element => { %>
                 <option value="<%= element.id %>"> <%= element.tipoDeGrano  %> </option>
                <% }) %>
             </select>
-     </label>
+            <% if (locals.errors && errors.tipoDeGrano) { %>
+                <p class="errormail"><%= errors.tipoDeGrano.msg %> </p>
+               <% } %>
+        </label>
 
 
      <label class="continput" for="cantidad">
      
         <select class="forminput" name="cantidad" id="cantidad">
+            <option value="">¿Cuántos gramos querés?</option>
             <% gramos.forEach(element => { %>
                 <option value="<%= element.id %>"> <%= element.Cantidad %> </option>
                <% }) %>
             </select> 
+            <% if (locals.errors && errors.cantidad) { %>
+                <p class="errormail"><%= errors.cantidad.msg %> </p>
+               <% } %>
         </label>
 
     <label class="continput" for="precio">
-        <input class="forminput"  type="number" name="precio" id="precio" placeholder="PRECIO" >
+        <input class="forminput"  type="number" name="precio" id="precio" placeholder="PRECIO" 
+        value="<%= locals.oldData ? oldData.precio : null%>"
+         >
         
             <% if (locals.errors && errors.precio) { %>
                 <p class="errormail"><%= errors.precio.msg %> </p>

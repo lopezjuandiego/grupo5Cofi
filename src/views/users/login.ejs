@@ -19,11 +19,14 @@
 
                     <h2>INGRESA TUS DATOS</h2>
                     <fieldset>
-                        <input class="Email" type="text" placeholder="Email" name="email" id="email" value="">
+                        <input class="Email" type="text" placeholder="Email" name="email" id="email" 
+                        value="<%= locals.oldData ? oldData.email : null%>">
                     </fieldset>
+
                     <fieldset>
                         <input class="Contraseña" type="password" placeholder="Contraseña" id="password" name="password" value="">
                     </fieldset>
+
                     <fieldset class="check">
                         <label for="">Recordame</label>
                         <input type="checkbox" name="remember" id="remember">

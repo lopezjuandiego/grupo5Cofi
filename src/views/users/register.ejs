@@ -16,14 +16,17 @@
                     <form action="/users/save" method="post">
                         <h2>DATOS PERSONALES</h2>
                         <fieldset>
-                            <input class="Nombre" type="text" placeholder="Nombre" name="nombre" id="nombre" value="">
+                            <input class="Nombre" type="text" placeholder="Nombre" name="nombre" id="nombre" 
+                            value="<%= locals.oldData ? oldData.nombre : null%>">
+                            
                         </fieldset>
                         <fieldset>
                             <input class="Apellido" type="text" placeholder="Apellido" name="apellido" id="Apellido"
-                                value="">
+                            value="<%= locals.oldData ? oldData.apellido : null%>">
                         </fieldset>
                         <fieldset>
-                            <input class="Email" type="text" placeholder="Email" name="email" id="Email" value="">
+                            <input class="Email" type="text" placeholder="Email" name="email" id="Email" 
+                            value="<%= locals.oldData ? oldData.email : null%>">
                         </fieldset>
                         <fieldset>
                             <input class="Contraseña" type="password" placeholder="Contraseña" name="password" value="">
