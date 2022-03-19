@@ -134,6 +134,22 @@ align-items: center;
     color: #ffe6a7;
   }
 
+  .errormail{
+    color: #ffe6a7;
+    font-size: 20px;
+    padding: 14px;
+  }
+
+  /* VALIDACION CREATE */
+
+  .errores{
+      border: 6px solid #d12926be;
+      
+  }
+
+  .correcto{
+    border: 6px solid #109c23bb
+  }
 
 /* FIN FORMULARIO */
 

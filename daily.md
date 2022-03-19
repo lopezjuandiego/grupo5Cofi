@@ -1,5 +1,12 @@
 **DAILY - SPRINT 7** 
 
+Daily  / Viernes 18
+Validación de avatar.
+Cambio en select de producto
+
+Daily  / Jueves 17
+Validación de producto.
+
 Daily  / Lunes 15
 Resolvimos validaciones del BACK para que no cree el usuario antes de validar.
 

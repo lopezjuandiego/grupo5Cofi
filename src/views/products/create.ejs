@@ -9,15 +9,18 @@
     <h2 class="title"><%= locals.title ? title : null %> </h2>
 </section>
  <section class="contformulario">    
+   
 
    <form class="formgral" action="/product/save" enctype="multipart/form-data" method="post">
-
+   
      <label class="continput" for="origen">
-        
+      
         <select class="forminput" name="origen" id="origen">
             <% origenes.forEach(element => { %>
-             <option value="<%= element.id %>"> <%= element.country %> </option>
-            <% }) %>
+                <option value="<%= element.id %>" <%= locals.oldData && (element.country === oldData.country ) ? "selected" : null  %> > <%= element.country %> </option>
+               <% }) %>
+   
+   
             </select>
      </label>
 
@@ -25,32 +28,41 @@
         
         <select class="forminput" name="tipoDeGrano" id="tipoDeGrano">
             <% granos.forEach(element => { %>
-             <option value="<%= element.id %>"> <%= element.tipoDeGrano  %> </option>
-            <% }) %>
+                <option value="<%= element.id %>"> <%= element.tipoDeGrano  %> </option>
+               <% }) %>
             </select>
      </label>
 
 
      <label class="continput" for="cantidad">
-        
+     
         <select class="forminput" name="cantidad" id="cantidad">
             <% gramos.forEach(element => { %>
-             <option value="<%= element.id %>"> <%= element.Cantidad %> </option>
-            <% }) %>
+                <option value="<%= element.id %>"> <%= element.Cantidad %> </option>
+               <% }) %>
             </select> 
         </label>
 
     <label class="continput" for="precio">
-        <input class="forminput"  type="number" name="precio" id="precio" placeholder="PRECIO" min="0">
+        <input class="forminput inputPrecio"  type="number" name="precio" id="precio" placeholder="PRECIO" >
+        
+            <% if (locals.errors && errors.precio) { %>
+                <p class="errormail"><%= errors.precio.msg %> </p>
+               <% } %>
+            
     </label>
 
     <label class="contchek" for="oferta">OFERTA !
         <input class="formchek" type="checkbox" name="oferta" id="oferta">
     </label>
 
- <label class="continput" for="imagen">
+    <label class="continput" for="imagen">
         <input class="forminput1" type="file" name="imagen" id="imagen" multiple>
+        <% if (locals.errors && errors.imagen) { %>
+            <p class="errormail"><%= errors.imagen.msg %> </p>
+           <% } %>
     </label>  
+
 
     <fieldset class="continput1">    
         <a class="boton1" href="/product">VOLVER</a>  
@@ -58,7 +70,9 @@
     </fieldset>       
      
 </form> 
+    
  </section>
+ <script src = "../js/productCreate.js"></script>
 </main>
 <%- include("../includes/footer") %> 
 </body>

@@ -34,7 +34,8 @@ module.exports = {
     db.User.findOne({
       where: {
         email: req.body.email
-      }
+      }, 
+      //include : ['avatars']
     })
       .then(users => {
 
@@ -105,7 +106,6 @@ module.exports = {
           },
         });
       }
-    
 
 
         db.User.create({
@@ -114,7 +114,6 @@ module.exports = {
           apellido: req.body.apellido,
           email: req.body.email,
           password: bcrypt.hashSync(req.body.password, 10),
-          password2: req.body.password2,
           admin: req.body.email.includes('@cofi') ? true : false,
           avatar: req.body.avatar,
         })
@@ -130,21 +129,7 @@ module.exports = {
         errors: errors.mapped(),
       });
     }
-
-    /*    if (!users) {
-         return res.render("users/register", {
-           styles: ["register"],
-           errors: {
-             email: {
-               msg: "El email  ya está registrado",
-             },
-           },
-         });
-       }  */
-
-
-
-
+   
   },
 
   profile: (req, res) => {
@@ -160,7 +145,6 @@ module.exports = {
         })
       })
   },
-
 
   showUser: (req, res) => {
     db.User.findByPk(req.params.id, { include: ['avatars'] })
@@ -250,12 +234,21 @@ module.exports = {
 
   logout: (req, res) => {
     delete req.session.user;
-    res.cookie("user", null, { maxAge: -1 });
+    res.cookie("email", null, { maxAge: -1 });
     return res.redirect("/users/login");
   },
 
 
-  uploadAvatar: (req, res) => {
+ uploadAvatar: (req, res) => {
+    let errors = validator.validationResult(req);
+        if (!errors.isEmpty()) {
+ //      res.send(errors)}
+ return  res.render("users/profile", {
+            styles: ["profile"],
+            title: "usuario X",
+            errors: errors.mapped(),
+          })} 
+        
 
     if (req.files && req.files.length > 0) {
       db.Imagen.create({
@@ -276,12 +269,12 @@ module.exports = {
               req.session.user = user
             })
 
-          res.redirect('/users/profile')
+         res.redirect('/users/index')
         })
         .catch((error) => res.send(error));
     }
   },
-
+ 
   search: (req, res) => {
     db.User.findAll(
       {

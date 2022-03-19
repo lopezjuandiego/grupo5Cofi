@@ -4,8 +4,8 @@ const middleware = (req, res, next) => {
     db.User.findOne( {
         where: {
         email : req.cookies && req.cookies.user ?  req.cookies.user : null,
-        
-    }})
+    },
+})
     .then (users => {
     let logged = users;
      
