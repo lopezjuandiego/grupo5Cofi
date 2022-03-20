@@ -27,13 +27,13 @@ const validations = [
     validator.body('password')
     .notEmpty().withMessage('Tenés que completar el campo de contraseña')
     .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres')
-    .matches(/^.*(?=.{8,})(?=.*[a-zA-Z]).*$/).withMessage('Debe tener al menos 8 caracteres y una o más letras'),
+    .matches(/^.(?=.{8,})(?=.[a-zA-Z0-9-.]).*$/).withMessage('Debe tener al menos 8 caracteres y una o más letras'),
 
     validator.body('password2')
     .notEmpty().withMessage('Tenés que completar el campo de repetir contraseña')
 
     .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres')
-    .matches(/^.*(?=.{8,})(?=.*[a-zA-Z]).*$/).withMessage('Debe tener al menos 8 caracteres y una o más letras')
+    .matches(/^.(?=.{8,})(?=.[a-zA-Z0-9-.]).*$/).withMessage('Debe tener al menos 8 caracteres y una o más letras')
 ]
 
 module.exports = validations;

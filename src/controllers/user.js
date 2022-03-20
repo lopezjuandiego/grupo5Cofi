@@ -45,6 +45,7 @@ module.exports = {
           res.render("users/login", {
             styles: ["login"],
             errors: errors.mapped(),
+            oldData: req.body
 
           })
         } if (!users) {
@@ -127,6 +128,7 @@ module.exports = {
       return res.render("users/register", {
         styles: ["register"],
         errors: errors.mapped(),
+        oldData: req.body,
       });
     }
    

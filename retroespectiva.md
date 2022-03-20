@@ -1,4 +1,14 @@
-﻿**RETROESPECTIVA SPRINT 5**
+﻿
+**RETROESPECTIVA SPRINT 6**
+
+*Hacer más:* Seguir ayudandonos cuando se presentan dificultades. Codear más individualmente y en la puesta en común poder explicar que hicimos, porque lo hicimos y que esto nos sirva incluso para aprender más nosotros mismos.
+*Continuar haciendo:* Estar comunicados
+*Hacer menos:* Empezar a dejar de codear todos juntos. En determinadas circunstancias no nos escuchamos lo suficiente. Este punto no logramos mejorarlo 
+*Dejar de hacer:* No ser más claros con lo que hablamos y acordamos. 
+No respetar los horarios cuando nos juntamos. Este punto no logramos mejorarlo
+
+
+**RETROESPECTIVA SPRINT 5**
 
 *Hacer más:* Pedir más ayuda a los docentes e insistir con la misma cuando no sucede. También pedir más ayuda y participación a los compañeros..
 *Continuar haciendo:* El esquema de reuniones diarias nos viene sirviendo. 

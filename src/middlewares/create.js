@@ -4,6 +4,16 @@ const path = require ('path');
 
 const validations = [
 
+
+    validator.body('origen')
+    .notEmpty().withMessage('Tenés que elegir el origen del café'),
+
+    validator.body('tipoDeGrano')
+    .notEmpty().withMessage('Tenés que elegir la molienda'),
+
+    validator.body('cantidad')
+    .notEmpty().withMessage('Tenés que elegir los gramos'),
+
     validator.body('precio')
     .notEmpty().withMessage('Debe ingresar un precio al producto')
     .isLength({min: 3}).withMessage('El precio debe contener al menos 3 digitos'),
