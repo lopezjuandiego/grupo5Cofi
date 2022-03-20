@@ -1,11 +1,19 @@
 **DAILY - SPRINT 7** 
 
+Daily  / Sábado 19
+Persistencia de campo email en login y nombre, apellido y email en register.
+
+
+
 Daily  / Viernes 18
-Validación de avatar.
-Cambio en select de producto
+Validación de avatar en Backend.
+Cambio en Select de producto.
+Persistencia de campo precio en Porducto, no así de campos con select.
+Elimación de password2, solo se usa para REGISTER y luego no se almacena.
+Validaciones FrontEnd de Login y producto.
 
 Daily  / Jueves 17
-Validación de producto.
+Validación Backend de producto.
 
 Daily  / Lunes 15
 Resolvimos validaciones del BACK para que no cree el usuario antes de validar.
@@ -19,7 +27,7 @@ Empezamos a implenar también validaciones desde el FRONTEND en el login.
 *DAILY - SPRINT 6* 
 
 Daily  / Viernes 11
-Search en user funcional con mejores. Busca por nombre y apellido
+Search en user funcional con mejoras. Busca por nombre y apellido
 Search en Product implementado 
 
 Daily  / Jueves 10
