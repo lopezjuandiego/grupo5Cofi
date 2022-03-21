@@ -31,7 +31,8 @@ create: (req, res) => Promise.all([db.Origen.findAll(), db.Grano.findAll(), db.G
     title: 'NUEVO PRODUCTO',
     origenes: origenes,
     granos: granos,
-    gramos: gramos
+    gramos: gramos,
+   
 })
 
 }),
