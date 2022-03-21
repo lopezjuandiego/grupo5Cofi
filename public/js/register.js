@@ -9,8 +9,6 @@ window.onload = function (){
     //const nombreYapellido = document.querySelectorAll(".nomYape")
 
 
-
-
     campoNombre.addEventListener ("keydown", () => {
         let campoNombreValido = campoNombre.value.trim();
 
@@ -29,9 +27,6 @@ window.onload = function (){
         
     } 
 
-
-
-    
     })
 
     campoApellido.addEventListener ("keydown", () => {
@@ -52,8 +47,6 @@ window.onload = function (){
     } 
 
 
-
-    
     })
 
     campoEmail.addEventListener ("keydown", () => {
@@ -74,8 +67,6 @@ window.onload = function (){
     } 
 
 
-
-    
     })
 
     campoPassword.addEventListener ("keydown", () => {
@@ -96,8 +87,6 @@ window.onload = function (){
     } 
 
 
-
-    
     })
 
     campoPassword2.addEventListener ("keydown", () => {
@@ -118,8 +107,6 @@ window.onload = function (){
     } 
 
 
-
-    
     })
 
 
