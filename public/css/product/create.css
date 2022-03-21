@@ -49,11 +49,11 @@ align-items: center;
     width: 100%;
 }
 
-.continput{
+ .continput{
 
-    padding: 1em;
+    padding: 12px;
 
-}
+} 
 
 .forminput{
 
@@ -136,8 +136,8 @@ align-items: center;
 
   .errormail{
     color: #ffe6a7;
-    font-size: 20px;
-    padding: 14px;
+    font-size: 15px;
+    
   }
 
   /* VALIDACION CREATE */
@@ -165,7 +165,7 @@ align-items: center;
 
     .forminput{
 
-        height: 4em;
+        height: 3em;
         width: 43em;
 
     }

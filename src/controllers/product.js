@@ -38,19 +38,20 @@ create: (req, res) => Promise.all([db.Origen.findAll(), db.Grano.findAll(), db.G
 save: (req,res) => {
  
   let errors = validator.validationResult(req)
-  
  if (!errors.isEmpty()) {
     Promise.all([db.Origen.findAll(), db.Grano.findAll(), db.Gramo.findAll()])
 .then(([origenes, granos, gramos])=> {
-  res.render('products/create', {
+   res.render('products/create', {
     styles: ['product/create'],
     title: 'NUEVO PRODUCTO',
     origenes: origenes,
     granos: granos,
     gramos: gramos,
     errors: errors.mapped(),
-    oldData: req.body
+    oldData: req.body,
+
 })
+
 
 })
       
@@ -72,6 +73,8 @@ save: (req,res) => {
       .then(() => {
           return res.redirect('/product')
   })
+  //console.log(oldData)
+
   .catch(error => res.send(error))
 })
   }
