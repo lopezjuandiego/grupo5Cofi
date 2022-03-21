@@ -245,7 +245,7 @@ module.exports = {
     let errors = validator.validationResult(req);
         if (!errors.isEmpty()) {
  //      res.send(errors)}
- return  res.render("users/profile", {
+  return  res.render("users/profile", {
             styles: ["profile"],
             title: "usuario X",
             errors: errors.mapped(),
