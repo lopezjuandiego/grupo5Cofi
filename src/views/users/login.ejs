@@ -18,6 +18,7 @@
                 <form action="/users/access" method="post" id="login">
 
                     <h2>INGRESA TUS DATOS</h2>
+                    <section class="inputs">
                     <fieldset>
                         <input class="Email" type="text" placeholder="Email" name="email" id="email" 
                         value="<%= locals.oldData ? oldData.email : null%>">
@@ -27,7 +28,7 @@
                         <input class="Contraseña" type="password" placeholder="Contraseña" id="password" name="password" value="">
                         
                     </fieldset>
-
+                </section>
                     <fieldset class="check">
                         <label for="">Recordame</label>
                         <input type="checkbox" name="remember" id="remember">
