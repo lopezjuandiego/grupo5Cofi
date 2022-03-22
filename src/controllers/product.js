@@ -50,10 +50,11 @@ save: (req,res) => {
     gramos: gramos,
     errors: errors.mapped(),
     oldData: req.body,
+  
 
 })
 
-
+console.log(req.body);
 })
       
   } else {
@@ -74,7 +75,7 @@ save: (req,res) => {
       .then(() => {
           return res.redirect('/product')
   })
-  //console.log(oldData)
+ 
 
   .catch(error => res.send(error))
 })

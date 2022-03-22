@@ -38,7 +38,7 @@ module.exports = {
       //include : ['avatars']
     })
       .then(users => {
-
+console.log(users)
         let errors = validator.validationResult(req);
 
         if (!errors.isEmpty()) {
@@ -71,10 +71,10 @@ module.exports = {
             },
           });
         }
-        //else {
+        
 
         if (req.body.remember) {
-          res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 })
+          res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 7 })
         }
         req.session.user = users
         return res.redirect("/users/profile")
@@ -111,9 +111,9 @@ module.exports = {
 
         db.User.create({
           id: req.body.id,
-          nombre: req.body.nombre,
-          apellido: req.body.apellido,
-          email: req.body.email,
+          nombre: req.body.nombre.trim(),
+          apellido: req.body.apellido.trim(),
+          email: req.body.email.trim(),
           password: bcrypt.hashSync(req.body.password, 10),
           admin: req.body.email.includes('@cofi') ? true : false,
           avatar: req.body.avatar,
@@ -190,9 +190,9 @@ module.exports = {
 
     db.User.update({
 
-      nombre: req.body.nombre,
-      apellido: req.body.apellido,
-      email: req.body.email,
+      nombre: req.body.nombre.trim(),
+      apellido: req.body.apellido.trim(),
+      email: req.body.email.trim(),
 
     }, {
       where: {
@@ -245,9 +245,8 @@ module.exports = {
     let errors = validator.validationResult(req);
         if (!errors.isEmpty()) {
  //      res.send(errors)}
- return  res.render("users/profile", {
+  return  res.render("users/profile", {
             styles: ["profile"],
-            title: "usuario X",
             errors: errors.mapped(),
           })} 
         
@@ -270,7 +269,7 @@ module.exports = {
             .then(user => {
               req.session.user = user
             })
-
+         
          res.redirect('/users/index')
         })
         .catch((error) => res.send(error));

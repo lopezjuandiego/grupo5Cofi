@@ -1,68 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('../includes/head') %> 
-       
-<body>
-    <%- include("../includes/header") %> 
-<main>
- <section class="conttitle">
-    <h2 class="title"><%= locals.title ? title : null %> </h2>
-</section>
- <section class="contformulario">    
-   
+<%- include('../includes/head') %>
 
-   <form class="formgral" action="/product/save" enctype="multipart/form-data" method="post">
-   
-     <label class="continput" for="origen">
-      
-     
-        
-            <select class="forminput" name="tipoDeGrano" id="tipoDeGrano">
-                <option value="">Seleccioná un origen</option>
-                <% origenes.forEach(element => { %>
-                    <option value="<%= element.id %>">
-                        
-                        <%= element.country  %> 
-                     
-                </option>
-                   <% }) %>
-                </select>
-             
-                
-            <% if (locals.errors && errors.origen) { %>
-                <p class="errormail"><%= errors.origen.msg %> </p>
-               <% } %>
-     </label>
-
-    
-    
-     <label class="continput" for="tipoDeGrano">
-        
-        <select class="forminput" name="tipoDeGrano" id="tipoDeGrano">
-            <option value="">Seleccioná una molienda</option>
-            <% granos.forEach(element => { %>
-                <option value="<%= element.id %>"> <%= element.tipoDeGrano  %> </option>
-               <% }) %>
-            </select>
-            <% if (locals.errors && errors.tipoDeGrano) { %>
-                <p class="errormail"><%= errors.tipoDeGrano.msg %> </p>
-               <% } %>
-        </label>
+    <body>
+        <%- include("../includes/header") %>
+            <main>
+                <section class="conttitle">
+                    <h2 class="title">
+                        <%= locals.title ? title : null %>
+                    </h2>
+                </section>
+                <section class="contformulario">
 
 
-     
-        <label class="continput" for="cantidad">
-     
-            <select class="forminput" name="cantidad" id="cantidad">
-                <option value="">¿Cuántos gramos querés?</option>
-    
-                <% gramos.forEach(element => { %>
-                    <option value="<%= element.id %>" <%= locals.oldData && (element.id == oldData.id )  ? "selected" :  "" %>>
+                    <form class="formgral" action="/product/save" enctype="multipart/form-data" method="post">
+
+                        <label class="continput" for="origen">
+
+                            <select class="forminput" name="origen" id="origen">
+                                <option value="">Seleccioná un origen</option>
+                                <% origenes.forEach(element=> { %>
+                                    <option value="<%= element.id %>">
+                                        <%= element.country %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+
+                           
+
+                            <% if (locals.errors && errors.origen) { %>
+                                <p class="errormail">
+                                    <%= errors.origen.msg %>
+                                </p>
+                                <% } %>
+                        </label>
+
+
+
+                        <label class="continput" for="tipoDeGrano">
+
+                            <select class="forminput" name="tipoDeGrano" id="tipoDeGrano">
+                                <option value="">Seleccioná una molienda</option>
+                                <% granos.forEach(element=> { %>
+                                    <option value="<%= element.id %>">
+                                        <%= element.tipoDeGrano %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                            <% if (locals.errors && errors.tipoDeGrano) { %>
+                                <p class="errormail">
+                                    <%= errors.tipoDeGrano.msg %>
+                                </p>
+                                <% } %>
+                        </label>
+
+
+
+                        <label for="cantidad" class="continput" >
+
+                            <select class="forminput" name="cantidad" id="cantidad">
+                                <option value="">¿Cuántos gramos?</option>
+
+                                <% gramos.forEach(element=> { %>
+                                    <option value="<%= element.id %>" <%=locals.oldData && (element.cantidad == oldData.cantidad )
+                                        ? 'selected' :  "" %>">
                         <%= element.Cantidad %> </option>
                    <% }) %>
 
-            </select>
+                             </select>
 
+
+                           
+       
                 <% if (locals.errors && errors.cantidad) { %>
                     <p class="errormail"><%= errors.cantidad.msg %> </p>
                    <% } %>
@@ -92,14 +101,11 @@
            <% } %>
     </label>  
 
-   
-    
 
     <fieldset class="continput1">    
         <a class="boton1" href="/product">VOLVER</a>  
         <button class="boton" type="submit">CREAR</button>
     </fieldset>       
-     
 </form> 
     
  </section>
@@ -108,4 +114,3 @@
 <%- include("../includes/footer") %> 
 </body>
 </html>    
-

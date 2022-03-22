@@ -47,7 +47,9 @@
 
                                     </article>
                                     <article class="contenticonos">
-                                        <a href="/users/edit/<%= user.id %>"><i class="fa fa-edit"></i></a>
+
+                                        <a href="/users/update/<%= user.id %>"><i class="fa fa-edit"></i></a>
+                                   
 
                                         <form action="/users/delete/<%= user.id %>?m=DELETE" method="post">
                                             <button class="tachito" type="submit">
@@ -56,6 +58,7 @@
                                         </form>
                                     </article>
                                 </section>
+                            
                                 <form action="/users/logout" method="post">
                                     <button class="botonExit" type="submit">SALIR</button>
                                 </form>
