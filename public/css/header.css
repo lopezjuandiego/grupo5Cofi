@@ -13,39 +13,28 @@ header {
 
 
 .headerPrincipal{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: center;
+    background-color: #432818;
+    height: 5.5em;
+    width: 100%;
+    flex-direction: column;
     }
+
+   
 .headerPrincipal:hover{
     
     transition: 0.5s;
 }
 
 .iconos{
-     padding: 2em;
+    padding: 2em;
+    position: absolute;  
+    left: 40%;
 
 }
 
-/*.headerEnlaces,#lienlace,.enlaces{
-    
-    color: #ffe6a7;
-    background-color: #432818;
-    padding:  0.7em;
-    font-size: 1.1em;
-    list-style: none;
-    text-decoration: none;
-    order: 6;
-    margin-right: -4em;
-    height: 1em;
-    transition: all 0.5s;
-    
-
-}*/
-
-.headerEnlaces,#lienlace,.enlaces{
-    color: #ffe6a7;
+#lienlace,.enlaces{
+   
+   color: #ffe6a7;
     align-items: center;
     display: flex;
     padding: 0 0.1em;
@@ -57,37 +46,31 @@ header {
     order: 0;
     margin-right: 0;
     height: 1.4em;
-}
-
-/*.headerEnlaces, .header-nav{
-    position: absolute;
-    left: 100;
-    top: 4em;
-    flex-flow: column;
-    width: 100%;
-    background-color: #432818;
-    height: 107%;
     
-
-}*/
-
-
-
-.nav-menu_visible{
-    left: 0;
 }
-
-.headerEnlacesVisible{
-
-    margin-right: 0em;
-    height: 0;
+.headerEnlaces{
+    height: 55em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+    padding:4em;
+    background-color: #432818;
+    position: absolute;
+    width:100%;
+    left: -50em;
+    transition: all 0.5s linear
+    
 }
-
+ .nav-li{
+     left: 0em; 
+       
+}
 
 
 .contenedorelementos1,.contenedorelementos2{
     flex-grow: 1;
-    
+   
 }
 
 .contenedorelementos2{
@@ -115,14 +98,19 @@ color: #ffe6a7;
     color: #ffe6a7;
     
 }
-
-
 .fa-bars{
-    color: #ffe6a7;
-    padding: 0.5em 0 0.5em ;
+color: #ffe6a7;
+    padding: 10px;
     font-size: 3em;
     cursor: pointer;
+    position: absolute;
+    background-color:  #432818;
+    right: 53px;
+    top: 11px;
+    height: 1.5em;
 }
+
+
 
 .imglogin{
     margin-right: 1em;
@@ -162,10 +150,25 @@ color: #ffe6a7;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        
+        flex-direction: row;
+        height: 5.5em;
+        position: relative;
     }
-
-    .headerEnlaces,#lienlace,.enlaces{
+    .headerEnlaces{
+    
+        height: 3em;
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        padding: 1em;
+        background-color: #432818;
+        position: relative;
+        width: 30%;
+        left: 0;
+        transition: all 0.5s linear;
+        justify-content: center;
+    }
+    #lienlace,.enlaces{
         
         display: inline-block;
         padding: 0 0.1em;
@@ -177,6 +180,7 @@ color: #ffe6a7;
         order: 0;
         margin-right: 0;
         height: 1.4em;
+        
     }
     
     .enlaces:hover{
@@ -206,6 +210,7 @@ color: #ffe6a7;
         .iconos {
             padding: 1em;
             font-size: 1em;
+            position: inherit;
         }
 
         .imglogin{            
@@ -253,7 +258,7 @@ color: #ffe6a7;
         
     }
 
-    .headerEnlaces,#lienlace,.enlaces{
+    #lienlace,.enlaces{
         color: #ffe6a7;
         display: inline-block;
         padding: 0 1em;

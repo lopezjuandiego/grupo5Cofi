@@ -1,11 +1,14 @@
 window.addEventListener('load', function() {
 
-let navHamburguesa = document.querySelector('.contenedorelementos2')
-let navMenu = document.querySelector('headerEnlaces')
+let navHamburguesa = document.querySelector('.fa-bars')
 
-navHamburguesa.addEventListener('click', function() {
+let navMenu = document.querySelector('.headerEnlaces')
+ 
+    
+ navHamburguesa.addEventListener('click', function() {
 
-    navMenu.classList.toggle('nav-menu_visible')
+    
+    navMenu.classList.toggle('nav-li')
 })
 
 })

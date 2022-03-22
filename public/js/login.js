@@ -48,7 +48,6 @@ window.onload = function() {
     
            }
 
-
        emPasValue.forEach((item)  => {           
         item.addEventListener("click" , validaciones)  
         item.addEventListener("keydown" , validaciones)   
