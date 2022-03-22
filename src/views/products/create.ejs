@@ -17,19 +17,16 @@
 
                         <label class="continput" for="origen">
 
-
-
-                            <select class="forminput" name="tipoDeGrano" id="tipoDeGrano">
+                            <select class="forminput" name="origen" id="origen">
                                 <option value="">Seleccioná un origen</option>
                                 <% origenes.forEach(element=> { %>
                                     <option value="<%= element.id %>">
-
                                         <%= element.country %>
-
                                     </option>
                                     <% }) %>
                             </select>
 
+                           
 
                             <% if (locals.errors && errors.origen) { %>
                                 <p class="errormail">
