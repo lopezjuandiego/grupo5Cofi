@@ -50,7 +50,6 @@ save: (req,res) => {
     gramos: gramos,
     errors: errors.mapped(),
     oldData: req.body,
-  
 
 })
 

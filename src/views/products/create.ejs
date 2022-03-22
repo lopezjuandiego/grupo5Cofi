@@ -20,15 +20,14 @@
                             <select class="forminput" name="origen" id="origen">
                                 <option value="">Seleccioná un origen</option>
                                 <% origenes.forEach(element=> { %>
-                                    <option value="<%= element.id %>">
+                                    <option value="<%= element.id %>" <%=locals.oldData && (element.id == oldData.origen )
+                                        ? 'selected' :  "" %>>
                                         <%= element.country %>
                                     </option>
                                     <% }) %>
                             </select>
 
-                           
-
-                            <% if (locals.errors && errors.origen) { %>
+                                                <% if (locals.errors && errors.origen) { %>
                                 <p class="errormail">
                                     <%= errors.origen.msg %>
                                 </p>
@@ -42,7 +41,8 @@
                             <select class="forminput" name="tipoDeGrano" id="tipoDeGrano">
                                 <option value="">Seleccioná una molienda</option>
                                 <% granos.forEach(element=> { %>
-                                    <option value="<%= element.id %>">
+                                    <option value="<%= element.id %>" <%=locals.oldData && (element.id == oldData.tipoDeGrano )
+                                        ? 'selected' :  "" %>>
                                         <%= element.tipoDeGrano %>
                                     </option>
                                     <% }) %>
@@ -56,14 +56,15 @@
 
 
 
+
                         <label for="cantidad" class="continput" >
 
                             <select class="forminput" name="cantidad" id="cantidad">
                                 <option value="">¿Cuántos gramos?</option>
 
                                 <% gramos.forEach(element=> { %>
-                                    <option value="<%= element.id %>" <%=locals.oldData && (element.cantidad == oldData.cantidad )
-                                        ? 'selected' :  "" %>">
+                                    <option value="<%= element.id %>" <%=locals.oldData && (element.id == oldData.cantidad )
+                                        ? 'selected' :  "" %>>
                         <%= element.Cantidad %> </option>
                    <% }) %>
 
