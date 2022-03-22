@@ -28,7 +28,13 @@ header {
 .iconos{
     padding: 2em;
     position: absolute;  
-    left: 40%;
+    left: 26%;
+
+}
+.iconos1{
+    padding: 2em;
+    position: absolute;  
+    left: 47%;
 
 }
 
@@ -59,8 +65,8 @@ header {
     position: absolute;
     width:100%;
     left: -50em;
-    transition: all 0.5s linear
-    
+    transition: all 0.5s linear;
+    z-index: 1;    
 }
  .nav-li{
      left: 0em; 
@@ -143,7 +149,9 @@ color: #ffe6a7;
         display: none;
     }
 
-
+    .iconos1 {        
+        position: initial;
+        }
 
     .headerPrincipal{
         display: flex;
@@ -167,6 +175,7 @@ color: #ffe6a7;
         left: 0;
         transition: all 0.5s linear;
         justify-content: center;
+        
     }
     #lienlace,.enlaces{
         
