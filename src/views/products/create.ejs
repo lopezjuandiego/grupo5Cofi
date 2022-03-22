@@ -59,19 +59,19 @@
 
 
 
-                        <label class="continput" for="cantidad">
+                        <label for="cantidad" class="continput" >
 
                             <select class="forminput" name="cantidad" id="cantidad">
-                                <option value="">¿Cuántos gramos querés?</option>
+                                <option value="">¿Cuántos gramos?</option>
 
                                 <% gramos.forEach(element=> { %>
-                                    <option value="<%= element.id %>" <%=locals.oldData && (element.id==oldData.Gramo )
-                                        ? 'selected' :  null %>>
+                                    <option value="<%= element.id %>" <%=locals.oldData && (oldData.element === element.id )
+                                        ? 'selected' :  "" %>">
                         <%= element.Cantidad %> </option>
                    <% }) %>
 
-            </select>
-
+                             </select>
+       
                 <% if (locals.errors && errors.cantidad) { %>
                     <p class="errormail"><%= errors.cantidad.msg %> </p>
                    <% } %>
@@ -101,9 +101,6 @@
            <% } %>
     </label>  
 
-   
-    <p><%= locals.oldData %> </p>
-    <p><%= oldData.precio %> </p>
 
     <fieldset class="continput1">    
         <a class="boton1" href="/product">VOLVER</a>  

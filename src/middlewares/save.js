@@ -31,7 +31,6 @@ const validations = [
 
     validator.body('password2')
     .notEmpty().withMessage('Tenés que completar el campo de repetir contraseña')
-
     .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres')
     .matches(/^.(?=.{8,})(?=.[a-zA-Z0-9-.]).*$/).withMessage('Debe tener al menos 8 caracteres y una o más letras')
 ]

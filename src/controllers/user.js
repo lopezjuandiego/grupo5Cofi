@@ -247,7 +247,6 @@ module.exports = {
  //      res.send(errors)}
   return  res.render("users/profile", {
             styles: ["profile"],
-            title: "usuario X",
             errors: errors.mapped(),
           })} 
         
@@ -270,7 +269,7 @@ module.exports = {
             .then(user => {
               req.session.user = user
             })
-
+         
          res.redirect('/users/index')
         })
         .catch((error) => res.send(error));

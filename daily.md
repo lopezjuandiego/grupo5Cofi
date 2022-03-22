@@ -1,9 +1,11 @@
 **DAILY - SPRINT 7** 
 
+Daily / Lunes 21
+Finalización del sprint con pendientes de validaciones de Front con register
+Menu hamburguesa funcional
+
 Daily  / Sábado 19
 Persistencia de campo email en login y nombre, apellido y email en register.
-
-
 
 Daily  / Viernes 18
 Validación de avatar en Backend.
