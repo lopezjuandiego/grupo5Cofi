@@ -1,5 +1,13 @@
 **DAILY - SPRINT 7** 
 
+Daily / Jueves 24
+Mejores finales luego del sprint.
+Arreglo de validación de FRONT de campo REPETIR contraseña, para que valide con la contraseña original.
+
+Daily / Martes 22
+Mejores finales luego del sprint.
+Arreglo de persistencia de datos en campos con SELECT
+
 Daily / Lunes 21
 Finalización del sprint con pendientes de validaciones de Front con register
 Menu hamburguesa funcional

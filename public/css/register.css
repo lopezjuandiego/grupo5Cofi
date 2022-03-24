@@ -159,6 +159,10 @@ input.error{
 input.success{
   border: 6.6px solid rgb(104, 235, 148)
 }
+
+input.danger{
+  border: 6.6px solid rgb(239, 251, 61)
+}
   
 
 @media (min-width: 768px) {
