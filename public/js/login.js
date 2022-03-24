@@ -29,13 +29,25 @@ window.onload = function() {
 
          //VALIDACION PASSWORD
 
-            let passwordValido = fieldPassword.value.trim();    
 
-            if (passwordValido.length < 6 ){        
+           //CAMPO PASSWORD      
+      let passwordValido = fieldPassword.value.trim();    
+
+            if (passwordValido.length < 3 ){        
                 fieldPassword.classList.add ("error")
-                fieldPassword.classList.remove ("success")                
+                fieldPassword.classList.remove ("danger")                
                  }
         
+            if (passwordValido.length >= 3 && passwordValido.length <= 6){        
+                fieldPassword.classList.add ("danger")
+                fieldPassword.classList.remove ("error")                
+                 }
+             if (passwordValido.length >6 ){        
+                fieldPassword.classList.add ("succes")
+                fieldPassword.classList.remove ("danger")                
+                 }
+                     
+
             let regexs = /^.(?=.{6,})(?=.[a-zA-Z0-9-.]).*$/;
         
             if (!regexs.test(passwordValido)){        
@@ -44,7 +56,7 @@ window.onload = function() {
              } else{ 
                  fieldPassword.classList.add ("success")            
              } 
-           
+            
     
            }
 

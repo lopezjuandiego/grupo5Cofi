@@ -66,10 +66,21 @@ window.onload = function (){
         //CAMPO PASSWORD      
        let campoPasswordValido = campoPassword.value.trim();
 
-       if (campoPasswordValido.length <= 7 ){
+       if (campoPasswordValido.length < 3 ){
            campoPassword.classList.add ("error")
-           campoPassword.classList.remove ("success")
+           campoPassword.classList.remove ("danger")
          }
+         if (campoPasswordValido.length >=3 && campoPasswordValido.length <= 6 ){
+            campoPassword.classList.add ("danger")
+            campoPassword.classList.remove ("error")
+          }
+
+          if (campoPasswordValido.length > 6 ){
+            campoPassword.classList.add ("success")
+            campoPassword.classList.remove ("danger")
+          }
+
+
            let regext = /^.(?=.{6,})(?=.[a-zA-Z0-9-.]).*$/
        if (!regext.test(campoPasswordValido)){
            campoPassword.classList.add ("error")

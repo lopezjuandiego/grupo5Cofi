@@ -4,6 +4,7 @@ Daily / Jueves 24
 Mejores finales luego del sprint.
 Arreglo de validación de FRONT de campo REPETIR contraseña, para que valide con la contraseña original.
 Dark Mode en User List
+Semáforo en password de Login y Register
 
 Daily / Martes 22
 Mejores finales luego del sprint.
