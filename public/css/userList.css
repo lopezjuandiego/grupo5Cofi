@@ -211,7 +211,7 @@ body.light .contentlista{
     outline: none;
 }
 
-.switch ::after  {
+.switch::after  {
     content: "";
     display: block;
     width: 30px;
@@ -227,7 +227,7 @@ body.light .contentlista{
 } 
 
 .switch.active{
-    background-color: rgb(83, 11, 11);
+    background-color: #ffe6a7;
     color: #FFF;
 
 }
