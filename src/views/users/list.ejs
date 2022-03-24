@@ -14,28 +14,38 @@
                 </section>
 
                 <% if (user !=null && user.admin) { %>
- 
-                   
-                    <form class="search"  action="/users/search" method="get">
-                      <i class="fas fa-search"></i>
-                      <input  class ="barraB" type="search" name="buscar" placeholder="Buscá por Nombre o Apellido">
-                      <button class="boton1" type="submit">Buscar</button>
+
+
+
+                    <form class="search" action="/users/search" method="get">
+                        <i class="fas fa-search"></i>
+                        <input class="barraB" type="search" name="buscar" placeholder="Buscá por Nombre o Apellido">
+                        <button class="boton1" type="submit">Buscar</button>
                     </form>
-                        
+
+                    <button class="switch" id="switch">
+                        <span>
+                            <i class="fa fa-sun"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-moon"></i>
+                        </span>
+                    </button>
+
                     <section class="contlistado">
                         <% if (locals.users) { %>
 
                             <% if (users.length> 0) { %>
 
-                                <% users.forEach(user => { %>
+                                <% users.forEach(user=> { %>
                                     <article class="listagral">
                                         <a class="contentlista" href="/users/profile/<%= user.id %> ">
                                             <% if (user.avatar) { %>
-                                                <img class="contentimagen" src="/uploads/avatars/<%= user.avatars.Url %> "
-                                                    alt="" srcset="">
+                                                <img class="contentimagen"
+                                                    src="/uploads/avatars/<%= user.avatars.Url %> " alt="" srcset="">
                                                 <% } %>
                                                     <ul class="contlis">
-                                                       
+
                                                         <li class="lilista">NOMBRE: <%= user.nombre %>
                                                         </li>
 
@@ -44,36 +54,42 @@
 
                                                         <li class="lilista">E-MAIL: <%= user.email %>
                                                         </li>
-                                                       
+
 
                                                     </ul>
                                         </a>
+
                                     </article>
                                     <% }) %>
-                 
-                                    <% } %>
-                                    <% } %>
-                                    
-                    <% } else { %>
 
-                    <section class="contlistado">
-                        <h1 class="titulolist">Tenés que ser admin para ver la lista de usuarios</h1>
-                    </section>
-                    <form action="/users/logout" method="post">
-                        <button class= "boton-logout" type="submit">LOGOUT</button>
-                  </form>
-                    
+                                        <% } %>
+                                       <!--  <form action="/users/logout" method="post">
+                                            <button class= "boton-logout" type="submit">LOGOUT</button>
+                                      </form> -->
+                                            <% } %>
+                                            <form action="/users/logout" method="post">
+                                                <button class= "boton-logout" type="submit">LOGOUT</button>
+                                          </form>
+                                                <% } else { %>
+
+                                                    <section class="contlistado">
+                                                        <h1 class="titulolist">Tenés que ser admin para ver la lista de
+                                                            usuarios</h1>
+                                                    </section>
 
 
-                    
-                    
 
-                        
 
-                        <% } %>
+
+
+
+
+
+                                                    <% } %>
             </main>
 
             <%- include("../includes/footer") %>
+            <script src = "../js/user.js"></script>
     </body>
 
 </html>

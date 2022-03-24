@@ -13,7 +13,7 @@ module.exports = {
     })
       .then(users => {
         res.render("users/list", {
-          styles: ["product/product"],
+          styles: ["userList"],
 
           title: "USUARIOS REGISTRADOS",
           users: users
