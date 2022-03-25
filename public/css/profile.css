@@ -43,7 +43,7 @@ main{
   font-size: 30px;
   font-family: "Roboto";
   padding: 12px;
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 
 .searchLista{
@@ -55,6 +55,11 @@ main{
     vertical-align: baseline;
     text-decoration: none;
 }
+
+.listagral a{
+    text-decoration: none;
+}
+
 .figura{
     display: flex;
     flex-direction: row;
