@@ -32,7 +32,7 @@ main{
     justify-content: center;
     color: #ffe6a7;
     font-size: 7vw;
-    font-family: Roboto, "Helvetica Neue",;
+    font-family: "Roboto";
     padding: 12px;
 }
 
@@ -41,7 +41,7 @@ main{
   justify-content: center;
   color: #ffe6a7;
   font-size: 30px;
-  font-family: Roboto, "Helvetica Neue",;
+  font-family: "Roboto";
   padding: 12px;
   text-decoration: none;
 }
