@@ -3,6 +3,7 @@
 Daily / Viernes 25
 Modificación de FORM de Logout para que funcione tanto para usuarios admin, logueados y guest
 Retoques de CSS UserList
+Arreglo en validación de Front de Register para que el "repetir contraseña" aparezca en rojo al principio.
 
 Daily / Jueves 24
 Arreglo de validación de FRONT de campo REPETIR contraseña, para que valide con la contraseña original.
