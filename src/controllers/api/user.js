@@ -2,7 +2,7 @@ const db = require("../../database/models");
 const Op = db.Sequelize.Op
 
 module.exports = {
-
+//API listado de Usuarios
   list: (req, res) => {
 
     db.User.findAll({
@@ -10,7 +10,7 @@ module.exports = {
       include: ['avatars']
     }, { attributes:['id', 'nombre', 'apellido', 'email']})
     .then((users)=> {
-      if(users.length){
+      if(users.length > 0){
                 
         let response = {
             meta: {
@@ -23,14 +23,14 @@ module.exports = {
         users.forEach(user => {
             response.data.push({
                 id: user.id,
-                nombre: user.nombre,
-                apellido: user.last_name,
-                email: user.email,
-                detail: `/api/users/${user.id}`
+                Nombre: user.nombre,
+                Apellido: user.apellido,
+                Email: user.email,
+                urlUser: `/api/users/${user.id}`
             })
         });
 
-        return res.json(response);
+        return res.status(200).json(response);
     }
     else{
         return res.status(404).json( {
@@ -42,7 +42,7 @@ module.exports = {
        error: 'No se pudo conectar a la base' } );;
         })             
   },
-
+//API de Usuario por ID
   showUser: (req, res) => {
     db.User.findByPk(req.params.id, 
          { include: ['avatars'] })
@@ -52,17 +52,17 @@ module.exports = {
         return res.status(200).json({
             data: {
                 id: user.id,
-                nombre: user.nombre,
-                apellido: user.apellido,
-                email: user.email,
-                admin: user.admin,
-                avatar: "http://localhost:3050/uploads/avatars/" + user.avatars.Url,
-                detail: `/api/users/${user.id}`
+                Nombre: user.nombre,
+                Apellido: user.apellido,
+                Email: user.email,
+                Administrador: user.admin,
+                urlAvatar: "http://localhost:3050/uploads/avatars/" + user.avatars.Url,
+                urlUser: `/api/users/${user.id}`
               
             },
             
             status: 200,
-            url: "http://localhost:3050/api/users" + req.url
+            //url: "http://localhost:3050/api/users" + req.url
         })       
 
       })
