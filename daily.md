@@ -1,3 +1,11 @@
+**DAILY - SPRINT 8** 
+
+Jueves 31 de marzo
+Api de usuario funcional y comienzo de Api de producto
+
+Miercoles 30 de marzo
+Análisis de sprint y división de tareas.
+---------------------------------------
 **DAILY - SPRINT 7** 
 
 Daily / Viernes 25

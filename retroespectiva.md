@@ -1,4 +1,10 @@
-﻿
+﻿**RETROESPECTIVA SPRINT 7**
+
+*Hacer más:* Seguir ayudandonos cuando se presentan dificultades. 
+*Continuar haciendo:* Mantener el cumplimiento de los deadlines.
+*Hacer menos:* Dejar de codear todos juntos. En determinadas circunstancias no nos escuchamos lo suficiente. Este punto no logramos mejorarlo y fue nuestro talón de aquiles
+*Dejar de hacer:* No respetarnos en función de las dificultades, tanto horarios como de aprendizaje. 
+
 **RETROESPECTIVA SPRINT 6**
 
 *Hacer más:* Seguir ayudandonos cuando se presentan dificultades. Codear más individualmente y en la puesta en común poder explicar que hicimos, porque lo hicimos y que esto nos sirva incluso para aprender más nosotros mismos.

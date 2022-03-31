@@ -28,7 +28,7 @@ app.use(cookie());
 
 app.use(require('./middlewares/user'));
 
-
+//Rutas
 app.use(require('./routes/home'));
 app.use(require('./routes/pagoyenvio'));
 app.use(require('./routes/productCart'));
@@ -36,4 +36,5 @@ app.use(require('./routes/productDetail'));
 app.use("/product", require('./routes/product'));
 app.use("/users", require('./routes/user'));
 
-
+//Rutas API
+app.use('/api/users', require('./routes/api/user'));
