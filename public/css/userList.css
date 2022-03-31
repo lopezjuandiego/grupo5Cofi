@@ -13,6 +13,7 @@ body.light {
     background-color: #fff;
     transition: .3s ease all;
 }
+/* DARK MODE */
 
 /* BANNER */
 
@@ -86,36 +87,6 @@ body.light .contentlista{
     border-radius: 20px;
 }
 
-.contemoji{
-    font-size: 1.5em;
-    padding: 1em;
-    color: #ffe6a7;
-}
-
-
-.contemojimas{
-
-    font-size: 3em;
-    padding: 1em;    
-    display: flex;
-    justify-content: flex-start;
-    transition: all .3s ease-in-out;
-}
-
-.contemojimas:hover{
-
-    font-size: 3.2em;
-}
-
-/* .fa-plus-circle{
-
-    color: #ffe6a7;
-}
-
-.fa-dizzy{
-    font-size:2em;
-    color: #ffe6a7;
-} */
 
 .contlis{
 
@@ -147,16 +118,19 @@ body.light .contentlista{
     border-width: 3px;
     border-color: #959595;
     font-family: "Roboto";
+    margin: 20px
     
 }
+
+/* FIN CUERPO */
+
+/*  SEARCH */
 .search{
     display: flex;
     justify-content: center;
     padding: 12px;
     gap:0.8em
 }
-
-
 
 .fa-search{
     font-size: 28px;
@@ -184,21 +158,7 @@ body.light .contentlista{
     font-weight: bold;
     
 }
-
-.search{
-    display: flex;
-    justify-content: center;
-    padding: 12px;
-}
-
-
-
-.fa-search{
-    font-size: 28px;
-}
-
-
-/* FIN CUERPO */
+/* FIN SEARCH */
 
 /* DARK MODE */
 .switch{
@@ -214,8 +174,8 @@ body.light .contentlista{
 .switch::after  {
     content: "";
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     background: #f1f1f1;
     top: 0;
@@ -238,18 +198,15 @@ body.light .contentlista{
 }
 
 .switch span  {
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
         display: block;
         background: none;
         color: #fff;
        }
 
    /*FIN DARK MODE */
-
-
-
 
 
 @media  (min-width: 768px) {
@@ -270,19 +227,16 @@ body.light .contentlista{
         
         }
         
-        .contemoji{
-            font-size: 3em;
-            padding: 1em;
-            color: #ffd9a7;
+        .search{
+            display: flex;
+            justify-content: center;
+            padding: 12px;
         }
-
-        .contemojimas{
-
-            
-            padding: 1em;    
-          
+        
+        
+        .fa-search{
+            font-size: 28px;
         }
-
 }
 
 

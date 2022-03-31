@@ -1,10 +1,25 @@
+**DAILY - SPRINT 8** 
+
+Jueves 31 de marzo
+Api de usuario funcional y comienzo de Api de producto
+
+Miercoles 30 de marzo
+Análisis de sprint y división de tareas.
+---------------------------------------
 **DAILY - SPRINT 7** 
 
+Daily / Viernes 25
+Modificación de FORM de Logout para que funcione tanto para usuarios admin, logueados y guest
+Retoques de CSS UserList
+Arreglo en validación de Front de Register para que el "repetir contraseña" aparezca en rojo al principio.
+
 Daily / Jueves 24
-Mejores finales luego del sprint.
 Arreglo de validación de FRONT de campo REPETIR contraseña, para que valide con la contraseña original.
-Dark Mode en User List
 Semáforo en password de Login y Register
+Mejores finales luego de la finalización del sprint.
+Dark Mode en User List
+Retoques de CSS en Login y Register.
+
 
 Daily / Martes 22
 Mejores finales luego del sprint.

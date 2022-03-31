@@ -42,7 +42,7 @@ window.onload = function() {
                 fieldPassword.classList.add ("danger")
                 fieldPassword.classList.remove ("error")                
                  }
-             if (passwordValido.length >6 ){        
+             if (passwordValido.length >=8 ){        
                 fieldPassword.classList.add ("succes")
                 fieldPassword.classList.remove ("danger")                
                  }

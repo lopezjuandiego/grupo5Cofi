@@ -15,8 +15,6 @@
 
                 <% if (user !=null && user.admin) { %>
 
-
-
                     <form class="search" action="/users/search" method="get">
                         <i class="fas fa-search"></i>
                         <input class="barraB" type="search" name="buscar" placeholder="Buscá por Nombre o Apellido">
@@ -55,37 +53,33 @@
                                                         <li class="lilista">E-MAIL: <%= user.email %>
                                                         </li>
 
-
                                                     </ul>
                                         </a>
 
                                     </article>
-                                    <% }) %>
+                                <% }) %>
 
-                                        <% } %>
-                                       <!--  <form action="/users/logout" method="post">
-                                            <button class= "boton-logout" type="submit">LOGOUT</button>
-                                      </form> -->
-                                            <% } %>
-                                            <form action="/users/logout" method="post">
-                                                <button class= "boton-logout" type="submit">LOGOUT</button>
-                                          </form>
-                                                <% } else { %>
+                             <% } %>
+                                      
+                        <% } %>
+                                        
+                    </section>
+                        <form action="/users/logout" method="post">
+                            <button class= "boton-logout" type="submit">LOGOUT</button>
+                        </form>
+                                   
 
-                                                    <section class="contlistado">
-                                                        <h1 class="titulolist">Tenés que ser admin para ver la lista de
-                                                            usuarios</h1>
-                                                    </section>
+            <% } else { %>
 
+                    <section class="contlistado">
+                        <h1 class="titulolist">Tenés que ser admin para ver la lista de usuarios</h1>
+                    </section>
+                     
+                     <form action="/users/logout" method="post">
+                         <button class= "boton-logout" type="submit">LOGOUT</button>
+                     </form>
 
-
-
-
-
-
-
-
-                                                    <% } %>
+                <% } %>
             </main>
 
             <%- include("../includes/footer") %>
