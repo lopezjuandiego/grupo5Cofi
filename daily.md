@@ -1,11 +1,13 @@
 **DAILY - SPRINT 8** 
+Viernes 1 de abril
+Iniciamos dashboard de React
 
 Jueves 31 de marzo
-Api de usuario funcional y comienzo de Api de producto
+Api de usuario y producto funcional. 
 
 Miercoles 30 de marzo
 Análisis de sprint y división de tareas.
----------------------------------------
+--
 **DAILY - SPRINT 7** 
 
 Daily / Viernes 25

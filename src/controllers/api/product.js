@@ -15,10 +15,11 @@ module.exports = {
         let response = {
             meta: {
                 status: 200,
-                totalProducts: products.length
+                totalProducts: products.length,
+                //countCategory: products.origen.length
             },
             data: []
-            //data: users
+            
         }
         products.forEach(product => {
             response.data.push({
@@ -29,10 +30,11 @@ module.exports = {
                 Precio: product.Precio,
                 Oferta: product.Oferta,
                 urlImagen: "http://localhost:3050/uploads/" + product.imagen.Url,
+                urlProduct:"http://localhost:3050" + `/api/products/${product.id}`
+               
             })
         });
-
-        return res.status(200).json(response);
+                return res.status(200).json(response);
     }
     else{
         return res.status(404).json( {
@@ -60,6 +62,8 @@ module.exports = {
                 Precio: product.Precio,
                 Oferta: product.Oferta,
                 urlImagen: "http://localhost:3050/uploads/" + product.imagen.Url,
+                 urlProduct:"http://localhost:3050" + `/api/products/${product.id}`
+
                               
             },
             

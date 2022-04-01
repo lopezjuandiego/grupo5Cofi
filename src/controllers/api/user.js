@@ -18,7 +18,6 @@ module.exports = {
                 totalUsers: users.length
             },
             data: []
-            //data: users
         }
         users.forEach(user => {
             response.data.push({
@@ -26,7 +25,9 @@ module.exports = {
                 Nombre: user.nombre,
                 Apellido: user.apellido,
                 Email: user.email,
-                urlUser: "http://localhost:3050/api/users" + `/api/users/${user.id}`
+                urlUser: "http://localhost:3050/api/users" + `/api/users/${user.id}`,
+                urlAvatar: "http://localhost:3050/uploads/avatars/" + user.avatars.Url,
+
             })
         });
 
