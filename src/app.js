@@ -38,3 +38,4 @@ app.use("/users", require('./routes/user'));
 
 //Rutas API
 app.use('/api/users', require('./routes/api/user'));
+app.use('/api/products', require('./routes/api/product'));
