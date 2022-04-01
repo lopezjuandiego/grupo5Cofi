@@ -7,8 +7,9 @@ module.exports = {
 
     db.Product.findAll({
       
-        include: [ "origen", "grano","cantidad","imagen"],
-    }, { attributes:['id', 'origen', 'grano', 'cantidad']})
+        include: [ "origen", "grano","cantidad","imagen"]},
+
+        { attributes:['id', 'origen', 'grano', 'cantidad']})
     .then((products)=> {
       if(products.length > 0){
                 
@@ -16,7 +17,6 @@ module.exports = {
             meta: {
                 status: 200,
                 totalProducts: products.length,
-                //countCategory: products.origen.length
             },
             data: []
             
@@ -30,8 +30,7 @@ module.exports = {
                 Precio: product.Precio,
                 Oferta: product.Oferta,
                 urlImagen: "http://localhost:3050/uploads/" + product.imagen.Url,
-                urlProduct:"http://localhost:3050" + `/api/products/${product.id}`
-               
+                urlProduct:"http://localhost:3050" + `/api/products/${product.id}`     
             })
         });
                 return res.status(200).json(response);
@@ -62,9 +61,7 @@ module.exports = {
                 Precio: product.Precio,
                 Oferta: product.Oferta,
                 urlImagen: "http://localhost:3050/uploads/" + product.imagen.Url,
-                 urlProduct:"http://localhost:3050" + `/api/products/${product.id}`
-
-                              
+                 urlProduct:"http://localhost:3050" + `/api/products/${product.id}`              
             },
             
             status: 200,
