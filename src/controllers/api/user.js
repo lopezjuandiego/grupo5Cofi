@@ -26,7 +26,7 @@ list: (req, res) => {
                 Nombre: user.nombre,
                 Apellido: user.apellido,
                 Email: user.email,
-               // urlUser: "http://localhost:3050/api/users" + `/api/users/${user.id}`,
+                urlUser: "http://localhost:3050/api/users" + `/api/users/${user.id}`,
                 urlAvatar: "http://localhost:3050/uploads/avatars/" + user.avatars.Url,
 
             })
@@ -60,7 +60,7 @@ showUser: (req, res) => {
                 Apellido: user.apellido,
                 Email: user.email,
                 Administrador: user.admin,
-              //  urlAvatar: "http://localhost:3050/uploads/avatars/" + user.avatars.Url,
+                urlAvatar: "http://localhost:3050/uploads/avatars/" + user.avatars.Url,
                 urlUser: "http://localhost:3050/api/users" + `/api/users/${user.id}`
               
             },
@@ -75,7 +75,9 @@ showUser: (req, res) => {
 
   last: (req, res) => {
     db.User.findOne({ 
+      include: [ "avatars"],
         order: [['id', 'DESC']]
+    
     })
     
     .then(user => {
@@ -87,7 +89,7 @@ showUser: (req, res) => {
             Apellido: user.apellido,
             Email: user.email,
             Administrador: user.admin,
-           //urlAvatar: "http://localhost:3050/uploads/avatars/" + user.avatars.Url,
+           urlAvatar: "http://localhost:3050/uploads/avatars/" + user.avatars.Url,
            urlUser: "http://localhost:3050/api/users" + `/api/users/${user.id}`
           
         },
