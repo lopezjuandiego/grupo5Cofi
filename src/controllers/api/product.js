@@ -7,10 +7,12 @@ module.exports = {
 
     db.Product.findAll({
       
-        include: [ "origen", "grano","cantidad","imagen"]},
+        include: [ "origen", "grano","cantidad","imagen"]}//,
 
-        { attributes:['id', 'origen', 'grano', 'cantidad']})
-    .then((products)=> {
+//        { attributes:['id', 'origen', 'grano', 'cantidad']}
+)
+    
+        .then((products)=> {
       if(products.length > 0){
                 
         let response = {
@@ -29,7 +31,7 @@ module.exports = {
                 Cantidad: product.cantidad,
                 Precio: product.Precio,
                 Oferta: product.Oferta,
-                urlImagen: "http://localhost:3050/uploads/" + product.imagen.Url,
+               // urlImagen: "http://localhost:3050/uploads/" + product.imagen.Url,
                 urlProduct:"http://localhost:3050" + `/api/products/${product.id}`     
             })
         });
