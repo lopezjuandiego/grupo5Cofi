@@ -1,4 +1,9 @@
 **DAILY - SPRINT 8** 
+
+Sábado 2
+Armamos ENDPOINT ultimo usuario. Correcciones en APIs
+Seguimos con REACT.
+
 Viernes 1 de abril
 Iniciamos dashboard de React
 
