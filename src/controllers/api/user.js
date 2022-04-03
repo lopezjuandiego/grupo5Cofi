@@ -2,13 +2,14 @@ const db = require("../../database/models");
 const Op = db.Sequelize.Op
 
 module.exports = {
-//API listado de Usuarios
-  list: (req, res) => {
+//ENDPOINT - Listado de Usuarios
+  
+list: (req, res) => {
 
     db.User.findAll({
       
       include: ['avatars']
-    }, { attributes:['id', 'nombre', 'apellido', 'email']})
+    })
     .then((users)=> {
       if(users.length > 0){
                 
@@ -18,7 +19,6 @@ module.exports = {
                 totalUsers: users.length
             },
             data: []
-            //data: users
         }
         users.forEach(user => {
             response.data.push({
@@ -43,8 +43,10 @@ module.exports = {
        error: 'No se pudo conectar a la base' } );;
         })             
   },
-//API de Usuario por ID
-  showUser: (req, res) => {
+
+  //ENDPOINT - Usuario por ID
+
+showUser: (req, res) => {
     db.User.findByPk(req.params.id, 
          { include: ['avatars'] })
 
@@ -68,7 +70,33 @@ module.exports = {
       })
 
   },
+//ENDPOINT - Último usuario agregado
 
- 
+  last: (req, res) => {
+    db.User.findOne({ 
+      include: [ "avatars"],
+        order: [['id', 'DESC']]
+    
+    })
+    
+    .then(user => {
+
+      return res.status(200).json({
+        data: {
+            id: user.id,
+            Nombre: user.nombre,
+            Apellido: user.apellido,
+            Email: user.email,
+            Administrador: user.admin,
+           urlAvatar: "http://localhost:3050/uploads/avatars/" + user.avatars.Url,
+           urlUser: "http://localhost:3050/api/users" + `/api/users/${user.id}`
+          
+        },
+        
+        status: 200,
+    })       
+      })
+
+}
  
 }

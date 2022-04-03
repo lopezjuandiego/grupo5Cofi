@@ -2,16 +2,15 @@ const db = require("../../database/models");
 const Op = db.Sequelize.Op
 
 module.exports = {
-//API listado de Productos
+//ENDPOINT - Listado de Productos
+
   list: (req, res) => {
 
     db.Product.findAll({
-      
-        include: [ "origen", "grano","cantidad","imagen"]},
-
-        { attributes:['id', 'origen', 'grano', 'cantidad']})
-    .then((products)=> {
-      if(products.length > 0){
+        include: [ "origen", "grano","cantidad","imagen"]}
+)
+        .then((products)=> {
+      if(products.length ){
                 
         let response = {
             meta: {
@@ -22,19 +21,18 @@ module.exports = {
             
         }
         products.forEach(product => {
-            response.data.push({
+          response.data.push({
                 id: product.id,
                 Origen: product.origen,
                 Grano: product.grano,
                 Cantidad: product.cantidad,
                 Precio: product.Precio,
                 Oferta: product.Oferta,
-                urlImagen: "http://localhost:3050/uploads/" + product.imagen.Url,
+                urlImagen: `http://localhost:3050/uploads/${product.imagen.Url}`,
                 urlProduct:"http://localhost:3050" + `/api/products/${product.id}`     
             })
         });
-
-        return res.status(200).json(response);
+                return res.status(200).json(response);
     }
     else{
         return res.status(404).json( {
@@ -46,7 +44,8 @@ module.exports = {
        error: 'No se pudo conectar a la base' } );;
         })             
   },
-//API de Producto por ID
+//ENDPOINT - Producto por ID
+
   showProduct: (req, res) => {
     db.Product.findByPk(req.params.id, 
          {  include: [ "origen", "grano","cantidad","imagen"], })
@@ -71,7 +70,33 @@ module.exports = {
       })
 
   },
+//ENDPOINT - Último producto agregado
 
+  last: (req, res) => {
+    db.Product.findOne({ 
+      include: [ "origen", "grano","cantidad","imagen"],
+        order: [['id', 'DESC']]
+    })
+    
+    .then(product => {
+
+      return res.status(200).json({
+        data: {
+          id: product.id,  
+          Origen: product.origen,
+          Grano: product.grano,
+          Cantidad: product.cantidad,
+          Precio: product.Precio,
+          Oferta: product.Oferta,
+          urlImagen: "http://localhost:3050/uploads/" + product.imagen.Url,
+           urlProduct:"http://localhost:3050" + `/api/products/${product.id}`              
+      },
+        
+        status: 200,
+    })       
+      })
+
+}
  
  
 }
