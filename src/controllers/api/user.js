@@ -26,6 +26,7 @@ module.exports = {
                 Nombre: user.nombre,
                 Apellido: user.apellido,
                 Email: user.email,
+                urlAvatar: "http://localhost:3050/uploads/avatars/" + user.avatars.Url,
                 urlUser: "http://localhost:3050/api/users" + `/api/users/${user.id}`
             })
         });

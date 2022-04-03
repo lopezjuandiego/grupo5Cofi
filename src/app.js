@@ -4,6 +4,9 @@ const session = require('express-session');
 const cookie = require('cookie-parser');
 const app = express();
 const method = require("method-override");
+const cors = require('cors');
+
+app.use(cors());
 
 app.set("port", process.env.PORT || 3050);
 app.listen(app.get("port"), () =>
