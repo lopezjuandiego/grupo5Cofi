@@ -26,9 +26,8 @@ list: (req, res) => {
                 Nombre: user.nombre,
                 Apellido: user.apellido,
                 Email: user.email,
-                urlUser: "http://localhost:3050/api/users" + `/api/users/${user.id}`,
                 urlAvatar: "http://localhost:3050/uploads/avatars/" + user.avatars.Url,
-
+                urlUser: "http://localhost:3050/api/users" + `/api/users/${user.id}`
             })
         });
 
