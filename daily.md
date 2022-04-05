@@ -1,5 +1,11 @@
 **DAILY - SPRINT 8** 
 
+Martes 5
+Css React
+
+Lunes 4
+Terminamos DASHBOARD con producto y usuarios. Resta el CSS
+
 Sábado 2
 Armamos ENDPOINT ultimo usuario. Correcciones en APIs
 Seguimos con REACT.

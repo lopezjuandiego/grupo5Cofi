@@ -6,6 +6,7 @@ const app = express();
 const method = require("method-override");
 const cors = require('cors');
 
+//CORS
 app.use(cors());
 
 //Seteo Server

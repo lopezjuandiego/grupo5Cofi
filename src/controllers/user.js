@@ -6,39 +6,36 @@ const Op = db.Sequelize.Op
 
 module.exports = {
 
+  //LISTADO DE USUARIOS
   list: (req, res) => {
-
     db.User.findAll({
       include: ['avatars']
     })
       .then(users => {
         res.render("users/list", {
           styles: ["userList"],
-
           title: "USUARIOS REGISTRADOS",
           users: users
-
-
         })
       })
   },
 
+//LOGIN DE USUARIOS
   login: (req, res) =>
     res.render("users/login", {
       styles: ["login"],
       title: "Login",
     }),
 
-
   access: (req, res) => {
     db.User.findOne({
       where: {
         email: req.body.email
-      }, 
+      },
       //include : ['avatars']
     })
       .then(users => {
-console.log(users)
+        console.log(users)
         let errors = validator.validationResult(req);
 
         if (!errors.isEmpty()) {
@@ -46,7 +43,6 @@ console.log(users)
             styles: ["login"],
             errors: errors.mapped(),
             oldData: req.body
-
           })
         } if (!users) {
           return res.render("users/login", {
@@ -56,11 +52,8 @@ console.log(users)
                 msg: "Email sin registrar",
               },
             },
-
           })
-
         }
-
         if (!bcrypt.compareSync(req.body.password, users.password)) {
           return res.render("users/login", {
             styles: ["login"],
@@ -71,32 +64,25 @@ console.log(users)
             },
           });
         }
-        
-
         if (req.body.remember) {
           res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 7 })
         }
         req.session.user = users
         return res.redirect("/users/profile")
-
       })
       .catch(error => res.send(error))
-
-
   },
 
+  //REGISTRO DE USUARIOS
   register: (req, res) =>
     res.render("users/register", {
       styles: ["register"],
       title: "Registro",
     }),
 
-
   save: (req, res) => {
-
     let errors = validator.validationResult(req);
     if (errors.isEmpty()) {
-
       if (req.body.password != req.body.password2) {
         return res.render("users/register", {
           styles: ["register"],
@@ -107,23 +93,17 @@ console.log(users)
           },
         });
       }
-
-
-        db.User.create({
-          id: req.body.id,
-          nombre: req.body.nombre.trim(),
-          apellido: req.body.apellido.trim(),
-          email: req.body.email.trim(),
-          password: bcrypt.hashSync(req.body.password, 10),
-          admin: req.body.email.includes('@cofi') ? true : false,
-          avatar: req.body.avatar,
-        })
-
-          .then(() => res.redirect('/users/login'))
-
-
-
-          .catch(error => res.send(error))
+      db.User.create({
+        id: req.body.id,
+        nombre: req.body.nombre.trim(),
+        apellido: req.body.apellido.trim(),
+        email: req.body.email.trim(),
+        password: bcrypt.hashSync(req.body.password, 10),
+        admin: req.body.email.includes('@cofi') ? true : false,
+        avatar: req.body.avatar,
+      })
+        .then(() => res.redirect('/users/login'))
+        .catch(error => res.send(error))
     } else {
       return res.render("users/register", {
         styles: ["register"],
@@ -131,11 +111,10 @@ console.log(users)
         oldData: req.body,
       });
     }
-   
   },
 
+  //MOSTRAR USUARIO
   profile: (req, res) => {
-
     db.User.findByPk(req.session.user.id, {
       include: ['avatars']
     })
@@ -152,7 +131,6 @@ console.log(users)
     db.User.findByPk(req.params.id, { include: ['avatars'] })
 
       .then(users => {
-
         let result = db.User.findOne({
           where: {
             email: req.cookies && req.cookies.user ? req.cookies.user : null
@@ -162,19 +140,16 @@ console.log(users)
           styles: ["profile"],
           title: 'Usuario: ' + users.nombre,
           user: users,
-        })
-          :
-          res.render('error', {
+        }) : res.render('error', {
             msg: 'Usuario inexistente'
           })
-
       })
       .catch(error => res.send(error))
-
   },
 
-  edit: (req, res) => {
 
+// EDITAR USUARIO
+  edit: (req, res) => {
     db.User.findByPk(req.params.id)
       .then(users => {
         res.render('users/userUpdate', {
@@ -187,25 +162,20 @@ console.log(users)
   },
 
   update: (req, res) => {
-
     db.User.update({
-
       nombre: req.body.nombre.trim(),
       apellido: req.body.apellido.trim(),
       email: req.body.email.trim(),
-
     }, {
       where: {
         id: req.params.id
       }
     })
-
     res.redirect('/users/index')
   },
 
+  //ELIMINAR USUARIO
   delete: (req, res) => {
-
-
     db.User.findByPk(req.params.id)
       .then((user) => {
         db.User.destroy({
@@ -218,14 +188,10 @@ console.log(users)
               where: {
                 id: user.avatar,
               },
-
             })
-
               .then(() => {
-
                 res.redirect('/users/index')
               })
-
               .catch((error) => res.send(error));
           })
           .catch((error) => res.send(error));
@@ -234,23 +200,22 @@ console.log(users)
 
   },
 
+  //DESLOGEO DE USUARIO
   logout: (req, res) => {
     delete req.session.user;
     res.cookie("email", null, { maxAge: -1 });
     return res.redirect("/users/login");
   },
 
-
- uploadAvatar: (req, res) => {
+//SUBIR FOTO DE USUARIO
+  uploadAvatar: (req, res) => {
     let errors = validator.validationResult(req);
-        if (!errors.isEmpty()) {
- //      res.send(errors)}
-  return  res.render("users/profile", {
-            styles: ["profile"],
-            errors: errors.mapped(),
-          })} 
-        
-
+    if (!errors.isEmpty()) {
+      return res.render("users/profile", {
+        styles: ["profile"],
+        errors: errors.mapped(),
+      })
+    }
     if (req.files && req.files.length > 0) {
       db.Imagen.create({
         Url:
@@ -269,13 +234,13 @@ console.log(users)
             .then(user => {
               req.session.user = user
             })
-         
-         res.redirect('/users/index')
+          res.redirect('/users/index')
         })
         .catch((error) => res.send(error));
     }
   },
- 
+
+  //BUSCAR USUARIO
   search: (req, res) => {
     db.User.findAll(
       {
@@ -301,7 +266,6 @@ console.log(users)
           title: 'Resultado',
           users: users
         })
-
       })
       .catch((error) => res.send(error));
   }

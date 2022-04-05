@@ -1,6 +1,6 @@
 const file = require("../models/file")
 
-
+//SUBIR IMGS JSON
 const controller = {
     upload: (req, res) => res.render ('files/upload',{
         styles:["files/upload"],                        
