@@ -83,9 +83,9 @@ module.exports = {
       return res.status(200).json({
         data: {
           id: product.id,  
-          Origen: product.origen,
-          Grano: product.grano,
-          Cantidad: product.cantidad,
+          Origen: product.origen.country,
+          Grano: product.grano.tipoDeGrano,
+          Cantidad: product.cantidad.Cantidad,
           Precio: product.Precio,
           Oferta: product.Oferta,
           urlImagen: "http://localhost:3050/uploads/" + product.imagen.Url,
