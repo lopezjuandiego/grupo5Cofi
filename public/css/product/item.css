@@ -96,7 +96,7 @@ font-size: 2em;
 }
     @keyframes titoferta {
         0%{
-            opacity:.0.8;
+            opacity:0.8;
         }
         100%{
             opacity:0;
@@ -139,7 +139,7 @@ font-size: 2em;
 .tachito{
     border: none;
 }
-.iconos1{
+.iconos2{
     display: flex;    
     justify-content: center;
     align-items: center;

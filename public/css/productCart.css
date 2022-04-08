@@ -42,6 +42,9 @@ gap: 0;
   height: 20vh;
  
 }
+.total{
+  margin-bottom: 25px;
+}
 
 #banner-txt {
   font-family: "Dancing Script";
@@ -61,12 +64,13 @@ h2 {
 }
 
 .link {
-  font-size: 0.8rem;
-  font-family: "Roboto";
-  padding: 1.5em;
+  flex: 1 0 auto;
+  background-color: #ffe6a7;
+  color: #99582a;
+  border-radius: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
   text-decoration: none;
-  color: #ffe6a7;
-  transition: all 0.3s linear;
 }
 
 .link:hover {
