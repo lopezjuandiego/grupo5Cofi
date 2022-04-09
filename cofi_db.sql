@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 08-03-2022 a las 15:34:39
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.1
+-- Servidor: localhost
+-- Tiempo de generación: 09-04-2022 a las 19:54:07
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -58,9 +58,9 @@ CREATE TABLE `grano` (
 --
 
 INSERT INTO `grano` (`id`, `tipoDeGrano`) VALUES
-(1, 'fino'),
-(2, 'medio'),
-(3, 'grueso');
+(1, 'Fino'),
+(2, 'Medio'),
+(3, 'Grueso');
 
 -- --------------------------------------------------------
 
@@ -80,8 +80,37 @@ CREATE TABLE `imagenes` (
 
 INSERT INTO `imagenes` (`id`, `Url`, `Type`) VALUES
 (41, 'avatar-1646698456145.jpeg', 0),
-(42, 'avatar-1646698801150.jpg', 0),
-(43, 'avatar-1646698817040.jpg', 0);
+(44, 'avatar-1646853291983.png', 2),
+(45, 'avatar-1646858198701.png', 2),
+(47, 'avatar-1646861375741.jpeg', 2),
+(48, 'avatar-1646861646105.jpeg', 2),
+(50, 'avatar-1647123533880.jpeg', 2),
+(53, 'avatar-1647123748331.jpeg', 2),
+(55, 'avatar-1647613287361.pdf', 2),
+(71, 'avatar-1647620316690.jpeg', 2),
+(72, 'avatar-1647620475918.jpeg', 2),
+(73, 'avatar-1647620559574.png', 2),
+(74, 'avatar-1647620576835.png', 2),
+(75, 'avatar-1647620699865.jpeg', 2),
+(80, 'avatar-1647960712714.jpeg', 2),
+(81, 'avatar-1647966082325.jpeg', 2),
+(82, 'imagen-1647983006999.jpg', 1),
+(83, 'avatar-1647992942302.jpeg', 2),
+(84, 'avatar-1648137941289.jpeg', 2),
+(85, 'avatar-1648137976882.jpeg', 2),
+(86, 'avatar-1648210219764.jpeg', 2),
+(87, 'avatar-1648212553578.jpeg', 2),
+(88, 'avatar-1648730009390.jpg', 2),
+(89, 'avatar-1649002093139.jpeg', 2),
+(90, 'imagen-1649106824927.png', 1),
+(91, 'avatar-1649168611576.png', 2),
+(93, 'imagen-1649169360712.png', 1),
+(96, 'avatar-1649525278688.png', 2),
+(97, 'imagen-1649525757124.png', 1),
+(98, 'imagen-1649525883613.png', 1),
+(99, 'imagen-1649526066313.png', 1),
+(100, 'imagen-1649526095260.png', 1),
+(101, 'imagen-1649526289054.png', 1);
 
 -- --------------------------------------------------------
 
@@ -99,14 +128,14 @@ CREATE TABLE `origen` (
 --
 
 INSERT INTO `origen` (`id`, `country`) VALUES
-(1, 'Brasil'),
+(1, 'Egipto'),
 (2, 'Costa Rica'),
 (3, 'Colombia'),
 (4, 'Guatemala'),
-(5, 'Mexico'),
-(6, 'Argentina'),
-(7, 'Francia'),
-(8, 'Chile');
+(5, 'Etiopia'),
+(6, 'Vietnam'),
+(7, 'Indonesia'),
+(8, 'Malasia');
 
 -- --------------------------------------------------------
 
@@ -129,8 +158,14 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `OrigenID`, `GranoID`, `CantidadID`, `Precio`, `Oferta`, `ImagenID`) VALUES
-(14, 1, 1, 4, 5600, 0, NULL),
-(37, 2, 1, 1, 788, 0, NULL);
+(44, 4, 2, 2, 2500, 0, 82),
+(45, 3, 2, 2, 1800, 1, 90),
+(47, 2, 3, 4, 1300, 1, 93),
+(49, 1, 3, 2, 4500, 0, 97),
+(50, 5, 1, 1, 2000, 1, 98),
+(51, 6, 1, 2, 3000, 0, 99),
+(52, 6, 1, 1, 1999, 1, 100),
+(53, 7, 3, 4, 7000, 0, 101);
 
 -- --------------------------------------------------------
 
@@ -144,7 +179,6 @@ CREATE TABLE `usuarios` (
   `apellido` varchar(255) NOT NULL,
   `email` text NOT NULL,
   `password` text NOT NULL,
-  `password2` text NOT NULL,
   `admin` tinyint(1) NOT NULL DEFAULT 0,
   `avatar` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -153,13 +187,16 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `email`, `password`, `password2`, `admin`, `avatar`) VALUES
-(27, 'Martin', 'Palermo', 'palermo@cofi.com', '$2b$10$LmSOh7GjILMyGYpV0AtRRuJ3cRAVeLuT0eudzfX5M1zA3SJ8zvDSm', '0', 1, 43),
-(31, 'Juan', 'Diaz', 'juancho@cofi.com', '$2b$10$iFy7bSmskwgHmsbi44N2GeKa1lFho4TpcL2xy3sfWbOdxHGLYWf6W', '0', 1, NULL),
-(33, 'alexis', 'sanchez', 'alexis@cofi.com', '$2b$10$GVapNyDXqlgvG5AWVM5ZK.slgPpLuJ7h1ckVYpxOQyCzz0TZuQ06y', '0', 1, NULL),
-(34, 'Ric', 'Lopez', 'ricardo@cofi.com', '$2b$10$fjP0/2xTkSDkDMDSA/E89Oo4nVuAi07Xxhm3kUjBMhNa6INmhq55e', 'ric123', 1, NULL),
-(35, 'Pedro', 'Troglio', 'troglio@sl.com', '$2b$10$E.vZlC0JqIf2.pfvVuLS8e.NJnTaDl8heobsRNGFHgCItPo2O/bxa', 't123456', 0, NULL),
-(36, 'Fernando', 'Campos', 'fernando@cofi.com', '$2b$10$Fz6tBbCvJiC4EJqrqGdavuGqSWwG3.2GEzaEaUuJDh/o7z0okjaAu', 'f123456', 1, 42);
+INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `email`, `password`, `admin`, `avatar`) VALUES
+(59, 'Mick', 'Jagger', 'jagger@cofi.com ', '$2b$10$0eP2/x/.z1JVV2biptTtFuLOhS0rFHF9s0LZ6VVsCrgv.Cu9ssszm', 1, 80),
+(60, 'Juan Diego', 'Lopez', 'juan@cofi.com', '$2b$10$j6dql4sieQRwrd3yXnbM0usaHK/Pfodb4qXHweVIMqUQt2cWANSwi', 1, 85),
+(62, 'David', 'Cooperfield', 'mago@cofi.com', '$2b$10$XEMywWnHDAvw0yedGd/u9enwkH0hwFWzuKlBGBUFl51/P2E34shW6', 1, 83),
+(66, 'John', 'Lennon', 'john@beatles.com', '$2b$10$QbK2MZQvj9AMO8aW/8llvucjMFNSBsJY3sQeOrV1vGO8vUx63qbZy', 0, 86),
+(67, 'Freddie', 'Mercury', 'queen@queen.com', '$2b$10$3NQAlCbQWXC4brNhJcci9.au9dDrjyFnyxFn3zJuvAoUCMNMhkwTq', 0, 87),
+(68, 'Marty', 'McFly', 'marty@bttf.com', '$2b$10$C.ChxoY1Dts2oKKt6s5sf.Kw3Duh6QbV8anayd.jvN.Fmif82nexC', 0, 88),
+(69, 'Axl', 'Rose', 'axl@guns.com', '$2b$10$OTlTZA.yfar5NldKNOjKSOyD12y7cnGbmZhLsbfk.iMK2SSDUey7m', 0, 89),
+(70, 'Buzz', 'Lightyear', 'buzz@cofi.com', '$2b$10$ebCidupkFHOXptAhFQJIrOZkzHzWHz1mYpt2WerYF1UumJlLpoTGu', 1, 91),
+(72, 'Woody', 'Pride', 'woody@cofi.com', '$2b$10$6pKw0b82lt33t856ItFkxOI6l/C3j8A2i/BnUCOMw/Snq7.cuhsHW', 1, 96);
 
 --
 -- Índices para tablas volcadas
@@ -226,7 +263,7 @@ ALTER TABLE `grano`
 -- AUTO_INCREMENT de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT de la tabla `origen`
@@ -238,13 +275,13 @@ ALTER TABLE `origen`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- Restricciones para tablas volcadas
