@@ -13,34 +13,36 @@
                     </h2>
                 </section>
 
-                <section >
-                    <% if (cafe.length > 0) { %>
-                        <h3 class="title-busqueda">Hay <%= cafe.length %> cafes con ese Origen</h3>
-         
-            <% cafe.forEach(element => { %>
-                <section class= "conteinfo">
-                    <article class="cajaprod1">
-                            <a class="itemtext" href="/product/<%= element.id %> ">
-                               
-                                        <ul >
-                                            <li class="itemtext">ORIGEN: <%= element.origen.country %></li> 
-                                            <li class="itemtext">TIPO DE GRANO: <%= element.grano.tipoDeGrano %></li>                
-                                            <li class="itemtext">CANTIDAD: <%= element.cantidad.Cantidad  %> gr</li>
+                <section>
+                    <% if (cafe.length> 0) { %>
+                        <h3 class="title-busqueda">Hay <%= cafe.length %> cafés de esa procedencia</h3>
+
+                        <% cafe.forEach(element=> { %>
+                            <section class="conteinfo">
+                                <article class="cajaprod1">
+                                    <a class="itemtext" href="/product/<%= element.id %> ">
+
+                                        <ul>
+                                            <li class="itemtext">ORIGEN: <%= element.origen.country %>
+                                            </li>
+                                            <li class="itemtext">TIPO DE GRANO: <%= element.grano.tipoDeGrano %>
+                                            </li>
+                                            <li class="itemtext">CANTIDAD: <%= element.cantidad.Cantidad %> gr</li>
                                             <li class="itemtext">PRECIO: $ <%= element.Precio %>
-                                        </ul>  
-                            </a>
-                        </article>
-                        </section>
+                                        </ul>
+                                    </a>
+                                </article>
+                            </section>
 
-                        <% }) %>
+                            <% }) %>
 
-                            <% } else { %>
-                                <article>No hay resultados para esta búsqueda</article>
-                                <% }%>
+                                <% } else { %>
+                                    <h2 class="juan">No hay resultados para esta búsqueda</h2>
+                                    <% }%>
 
-                                    <article class="iconos1">
-                                        <a class="boton1" href="/product/">VOLVER</a>
-                                    </article>
+                                        <article class="iconos1">
+                                            <a class="boton1" href="/product/">VOLVER</a>
+                                        </article>
 
 
                 </section>
