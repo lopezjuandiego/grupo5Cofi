@@ -6,6 +6,11 @@ Mail Administrador: @cofi.com
 Vista que se modifica como administrador: create y update. Unicamente el administrador puede crear nuevos productos, modificarlos y borrarlos.
 Usuario registrado puede ingresar a todo el sitio a excepción de "crear productos, modificarlos y borrarlos".
 
+3 ramas en github
+- rama main: proyecto con Sequelize + REACT
+- rama backup: proyecto con JSON 
+
+
 # *¿Qué productos o servicios vendemos?*
 
 - Somos un Marketplace dedicado al café. Nuestro principal servicio es un "Club de café". 

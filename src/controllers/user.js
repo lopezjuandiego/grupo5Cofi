@@ -234,7 +234,7 @@ module.exports = {
             .then(user => {
               req.session.user = user
             })
-          res.redirect('/users/index')
+          return res.redirect('/users/index')
         })
         .catch((error) => res.send(error));
     }

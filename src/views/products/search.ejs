@@ -6,9 +6,13 @@
         <%- include("../includes/header") %>
 
             <main>
+
                 <section class="conttitle">
-                <h1 class="title">RESULTADO DE BUSQUEDA</h1>
+                    <h2 class="title">
+                        <%= locals.title ? title : null %>
+                    </h2>
                 </section>
+
                 <section >
                     <% if (cafe.length > 0) { %>
                         <h3 class="title-busqueda">Hay <%= cafe.length %> cafes con ese Origen</h3>

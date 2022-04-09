@@ -168,7 +168,7 @@ const controllers = {
           .then(cafe => {
             return res.render('products/search', {
               styles: ['product/item'],
-              title: 'Café   ',
+              title: 'Resultado',
               cafe: cafe,
             })
           })
