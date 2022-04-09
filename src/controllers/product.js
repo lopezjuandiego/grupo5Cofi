@@ -153,6 +153,7 @@ const controllers = {
 
   //BUSCADOR DE PRODUCTO
   search: (req, res) => {
+   
     db.Origen.findOne({
       where: {
         country: { [Op.like]: "%" + req.query.buscar + "%" },
@@ -175,5 +176,6 @@ const controllers = {
       })
       .catch((error) => res.send(error));
   }
+  
 }
 module.exports = controllers
