@@ -167,14 +167,24 @@ const controllers = {
           }
         })
           .then(cafe => {
-            return res.render('products/search', {
+           // res.send(cafe);
+             return res.render('products/search', {
               styles: ['product/item'],
               title: 'Resultado',
-              cafe: cafe,
-            })
+              cafe: cafe ? cafe : [],
+            }) 
           })
+          .catch((error) => res.render('products/search', {
+            styles: ['product/item'],
+            title: 'Resultado',
+            cafe: [],
+          }) );
       })
-      .catch((error) => res.send(error));
+      .catch((error) => res.render('products/search', {
+        styles: ['product/item'],
+        title: 'Resultado',
+        cafe: [],
+      }) );
   }
   
 }

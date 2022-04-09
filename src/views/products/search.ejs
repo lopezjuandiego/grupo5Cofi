@@ -15,7 +15,7 @@
 
                 <section >
                     <% if (cafe.length > 0) { %>
-                        <h3 class="title-busqueda">Hay <%= cafe.length %> cafes con ese Origen</h3>
+                        <article class="title-busqueda">Hay <%= cafe.length %> cafes con ese Origen</article>
          
             <% cafe.forEach(element => { %>
                 <section class= "conteinfo">
@@ -26,7 +26,7 @@
                                             <li class="itemtext">ORIGEN: <%= element.origen.country %></li> 
                                             <li class="itemtext">TIPO DE GRANO: <%= element.grano.tipoDeGrano %></li>                
                                             <li class="itemtext">CANTIDAD: <%= element.cantidad.Cantidad  %> gr</li>
-                                            <li class="itemtext">PRECIO: $ <%= element.Precio %>
+                                            <li class="itemtext">PRECIO: $ <%= element.Precio %></li>
                                         </ul>  
                             </a>
                         </article>
@@ -35,7 +35,7 @@
                         <% }) %>
 
                             <% } else { %>
-                                <article>No hay resultados para esta búsqueda</article>
+                                <h2 class= "containh2">No hay resultados para esta búsqueda</h2>
                                 <% }%>
 
                                     <article class="iconos1">
