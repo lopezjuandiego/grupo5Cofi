@@ -7,12 +7,25 @@ main {
   background-color: #6f1d1b;
 }
 
-.juan {
-  text-align: center;
+.containh2{
   color: #ffe6a7;
-  font-size: 30px;
-  font-family: "Roboto";
-  height: 10em;
+  font-size: 4em;
+  height: 9em;
+  text-align: center;
+  padding-top: 4em;
+}
+
+.tituloprofile{
+    background-image: url(../../image/cafelargo3.jpeg);
+    height: 20vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffe6a7;
+    font-family: "Dancing Script";
+    font-size: 13vw;
 }
 
 .tituloprofile {
