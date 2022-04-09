@@ -7,9 +7,9 @@ Vista que se modifica como administrador: create y update. Unicamente el adminis
 Usuario registrado puede ingresar a todo el sitio a excepción de "crear productos, modificarlos y borrarlos".
 
 3 ramas en github
-- rama main: proyecto con Sequeliza 
+- rama main: proyecto con Sequelize + REACT
 - rama backup: proyecto con JSON 
-- rama REACT: proyecto con Sequeliza + REACT
+
 
 # *¿Qué productos o servicios vendemos?*
 
