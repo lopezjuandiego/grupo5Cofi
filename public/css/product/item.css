@@ -38,7 +38,13 @@ font-size: 2em;
 
 /* FORMULARIO */
 
-
+.containh2{
+    color: #ffe6a7;
+    font-size: 4em;
+    height: 9em;
+    text-align: center;
+    padding-top: 4em;
+}
 
 .conteinfo{
     padding: 2em;
