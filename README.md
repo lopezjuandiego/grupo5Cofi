@@ -1,15 +1,16 @@
 ﻿> No hay nada como una taza de café para estimular las células del cerebro.  
 **Sherlock Holmes**
 
-Link Heroku: https://cofi.herokuapp.com/
+[HEROKU](https://cofi.herokuapp.com/)
+[Proyecto REACT](https://github.com/lopezjuandiego/Api-Cofi-React)
+
 Mail Administrador: @cofi.com
 Vista que se modifica como administrador: create y update. Unicamente el administrador puede crear nuevos productos, modificarlos y borrarlos.
 Usuario registrado puede ingresar a todo el sitio a excepción de "crear productos, modificarlos y borrarlos".
 
-3 ramas en github
+Ramas en Github
 - rama main: proyecto con Sequelize + REACT
 - rama backup: proyecto con JSON 
-
 
 # *¿Qué productos o servicios vendemos?*
 
